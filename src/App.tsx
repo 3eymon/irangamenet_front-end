@@ -1,8 +1,7 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Router, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Register from "./pages/Register";
-import Auth from "./pages/Auth";
 import About from "./pages/About";
 import Games from "./pages/Games";
 import Streamers from "./pages/Streamers";
@@ -17,9 +16,11 @@ import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import SingleGameNets from "./features/GameNets/SingleGameNets";
 import NotFound from "./ui/NotFound";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "./ui/Navbar";
+import SignIn from "./features/authentication/SignIn";
+import SignUp from "./features/authentication/SignUp";
+import AuthLayout from "./ui/AuthLayout";
 function App() {
   const queryClient = new QueryClient();
 
@@ -42,7 +43,10 @@ function App() {
               <Route path="games/page/:id" element={<SinglePage />} />
               <Route path="games/:id" element={<GamesFilter />} />
               <Route path="streamers" element={<Streamers />} />
-              <Route path="Auth" element={<Auth />} />
+              <Route path="auth" element={<AuthLayout />}>
+                <Route path="login" element={<SignIn />} />
+                <Route path="register" element={<SignUp />} />
+              </Route>
               <Route path="gameNet" element={<GameNets />} />
               <Route path="gameNet/:id" element={<SingleGameNets />} />
             </Route>

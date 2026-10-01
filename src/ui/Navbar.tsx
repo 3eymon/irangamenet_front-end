@@ -60,7 +60,7 @@ function Navbar() {
       <NavigationMobile />
       <NavLinks navBar={navBar} />
       <NavLink
-        to="/Auth"
+        to="/auth/login"
         className="text-xs hidden sm:flex bg-gradient-to-r from-[#3b35b2] to-[#733cb3] px-5 py-1 transition-transform ease-linear rounded-md shadow-[#733cb39c_0px_0px_5px] hover:scale-95 "
       >
         ورود

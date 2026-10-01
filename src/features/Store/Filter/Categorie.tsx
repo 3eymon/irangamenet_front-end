@@ -9,14 +9,14 @@ export default function Categorie({ categories, hanleFilter }) {
           <label className="flex gap-3 cursor-pointer">
             {c.chek ? (
               <Checkbox
-                size="xs"
+                size="sm"
                 defaultSelected={true}
                 className="p-0 pr-2"
                 onChange={(e) => hanleFilter(c.val, e)}
               ></Checkbox>
             ) : (
               <Checkbox
-                size="xs"
+                size="sm"
                 className="p-0 pr-2"
                 onChange={(e) => hanleFilter(c.val, e)}
               ></Checkbox>

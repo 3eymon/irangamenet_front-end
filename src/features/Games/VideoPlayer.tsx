@@ -9,7 +9,8 @@ const VideoPlayer = ({ options }) => {
   const videoRef = useRef(null);
   const playerRef = useRef(null);
   document.addEventListener("contextmenu", function (event) {
-    if (event.target.tagName === "VIDEO") {
+    const target = event.target as HTMLElement | null;
+    if (target?.tagName === "VIDEO") {
       event.preventDefault();
     }
   });

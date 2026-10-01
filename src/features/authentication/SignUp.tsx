@@ -4,16 +4,30 @@ import { useForm } from "react-hook-form";
 import { Loading } from "react-daisyui";
 import Input from "../../ui/input";
 
-function SendOTPForm({ setStep, phoneNumber, onChange }) {
+type SignUpForm = {
+  phoneNumber: string;
+};
+
+type SignUpProps = {
+  setStep?: (step: number) => void;
+  phoneNumber?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+function SignUp({
+  setStep = () => {},
+  phoneNumber = "",
+  onChange = () => {},
+}: SignUpProps) {
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
-  } = useForm();
+  } = useForm<SignUpForm>();
 
-  const persianToEnglish = (str) => {
+  const persianToEnglish = (str: string) => {
     const persianDigits = "۰۱۲۳۴۵۶۷۸۹";
     const englishDigits = "0123456789";
     return str.replace(
@@ -22,15 +36,16 @@ function SendOTPForm({ setStep, phoneNumber, onChange }) {
     );
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: SignUpForm) => {
     setIsLoading(true);
     const englishPhoneNumber = persianToEnglish(data.phoneNumber);
+    console.log(englishPhoneNumber);
     setTimeout(() => {
       setStep(2);
     }, 1500);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = persianToEnglish(e.target.value);
     setValue("phoneNumber", value);
     onChange(e);
@@ -72,7 +87,35 @@ function SendOTPForm({ setStep, phoneNumber, onChange }) {
           />
           {errors.phoneNumber && (
             <span className="text-red-500 inline-block px-4 pt-2 text-sm lg:text-base w-full text-right dir-rtl">
-              {errors.phoneNumber.message}
+              {typeof errors.phoneNumber.message === "string"
+                ? errors.phoneNumber.message
+                : "لطفا از یک شماره موبایل معتبر استفاده کنید"}
+            </span>
+          )}
+        </div>
+        <div className="w-full dir-ltr">
+          <Input
+            placeholder="شماره موبایل"
+            mode="numeric"
+            label={
+              <PhoneIcon className="transition-all h-5 lg:w-6 w-5 lg:h-6 fill-gray-400 text-gray-400" />
+            }
+            maxLength={phoneNumber.startsWith("0") ? 11 : 10}
+            prop={register("phoneNumber", {
+              required: "افزودن شماره موبایل ضروری است.",
+              pattern: {
+                value: /^09\d{9}$/,
+                message: "لطفا از یک شماره موبایل معتبر استفاده کنید",
+              },
+            })}
+            name="input"
+            setValue={handleChange}
+          />
+          {errors.phoneNumber && (
+            <span className="text-red-500 inline-block px-4 pt-2 text-sm lg:text-base w-full text-right dir-rtl">
+              {typeof errors.phoneNumber.message === "string"
+                ? errors.phoneNumber.message
+                : "لطفا از یک شماره موبایل معتبر استفاده کنید"}
             </span>
           )}
         </div>
@@ -84,4 +127,4 @@ function SendOTPForm({ setStep, phoneNumber, onChange }) {
   );
 }
 
-export default SendOTPForm;
+export default SignUp;

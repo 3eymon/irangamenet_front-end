@@ -13,10 +13,29 @@ import LazyLoad from "react-lazyload";
 import { Rating } from "@mui/material";
 import { Tooltip } from "react-tooltip";
 
-export default function SliderCards({ arr, categ, type }) {
+type SliderCardItem = {
+  id: string | number;
+  title: string;
+  image: string;
+  author: string;
+  date: string;
+  description: string;
+  views: number;
+  rating?: number | string;
+  like?: number | string;
+  save?: number | string;
+};
+
+type SliderCardsProps = {
+  arr: SliderCardItem[];
+  categ: string;
+  type?: string;
+};
+
+export default function SliderCards({ arr, categ, type = "news" }: SliderCardsProps) {
   const pagination = {
     el: ".swiper-pagination",
-    type: "bullets",
+    type: "bullets" as const,
     clickable: true,
     bulletClass: "bg-gray-600",
     bulletActiveClass: "!w-5 sm:w-6 !bg-gray-400",
@@ -56,7 +75,7 @@ export default function SliderCards({ arr, categ, type }) {
         return (
           <SwiperSlide key={n.id} className="w-full px-5 md:px-0 md:w-[22rem]">
             <div className="relative">
-              <Link to={`${type == "gamenet" ? "" : "page/"}${n.id}`}>
+              <Link to={type === "gamenet" ? `/gameNet/${n.id}` : `/games/page/${n.id}`}>
                 <LazyLoad>
                   <img
                     loading="lazy"
@@ -69,7 +88,7 @@ export default function SliderCards({ arr, categ, type }) {
               <div className="flex absolute left-2 -bottom-2  gap-5">
                 <button
                   // onClick={}
-                  title={n.like}
+                  title={String(n.like ?? "")}
                   className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-red-500 transition-all ease-linear"
                 >
                   <HeartIcon
@@ -77,7 +96,7 @@ export default function SliderCards({ arr, categ, type }) {
                   />
                 </button>
                 <button
-                  title={n.save}
+                  title={String(n.save ?? "")}
                   className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-gray-400 transition-all ease-linear"
                 >
                   <BookmarkIcon className="w-5 h-5 group-hover:fill-gray-400/30 transition-all ease-linear" />
@@ -86,7 +105,7 @@ export default function SliderCards({ arr, categ, type }) {
             </div>
             <div className="flex flex-col gap-1 pt-3">
               <div className="flex justify-between gap-2 items-center text-sm pr-1">
-                <Link className="inline-flex gap-1 items-center">
+                <Link to="/" className="inline-flex gap-1 items-center">
                   <img
                     loading="lazy"
                     src="/images/icon/header/Grand-Theft-Auto-San-Andreas.jpg"
@@ -105,7 +124,7 @@ export default function SliderCards({ arr, categ, type }) {
                 </div>
               </div>
               <h2 className="text-lg font-PeydaMed w-11/12 ">
-                <Link to={n.id}>{n.title}</Link>
+                <Link to={`/news/${n.id}`}>{n.title}</Link>
               </h2>
               <p className="text-gray-300 text-xs line-clamp-3">
                 {n.description}
@@ -127,7 +146,7 @@ export default function SliderCards({ arr, categ, type }) {
                       />
                       <div
                         data-tooltip-id="my-tooltip"
-                        data-tooltip-content={+n.rating}
+                        data-tooltip-content={String(n.rating ?? 0)}
                       >
                         <Rating
                           name="half-rating-read"
@@ -139,7 +158,7 @@ export default function SliderCards({ arr, categ, type }) {
                       </div>
                     </>
                   ) : (
-                    <Link to="action" className="text-red-500 pl-2">
+                    <Link to="/games" className="text-red-500 pl-2">
                       اکشن
                     </Link>
                   )}
@@ -203,7 +222,7 @@ export function Loader() {
     </div>
   );
 }
-function LoaderCard({ c }) {
+function LoaderCard({ c }: { c?: string }) {
   return (
     <div className={`w-full px-5 md:px-0 ${c ? "hidden" : ""} ${c}`}>
       <div>
@@ -227,7 +246,6 @@ function LoaderCard({ c }) {
         <div className="pt-2">
           <div className="text-gray-400 inline-flex items-center text-xs gap-1">
             <div
-              to="action"
               className="text-red-500 ml-2 bg-gray-400 w-7 h-3 animate-pulse rounded-sm"
             ></div>
             <BookOpenIcon className="w-4 text-gray-400 animate-pulse" />

@@ -74,7 +74,7 @@ function HeaderNews() {
     </>
   );
 }
-function CardSlider({ title, desc, createdAt, author, id }) {
+function CardSlider({ title, desc, createdAt, author, id, image }: { title: string; desc: string; createdAt: string; author: string; id: string | number; image?: string; }) {
   return (
     <div className="flex flex-col justify-between h-full text-xs lg:text-base">
       <div>
@@ -90,7 +90,7 @@ function CardSlider({ title, desc, createdAt, author, id }) {
           </p>
         </div>
         <Link
-          to={id}
+          to={String(id)}
           className=" hover:underline transition-all ease-linear line-clamp-4 font-Peyda text-xl lg:text-2xl"
         >
           {title}

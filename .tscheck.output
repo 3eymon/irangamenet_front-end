@@ -1,0 +1,79 @@
+
+> gamenet@0.0.0 typecheck
+> tsc --noEmit
+
+src/features/authentication/AuthContainer.tsx(2,25): error TS2307: Cannot find module './SendOTPForm' or its corresponding type declarations.
+src/features/authentication/AuthContainer.tsx(3,26): error TS2307: Cannot find module './CheckOTPForm' or its corresponding type declarations.
+src/features/authentication/AuthContainer.tsx(4,29): error TS2307: Cannot find module './CompleteProfile' or its corresponding type declarations.
+src/features/authentication/SignIn.tsx(89,17): error TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>>' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+src/features/authentication/SignUp.tsx(33,15): error TS2554: Expected 0 arguments, but got 1.
+src/features/authentication/SignUp.tsx(40,14): error TS2554: Expected 0 arguments, but got 1.
+src/features/authentication/SignUp.tsx(60,12): error TS2741: Property 'className' is missing in type '{ placeholder: string; mode: string; label: Element; maxLength: number; prop: UseFormRegisterReturn<"phoneNumber">; name: string; setValue: (e: any) => void; }' but required in type '{ [x: string]: any; label: any; className: any; }'.
+src/features/authentication/SignUp.tsx(79,15): error TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>>' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+src/features/authentication/SignUp.tsx(84,12): error TS2741: Property 'className' is missing in type '{ placeholder: string; mode: string; label: Element; maxLength: number; prop: UseFormRegisterReturn<"phoneNumber">; name: string; setValue: (e: any) => void; }' but required in type '{ [x: string]: any; label: any; className: any; }'.
+src/features/authentication/SignUp.tsx(103,15): error TS2322: Type 'string | FieldError | Merge<FieldError, FieldErrorsImpl<any>>' is not assignable to type 'ReactNode'.
+  Type 'FieldError' is not assignable to type 'ReactNode'.
+    Type 'FieldError' is missing the following properties from type 'ReactPortal': children, props, key
+src/features/GameNets/Header.tsx(98,42): error TS2554: Expected 1 arguments, but got 0.
+src/features/GameNets/Header.tsx(113,31): error TS2554: Expected 1 arguments, but got 0.
+src/features/GameNets/Header.tsx(130,63): error TS2345: Argument of type 'string' is not assignable to parameter of type '(prevState: undefined) => undefined'.
+src/features/GameNets/SingleGameNets.tsx(21,25): error TS2550: Property 'findLast' does not exist on type '{ value: number; symbol: string; }[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2023' or later.
+src/features/Games/Comments.tsx(1,10): error TS2614: Module '"./SinglePage"' has no exported member 'TitleHeader'. Did you mean to use 'import TitleHeader from "./SinglePage"' instead?
+src/features/Games/FreeGames.tsx(10,10): error TS2741: Property 'type' is missing in type '{ arr: boolean | any[]; categ: string; }' but required in type '{ arr: any; categ: any; type: any; }'.
+src/features/Games/LatestGames.tsx(10,10): error TS2741: Property 'type' is missing in type '{ arr: boolean | any[]; categ: string; }' but required in type '{ arr: any; categ: any; type: any; }'.
+src/features/Games/VideoPlayer.tsx(12,22): error TS2339: Property 'tagName' does not exist on type 'EventTarget'.
+src/features/News/HeaderNews.tsx(42,21): error TS2339: Property 'map' does not exist on type 'boolean | any[]'.
+  Property 'map' does not exist on type 'false'.
+src/features/News/HeaderNews.tsx(50,21): error TS2322: Type '{ title: any; desc: any; createdAt: any; author: any; id: any; image: any; }' is not assignable to type 'IntrinsicAttributes & { title: any; desc: any; createdAt: any; author: any; id: any; }'.
+  Property 'image' does not exist on type 'IntrinsicAttributes & { title: any; desc: any; createdAt: any; author: any; id: any; }'.
+src/features/News/HeaderNews.tsx(61,24): error TS2339: Property 'map' does not exist on type 'boolean | any[]'.
+  Property 'map' does not exist on type 'false'.
+src/features/News/LatestNews.tsx(6,21): error TS2339: Property 'sort' does not exist on type 'boolean | any[]'.
+  Property 'sort' does not exist on type 'false'.
+src/features/News/LatestNews.tsx(7,12): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/features/News/LatestNews.tsx(7,31): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/features/News/LatestNews.tsx(14,8): error TS2741: Property 'type' is missing in type '{ arr: any; categ: string; }' but required in type '{ arr: any; categ: any; type: any; }'.
+src/features/News/MostViewed.tsx(10,8): error TS2339: Property 'sort' does not exist on type 'boolean | any[]'.
+  Property 'sort' does not exist on type 'false'.
+src/features/News/MostViewed.tsx(21,17): error TS2339: Property 'map' does not exist on type 'boolean | any[]'.
+  Property 'map' does not exist on type 'false'.
+src/features/News/MostViewed.tsx(58,16): error TS2741: Property 'to' is missing in type '{ children: Element[]; className: string; }' but required in type 'LinkProps'.
+src/features/News/WeeklyHighlightNews.tsx(12,8): error TS2741: Property 'type' is missing in type '{ arr: boolean | any[]; categ: string; }' but required in type '{ arr: any; categ: any; type: any; }'.
+src/features/Store/context/StoreProvider.tsx(5,22): error TS2554: Expected 1 arguments, but got 0.
+src/features/Store/Filter/Categorie.tsx(12,17): error TS2322: Type '"xs"' is not assignable to type '"sm" | "md" | "lg"'.
+src/features/Store/Filter/Categorie.tsx(19,17): error TS2322: Type '"xs"' is not assignable to type '"sm" | "md" | "lg"'.
+src/features/Store/Filter/FillterCard.tsx(14,11): error TS2339: Property 'hanleFilterCategories' does not exist on type '{}'.
+src/features/Store/Filter/FillterCard.tsx(14,34): error TS2339: Property 'hanleFilterPlatform' does not exist on type '{}'.
+src/features/Store/Filter/FillterCardMobile.tsx(23,11): error TS2339: Property 'hanleFilterCategories' does not exist on type '{}'.
+src/features/Store/Filter/FillterCardMobile.tsx(23,34): error TS2339: Property 'hanleFilterPlatform' does not exist on type '{}'.
+src/features/Store/Filter/Platform.tsx(13,21): error TS2322: Type '"xs"' is not assignable to type '"sm" | "md" | "lg"'.
+src/features/Store/Filter/Platform.tsx(20,21): error TS2322: Type '"xs"' is not assignable to type '"sm" | "md" | "lg"'.
+src/features/Store/Filter/PriceFilter.tsx(6,11): error TS2339: Property 'price' does not exist on type '{}'.
+src/features/Store/Filter/PriceFilter.tsx(6,18): error TS2339: Property 'setPrice' does not exist on type '{}'.
+src/features/Store/Filter/PriceFilter.tsx(6,29): error TS2339: Property 'maxPrice' does not exist on type '{}'.
+src/features/Store/Prodocts.tsx(9,11): error TS2339: Property 'price' does not exist on type '{}'.
+src/features/Store/Prodocts.tsx(85,17): error TS2322: Type 'number' is not assignable to type 'string'.
+src/features/Store/Prodocts.tsx(91,17): error TS2322: Type 'number' is not assignable to type 'string'.
+src/ui/SliderCards.tsx(45,7): error TS2322: Type '{ el: string; type: string; clickable: boolean; bulletClass: string; bulletActiveClass: string; lockClass: string; renderBullet: (index: any, className: any) => string; }' is not assignable to type 'boolean | PaginationOptions'.
+  Type '{ el: string; type: string; clickable: boolean; bulletClass: string; bulletActiveClass: string; lockClass: string; renderBullet: (index: any, className: any) => string; }' is not assignable to type 'PaginationOptions'.
+    Types of property 'type' are incompatible.
+      Type 'string' is not assignable to type '"custom" | "progressbar" | "bullets" | "fraction"'.
+src/ui/SliderCards.tsx(89,18): error TS2741: Property 'to' is missing in type '{ children: Element[]; className: string; }' but required in type 'LinkProps'.
+src/ui/SliderCards.tsx(128,24): error TS2322: Type '{ children: Element; "data-tooltip-id": string; "data-tooltip-content": number; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Type '{ children: Element; "data-tooltip-id": string; "data-tooltip-content": number; }' is not assignable to type 'HTMLAttributes<HTMLDivElement>'.
+    Types of property ''data-tooltip-content'' are incompatible.
+      Type 'number' is not assignable to type 'string'.
+src/ui/SliderCards.tsx(198,10): error TS2741: Property 'c' is missing in type '{}' but required in type '{ c: any; }'.
+src/ui/SliderCards.tsx(230,15): error TS2322: Type '{ to: string; className: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'to' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path /Users/nic/Desktop/Projects/FullStack-Projects/irangamenet/frontend
+npm error workspace gamenet@0.0.0
+npm error location /Users/nic/Desktop/Projects/FullStack-Projects/irangamenet/frontend
+npm error command failed
+npm error command sh -c tsc --noEmit

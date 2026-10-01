@@ -55,7 +55,7 @@ function TopViewed({ news }) {
           </Link>
           <div className="flex flex-col gap-1 pt-3">
             <div className="inline-flex gap-2 items-center text-sm pr-1">
-              <Link className="inline-flex gap-1 items-center">
+              <Link to={`/news/${topview.id}`} className="inline-flex gap-1 items-center">
                 <img
                   loading="lazy"
                   src="/images/icon/header/Grand-Theft-Auto-San-Andreas.jpg"

@@ -2,7 +2,7 @@
 function ForMore() {
   return (
     <div>
-      
+      ....
     </div>
   )
 }

@@ -60,7 +60,7 @@ function Header({ setFilter, destination, setDestination }) {
 export default Header;
 function SelectDestination({ setDestination, destination }) {
   const provinces = getAllProvinces();
-  const [provincesSelect, setProvincesSelect] = useState();
+  const [provincesSelect, setProvincesSelect] = useState<string | undefined>(undefined);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div className="md:relative mx-10 flex-auto">
@@ -95,7 +95,7 @@ function SelectDestination({ setDestination, destination }) {
                       <div className="w-full flex items-center justify-between">
                         <button
                           className="flex"
-                          onClick={() => setProvincesSelect()}
+                          onClick={() => setProvincesSelect(undefined)}
                         >
                           <ArrowUturnRightIcon className="w-4" />
                         </button>
@@ -110,7 +110,7 @@ function SelectDestination({ setDestination, destination }) {
                                 ...prev,
                                 provincesSelect,
                               ]);
-                              setProvincesSelect();
+                              setProvincesSelect(undefined);
                               onClose();
                               document.body.style.overflow = "auto";
                             }}

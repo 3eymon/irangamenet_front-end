@@ -82,13 +82,13 @@ function Prodocts() {
             </Link>
             <div className="flex absolute left-5 bottom-0  gap-5">
               <button
-                title={g.like}
+                title={String(g.like ?? "")}
                 className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-red-500 transition-all ease-linear"
               >
                 <HeartIcon className="w-5 h-5 group-hover:fill-red-400/30 transition-all ease-linear" />
               </button>
               <button
-                title={g.save}
+                title={String(g.save ?? "")}
                 className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-gray-400 transition-all ease-linear"
               >
                 <BookmarkIcon className="w-5 h-5 group-hover:fill-gray-400/30 transition-all ease-linear" />

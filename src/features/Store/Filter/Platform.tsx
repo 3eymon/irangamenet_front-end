@@ -10,14 +10,14 @@ export default function Platform({ platform, hanleFilter }) {
               <div className="flex gap-3 cursor-pointer items-center">
                 {p.chek ? (
                   <Checkbox
-                    size="xs"
+                    size="sm"
                     defaultSelected={true}
                     className="p-0 pr-2"
                     onChange={(e) => hanleFilter(p.val, e)}
                   ></Checkbox>
                 ) : (
                   <Checkbox
-                    size="xs"
+                    size="sm"
                     className="p-0 pr-2"
                     onChange={(e) => hanleFilter(p.val, e)}
                   ></Checkbox>
