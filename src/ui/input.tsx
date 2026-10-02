@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes, ReactNode } from "react";
+import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
 import clsx from "clsx";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
@@ -9,7 +9,8 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   mode?: string;
 };
 
-function Input({ label, className, prop, setValue, ...props }: InputProps) {
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  function Input({ label, className, prop, setValue, ...props }, ref) {
   return (
     <div className="relative w-full">
       {label && (
@@ -19,6 +20,7 @@ function Input({ label, className, prop, setValue, ...props }: InputProps) {
       )}
 
       <input
+        ref={ref}
         {...props}
         {...(prop ?? {})}
         onChange={(event) => {
@@ -32,6 +34,7 @@ function Input({ label, className, prop, setValue, ...props }: InputProps) {
       />
     </div>
   );
-}
+  }
+);
 
 export default Input;
