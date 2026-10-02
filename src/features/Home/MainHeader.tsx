@@ -103,7 +103,7 @@ function GameTexts() {
     >
       <h1 className="text-4xl font-bold xl:w-3/4 line-clamp-2 first-letter:text-lg leading-snug">
         تماشای بازی و و دیدن بروز ترین اخبار بازی ها فقط تو{" "}
-        <span className="bg-gradient-to-r from-[#655fd8] to-[#8856c0] bg-clip-text text-transparent font-extrabold ">
+        <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-extrabold ">
           ایران گیم نت&nbsp;
         </span>
         که حال میده ارعععع
@@ -112,12 +112,12 @@ function GameTexts() {
         خیلی راحت با ایران گیم نت به تمام اخبار بازی های جهان اگاه باش .
       </p>
       <div className="flex gap-3 font-PeydaLight">
-        <button onClick={()=> window.scrollTo(0,750)} className=" text-xs font-thin bg-gradient-to-r from-[#3b35b2] to-[#733cb3] px-6 py-1 transition-transform ease-linear rounded-md shadow-[#733cb39c_0px_0px_5px] hover:scale-95 ">
+        <button onClick={()=> window.scrollTo(0,750)} className=" text-xs font-thin bg-gradient-to-r from-primary to-secondary px-6 py-1 transition-transform ease-linear rounded-md shadow-primary/35 hover:scale-95 ">
           بریم برای شروع
         </button>
         <Link
           to="/news/latest"
-          className="text-xs inline-flex gap-1 items-center  px-5 py-1 transition-transform ease-linear rounded-md border-2 border-[#733cb3] hover:scale-95 "
+          className="text-xs inline-flex gap-1 items-center  px-5 py-1 transition-transform ease-linear rounded-md border-2 border-secondary hover:scale-95 "
         >
           <NewspaperIcon className="w-5" />
           جدیدترین اخبار
@@ -126,7 +126,7 @@ function GameTexts() {
       <div className="flex gap-2 items-center">
         <div className="flex -space-x-2 space-x-reverse">
           <img
-            className="w-12 h-12 border-2 bg-gray-800 border-[#733cb3] rounded-full  object-cover aspect-video"
+            className="w-12 h-12 border-2 bg-gray-800 border-secondary rounded-full  object-cover aspect-video"
             src="images/icon/header/Call_of_duty.jpg"
             alt=""
           />
@@ -136,7 +136,7 @@ function GameTexts() {
             alt=""
           />
           <img
-            className="w-12 h-12 border-2 bg-gray-800 border-[#50297e] rounded-full  object-cover aspect-video"
+            className="w-12 h-12 border-2 bg-gray-800 border-secondary/70 rounded-full  object-cover aspect-video"
             src="images/icon/header/Grand-Theft-Auto-San-Andreas.jpg"
             alt=""
           />

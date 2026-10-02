@@ -54,14 +54,14 @@ export const navBar = [
 function Navbar() {
   return (
     <nav className="flex justify-between items-center text-sm py-5 sm:py-2 px-5 font-Peyda flex-row-reverse md:flex-row">
-      <h2 className="bg-gradient-to-r from-[#3b35b2] to-[#733cb3] bg-clip-text text-transparent font-bold text-lg">
+      <h2 className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold text-lg">
         ایران گیم نت
       </h2>
       <NavigationMobile />
       <NavLinks navBar={navBar} />
       <NavLink
         to="/auth/login"
-        className="text-xs hidden sm:flex bg-gradient-to-r from-[#3b35b2] to-[#733cb3] px-5 py-1 transition-transform ease-linear rounded-md shadow-[#733cb39c_0px_0px_5px] hover:scale-95 "
+        className="text-xs hidden sm:flex bg-gradient-to-r from-primary to-secondary px-5 py-1 transition-transform ease-linear rounded-md shadow-primary/35 hover:scale-95 "
       >
         ورود
       </NavLink>

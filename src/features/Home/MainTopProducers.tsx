@@ -59,7 +59,7 @@ function MainTopProducers({ producers }) {
           </div>
         ))}
       </div>
-      <button className="text-xs flex hover:opacity-80 items-center mx-auto mt-5 font-thin bg-gradient-to-r from-[#3b35b2] to-[#733cb3] px-6 py-1.5 transition-opacity ease-linear rounded-md shadow-[#733cb39c_0px_0px_5px]">
+      <button className="text-xs flex hover:opacity-80 items-center mx-auto mt-5 font-thin bg-gradient-to-r from-primary to-secondary px-6 py-1.5 transition-opacity ease-linear rounded-md shadow-primary/35">
         مشاهده همه ی سازنده ها
         <span>
           <ChevronLeftIcon className="w-4 h-4" />

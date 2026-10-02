@@ -60,8 +60,8 @@ function MainFaqs() {
             />
           ))}
         </div>
-        <div className="hidden lg:block rounded-s-[5rem] rounded-bl-[5rem] border px-10 pt-12 border-b-[#3b35b2b6] text-center border-t-[#743cb380] border-l-[#743cb380] border-r-[#3b35b2b6]">
-          <span className="bg-gradient-to-r from-[#3b35b2] to-[#733cb3] bg-clip-text text-transparent font-PeydaBlack font-bold pb-2 text-4xl">
+        <div className="hidden lg:block rounded-s-[5rem] rounded-bl-[5rem] border px-10 pt-12 border-b-primary/70 text-center border-t-secondary/50 border-l-secondary/50 border-r-primary/70">
+          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-PeydaBlack font-bold pb-2 text-4xl">
             I G N
           </span>
           <img
@@ -81,12 +81,12 @@ export default MainFaqs;
 
 function AccordionItem({ title, text, setOpen, open, id }) {
   const isOpen = id === open;
-  const active = "bg-gradient-to-r from-[#3b35b2] to-[#733cb3] border-none";
+  const active = "bg-gradient-to-r from-primary to-secondary border-none";
   return (
     <div className="sm:w-3/4 mx-auto">
       <div
         onClick={() => setOpen(id)}
-        className={`flex justify-between drop-shadow-2xl  items-center cursor-pointer p-2 pr-5 rounded-xl border border-b-[#3b35b2b6] text-center border-t-[#743cb380] border-l-[#743cb380] border-r-[#3b35b2b6]  transition-all ease-linear ${
+        className={`flex justify-between drop-shadow-2xl  items-center cursor-pointer p-2 pr-5 rounded-xl border border-b-primary/70 text-center border-t-secondary/50 border-l-secondary/50 border-r-primary/70  transition-all ease-linear ${
           isOpen ? active : ""
         }`}
       >

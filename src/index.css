@@ -3,6 +3,63 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* =========================
+     BRAND
+  ========================= */
+
+  --ign-primary: 125 119 233;
+
+  --ign-primary-50: 245 244 255;
+  --ign-primary-100: 232 230 255;
+  --ign-primary-200: 207 204 250;
+  --ign-primary-300: 176 171 245;
+  --ign-primary-400: 148 142 239;
+  --ign-primary-500: 125 119 233;
+  --ign-primary-600: 101 95 210;
+  --ign-primary-700: 80 74 179;
+  --ign-primary-800: 62 57 145;
+  --ign-primary-900: 45 41 105;
+
+
+  /* =========================
+     SECONDARY
+  ========================= */
+
+  --ign-secondary: 132 83 189;
+
+  --ign-secondary-50: 248 244 252;
+  --ign-secondary-100: 237 226 246;
+  --ign-secondary-200: 216 195 232;
+  --ign-secondary-300: 190 157 215;
+  --ign-secondary-400: 159 119 197;
+  --ign-secondary-500: 132 83 189;
+  --ign-secondary-600: 110 67 160;
+  --ign-secondary-700: 88 52 131;
+  --ign-secondary-800: 68 40 102;
+  --ign-secondary-900: 50 30 75;
+
+
+  /* =========================
+     BACKGROUND
+  ========================= */
+
+  --ign-background: 12 12 20;
+  --ign-background-100: 18 18 29;
+  --ign-background-200: 25 24 39;
+  --ign-background-300: 33 32 49;
+
+
+  /* =========================
+     SURFACE
+  ========================= */
+
+  --ign-surface: 22 21 35;
+  --ign-surface-100: 30 29 46;
+  --ign-surface-200: 40 38 59;
+  --ign-surface-300: 51 48 72;
+}
+
 @layer base {
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
@@ -38,14 +95,18 @@
     font-weight: 900;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(0deg, #733cb3 0%, #3b35b2 100%);
+    background: linear-gradient(
+      0deg,
+      rgb(var(--ign-secondary)) 0%,
+      rgb(var(--ign-primary)) 100%
+    );
     will-change: transform;
     transition: all 0.3s;
-    border-bottom: 2px solid #7600ff;
+    border-bottom: 2px solid rgb(var(--ign-secondary));
   }
   .all-games:hover {
     transform: perspective(190px) rotateX(25deg) translateY(2px);
-    box-shadow: #8c3cb32b 0px 40px 29px 0px;
+    box-shadow: 0 40px 29px 0 rgb(var(--ign-primary) / 0.17);
   }
   .css-1c99szj-MuiRating-icon {
     color: gray !important;
@@ -181,6 +242,6 @@
 
 @layer components {
   .btn--primary {
-    @apply text-sm lg:text-base text-center w-full flex bg-gradient-to-r from-[#7d77e9] to-[#8453bd] px-5 py-3 transition ease-linear rounded-xl shadow-[#733cb39c_0px_0px_5px] hover:brightness-90 active:brightness-75;
+    @apply text-sm lg:text-base text-center w-full flex bg-gradient-to-r from-primary to-secondary px-5 py-3 transition ease-linear rounded-xl shadow-primary/35 hover:brightness-105 active:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 }

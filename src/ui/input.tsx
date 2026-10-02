@@ -10,7 +10,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  function Input({ label, className, prop, setValue, ...props }, ref) {
+  function Input({ label, className, prop, setValue, onChange, ...props }, ref) {
   return (
     <div className="relative w-full">
       {label && (
@@ -24,6 +24,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {...props}
         {...(prop ?? {})}
         onChange={(event) => {
+          onChange?.(event);
           prop?.onChange?.(event);
           setValue?.(event);
         }}
