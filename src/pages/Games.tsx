@@ -1,12 +1,22 @@
 import { useRef } from "react";
-import Header from "../features/Games/Header";
-import Main from "../features/Games/Main";
-import LatestGames from "../features/Games/LatestGames";
+import Header from "../features/games/Header";
+import Main from "../features/games/Main";
 import { SeeAll } from "../pages/News";
-import Category from "../features/Games/Category";
-import FreeGames from "../features/Games/FreeGames";
-import ForMore from "../features/Games/ForMore";
+import Category from "../features/games/Category";
+import ForMore from "../features/games/ForMore";
+import DataSliderSection from "../ui/DataSliderSection";
+import { sliderCardsType } from "../ui/SliderCards";
+import type { Game } from "../types/game.types";
+import useServer from "../hook/useServer";
 function Games() {
+  const [latestGames, latestGamesIsLoading] = useServer<Game[]>(
+    "games?releaseDate:desc",
+    [],
+  );
+  const [freeGames, freeGamesIsLoading] = useServer<Game[]>(
+    "games?isFree=true",
+    [],
+  );
   const around = useRef(null);
   const scroll = () => {
     around?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -15,13 +25,23 @@ function Games() {
     <main className="flex flex-col justify-center gap-14 w-full mt-0 md:mt-5 z-10">
       <Header scroll={scroll} />
       <Main el={around} />
-      <LatestGames>
+      <DataSliderSection
+        data={latestGames}
+        isLoading={latestGamesIsLoading}
+        type={sliderCardsType.Games}
+        className="mb-16"
+      >
         <SeeAll title="جدیدترین بازی ها " link="latest" color="#d42222" />
-      </LatestGames>
+      </DataSliderSection>
       <Category />
-      <FreeGames>
+      <DataSliderSection
+        data={freeGames}
+        isLoading={freeGamesIsLoading}
+        type={sliderCardsType.Games}
+        className="mb-16"
+      >
         <SeeAll title="بازی های رایگان" link="free" color="#22d465" />
-      </FreeGames>
+      </DataSliderSection>
       <ForMore />
     </main>
   );

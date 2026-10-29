@@ -242,10 +242,10 @@ function AuthPageForm() {
           </button>
         </div>
 
-        <div className="inline-flex items-center justify-center w-full gap-3">
-          <hr className="bg-white text-white w-full" />
+        <div className="text-xs inline-flex items-center justify-center w-full gap-3">
+          <hr className="bg-white text-white w-full h-[0.5px]" />
           یا
-          <hr className="bg-white text-white w-full" />
+          <hr className="bg-white text-white w-full h-[0.5px]" />
         </div>
 
         <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>

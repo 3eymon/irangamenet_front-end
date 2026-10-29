@@ -1,28 +1,49 @@
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
-import HeaderNews from "../features/News/HeaderNews";
-import LatestNews from "../features/News/LatestNews";
+import HeaderNews from "../features/news/HeaderNews";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import fa from "javascript-time-ago/locale/fa";
 import { Link } from "react-router-dom";
-import MostViewed from "../features/News/MostViewed";
-import WeeklyHighlightNews from "../features/News/WeeklyHighlightNews";
+import MostViewed from "../features/news/MostViewed";
+import DataSliderSection from "../ui/DataSliderSection";
+import { sliderCardsType } from "../ui/SliderCards";
+import type { News as NewsItem } from "../types/news.types";
+import useServer from "../hook/useServer";
 
 TimeAgo.addDefaultLocale(en);
 TimeAgo.addLocale(fa);
 function News() {
+  const [news, newsIsLoading] = useServer<NewsItem[]>("news", []);
+  const [weeklyHighlightNews, weeklyHighlightIsLoading] = useServer<NewsItem[]>(
+    "WeeklyHighlightNews",
+    [],
+  );
+
   return (
     <main className="flex flex-col justify-center gap-14 w-full mt-0 md:mt-5 ">
       <HeaderNews />
-      <LatestNews>
+      <DataSliderSection
+        data={news}
+        isLoading={newsIsLoading}
+        type={sliderCardsType.News}
+      >
         <SeeAll title="جدیدترین اخبار " link="latest" color="#5254d4" />
-      </LatestNews>
-      <MostViewed>
+      </DataSliderSection>
+      <DataSliderSection
+        data={news}
+        isLoading={newsIsLoading}
+        type={sliderCardsType.News}
+        renderItems={(news) => <MostViewed news={news} />}
+      >
         <SeeAll title="بیشترین تعداد خوندن" link="mostRead" color="#34f4c5" />
-      </MostViewed>
-      <WeeklyHighlightNews>
+      </DataSliderSection>
+      <DataSliderSection
+        data={weeklyHighlightNews}
+        isLoading={weeklyHighlightIsLoading}
+        type={sliderCardsType.News}
+      >
         <SeeAll title="برترین های هفته" link="weeklyHighlight" color="#fff" />
-      </WeeklyHighlightNews>
+      </DataSliderSection>
       <TopCreatorNews />
     </main>
   );
@@ -33,8 +54,13 @@ export default News;
 function TopCreatorNews() {
   return <div></div>;
 }
-// #34f4c5 , #5254d4 , #fff
-export function SeeAll({ title, link, color }) {
+type SeeAllProps = {
+  title: string;
+  link: string;
+  color: string;
+};
+
+export function SeeAll({ title, link, color }: SeeAllProps) {
   return (
     <div className="flex justify-between pb-3">
       <div className="relative flex gap-5 mr-5 md:mr-0">

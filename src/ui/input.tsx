@@ -3,8 +3,7 @@ import clsx from "clsx";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: ReactNode;
-  className?: string;
-  prop?: any;
+  prop?: Partial<InputHTMLAttributes<HTMLInputElement>>;
   setValue?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   mode?: string;
 };

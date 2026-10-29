@@ -1,11 +1,9 @@
-// import CheckOTPForm from "../features/authentication/CheckOTPForm";
-
-import AuthContainer from "../features/authentication/AuthContainer";
+import AuthPage from "../features/authentication/AuthPage";
 
 export default function Auth() {
   return (
     <div className="">
-      <AuthContainer />
+      <AuthPage />
     </div>
   );
 }

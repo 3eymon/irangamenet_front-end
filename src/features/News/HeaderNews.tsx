@@ -1,7 +1,6 @@
 import "animate.css";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import "./style.css";
 import { Keyboard, Navigation } from "swiper/modules";
 import {
@@ -15,11 +14,14 @@ import useServer from "../../hook/useServer";
 
 import ReactTimeAgo from "react-time-ago";
 import LazyLoad from "react-lazyload";
+import type { News } from "../../types/news.types";
+import EmptyState from "../../ui/EmptyState";
 
 function HeaderNews() {
-  const [news, isLoading] = useServer("news");
-  const [popularNews] = useServer("popularNews");
+  const [news, isLoading] = useServer<News[]>("news", []);
+  const [popularNews] = useServer<News[]>("popularNews", []);
   if (isLoading) return <Loader />;
+
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-1 ">
@@ -58,23 +60,41 @@ function HeaderNews() {
           </div>
         </div>
         <div className="flex-1 flex flex-col gap-5 p-5">
-          {popularNews.map((n) => (
-            <PopularCard
-              key={n.id}
-              title={n.title}
-              createdAt={n.date}
-              author={n.author}
-              id={n.id}
-              views={n.views}
-              image={n.image}
-            />
-          ))}
+          {popularNews.length > 0 ? (
+            popularNews.map((n) => (
+              <PopularCard
+                key={n.id}
+                title={n.title}
+                createdAt={n.date}
+                author={n.author}
+                id={n.id}
+                views={n.views}
+                image={n.image}
+              />
+            ))
+          ) : (
+            <EmptyState />
+          )}
         </div>
       </div>
     </>
   );
 }
-function CardSlider({ title, desc, createdAt, author, id, image }: { title: string; desc: string; createdAt: string; author: string; id: string | number; image?: string; }) {
+function CardSlider({
+  title,
+  desc,
+  createdAt,
+  author,
+  id,
+  image,
+}: {
+  title: string;
+  desc: string;
+  createdAt: string;
+  author: string;
+  id: string | number;
+  image?: string;
+}) {
   return (
     <div className="flex flex-col justify-between h-full text-xs lg:text-base">
       <div>
@@ -114,10 +134,24 @@ function CardSlider({ title, desc, createdAt, author, id, image }: { title: stri
     </div>
   );
 }
-export function PopularCard({ title, createdAt, author, id, views, image }) {
+type PopularCardProps = Pick<
+  News,
+  "title" | "author" | "id" | "views" | "image"
+> & { date?: string; createdAt?: string };
+
+export function PopularCard({
+  title,
+  createdAt,
+  date,
+  author,
+  id,
+  views,
+  image,
+}: PopularCardProps) {
+  const publishedAt = createdAt ?? date ?? "";
   return (
     <div className="flex gap-2 hover:bg-white/5 backdrop-blur p-2 rounded-lg transition-colors ease-in-out animate-fade animate-duration-1000">
-      <Link to={id} className="w-2/6 h-24 xl:h-28">
+      <Link to={String(id)} className="w-2/6 h-24 xl:h-28">
         <LazyLoad className="w-full h-full">
           <img
             src={image}
@@ -132,7 +166,7 @@ export function PopularCard({ title, createdAt, author, id, views, image }) {
           <div className="text-gray-400  inline-flex gap-1">
             <ClockIcon className="w-3.5" />
             <ReactTimeAgo
-              date={new Date(createdAt)}
+              date={new Date(publishedAt)}
               locale="fa-IR"
               timeStyle="round"
             />
@@ -140,7 +174,7 @@ export function PopularCard({ title, createdAt, author, id, views, image }) {
         </div>
         <div>
           <Link
-            to={id}
+            to={String(id)}
             className="line-clamp-2 hover:underline underline-offset-4"
           >
             {title}
