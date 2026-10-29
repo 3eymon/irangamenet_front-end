@@ -3,14 +3,14 @@ import { useForm } from "react-hook-form";
 import { Loading } from "react-daisyui";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import Input from "../../components/ui/input";
+import Input from "../../../components/ui/input";
 import { SiSteam } from "react-icons/si";
 import { MdAlternateEmail } from "react-icons/md";
 import {
   getOTP,
   PENDING_OTP_EMAIL_KEY,
   VERIFIED_OTP_EMAIL_KEY,
-} from "../../services/authService";
+} from "../../../services/authService";
 
 const AUTH_PREVIEW_VIDEOS = [
   {

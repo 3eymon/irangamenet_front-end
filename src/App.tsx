@@ -1,25 +1,25 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/index";
-import Store from "./pages/Store";
-import Register from "./pages/Register";
-import About from "./pages/About";
-import Games from "./pages/Games";
-import Streamers from "./pages/Streamers";
+import Home from "./pages/home";
+import Register from "./pages/register";
+import About from "./pages/about";
+import Games from "./pages/games";
+import Streamers from "./pages/streamers";
 import Layout from "./components/layout/Layout";
-import News from "./pages/News";
-import SinglePage from "./pages/games/components/SinglePage";
+import News from "./pages/news";
+import SinglePage from "./pages/games/detail";
 import { Toaster } from "react-hot-toast";
-import GameCenters from "./pages/GameCenters";
+import GameCenters from "./pages/game-centers";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
-import SingleGameCenter from "./pages/game-centers/components/SingleGameCenter";
+import SingleGameCenter from "./pages/game-centers/detail";
 import NotFound from "./components/layout/NotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "./components/layout/Navbar";
 import AuthLayout from "./components/layout/AuthLayout";
-import AuthPage from "./features/authentication/AuthPage";
-import CompleteProfile from "./features/authentication/CompleteProfile";
-import CheckOTP from "./features/authentication/CheckOTP";
+import AuthPage from "./pages/auth";
+import CompleteProfile from "./pages/auth/complete-profile";
+import CheckOTP from "./pages/auth/check-otp";
+import SingleNews from "./pages/news/detail";
 function App() {
   const queryClient = new QueryClient();
 
@@ -33,7 +33,7 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="news" element={<News />} />
-              <Route path="news/:id" element={<div>single new</div>} />
+              <Route path="news/:id" element={<SingleNews />} />
 
               <Route path="register" element={<Register />} />
               <Route path="about" element={<About />} />

@@ -1,4 +1,6 @@
-import SliderCards from "../../../components/ui/SliderCards";
+import SliderCards, {
+  sliderCardsType,
+} from "../../../components/ui/SliderCards";
 import SeeAll from "../../../components/ui/SeeAll";
 import { useState } from "react";
 import type { GameCenter } from "../../../types/game.types";
@@ -36,7 +38,10 @@ function GameCenters({ gameCenters }: { gameCenters: GameCenter[] }) {
           </button>
         ))}
       </div>
-      <SliderCards type="gameCenter" data={gameCenters.slice(0, 4)} />
+      <SliderCards
+        type={sliderCardsType.GameCenters}
+        data={gameCenters.slice(0, 4)}
+      />
     </>
   );
 }

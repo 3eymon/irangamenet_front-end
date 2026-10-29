@@ -1,4 +1,4 @@
-import GameCentersContainer from "./game-centers/components/GameCentersContainer";
+import GameCentersContainer from "./components/GameCentersContainer";
 
 function GameCenters() {
   return (

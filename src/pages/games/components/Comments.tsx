@@ -1,5 +1,5 @@
-import { TitleHeader } from "./SinglePage";
 import { IoSendOutline } from "react-icons/io5";
+import TitleHeader from "./TitleHeader";
 
 function Comments({ el }) {
   return (

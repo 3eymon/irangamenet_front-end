@@ -1,13 +1,13 @@
-import HeaderNews from "./news/components/HeaderNews";
+import HeaderNews from "./components/HeaderNews";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import fa from "javascript-time-ago/locale/fa";
-import MostViewed from "./news/components/MostViewed";
-import DataSliderSection from "../components/ui/DataSliderSection";
-import { sliderCardsType } from "../components/ui/SliderCards";
-import type { News as NewsItem } from "../types/news.types";
-import useServer from "../hooks/useServer";
-import SeeAll from "../components/ui/SeeAll";
+import MostViewed from "./components/MostViewed";
+import DataSliderSection from "../../components/ui/DataSliderSection";
+import { sliderCardsType } from "../../components/ui/SliderCards";
+import type { News as NewsItem } from "../../types/news.types";
+import useServer from "../../hooks/useServer";
+import SeeAll from "../../components/ui/SeeAll";
 
 TimeAgo.addDefaultLocale(en);
 TimeAgo.addLocale(fa);

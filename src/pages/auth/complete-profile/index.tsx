@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { Navigate, useLocation } from "react-router-dom";
-import Input from "../../components/ui/input";
+import Input from "../../../components/ui/input";
 import {
   PENDING_OTP_EMAIL_KEY,
   VERIFIED_OTP_EMAIL_KEY,
-} from "../../services/authService";
+} from "../../../services/authService";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { BiRename } from "react-icons/bi";
 type CompleteProfileForm = {

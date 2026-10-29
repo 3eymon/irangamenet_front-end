@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Navigate, useNavigate } from "react-router-dom";
-import Input from "../../components/ui/input";
+import Input from "../../../components/ui/input";
 import {
   checkOTP,
   PENDING_OTP_EMAIL_KEY,
   VERIFIED_OTP_EMAIL_KEY,
-} from "../../services/authService";
+} from "../../../services/authService";
 import { MdMarkEmailUnread, MdOutlineMarkEmailUnread } from "react-icons/md";
 
 type CheckOTPForm = {
