@@ -457,14 +457,14 @@
       "category": ["اکشن", "action"]
     }
   ],
-  "GameNets": [
+  "GameCenters": [
     {
       "id": 62345680,
       "title": "گیم نت آریا",
       "views": "1700",
       "date": "2024-06-20",
       "description": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه در شمال تهران.",
-      "image": "/images/gamenets/6.jpg",
+      "image": "/images/gameCenters/6.jpg",
       "like": 320,
       "rating": 2,
       "city": "تهران",
@@ -552,7 +552,7 @@
       "views": "1300",
       "date": "2024-06-15",
       "description": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز در شرق تهران.",
-      "image": "/images/gamenets/5.webp",
+      "image": "/images/gameCenters/5.webp",
       "like": 270,
       "rating": "3.5",
       "city": "تهران",
@@ -637,7 +637,7 @@
       "views": "1900",
       "date": "2024-06-10",
       "description": "گیم نت البرز با امکانات فوق‌العاده و تجهیزات پیشرفته در کرج.",
-      "image": "/images/gamenets/4.jpg",
+      "image": "/images/gameCenters/4.jpg",
       "like": 350,
       "rating": "3.7",
       "city": "کرج",
@@ -725,7 +725,7 @@
       "views": "1600",
       "date": "2024-06-05",
       "description": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت در جنوب تهران.",
-      "image": "/images/gamenets/1.jpg",
+      "image": "/images/gameCenters/1.jpg",
       "like": 310,
       "rating": "4.5",
       "city": "تهران",
@@ -810,7 +810,7 @@
       "views": "1500",
       "date": "2024-07-03",
       "description": "یکی از بهترین گیم نت‌های تهران با تجهیزات به‌روز و محیطی دوستانه.",
-      "image": "/images/gamenets/6.webp",
+      "image": "/images/gameCenters/6.webp",
       "like": 300,
       "rating": "5",
       "city": "تهران",
@@ -895,18 +895,18 @@
       "views": "2000",
       "date": "2024-06-25",
       "description": "گیم نت پارسیان با فضایی مدرن و تجهیزات پیشرفته در غرب تهران.",
-      "image": "/images/gamenets/parsian/1.webp",
+      "image": "/images/gameCenters/parsian/1.webp",
       "like": 450,
       "rating": "5",
       "city": "تهران",
       "save": 200,
       "details": {
         "images": [
-          "/images/gamenets/parsian/1.webp",
-          "/images/gamenets/parsian/2.webp",
-          "/images/gamenets/parsian/3.webp",
-          "/images/gamenets/parsian/4.webp",
-          "/images/gamenets/parsian/5.webp"
+          "/images/gameCenters/parsian/1.webp",
+          "/images/gameCenters/parsian/2.webp",
+          "/images/gameCenters/parsian/3.webp",
+          "/images/gameCenters/parsian/4.webp",
+          "/images/gameCenters/parsian/5.webp"
         ],
         "completeExplanations": {
           "header": {
@@ -981,7 +981,7 @@
       "views": "1400",
       "date": "2024-05-30",
       "description": "گیم نت مروارید با تجهیزات پیشرفته و اینترنت پرسرعت در شیراز.",
-      "image": "/images/gamenets/2.jpg",
+      "image": "/images/gameCenters/2.jpg",
       "like": 290,
       "rating": "4.5",
       "city": "شیراز",
@@ -1238,6 +1238,1068 @@
           }
         ]
       }
+    }
+  ],
+  "home": {
+    "popularNews": [
+      {
+        "id": "6786756",
+        "title": "رشد صنعت بازی‌های موبایل در سال 2024",
+        "author": "وبسایت گیم‌اینداستری",
+        "author_image": "https://example.com/images/author-gameindustry.jpg",
+        "views": 14000,
+        "date": "2024-05-15 11:10:20",
+        "description": "صنعت بازی‌های موبایل در سال 2024 رشد چشمگیری داشته است. با افزایش تعداد کاربران و بهبود فناوری‌های موبایل، بازار بازی‌های موبایل به یکی از پر درآمدترین بخش‌های صنعت بازی تبدیل شده است.",
+        "link": "https://gameindustry.com/mobile-games-growth-2024",
+        "image": "/images/news/mobile-games.webp"
+      },
+      {
+        "id": "61883218",
+        "title": "بازی‌های واقعیت مجازی: آینده صنعت گیم",
+        "author": "مجله واقعیت مجازی",
+        "author_image": "https://example.com/images/author-vrmagazine.jpg",
+        "views": 11500,
+        "date": "2024-05-22 12:10:20 am",
+        "description": "بازی‌های واقعیت مجازی به عنوان آینده صنعت گیم شناخته می‌شوند. با پیشرفت‌های فناوری در حوزه واقعیت مجازی، این بازی‌ها تجربه‌ای بی‌نظیر و همه‌جانبه برای کاربران فراهم می‌کنند.",
+        "link": "https://vrmagazine.com/future-of-vr-games",
+        "image": "/images/news/آینده-صنعت-بازی.jpg"
+      },
+      {
+        "id": "61458118",
+        "title": "بهترین بازی‌های سال 2024 معرفی شدند",
+        "author": "وبسایت گیم‌آواردز",
+        "author_image": "https://example.com/images/author-gameawards.jpg",
+        "views": 19500,
+        "date": "2024-05-23 11:24:00",
+        "description": "در مراسم گیم‌آواردز بهترین بازی‌های سال 2024 معرفی شدند. این بازی‌ها با نوآوری‌های خود توانستند جوایز متعددی را کسب کنند و توجه گیمرها و منتقدان را به خود جلب کنند.",
+        "link": "https://gameawards.com/best-games-2024",
+        "image": "/images/news/best-games-of-the-2024.jpg"
+      },
+      {
+        "id": "11",
+        "title": "تکنولوژی‌های جدید در صنعت بازی‌سازی",
+        "author": "خبرگزاری تکنولوژی گیم",
+        "author_image": "https://example.com/images/author-gametechnews.jpg",
+        "views": 16000,
+        "date": "2024-05-23 11:00:20",
+        "description": "در این مقاله به بررسی تکنولوژی‌های جدید در صنعت بازی‌سازی پرداخته‌ایم. این تکنولوژی‌ها شامل هوش مصنوعی پیشرفته، گرافیک واقع‌گرایانه و ابزارهای توسعه بازی‌های چندنفره آنلاین می‌باشند.",
+        "link": "https://gametechnews.com/new-tech-in-gaming",
+        "image": "images/news/new-tech-in-gaming.jpeg"
+      }
+    ],
+    "newestGames": [
+      {
+        "id": 61234567,
+        "title": "بازی Call of Duty: Warzone",
+        "author": "شرکت Activision",
+        "author_image": "https://example.com/images/authors/activision.jpg",
+        "views": 5000000,
+        "price": 69.9,
+        "date": "2020-03-10",
+        "description": "بازی Call of Duty: Warzone یکی از محبوب‌ترین بازی‌های بتل رویال است که توسط شرکت Activision ساخته شده است. این بازی با گرافیک بالا و گیم‌پلی هیجان‌انگیز خود توانسته است طرفداران زیادی را جذب کند.",
+        "link": "https://www.callofduty.com/warzone",
+        "image": "/images/callofduty/4.jpg",
+        "trialer": "/video/trailer/warzone.mp4",
+        "like": 200,
+        "save": 200,
+        "details": {
+          "images": {
+            "poster": "/images/callofduty/warzone.jpg",
+            "gallery": [
+              "/images/callofduty/1.jpg",
+              "/images/callofduty/2.jpg",
+              "/images/callofduty/3.jpg",
+              "/images/callofduty/4.jpg"
+            ]
+          },
+          "completeExplanations": {
+            "header": {
+              "title": "",
+              "desc": ""
+            },
+            "main1": { "title": "", "desc": "" },
+            "main2": { "title": "", "desc": "" },
+            "system": {
+              "min": "",
+              "max": ""
+            }
+          },
+          "producer": {
+            "header": {
+              "title": "",
+              "desc": ""
+            },
+            "main": { "title": "", "desc": "" }
+          }
+        },
+        "category": ["اکشن", "action"]
+      },
+      {
+        "id": 62345678,
+        "title": "بازی Fortnite",
+        "author": "شرکت Epic Games",
+        "author_image": "https://example.com/images/authors/epicgames.jpg",
+        "views": 3500000,
+        "price": 69.9,
+        "date": "2017-07-25",
+        "description": "بازی Fortnite یکی از محبوب‌ترین بازی‌های بتل رویال است که توسط شرکت Epic Games ساخته شده است. این بازی با گرافیک کارتونی و امکانات متنوع خود، تجربه‌ای منحصر به فرد را به بازیکنان ارائه می‌دهد.",
+        "link": "https://www.epicgames.com/fortnite",
+        "image": "/images/news/Fortnite-Cover.jpg",
+        "trialer": "/video/trailer/Fortnite.mp4",
+        "like": 200,
+        "save": 200,
+        "details": {
+          "images": {
+            "poster": "/images/Fortnite/FortniteTum.jpg",
+            "gallery": [
+              "/images/Fortnite/1.webp",
+              "/images/Fortnite/2.webp",
+              "/images/Fortnite/3.jpg",
+              "/images/Fortnite/4.jpg"
+            ]
+          },
+          "completeExplanations": {
+            "header": {
+              "title": "",
+              "desc": ""
+            },
+            "main1": { "title": "", "desc": "" },
+            "main2": { "title": "", "desc": "" },
+            "system": {
+              "min": "",
+              "max": ""
+            }
+          },
+          "producer": {
+            "header": {
+              "title": "",
+              "desc": ""
+            },
+            "main": { "title": "", "desc": "" }
+          }
+        },
+        "category": "اکشن"
+      },
+      {
+        "id": 63456789,
+        "title": "بازی The Witcher 3: Wild Hunt",
+        "author": "شرکت CD Projekt Red",
+        "author_image": "https://example.com/images/authors/cdprojektred.jpg",
+        "views": 2000000,
+        "price": 69.9,
+        "date": "2015-05-19",
+        "description": "بازی The Witcher 3: Wild Hunt یک بازی نقش‌آفرینی است که توسط شرکت CD Projekt Red ساخته شده است. این بازی با داستان عمیق و گرافیک خیره‌کننده، یکی از بهترین بازی‌های تاریخ محسوب می‌شود.",
+        "link": "https://thewitcher.com/en/witcher3",
+        "image": "/images/news/the-witcher-4-logo.webp",
+        "trialer": "/video/trailer/theWitcher3WildHunt.mp4",
+        "like": 200,
+        "save": 200,
+        "details": {
+          "images": {
+            "poster": "/images/TheWitcher3WildHunt/TheWitcher3WildHuntTum.jpg",
+            "gallery": [
+              "/images/TheWitcher3WildHunt/1.jpg",
+              "/images/TheWitcher3WildHunt/2.webp",
+              "/images/TheWitcher3WildHunt/3.webp",
+              "/images/TheWitcher3WildHunt/4.jpg"
+            ]
+          },
+          "completeExplanations": {
+            "header": {
+              "title": "",
+              "desc": ""
+            },
+            "main1": { "title": "", "desc": "" },
+            "main2": { "title": "", "desc": "" },
+            "system": {
+              "min": "",
+              "max": ""
+            }
+          },
+          "producer": {
+            "header": {
+              "title": "",
+              "desc": ""
+            },
+            "main": { "title": "", "desc": "" }
+          }
+        },
+        "category": ["اکشن", "action"]
+      },
+      {
+        "id": 64567890,
+        "title": "بازی Cyberpunk 2077",
+        "author": "شرکت CD Projekt Red",
+        "author_image": "https://example.com/images/authors/cdprojektred.jpg",
+        "views": 3000000,
+        "price": 69.9,
+        "date": "2020-12-10",
+        "description": "بازی Cyberpunk 2077 یک بازی نقش‌آفرینی و جهان باز است که توسط شرکت CD Projekt Red ساخته شده است. این بازی با داستان علمی تخیلی و گرافیک بالا، تجربه‌ای جدید و هیجان‌انگیز را برای بازیکنان به ارمغان می‌آورد.",
+        "link": "https://www.cyberpunk.net",
+        "image": "/images/news/Cyber-Punk.jpg",
+        "trialer": "/video/trailer/cyberpunk.mp4",
+        "like": 200,
+        "save": 200,
+        "details": {
+          "images": {
+            "poster": "/images/cyberpunk/cyberPunkTum.jpg",
+            "gallery": [
+              "/images/cyberpunk/1.jpg",
+              "/images/cyberpunk/2.jpeg",
+              "/images/cyberpunk/3.webp",
+              "/images/cyberpunk/4.jpg"
+            ]
+          },
+          "completeExplanations": {
+            "header": {
+              "title": "",
+              "desc": ""
+            },
+            "main1": { "title": "", "desc": "" },
+            "main2": { "title": "", "desc": "" },
+            "system": {
+              "min": "",
+              "max": ""
+            }
+          },
+          "producer": {
+            "header": {
+              "title": "",
+              "desc": ""
+            },
+            "main": { "title": "", "desc": "" }
+          }
+        },
+        "category": ["اکشن", "action"]
+      }
+    ],
+    "bestStreamers": [],
+    "popularGameCenters": [
+      {
+        "id": 62345680,
+        "title": "گیم نت آریا",
+        "views": "1700",
+        "date": "2024-06-20",
+        "description": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه در شمال تهران.",
+        "image": "/images/gameCenters/6.jpg",
+        "like": 320,
+        "rating": 2,
+        "city": "تهران",
+        "save": 180,
+        "details": {
+          "images": [
+            "/images/AriaGame/1.webp",
+            "/images/AriaGame/2.webp",
+            "/images/AriaGame/3.jpg",
+            "/images/AriaGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت آریا",
+              "desc": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه، تجربه‌ای به‌یادماندنی را برای گیمرها فراهم می‌کند."
+            },
+            "main": {
+              "title": "تجهیزات و بازی‌ها",
+              "desc": "بیش از 30 سیستم با سخت‌افزارهای قدرتمند و اینترنت پرسرعت."
+            },
+            "about": {
+              "text": "آریا در منطقه شمال تهران واقع شده و به راحتی قابل دسترسی است.",
+              "tell": "021-99887766",
+              "email": "info@ariagame.net",
+              "socialMedia": {
+                "instagram": "@aria_game",
+                "twitter": "@aria_game",
+                "telegram": "@aria_game"
+              }
+            },
+            "amenities": [
+              {
+                "icon": "",
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "icon": "",
+                "type": "سیستم‌های قوی",
+                "description": "سیستم‌های گیمینگ قدرتمند.",
+                "typeEnglish": "Powerful Systems"
+              },
+              {
+                "icon": "",
+                "type": "محیط دوستانه",
+                "description": "فضایی مناسب برای بازی و تفریح.",
+                "typeEnglish": "Friendly Environment"
+              }
+            ],
+            "geoLocation": { "x": 35.8045, "y": 51.3988 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت آریا در منطقه شمال تهران واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "تهران، خیابان ولیعصر، نبش خیابان شریعتی، پلاک 789"
+            }
+          },
+          "comments": [
+            {
+              "user": "محمد",
+              "comment": "محیط دوستانه و تجهیزات عالی.",
+              "imageProfile": "/images/profiles/mohammad.jpg"
+            },
+            {
+              "user": "الهام",
+              "comment": "بازی‌های جدید و متنوع.",
+              "imageProfile": "/images/profiles/elham.jpg"
+            },
+            {
+              "user": "امیر",
+              "comment": "دسترسی آسان و فضای راحت.",
+              "imageProfile": "/images/profiles/amir.jpg"
+            }
+          ]
+        }
+      },
+      {
+        "id": 62345681,
+        "title": "گیم نت مهتاب",
+        "views": "1300",
+        "date": "2024-06-15",
+        "description": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز در شرق تهران.",
+        "image": "/images/gameCenters/5.webp",
+        "like": 270,
+        "rating": "3.5",
+        "city": "تهران",
+        "save": 140,
+        "details": {
+          "images": [
+            "/images/MahtabGame/1.webp",
+            "/images/MahtabGame/2.webp",
+            "/images/MahtabGame/3.jpg",
+            "/images/MahtabGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت مهتاب",
+              "desc": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز، محیطی مناسب برای بازی‌های آنلاین و آفلاین ارائه می‌دهد."
+            },
+            "main": {
+              "title": "تجهیزات و امکانات",
+              "desc": "سیستم‌های جدید و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
+            },
+            "about": {
+              "text": "مهتاب در منطقه شرق تهران قرار دارد و به راحتی قابل دسترسی است.",
+              "tell": "021-55443322",
+              "email": "info@mahtabgame.net",
+              "socialMedia": {
+                "instagram": "@mahtab_game",
+                "twitter": "@mahtab_game",
+                "telegram": "@mahtab_game"
+              }
+            },
+            "amenities": [
+              {
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "type": "فضای آرام",
+                "description": "محیطی آرام و راحت برای بازی.",
+                "typeEnglish": "Calm Space"
+              },
+              {
+                "type": "سیستم‌های به‌روز",
+                "description": "سیستم‌های گیمینگ جدید.",
+                "typeEnglish": "Updated Systems"
+              }
+            ],
+            "geoLocation": { "x": 35.7101, "y": 51.492 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت مهتاب در منطقه شرق تهران واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "تهران، خیابان دماوند، نبش خیابان پیروزی، پلاک 321"
+            }
+          },
+          "comments": [
+            {
+              "user": "فاطمه",
+              "comment": "محیط آرام و سیستم‌های خوب.",
+              "imageProfile": "/images/profiles/fatemeh.jpg"
+            },
+            {
+              "user": "مهدی",
+              "comment": "اینترنت عالی و بازی‌های جدید.",
+              "imageProfile": "/images/profiles/mahdi.jpg"
+            },
+            {
+              "user": "سارا",
+              "comment": "فضای راحت و دوستانه.",
+              "imageProfile": "/images/profiles/sara.jpg"
+            }
+          ]
+        }
+      },
+      {
+        "id": 62345682,
+        "title": "گیم نت البرز",
+        "views": "1900",
+        "date": "2024-06-10",
+        "description": "گیم نت البرز با امکانات فوق‌العاده و تجهیزات پیشرفته در کرج.",
+        "image": "/images/gameCenters/4.jpg",
+        "like": 350,
+        "rating": "3.7",
+        "city": "کرج",
+        "save": 190,
+        "details": {
+          "images": [
+            "/images/AlborzGame/1.webp",
+            "/images/AlborzGame/2.webp",
+            "/images/AlborzGame/3.jpg",
+            "/images/AlborzGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت البرز",
+              "desc": "گیم نت البرز در کرج با امکانات فوق‌العاده و تجهیزات پیشرفته، تجربه‌ای متفاوت را برای گیمرها فراهم می‌کند."
+            },
+            "main": {
+              "title": "تجهیزات و بازی‌ها",
+              "desc": "سیستم‌های قدرتمند و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
+            },
+            "about": {
+              "text": "البرز در مرکز شهر کرج قرار دارد و به راحتی قابل دسترسی است.",
+              "tell": "026-12345678",
+              "email": "info@alborzgame.net",
+              "socialMedia": {
+                "instagram": "@alborz_game",
+                "twitter": "@alborz_game",
+                "telegram": "@alborz_game"
+              }
+            },
+            "amenities": [
+              {
+                "icon": "",
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "icon": "",
+                "type": "سیستم‌های قوی",
+                "description": "سیستم‌های گیمینگ قدرتمند.",
+                "typeEnglish": "Powerful Systems"
+              },
+              {
+                "icon": "",
+                "type": "محیط دوستانه",
+                "description": "فضایی مناسب برای بازی و تفریح.",
+                "typeEnglish": "Friendly Environment"
+              }
+            ],
+            "geoLocation": { "x": 35.84, "y": 50.9391 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت البرز در مرکز شهر کرج واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "کرج، خیابان اصلی، نبش خیابان فرعی، پلاک 654"
+            }
+          },
+          "comments": [
+            {
+              "user": "حسین",
+              "comment": "فضای بسیار مدرن و تجهیزات عالی.",
+              "imageProfile": "/images/profiles/hossein2.jpg"
+            },
+            {
+              "user": "زهرا",
+              "comment": "بازی‌های متنوع و جذاب.",
+              "imageProfile": "/images/profiles/zahra2.jpg"
+            },
+            {
+              "user": "سعید",
+              "comment": "پارکینگ اختصاصی واقعا به کار میاد.",
+              "imageProfile": "/images/profiles/saeid2.jpg"
+            }
+          ]
+        }
+      },
+      {
+        "id": 62345683,
+        "title": "گیم نت ستاره",
+        "views": "1600",
+        "date": "2024-06-05",
+        "description": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت در جنوب تهران.",
+        "image": "/images/gameCenters/1.jpg",
+        "like": 310,
+        "rating": "4.5",
+        "city": "تهران",
+        "save": 160,
+        "details": {
+          "images": [
+            "/images/SetarehGame/1.webp",
+            "/images/SetarehGame/2.webp",
+            "/images/SetarehGame/3.jpg",
+            "/images/SetarehGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت ستاره",
+              "desc": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت، تجربه‌ای متفاوت را برای گیمرها فراهم می‌کند."
+            },
+            "main": {
+              "title": "تجهیزات و امکانات",
+              "desc": "سیستم‌های جدید و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
+            },
+            "about": {
+              "text": "ستاره در منطقه جنوب تهران قرار دارد و به راحتی قابل دسترسی است.",
+              "tell": "021-55443322",
+              "email": "info@setarehgame.net",
+              "socialMedia": {
+                "instagram": "@setareh_game",
+                "twitter": "@setareh_game",
+                "telegram": "@setareh_game"
+              }
+            },
+            "amenities": [
+              {
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "type": "فضای آرام",
+                "description": "محیطی آرام و راحت برای بازی.",
+                "typeEnglish": "Calm Space"
+              },
+              {
+                "type": "سیستم‌های به‌روز",
+                "description": "سیستم‌های گیمینگ جدید.",
+                "typeEnglish": "Updated Systems"
+              }
+            ],
+            "geoLocation": { "x": 35.6731, "y": 51.3245 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت ستاره در منطقه جنوب تهران واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "تهران، خیابان ولیعصر، نبش خیابان شریعتی، پلاک 123"
+            }
+          },
+          "comments": [
+            {
+              "user": "محمد",
+              "comment": "محیط دوستانه و تجهیزات عالی.",
+              "imageProfile": "/images/profiles/mohammad2.jpg"
+            },
+            {
+              "user": "الهام",
+              "comment": "بازی‌های جدید و متنوع.",
+              "imageProfile": "/images/profiles/elham2.jpg"
+            },
+            {
+              "user": "امیر",
+              "comment": "دسترسی آسان و فضای راحت.",
+              "imageProfile": "/images/profiles/amir2.jpg"
+            }
+          ]
+        }
+      },
+      {
+        "id": 62345678,
+        "title": "گیم نت ایران گیم",
+        "views": "1500",
+        "date": "2024-07-03",
+        "description": "یکی از بهترین گیم نت‌های تهران با تجهیزات به‌روز و محیطی دوستانه.",
+        "image": "/images/gameCenters/6.webp",
+        "like": 300,
+        "rating": "5",
+        "city": "تهران",
+        "save": 150,
+        "details": {
+          "images": [
+            "/images/IranGame/1.webp",
+            "/images/IranGame/2.webp",
+            "/images/IranGame/3.jpg",
+            "/images/IranGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت ایران گیم",
+              "desc": "گیم نت ایران گیم یکی از مجهزترین و محبوب‌ترین گیم نت‌های تهران است که با محیطی دوستانه و امکانات به‌روز، تجربه‌ای متفاوت را برای علاقه‌مندان به بازی‌های کامپیوتری فراهم می‌کند."
+            },
+            "main": {
+              "title": "تجهیزات و بازی‌ها",
+              "desc": "این گیم نت دارای بیش از 20 سیستم با سخت‌افزارهای قدرتمند، اینترنت پرسرعت و مجموعه‌ای از جدیدترین بازی‌های آنلاین و آفلاین است."
+            },
+            "about": {
+              "text": "ایران گیم در منطقه مرکزی تهران واقع شده و دسترسی آسانی دارد. این گیم نت همواره تلاش دارد تا با ارائه خدمات بهتر، رضایت مشتریان خود را جلب کند.",
+              "tell": "021-12345678",
+              "email": "info@irangame.net",
+              "socialMedia": {
+                "instagram": "@irangame_net",
+                "twitter": "@irangame_net",
+                "telegram": "@irangame_net"
+              }
+            },
+            "amenities": [
+              {
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا برای بازی‌های آنلاین.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "type": "سیستم‌های به‌روز",
+                "description": "سیستم‌های گیمینگ با سخت‌افزارهای جدید.",
+                "typeEnglish": "Updated Systems"
+              },
+              {
+                "type": "محیط دوستانه",
+                "description": "محیطی مناسب برای بازی و تفریح.",
+                "typeEnglish": "Friendly Environment"
+              }
+            ],
+            "geoLocation": { "x": 35.6892, "y": 51.389 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت ایران گیم در منطقه مرکزی تهران واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "تهران، خیابان انقلاب، نبش خیابان حافظ، پلاک 123"
+            }
+          },
+          "comments": [
+            {
+              "user": "علی",
+              "comment": "محیط عالی و تجهیزات به‌روز. خیلی راضی بودم.",
+              "imageProfile": "/images/profiles/ali.jpg"
+            },
+            {
+              "user": "مینا",
+              "comment": "فضای دوستانه و کارکنان حرفه‌ای.",
+              "imageProfile": "/images/profiles/mina.jpg"
+            },
+            {
+              "user": "رضا",
+              "comment": "از بازی‌های متنوع و جدیدشان خیلی خوشم اومد.",
+              "imageProfile": "/images/profiles/reza.jpg"
+            }
+          ]
+        }
+      }
+    ],
+    "producers": [
+      {
+        "id": 1,
+        "name": "نینتندو",
+        "icon": "https://www.google.com/s2/favicons?domain=nintendo.com&sz=128",
+        "Founded": 1889,
+        "employees": "حدود ۷٬۷۰۰ نفر",
+        "Revenue": "حدود ۱۱ تا ۱۲ میلیارد دلار در سال مالی ۲۰۲۴",
+        "growth": 5.55,
+        "decline": 1.25
+      },
+      {
+        "id": 2,
+        "name": "راک‌استار گیمز",
+        "icon": "https://www.google.com/s2/favicons?domain=rockstargames.com&sz=128",
+        "Founded": 1998,
+        "employees": "چند هزار نفر در استودیوهای مختلف",
+        "Revenue": "درآمد مستقل شرکت به‌صورت عمومی اعلام نمی‌شود",
+        "growth": 8.2,
+        "decline": 2.1
+      },
+      {
+        "id": 3,
+        "name": "سی‌دی پراجکت رد",
+        "icon": "https://www.google.com/s2/favicons?domain=cdprojektred.com&sz=128",
+        "Founded": 2002,
+        "employees": "حدود ۱٬۰۰۰ تا ۱٬۲۰۰ نفر در گروه",
+        "Revenue": "درآمد گروه در سال‌های اخیر متغیر بوده؛ رقم دقیق به سال مالی بستگی دارد",
+        "growth": 6.35,
+        "decline": 1.85
+      },
+      {
+        "id": 4,
+        "name": "الکترونیک آرتس",
+        "icon": "https://www.google.com/s2/favicons?domain=ea.com&sz=128",
+        "Founded": 1982,
+        "employees": "حدود ۱۳٬۰۰۰ نفر",
+        "Revenue": "حدود ۷ تا ۸ میلیارد دلار در سال مالی ۲۰۲۴",
+        "growth": 4.7,
+        "decline": 2.4
+      },
+      {
+        "id": 5,
+        "name": "یوبی‌سافت",
+        "icon": "https://www.google.com/s2/favicons?domain=ubisoft.com&sz=128",
+        "Founded": 1986,
+        "employees": "حدود ۱۷٬۰۰۰ نفر در سراسر جهان",
+        "Revenue": "چند میلیارد یورو در سال؛ رقم دقیق به سال مالی بستگی دارد",
+        "growth": 2.85,
+        "decline": 4.1
+      },
+      {
+        "id": 6,
+        "name": "ولو",
+        "icon": "https://www.google.com/s2/favicons?domain=valvesoftware.com&",
+        "Founded": 1996,
+        "employees": "تعداد دقیق کارکنان به‌صورت رسمی و مستمر منتشر نمی‌شود",
+        "Revenue": "درآمد خصوصی شرکت به‌صورت رسمی منتشر نمی‌شود",
+        "growth": 7.15,
+        "decline": 1.05
+      },
+      {
+        "id": 7,
+        "name": "اکتیویژن",
+        "icon": "https://www.google.com/s2/favicons?domain=activision.com&sz=128",
+        "Founded": 1979,
+        "employees": "اکنون بخشی از مایکروسافت گیمینگ",
+        "Revenue": "درآمد مستقل فعلی به‌صورت جداگانه گزارش نمی‌شود",
+        "growth": 3.2,
+        "decline": 2.75
+      },
+      {
+        "id": 8,
+        "name": "اپیک گیمز",
+        "icon": "https://www.google.com/s2/favicons?domain=epicgames.com&sz=128",
+        "Founded": 1991,
+        "employees": "چند هزار نفر؛ رقم دقیق ممکن است تغییر کند",
+        "Revenue": "شرکت خصوصی است و رقم درآمد سالانه را به‌طور کامل عمومی نمی‌کند",
+        "growth": 5.4,
+        "decline": 1.6
+      }
+    ],
+    "streamers": [
+      {
+        "id": 1,
+        "name": "میا پلیز",
+        "username": "miaplays",
+        "platform": "youtube",
+        "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
+        "followers": "863K",
+        "category": "Gaming / Fortnite / Vlog",
+        "isLive": false,
+        "link": "https://www.youtube.com/@miaplays"
+      },
+      {
+        "id": 2,
+        "name": "آریا کئوکسر",
+        "username": "KEOXER",
+        "platform": "youtube",
+        "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
+        "followers": "817K",
+        "category": "Gaming / Challenges / Just Chatting",
+        "isLive": false,
+        "link": "https://www.youtube.com/@AriaKeoXer"
+      },
+      {
+        "id": 3,
+        "name": "سام صابری",
+        "username": "SamSaberi",
+        "platform": "twitch",
+        "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/e3eff532-8c88-4112-860d-68597489529a-profile_image-300x300.png",
+        "followers": "360K",
+        "category": "Call of Duty / Warzone / Just Chatting",
+        "isLive": false,
+        "link": "https://www.twitch.tv/samsaberi"
+      },
+      {
+        "id": 4,
+        "name": "علی بیگزموگ",
+        "username": "Bigezmoge",
+        "platform": "twitch",
+        "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/c1f61b83-a0e5-4f97-89bf-b3e981830f7d-profile_image-300x300.png",
+        "followers": "290K",
+        "category": "Just Chatting / DayZ / Call of Duty",
+        "isLive": false,
+        "link": "https://www.twitch.tv/bigezmoge"
+      },
+      {
+        "id": 5,
+        "name": "امیر ایزد",
+        "username": "AmirEyZed",
+        "platform": "twitch",
+        "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/64b4f640-7bdd-47dd-b0c3-7e5bde6f7701-profile_image-300x300.png",
+        "followers": "149K",
+        "category": "Just Chatting / Podcast / Gaming",
+        "isLive": false,
+        "link": "https://www.twitch.tv/amireyzed"
+      },
+      {
+        "id": 6,
+        "name": "امیر فانتوم",
+        "username": "AmirPhanThom",
+        "platform": "twitch",
+        "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/7688e414-dd44-409f-aaef-9ea346066cf8-profile_image-300x300.png",
+        "followers": "114K",
+        "category": "Dota 2 / Just Chatting",
+        "isLive": false,
+        "link": "https://www.twitch.tv/amirphanthom"
+      },
+      {
+        "id": 7,
+        "name": "ابوالفضل ایکس مستر",
+        "username": "AliXMaster",
+        "platform": "aparat",
+        "avatar": "https://www.aparat.com/public/avatar/ali_x_master.jpg",
+        "followers": "450K",
+        "category": "Minecraft / Shooter",
+        "isLive": false,
+        "link": "https://www.aparat.com/ali_x_master"
+      },
+      {
+        "id": 8,
+        "name": "مهدی بیزیکسر",
+        "username": "MahdiBizixer",
+        "platform": "aparat",
+        "avatar": "https://www.aparat.com/public/avatar/mahdi.bizixer.jpg",
+        "followers": "390K",
+        "category": "Minecraft / Simulation / Fun",
+        "isLive": false,
+        "link": "https://www.aparat.com/mahdi.bizixer"
+      }
+    ]
+  },
+  "streamers": [
+    {
+      "id": 1,
+      "name": "میا پلیز",
+      "username": "miaplays",
+      "platform": "youtube",
+      "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
+      "followers": "863K",
+      "category": "Gaming / Fortnite / Vlog",
+      "isLive": false,
+      "link": "https://www.youtube.com/@miaplays"
+    },
+    {
+      "id": 2,
+      "name": "آریا کئوکسر",
+      "username": "KEOXER",
+      "platform": "youtube",
+      "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
+      "followers": "817K",
+      "category": "Gaming / Challenges / Just Chatting",
+      "isLive": false,
+      "link": "https://www.youtube.com/@AriaKeoXer"
+    },
+    {
+      "id": 3,
+      "name": "سام صابری",
+      "username": "SamSaberi",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/e3eff532-8c88-4112-860d-68597489529a-profile_image-300x300.png",
+      "followers": "360K",
+      "category": "Call of Duty / Warzone / Just Chatting",
+      "isLive": false,
+      "link": "https://www.twitch.tv/samsaberi"
+    },
+    {
+      "id": 4,
+      "name": "علی بیگزموگ",
+      "username": "Bigezmoge",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/c1f61b83-a0e5-4f97-89bf-b3e981830f7d-profile_image-300x300.png",
+      "followers": "290K",
+      "category": "Just Chatting / DayZ / Call of Duty",
+      "isLive": false,
+      "link": "https://www.twitch.tv/bigezmoge"
+    },
+    {
+      "id": 5,
+      "name": "امیر ایزد",
+      "username": "AmirEyZed",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/64b4f640-7bdd-47dd-b0c3-7e5bde6f7701-profile_image-300x300.png",
+      "followers": "149K",
+      "category": "Just Chatting / Podcast / Gaming",
+      "isLive": false,
+      "link": "https://www.twitch.tv/amireyzed"
+    },
+    {
+      "id": 6,
+      "name": "امیر فانتوم",
+      "username": "AmirPhanThom",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/7688e414-dd44-409f-aaef-9ea346066cf8-profile_image-300x300.png",
+      "followers": "114K",
+      "category": "Dota 2 / Just Chatting",
+      "isLive": false,
+      "link": "https://www.twitch.tv/amirphanthom"
+    },
+    {
+      "id": 7,
+      "name": "ابوالفضل ایکس مستر",
+      "username": "AliXMaster",
+      "platform": "aparat",
+      "avatar": "https://www.aparat.com/public/avatar/ali_x_master.jpg",
+      "followers": "450K",
+      "category": "Minecraft / Shooter",
+      "isLive": false,
+      "link": "https://www.aparat.com/ali_x_master"
+    },
+    {
+      "id": 8,
+      "name": "مهدی بیزیکسر",
+      "username": "MahdiBizixer",
+      "platform": "aparat",
+      "avatar": "https://www.aparat.com/public/avatar/mahdi.bizixer.jpg",
+      "followers": "390K",
+      "category": "Minecraft / Simulation / Fun",
+      "isLive": false,
+      "link": "https://www.aparat.com/mahdi.bizixer"
+    },
+    {
+      "id": 9,
+      "name": "فرهاد ایکس‌ری",
+      "username": "FarhadXRay",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/farhadxray-profile_image-300x300.png",
+      "followers": "140K+",
+      "category": "Call of Duty / Warzone / Reaction",
+      "isLive": false,
+      "link": "https://www.twitch.tv/farhadxray"
+    },
+    {
+      "id": 10,
+      "name": "تاکسیک گرل",
+      "username": "ToxicGirlow",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/toxicgirlow-profile_image-300x300.png",
+      "followers": "200K+",
+      "category": "Fortnite / Apex / Horror",
+      "isLive": false,
+      "link": "https://www.twitch.tv/toxicgirlow"
+    },
+    {
+      "id": 11,
+      "name": "علیرکسا",
+      "username": "Alirexza",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/alirexza-profile_image-300x300.png",
+      "followers": "126K",
+      "category": "Call of Duty / Warzone",
+      "isLive": false,
+      "link": "https://www.twitch.tv/alirexza"
+    },
+    {
+      "id": 12,
+      "name": "نیچوکو",
+      "username": "Nichoqu",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/nichoqu-profile_image-300x300.png",
+      "followers": "80K+",
+      "category": "Just Chatting / Variety",
+      "isLive": false,
+      "link": "https://www.twitch.tv/nichoqu"
+    },
+    {
+      "id": 13,
+      "name": "پارسا لیپ",
+      "username": "PARSALIP",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/parsalip-profile_image-300x300.png",
+      "followers": "70K+",
+      "category": "Just Chatting / Gaming",
+      "isLive": false,
+      "link": "https://www.twitch.tv/parsalip"
+    },
+    {
+      "id": 14,
+      "name": "ارف",
+      "username": "Erph",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/erph-profile_image-300x300.png",
+      "followers": "60K+",
+      "category": "Just Chatting",
+      "isLive": false,
+      "link": "https://www.twitch.tv/erph"
+    },
+    {
+      "id": 15,
+      "name": "آرکی تی‌وی",
+      "username": "ArchieTV",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/archietv-profile_image-300x300.png",
+      "followers": "50K+",
+      "category": "Hunt: Showdown / Variety",
+      "isLive": false,
+      "link": "https://www.twitch.tv/archietv"
+    },
+    {
+      "id": 16,
+      "name": "فلیم حسین",
+      "username": "flamehossein",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/flamehossein-profile_image-300x300.png",
+      "followers": "50K+",
+      "category": "Just Chatting",
+      "isLive": false,
+      "link": "https://www.twitch.tv/flamehossein"
+    },
+    {
+      "id": 17,
+      "name": "مهشاد",
+      "username": "mahshadtm",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/mahshadtm-profile_image-300x300.png",
+      "followers": "40K+",
+      "category": "Just Chatting / Variety",
+      "isLive": false,
+      "link": "https://www.twitch.tv/mahshadtm"
+    },
+    {
+      "id": 18,
+      "name": "ادمیرال",
+      "username": "AdMiRaL_TideBringer",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/admiral_tidebringer-profile_image-300x300.png",
+      "followers": "51K",
+      "category": "Just Chatting / Variety",
+      "isLive": false,
+      "link": "https://www.twitch.tv/admiral_tidebringer"
+    },
+    {
+      "id": 19,
+      "name": "سینا کرش",
+      "username": "SeenaCrash",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/seenacrash-profile_image-300x300.png",
+      "followers": "40K+",
+      "category": "Just Chatting / Gaming",
+      "isLive": false,
+      "link": "https://www.twitch.tv/seenacrash"
+    },
+    {
+      "id": 20,
+      "name": "ایکس‌یرونی",
+      "username": "x1rony",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/x1rony-profile_image-300x300.png",
+      "followers": "50K+",
+      "category": "Just Chatting / Variety",
+      "isLive": false,
+      "link": "https://www.twitch.tv/x1rony"
     }
   ]
 }

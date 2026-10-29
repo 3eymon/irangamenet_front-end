@@ -1,26 +1,28 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import http from "../services/httpService";
 
-export default function useServer<T = any>(url: string): [T[], boolean] {
-  const URL = `http://localhost:8000/${url}`;
+export default function useServer<T>(
+  url: string,
+  initialValue?: T,
+): [T, boolean] {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [value, setValue] = useState<T[]>([]);
+  const [value, setValue] = useState<T>(initialValue || null);
 
   useEffect(() => {
     async function fetchData() {
       try {
         setIsLoading(true);
-        const { data } = await axios.get<T[]>(URL);
+        const { data } = await http.get<T>(url);
         setValue(data);
       } catch (err) {
-        console.log(err);
+        console.error("Failed to fetch data:", err);
       } finally {
         setIsLoading(false);
       }
     }
 
     fetchData();
-  }, [URL]);
+  }, [url]);
 
   return [value, isLoading];
 }
