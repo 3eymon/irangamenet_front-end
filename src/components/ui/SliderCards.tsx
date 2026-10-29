@@ -2,8 +2,8 @@ import { BookOpenIcon } from "@heroicons/react/24/outline";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import Card from "./Card";
-import type { Game, GameCenter } from "../types/game.types";
-import type { News } from "../types/news.types";
+import type { Game, GameCenter } from "../../types/game.types";
+import type { News } from "../../types/news.types";
 import { ReactNode } from "react";
 
 type SliderCardsProps = {

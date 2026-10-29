@@ -1,17 +1,17 @@
-import FAQs from "../features/home/FAQs";
-import AboutUs from "../features/home/AboutUs";
-import useServer from "../hook/useServer";
+import FAQs from "./home/components/FAQs";
+import AboutUs from "./home/components/AboutUs";
+import useServer from "../hooks/useServer";
 import { News } from "../types/news.types";
 import type { Game, GameCenter } from "../types/game.types";
 import "swiper/css/effect-coverflow";
 import "swiper/css";
-import HeroSection from "../features/home/HeroSection";
-import DataSliderSection from "../ui/DataSliderSection";
-import { sliderCardsType } from "../ui/SliderCards";
-import { SeeAll } from "./News";
+import HeroSection from "./home/components/HeroSection";
+import DataSliderSection from "../components/ui/DataSliderSection";
+import { sliderCardsType } from "../components/ui/SliderCards";
+import SeeAll from "../components/ui/SeeAll";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { Producer } from "../types/ producer.types";
-import BestProducers from "../features/home/BestProducers";
+import BestProducers from "./home/components/BestProducers";
 type Home = {
   popularNews: News[];
   bestGameCenters: GameCenter[];
@@ -20,7 +20,7 @@ type Home = {
   bestStreamers: any[];
   streamers: Streamer[];
 };
-import StreamerCard from "../features/streamers/StreamerCard";
+import StreamerCard from "./home/components/StreamerCard";
 import { Streamer } from "../types/streamer.types";
 
 function Main() {

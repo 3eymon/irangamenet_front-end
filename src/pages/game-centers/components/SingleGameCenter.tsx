@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import useServer from "../../hook/useServer";
+import useServer from "../../../hooks/useServer";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { Rating } from "@mui/material";
-import type { GameCenter } from "../../types/game.types";
+import type { GameCenter } from "../../../types/game.types";
 
 function SingleGameCenter() {
   const { id } = useParams();

@@ -3,7 +3,7 @@ import { PopularCard } from "./HeaderNews";
 import ReactTimeAgo from "react-time-ago";
 import { BookOpenIcon } from "@heroicons/react/24/outline";
 import LazyLoad from "react-lazyload";
-import type { News } from "../../types/news.types";
+import type { News } from "../../../types/news.types";
 
 export default function MostViewed({ news }: { news: News[] }) {
   const topview = news[0];

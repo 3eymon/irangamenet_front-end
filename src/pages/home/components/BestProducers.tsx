@@ -1,6 +1,6 @@
 import React from "react";
 import { useMemo } from "react";
-import type { Producer } from "../../types/ producer.types";
+import type { Producer } from "../../../types/ producer.types";
 import ChevronLeftIcon from "@heroicons/react/24/solid/ChevronLeftIcon";
 import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";

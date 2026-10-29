@@ -1,4 +1,4 @@
-import { getAllProvinces, getCitiesByProvinceName } from "../..";
+import { getAllProvinces, getCitiesByProvinceName } from "../../../";
 import {
   ArrowLongLeftIcon,
   ArrowUturnRightIcon,

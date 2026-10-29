@@ -1,13 +1,13 @@
 import { useRef } from "react";
-import Header from "../features/games/Header";
-import Main from "../features/games/Main";
-import { SeeAll } from "../pages/News";
-import Category from "../features/games/Category";
-import ForMore from "../features/games/ForMore";
-import DataSliderSection from "../ui/DataSliderSection";
-import { sliderCardsType } from "../ui/SliderCards";
+import Header from "./games/components/Header";
+import Main from "./games/components/Main";
+import SeeAll from "../components/ui/SeeAll";
+import Category from "./games/components/Category";
+import ForMore from "./games/components/ForMore";
+import DataSliderSection from "../components/ui/DataSliderSection";
+import { sliderCardsType } from "../components/ui/SliderCards";
 import type { Game } from "../types/game.types";
-import useServer from "../hook/useServer";
+import useServer from "../hooks/useServer";
 function Games() {
   const [latestGames, latestGamesIsLoading] = useServer<Game[]>(
     "games?releaseDate:desc",

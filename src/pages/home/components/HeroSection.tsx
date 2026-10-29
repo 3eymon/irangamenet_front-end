@@ -5,13 +5,13 @@ import { NewspaperIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import { Game } from "../../types/game.types";
-import { formatCompactNumber } from "../../utils/formatCompactNumber";
+import { Game } from "../../../types/game.types";
+import { formatCompactNumber } from "../../../utils/formatCompactNumber";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { sliderCardsType } from "../../ui/SliderCards";
-import { News } from "../../types/news.types";
+import { sliderCardsType } from "../../../components/ui/SliderCards";
+import { News } from "../../../types/news.types";
 type NewsCardPreviewProps = {
   cards: News[];
   isLoading?: boolean;

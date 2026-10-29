@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { categories } from "../../../data/sortData";
+import { categories } from "../../../../data/sortData";
 function Category() {
   return (
     <div className="flex flex-col gap-7 px-7 text-center sm:text-right">

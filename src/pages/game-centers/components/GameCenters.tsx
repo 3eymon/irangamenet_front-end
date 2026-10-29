@@ -1,7 +1,7 @@
-import SliderCards from "../../ui/SliderCards";
-import { SeeAll } from "../../pages/News";
+import SliderCards from "../../../components/ui/SliderCards";
+import SeeAll from "../../../components/ui/SeeAll";
 import { useState } from "react";
-import type { GameCenter } from "../../types/game.types";
+import type { GameCenter } from "../../../types/game.types";
 function GameCenters({ gameCenters }: { gameCenters: GameCenter[] }) {
   const [citySelected, setCitySelected] = useState("همه");
   const topCity = [

@@ -1,4 +1,4 @@
-import useInc from "../../hook/useInc";
+import useInc from "../../../hooks/useInc";
 
 function Header({ scroll }) {
   const creaedGames = useInc(980);

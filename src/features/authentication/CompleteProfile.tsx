@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Navigate, useLocation } from "react-router-dom";
-import Input from "../../ui/input";
+import Input from "../../components/ui/input";
 import {
   PENDING_OTP_EMAIL_KEY,
   VERIFIED_OTP_EMAIL_KEY,

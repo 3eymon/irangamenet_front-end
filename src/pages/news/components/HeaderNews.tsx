@@ -9,13 +9,13 @@ import {
   ClockIcon,
   PencilIcon,
 } from "@heroicons/react/24/outline";
-import useServer from "../../hook/useServer";
+import useServer from "../../../hooks/useServer";
 // time ago
 
 import ReactTimeAgo from "react-time-ago";
 import LazyLoad from "react-lazyload";
-import type { News } from "../../types/news.types";
-import EmptyState from "../../ui/EmptyState";
+import type { News } from "../../../types/news.types";
+import EmptyState from "../../../components/ui/EmptyState";
 
 function HeaderNews() {
   const [news, isLoading] = useServer<News[]>("news", []);

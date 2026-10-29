@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Navigate, useNavigate } from "react-router-dom";
-import Input from "../../ui/input";
+import Input from "../../components/ui/input";
 import {
   checkOTP,
   PENDING_OTP_EMAIL_KEY,

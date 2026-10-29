@@ -1,9 +1,9 @@
-import useServer from "../../hook/useServer";
-import  { Loader } from "../../ui/SliderCards";
+import useServer from "../../../hooks/useServer";
+import  { Loader } from "../../../components/ui/SliderCards";
 import "./style.css";
 import BestIGNGameCenters from "./BestIGNGameCenters";
 import GameCenters from "./GameCenters";
-import type { GameCenter } from "../../types/game.types";
+import type { GameCenter } from "../../../types/game.types";
 function Main() {
   const [gameCenters, isLoading] = useServer<GameCenter[]>("GameCenters", []);
   return (

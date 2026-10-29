@@ -9,10 +9,10 @@ import {
 import ReactTimeAgo from "react-time-ago";
 import { Tooltip } from "react-tooltip";
 import { Rating } from "@mui/material";
-import type { Game, GameCenter } from "../types/game.types";
-import type { News } from "../types/news.types";
+import type { Game, GameCenter } from "../../types/game.types";
+import type { News } from "../../types/news.types";
 import { sliderCardsType } from "./SliderCards";
-import { formatCompactNumber } from "../utils/formatCompactNumber";
+import { formatCompactNumber } from "../../utils/formatCompactNumber";
 
 type CardData = Game | News | GameCenter;
 

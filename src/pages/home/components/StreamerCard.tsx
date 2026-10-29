@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { UserIcon } from "@heroicons/react/24/solid";
 
-import { Platform, Streamer } from "../../types/streamer.types";
+import { Platform, Streamer } from "../../../types/streamer.types";
 const PLATFORM_LABEL: Record<Platform, string> = {
   twitch: "Twitch",
   youtube: "YouTube",
