@@ -1,165 +1,77 @@
-import MainApplication from "../features/Home/MainApplication";
-import MainTopProducers from "../features/Home/MainTopProducers";
-import MainHeader from "../features/Home/MainHeader";
-import MainPopular from "../features/Home/MainSlider";
-import MainFaqs from "../features/Home/MainFaqs";
-import MainAbout from "../features/Home/MainAbout";
-
+import FAQs from "../features/home/FAQs";
+import AboutUs from "../features/home/AboutUs";
+import useServer from "../hook/useServer";
+import { News } from "../types/news.types";
+import type { Game, GameCenter } from "../types/game.types";
+import "swiper/css/effect-coverflow";
+import "swiper/css";
+import HeroSection from "../features/home/HeroSection";
+import DataSliderSection from "../ui/DataSliderSection";
+import { sliderCardsType } from "../ui/SliderCards";
+import { SeeAll } from "./News";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { Producer } from "../types/ producer.types";
+import BestProducers from "../features/home/BestProducers";
+type Home = {
+  popularNews: News[];
+  bestGameCenters: GameCenter[];
+  newestGames: Game[];
+  producers: Producer[];
+  bestStreamers: any[];
+  streamers: Streamer[];
+};
+import StreamerCard from "../features/streamers/StreamerCard";
+import { Streamer } from "../types/streamer.types";
 
 function Main() {
-  const headerCards = [
-    {
-      id: 1,
-      title: "سایبرپانک همچنین یکی از زیرسبک‌های داستان‌های پادآرمان‌شهری",
-      image: "images/Cyberpunk2077.jpg",
-      view: "665",
-      score: "4",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-    {
-      id: 2,
-      title: " یک بازی اول شخص از مجموعه بازی‌های ندای وظیفه است",
-      image: "images/callofduty_کالاف دیوتی.jpg",
-      view: "46",
-      score: "4.5",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-    {
-      id: 3,
-      title:
-        "این بازی پنجمین قسمت اصلی در مجموعهٔ کانتر استرایک به‌شمار می‌رود.",
-      image: "images/csgo.jpg",
-      view: "775",
-      score: "5",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-  ];
-  const allCards = [
-    {
-      id: 1,
-      title: "سایبرپانک همچنین یکی از زیرسبک‌های داستان‌های پادآرمان‌شهری",
-      image: "images/cyberpunk/2.jpeg",
-      view: "665",
-      score: "4",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-    {
-      id: 2,
-      title: " یک بازی اول شخص از مجموعه بازی‌های ندای وظیفه است",
-      image: "images/callofduty/2.jpg",
-      view: "46",
-      score: "4.5",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-    {
-      id: 3,
-      title:
-        "این بازی پنجمین قسمت اصلی در مجموعهٔ کانتر استرایک به‌شمار می‌رود.",
-      image: "images/csgo/3.webp",
-      view: "775",
-      score: "5",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-    {
-      id: 4,
-      title: "سایبرپانک همچنین یکی از زیرسبک‌های داستان‌های پادآرمان‌شهری",
-      image: "images/cyberpunk/1.jpg",
-      view: "665",
-      score: "4",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-    {
-      id: 5,
-      title: " یک بازی اول شخص از مجموعه بازی‌های ندای وظیفه است",
-      image: "images/callofduty/4.jpg",
-      view: "46",
-      score: "4.5",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-    {
-      id: 6,
-      title:
-        "این بازی پنجمین قسمت اصلی در مجموعهٔ کانتر استرایک به‌شمار می‌رود.",
-      image: "images/csgo/2.webp",
-      view: "775",
-      score: "5",
-      creatorName: "Ali Ahmadi",
-      creatorImage: "",
-    },
-  ];
-  const topProducers = [
-    {
-      id: 1,
-      name: "سونی /Sony",
-      icon: "images/icon/producers/PlayStation.jpg",
-      employees: "113,000 (2023)",
-      Revenue: "🔼 ¥11.540 trillion ",
-      Founded: "7 May 1946",
-      creatorImage: "",
-    },
-    {
-      id: 2,
-      name: "ایکس باکس /Xbox",
-      icon: "images/icon/producers/xbox.jpg",
-      employees: "113,000 (2023)",
-      Revenue: "🔼 ¥11.540 trillion ",
-      Founded: "7 May 1946",
-      creatorImage: "",
-    },
-    {
-      id: 3,
-      name: "تنسنت / Tencent",
-      icon: "images/icon/producers/Tencent.jpg",
-      employees: "113,000 (2023)",
-      Revenue: "🔼 ¥11.540 trillion ",
-      Founded: "7 May 1946",
-      creatorImage: "",
-    },
-    {
-      id: 4,
-      name: "اکتیویژن /Activision",
-      icon: "images/icon/producers/activision.svg",
-      employees: "113,000 (2023)",
-      Revenue: "🔼 ¥11.540 trillion ",
-      Founded: "7 May 1946",
-      creatorImage: "",
-    },
-    {
-      id: 5,
-      name: " الکترو .. / Electronic  Arts",
-      icon: "images/icon/producers/ea_sports.png",
-      employees: "113,000 (2023)",
-      Revenue: "🔼 ¥11.540 trillion ",
-      Founded: "7 May 1946",
-      creatorImage: "",
-    },
-    {
-      id: 6,
-      name: "اپیک گیمز / Epic Games",
-      icon: "images/icon/producers/Epic_Games.png",
-      employees: "113,000 (2023)",
-      Revenue: "🔼 ¥11.540 trillion ",
-      Founded: "7 May 1946",
-      creatorImage: "",
-    },
-  ];
+  const [homeData, isLoading] = useServer<Home>("home", {
+    popularNews: [],
+    bestGameCenters: [],
+    newestGames: [],
+    producers: [],
+    bestStreamers: [],
+    streamers: [],
+  });
   return (
     <main className="pb-10 flex flex-col gap-10">
-      <MainHeader cards={headerCards} />
-      <MainApplication />
-      <MainPopular cards={allCards} title="محبوب ترین IGN ها" />
-      <MainTopProducers producers={topProducers} />
-      <MainPopular cards={allCards} title="جدید ترین IGN ها" />
-      <MainFaqs />
-      <MainAbout />
+      <HeroSection data={homeData?.popularNews ?? []} isLoading={isLoading} />
+      <DataSliderSection
+        data={homeData?.newestGames ?? []}
+        isLoading={isLoading}
+        type={sliderCardsType.Games}
+        className="mb-16"
+      >
+        <SeeAll title="جدیدترین بازی ها " link="games?sort=newest" color="#d42222" />
+      </DataSliderSection>
+      <DataSliderSection
+        data={homeData?.bestGameCenters ?? []}
+        isLoading={isLoading}
+        type={sliderCardsType.GameCenters}
+        className="mb-16"
+      >
+        <SeeAll
+          title="برترین گیمنت ها"
+          link="game-centers"
+          color="#22d465"
+        />
+      </DataSliderSection>
+
+      <BestProducers data={homeData.producers} isLoading={isLoading} />
+      <div className="w-full">
+        <SeeAll
+          title="برترین استریمرها"
+          link="streamers"
+          color="#a855f7"
+        />
+
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-y-8 gap-x-3 md:gap-x-6 px-3 lg:px-5 mt-6">
+          {homeData?.streamers.map((s) => (
+            <StreamerCard key={s.id} s={s} />
+          ))}
+        </div>
+      </div>
+      <FAQs />
+      <AboutUs />
     </main>
   );
 }

@@ -24,7 +24,7 @@ const faqs = [
   },
 ];
 
-function MainFaqs() {
+function FAQs() {
   const [open, setOpen] = useState(1);
 
   return (
@@ -69,16 +69,13 @@ function MainFaqs() {
             src="images/20945728.png"
             className="px-10 object-cover"
             width="500px"
-            alt="iranGameNet Faqs سوالات متداول"
+            alt="Iran GameCenter FAQs سوالات متداول"
           />
         </div>
       </div>
     </div>
   );
 }
-
-export default MainFaqs;
-
 function AccordionItem({ title, text, setOpen, open, id }) {
   const isOpen = id === open;
   const active = "bg-gradient-to-r from-primary to-secondary border-none";
@@ -111,3 +108,5 @@ function AccordionItem({ title, text, setOpen, open, id }) {
     </div>
   );
 }
+
+export default FAQs;
