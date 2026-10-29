@@ -1,38 +1,26 @@
-import { Link } from "react-router-dom";
-import ReactTimeAgo from "react-time-ago";
-import {
-  BookOpenIcon,
-  BookmarkIcon,
-  ClockIcon,
-  EyeIcon,
-  HeartIcon,
-} from "@heroicons/react/24/outline";
+import { BookOpenIcon } from "@heroicons/react/24/outline";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
-import LazyLoad from "react-lazyload";
-import { Rating } from "@mui/material";
-import { Tooltip } from "react-tooltip";
-
-type SliderCardItem = {
-  id: string | number;
-  title: string;
-  image: string;
-  author: string;
-  date: string;
-  description: string;
-  views: number;
-  rating?: number | string;
-  like?: number | string;
-  save?: number | string;
-};
+import Card from "./Card";
+import type { Game, GameCenter } from "../types/game.types";
+import type { News } from "../types/news.types";
+import { ReactNode } from "react";
 
 type SliderCardsProps = {
-  arr: SliderCardItem[];
-  categ: string;
-  type?: string;
+  data: Array<Game | News | GameCenter>;
+  type?: sliderCardsType;
+  extraSlide?: ReactNode;
 };
-
-export default function SliderCards({ arr, categ, type = "news" }: SliderCardsProps) {
+export enum sliderCardsType {
+  News = "خبر",
+  Games = "بازی",
+  GameCenters = "گیم نت",
+}
+export default function SliderCards({
+  data,
+  type = sliderCardsType.Games,
+  extraSlide,
+}: SliderCardsProps) {
   const pagination = {
     el: ".swiper-pagination",
     type: "bullets" as const,
@@ -40,7 +28,7 @@ export default function SliderCards({ arr, categ, type = "news" }: SliderCardsPr
     bulletClass: "bg-gray-600",
     bulletActiveClass: "!w-5 sm:w-6 !bg-gray-400",
     lockClass: "hidden",
-    renderBullet: function (index, className) {
+    renderBullet: function (index: number, className: string) {
       return `<div class="w-2 h-2 sm:w-3 sm:h-3  rounded-full cursor-pointer ${className} transition-all ease-linear"></div>`;
     },
   };
@@ -71,107 +59,14 @@ export default function SliderCards({ arr, categ, type = "news" }: SliderCardsPr
       modules={[Navigation, Pagination]}
       className="mt-5"
     >
-      {arr.map((n) => {
+      {data.map((item) => {
         return (
-          <SwiperSlide key={n.id} className="w-full px-5 md:px-0 md:w-[22rem]">
-            <div className="relative">
-              <Link to={type === "gamenet" ? `/gameNet/${n.id}` : `/games/page/${n.id}`}>
-                <LazyLoad>
-                  <img
-                    loading="lazy"
-                    src={n.image}
-                    className="w-full h-60 object-cover rounded-xl hover:brightness-[.8] transition-all ease-linear bg-gray-400"
-                    alt={`${categ} ${n.title} `}
-                  />
-                </LazyLoad>
-              </Link>
-              <div className="flex absolute left-2 -bottom-2  gap-5">
-                <button
-                  // onClick={}
-                  title={String(n.like ?? "")}
-                  className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-red-500 transition-all ease-linear"
-                >
-                  <HeartIcon
-                    className={`w-5 h-5 group-hover:fill-red-400/30 transition-all ease-linear `}
-                  />
-                </button>
-                <button
-                  title={String(n.save ?? "")}
-                  className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-gray-400 transition-all ease-linear"
-                >
-                  <BookmarkIcon className="w-5 h-5 group-hover:fill-gray-400/30 transition-all ease-linear" />
-                </button>
-              </div>
-            </div>
-            <div className="flex flex-col gap-1 pt-3">
-              <div className="flex justify-between gap-2 items-center text-sm pr-1">
-                <Link to="/" className="inline-flex gap-1 items-center">
-                  <img
-                    loading="lazy"
-                    src="/images/icon/header/Grand-Theft-Auto-San-Andreas.jpg"
-                    className="w-7 h-7 rounded-full object-cover"
-                    alt={`${n.author} سازنده ${categ} `}
-                  />
-                  <p className="hover:underline">{n.author}</p>
-                </Link>
-                <div className="text-gray-400 inline-flex gap-2">
-                  <ReactTimeAgo
-                    date={new Date(n.date)}
-                    locale="fa-IR"
-                    timeStyle="round"
-                  />
-                  <ClockIcon className="w-4 text-gray-500" />
-                </div>
-              </div>
-              <h2 className="text-lg font-PeydaMed w-11/12 ">
-                <Link to={`/news/${n.id}`}>{n.title}</Link>
-              </h2>
-              <p className="text-gray-300 text-xs line-clamp-3">
-                {n.description}
-              </p>
-              <div className="pt-2">
-                <div
-                  className="text-gray-400 inline-flex items-center text-xs gap-1 justify-between w-full"
-                  dir="ltr"
-                >
-                  {type == "gamenet" ? (
-                    <>
-                      <Tooltip
-                        id="my-tooltip"
-                        style={{
-                          backgroundColor: "rgb(43 55 72)",
-                          borderRadius: "10px",
-                          color: "#FFF",
-                        }}
-                      />
-                      <div
-                        data-tooltip-id="my-tooltip"
-                        data-tooltip-content={String(n.rating ?? 0)}
-                      >
-                        <Rating
-                          name="half-rating-read"
-                          defaultValue={+n.rating}
-                          precision={0.1}
-                          size="small"
-                          readOnly
-                        />
-                      </div>
-                    </>
-                  ) : (
-                    <Link to="/games" className="text-red-500 pl-2">
-                      اکشن
-                    </Link>
-                  )}
-                  <div className="inline-flex items-center gap-2">
-                    <EyeIcon className="w-4 -mr-1" />
-                    {n.views.toLocaleString()} بازدید
-                  </div>
-                </div>
-              </div>
-            </div>
+          <SwiperSlide key={item.id}>
+            <Card type={type} data={item} />
           </SwiperSlide>
         );
       })}
+      {extraSlide && <SwiperSlide>{extraSlide}</SwiperSlide>}
       <div className="flex gap-3 w-full justify-center items-center py-2 pt-5">
         <button className="prev opacity-60 hover:opacity-80 transition-opacity ease-in-out">
           <svg
@@ -245,9 +140,7 @@ function LoaderCard({ c }: { c?: string }) {
         </div>
         <div className="pt-2">
           <div className="text-gray-400 inline-flex items-center text-xs gap-1">
-            <div
-              className="text-red-500 ml-2 bg-gray-400 w-7 h-3 animate-pulse rounded-sm"
-            ></div>
+            <div className="text-red-500 ml-2 bg-gray-400 w-7 h-3 animate-pulse rounded-sm"></div>
             <BookOpenIcon className="w-4 text-gray-400 animate-pulse" />
             <div className="bg-gray-400 w-16 h-3 animate-pulse rounded-sm"></div>
           </div>
