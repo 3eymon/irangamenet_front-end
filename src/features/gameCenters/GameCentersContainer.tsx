@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "./Header";
 import Main from "./Main";
 
-function GameNetsContainer() {
+function GameCentersContainer() {
   const [destination, setDestination] = useState([]);
   const [filter, setFilter] = useState("");
   return (
@@ -17,4 +17,4 @@ function GameNetsContainer() {
   );
 }
 
-export default GameNetsContainer;
+export default GameCentersContainer;

@@ -2,30 +2,34 @@ import { Link } from "react-router-dom";
 import { ButtonBase } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { ArrowLongLeftIcon, BookOpenIcon } from "@heroicons/react/24/outline";
-function BestIGNGameNets({ gameNets, isLoading }) {
-  const bestGameNets = gameNets.sort((a, b) => b.rating - a.rating).slice(0, 4);
+function BestIGNGameCenters({ gameCenters, isLoading }) {
+  const bestGameCenters = [...gameCenters]
+    .sort((a, b) => Number(b.rating) - Number(a.rating))
+    .slice(0, 4);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 lg:gap-6 gap-20 px-10 lg:px-0 justify-items-center sm:justify-items-stretch my-10">
       {isLoading ? (
         <>
-          <BestIGNGameNetCardLoader />
-          <BestIGNGameNetCardLoader />
-          <BestIGNGameNetCardLoader />
-          <BestIGNGameNetCardLoader />
+          <BestIGNGameCenterCardLoader />
+          <BestIGNGameCenterCardLoader />
+          <BestIGNGameCenterCardLoader />
+          <BestIGNGameCenterCardLoader />
         </>
       ) : (
-        bestGameNets.map((gn, i) => <BestIGNGameNetCard key={i} item={gn} />)
+        bestGameCenters.map((gameCenter) => (
+          <BestIGNGameCenterCard key={gameCenter.id} item={gameCenter} />
+        ))
       )}
     </div>
   );
 }
-function BestIGNGameNetCard({ item }) {
+function BestIGNGameCenterCard({ item }) {
   return (
     <div className="group">
       <div className="flex justify-between items-center pb-2">
         <div>
           <h2 className="text-xl font-PeydaMed p-0 m-0">
-            <Link to={`${item.id}`}>{item.title}</Link>
+            <Link to={`/gameCenter/${item.id}`}>{item.title}</Link>
           </h2>
           <div className="text-xs text-gray-400 flex gap-2 items-center">
             <BookOpenIcon className="w-12" />
@@ -33,12 +37,12 @@ function BestIGNGameNetCard({ item }) {
           </div>
         </div>
         <ButtonBase className="!text-white ring-1 ring-gray-500 !p-2 !rounded-lg">
-          <Link to={`${item.id}`}>
+          <Link to={`/gameCenter/${item.id}`}>
             <ArrowLongLeftIcon className="w-5 mx-auto" />
           </Link>
         </ButtonBase>
       </div>
-      <Link to={`${item.id}`} className="h-full w-full">
+      <Link to={`/gameCenter/${item.id}`} className="h-full w-full">
         <img
           src={item.image}
           alt={`${item.titl} عکس  `}
@@ -49,7 +53,7 @@ function BestIGNGameNetCard({ item }) {
     </div>
   );
 }
-function BestIGNGameNetCardLoader() {
+function BestIGNGameCenterCardLoader() {
   return (
     <div className="group">
       <div className="flex justify-between items-center pb-2">
@@ -74,4 +78,4 @@ function BestIGNGameNetCardLoader() {
   );
 }
 
-export default BestIGNGameNets;
+export default BestIGNGameCenters;

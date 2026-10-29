@@ -9,10 +9,10 @@ import Layout from "./ui/Layout";
 import News from "./pages/News";
 import SinglePage from "./features/games/SinglePage";
 import { Toaster } from "react-hot-toast";
-import GameNets from "./pages/GameNets";
+import GameCenters from "./pages/GameCenters";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
-import SingleGameNets from "./features/gameNets/SingleGameNets";
+import SingleGameCenter from "./features/gameCenters/SingleGameCenter";
 import NotFound from "./ui/NotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "./ui/Navbar";
@@ -48,8 +48,8 @@ function App() {
                 <Route path="check-otp" element={<CheckOTP />} />
                 <Route path="complete-profile" element={<CompleteProfile />} />
               </Route>
-              <Route path="gameNet" element={<GameNets />} />
-              <Route path="gameNet/:id" element={<SingleGameNets />} />
+              <Route path="game-centers" element={<GameCenters />} />
+              <Route path="game-centers/:id" element={<SingleGameCenter />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

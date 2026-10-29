@@ -28,7 +28,7 @@ function Header({ setFilter, destination, setDestination }) {
     <div className="relative 2xl:h-[40rem] xl:h-[32rem]  sm:h-[30rem] h-72  rounded-2xl overflow-hidden">
       <img
         className="w-full h-full object-cover"
-        src="/images/gamenets/cover.jpg"
+        src="/images/gameCenters/cover.jpg"
         alt="گیم نت های ایران / ایران گیم نت"
       />
       <div className=" absolute w-full bottom-10 left-0 righ-0 px-5">

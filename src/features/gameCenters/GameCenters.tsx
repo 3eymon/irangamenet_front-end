@@ -1,7 +1,8 @@
 import SliderCards from "../../ui/SliderCards";
 import { SeeAll } from "../../pages/News";
 import { useState } from "react";
-function GameNets({ gameNets }) {
+import type { GameCenter } from "../../types/game.types";
+function GameCenters({ gameCenters }: { gameCenters: GameCenter[] }) {
   const [citySelected, setCitySelected] = useState("همه");
   const topCity = [
     { id: 1, title: "همه" },
@@ -15,13 +16,13 @@ function GameNets({ gameNets }) {
   const notActive =
     "px-4 py-1.5  hover:bg-white/10 transition-colors rounded-lg";
   if (citySelected !== "همه") {
-    gameNets = gameNets.filter((gn) => gn.city === citySelected);
+    gameCenters = gameCenters.filter((gameCenter) => gameCenter.city === citySelected);
   }
   return (
     <>
       <SeeAll
         title="  گیم نت ها "
-        link={`bestGameNets${citySelected != "همه" ? "/" + citySelected : ""}`}
+        link={`bestGameCenters${citySelected != "همه" ? "/" + citySelected : ""}`}
         color="#d42222"
       />
       <div className="flex items-center gap-5 text-sm p-2">
@@ -35,9 +36,9 @@ function GameNets({ gameNets }) {
           </button>
         ))}
       </div>
-      <SliderCards type="gamenet" arr={gameNets.slice(0, 4)} categ="عکس" />
+      <SliderCards type="gameCenter" data={gameCenters.slice(0, 4)} />
     </>
   );
 }
 
-export default GameNets;
+export default GameCenters;
