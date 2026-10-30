@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
-import Register from "./pages/register";
 import About from "./pages/about";
 import Games from "./pages/games";
 import Streamers from "./pages/streamers";
@@ -34,10 +33,8 @@ function App() {
               <Route index element={<Home />} />
               <Route path="news" element={<News />} />
               <Route path="news/:id" element={<SingleNews />} />
-
-              <Route path="register" element={<Register />} />
               <Route path="about" element={<About />} />
-              
+
               <Route path="games" element={<Games />} />
               <Route path="games/:id" element={<SinglePage />} />
 
