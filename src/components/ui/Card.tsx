@@ -63,25 +63,27 @@ export default function Card({
         </div>
       </div>
       <div className="flex flex-col gap-1 pt-3">
-        <div className="flex justify-between gap-2 items-center text-sm pr-1">
-          <Link to="/" className="inline-flex gap-1 items-center">
-            <img
-              loading="lazy"
-              src="/images/icon/header/Grand-Theft-Auto-San-Andreas.jpg"
-              className="w-7 h-7 rounded-full object-cover"
-              alt={`${author} سازنده ${category ?? "محتوا"}`}
-            />
-            <p className="hover:underline">{data.author}</p>
-          </Link>
-          <div className="text-gray-400 inline-flex gap-2">
-            <ReactTimeAgo
-              date={new Date(data.date)}
-              locale="fa-IR"
-              timeStyle="round"
-            />
-            <ClockIcon className="w-4 text-gray-500" />
+        {type !== sliderCardsType.GameCenters && (
+          <div className="flex justify-between gap-2 items-center text-sm pr-1">
+            <Link to="/" className="inline-flex gap-1 items-center">
+              <img
+                loading="lazy"
+                src="/images/icon/header/Grand-Theft-Auto-San-Andreas.jpg"
+                className="w-7 h-7 rounded-full object-cover"
+                alt={`${author} سازنده ${category ?? "محتوا"}`}
+              />
+              <p className="hover:underline">{data.author}</p>
+            </Link>
+            <div className="text-gray-400 inline-flex gap-2">
+              <ReactTimeAgo
+                date={new Date(data.date)}
+                locale="fa-IR"
+                timeStyle="round"
+              />
+              <ClockIcon className="w-4 text-gray-500" />
+            </div>
           </div>
-        </div>
+        )}
         <h2 className="text-lg font-PeydaMed w-11/12 ">
           <Link to={detailPath}>{data.title}</Link>
         </h2>

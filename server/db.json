@@ -1242,50 +1242,50 @@
   ],
   "home": {
     "popularNews": [
-      {
-        "id": "6786756",
-        "title": "رشد صنعت بازی‌های موبایل در سال 2024",
-        "author": "وبسایت گیم‌اینداستری",
-        "author_image": "https://example.com/images/author-gameindustry.jpg",
-        "views": 14000,
-        "date": "2024-05-15 11:10:20",
-        "description": "صنعت بازی‌های موبایل در سال 2024 رشد چشمگیری داشته است. با افزایش تعداد کاربران و بهبود فناوری‌های موبایل، بازار بازی‌های موبایل به یکی از پر درآمدترین بخش‌های صنعت بازی تبدیل شده است.",
-        "link": "https://gameindustry.com/mobile-games-growth-2024",
-        "image": "/images/news/mobile-games.webp"
-      },
-      {
-        "id": "61883218",
-        "title": "بازی‌های واقعیت مجازی: آینده صنعت گیم",
-        "author": "مجله واقعیت مجازی",
-        "author_image": "https://example.com/images/author-vrmagazine.jpg",
-        "views": 11500,
-        "date": "2024-05-22 12:10:20 am",
-        "description": "بازی‌های واقعیت مجازی به عنوان آینده صنعت گیم شناخته می‌شوند. با پیشرفت‌های فناوری در حوزه واقعیت مجازی، این بازی‌ها تجربه‌ای بی‌نظیر و همه‌جانبه برای کاربران فراهم می‌کنند.",
-        "link": "https://vrmagazine.com/future-of-vr-games",
-        "image": "/images/news/آینده-صنعت-بازی.jpg"
-      },
-      {
-        "id": "61458118",
-        "title": "بهترین بازی‌های سال 2024 معرفی شدند",
-        "author": "وبسایت گیم‌آواردز",
-        "author_image": "https://example.com/images/author-gameawards.jpg",
-        "views": 19500,
-        "date": "2024-05-23 11:24:00",
-        "description": "در مراسم گیم‌آواردز بهترین بازی‌های سال 2024 معرفی شدند. این بازی‌ها با نوآوری‌های خود توانستند جوایز متعددی را کسب کنند و توجه گیمرها و منتقدان را به خود جلب کنند.",
-        "link": "https://gameawards.com/best-games-2024",
-        "image": "/images/news/best-games-of-the-2024.jpg"
-      },
-      {
-        "id": "11",
-        "title": "تکنولوژی‌های جدید در صنعت بازی‌سازی",
-        "author": "خبرگزاری تکنولوژی گیم",
-        "author_image": "https://example.com/images/author-gametechnews.jpg",
-        "views": 16000,
-        "date": "2024-05-23 11:00:20",
-        "description": "در این مقاله به بررسی تکنولوژی‌های جدید در صنعت بازی‌سازی پرداخته‌ایم. این تکنولوژی‌ها شامل هوش مصنوعی پیشرفته، گرافیک واقع‌گرایانه و ابزارهای توسعه بازی‌های چندنفره آنلاین می‌باشند.",
-        "link": "https://gametechnews.com/new-tech-in-gaming",
-        "image": "images/news/new-tech-in-gaming.jpeg"
-      }
+    {
+      "id": "6786756",
+      "title": "رشد صنعت بازی‌های موبایل در سال 2024",
+      "author": "وبسایت گیم‌اینداستری",
+      "author_image": "https://example.com/images/author-gameindustry.jpg",
+      "views": 14000,
+      "date": "2024-05-15 11:10:20",
+      "description": "صنعت بازی‌های موبایل در سال 2024 رشد چشمگیری داشته است. با افزایش تعداد کاربران و بهبود فناوری‌های موبایل، بازار بازی‌های موبایل به یکی از پر درآمدترین بخش‌های صنعت بازی تبدیل شده است.",
+      "link": "https://gameindustry.com/mobile-games-growth-2024",
+      "image": "/images/news/mobile-games.webp"
+    },
+    {
+      "id": "61883218",
+      "title": "بازی‌های واقعیت مجازی: آینده صنعت گیم",
+      "author": "مجله واقعیت مجازی",
+      "author_image": "https://example.com/images/author-vrmagazine.jpg",
+      "views": 11500,
+      "date": "2024-05-22 12:10:20 am",
+      "description": "بازی‌های واقعیت مجازی به عنوان آینده صنعت گیم شناخته می‌شوند. با پیشرفت‌های فناوری در حوزه واقعیت مجازی، این بازی‌ها تجربه‌ای بی‌نظیر و همه‌جانبه برای کاربران فراهم می‌کنند.",
+      "link": "https://vrmagazine.com/future-of-vr-games",
+      "image": "/images/news/آینده-صنعت-بازی.jpg"
+    },
+    {
+      "id": "61458118",
+      "title": "بهترین بازی‌های سال 2024 معرفی شدند",
+      "author": "وبسایت گیم‌آواردز",
+      "author_image": "https://example.com/images/author-gameawards.jpg",
+      "views": 19500,
+      "date": "2024-05-23 11:24:00",
+      "description": "در مراسم گیم‌آواردز بهترین بازی‌های سال 2024 معرفی شدند. این بازی‌ها با نوآوری‌های خود توانستند جوایز متعددی را کسب کنند و توجه گیمرها و منتقدان را به خود جلب کنند.",
+      "link": "https://gameawards.com/best-games-2024",
+      "image": "/images/news/best-games-of-the-2024.jpg"
+    },
+    {
+      "id": "11",
+      "title": "تکنولوژی‌های جدید در صنعت بازی‌سازی",
+      "author": "خبرگزاری تکنولوژی گیم",
+      "author_image": "https://example.com/images/author-gametechnews.jpg",
+      "views": 16000,
+      "date": "2024-05-23 11:00:20",
+      "description": "در این مقاله به بررسی تکنولوژی‌های جدید در صنعت بازی‌سازی پرداخته‌ایم. این تکنولوژی‌ها شامل هوش مصنوعی پیشرفته، گرافیک واقع‌گرایانه و ابزارهای توسعه بازی‌های چندنفره آنلاین می‌باشند.",
+      "link": "https://gametechnews.com/new-tech-in-gaming",
+      "image": "images/news/new-tech-in-gaming.jpeg"
+    }
     ],
     "newestGames": [
       {
@@ -1473,7 +1473,96 @@
         "category": ["اکشن", "action"]
       }
     ],
-    "bestStreamers": [],
+    "bestStreamers": [
+    {
+      "id": 1,
+      "name": "میا پلیز",
+      "username": "miaplays",
+      "platform": "youtube",
+      "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
+      "followers": "863K",
+      "category": "Gaming / Fortnite / Vlog",
+      "isLive": false,
+      "link": "https://www.youtube.com/@miaplays"
+    },
+    {
+      "id": 2,
+      "name": "آریا کئوکسر",
+      "username": "KEOXER",
+      "platform": "youtube",
+      "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
+      "followers": "817K",
+      "category": "Gaming / Challenges / Just Chatting",
+      "isLive": false,
+      "link": "https://www.youtube.com/@AriaKeoXer"
+    },
+    {
+      "id": 3,
+      "name": "سام صابری",
+      "username": "SamSaberi",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/e3eff532-8c88-4112-860d-68597489529a-profile_image-300x300.png",
+      "followers": "360K",
+      "category": "Call of Duty / Warzone / Just Chatting",
+      "isLive": false,
+      "link": "https://www.twitch.tv/samsaberi"
+    },
+    {
+      "id": 4,
+      "name": "علی بیگزموگ",
+      "username": "Bigezmoge",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/c1f61b83-a0e5-4f97-89bf-b3e981830f7d-profile_image-300x300.png",
+      "followers": "290K",
+      "category": "Just Chatting / DayZ / Call of Duty",
+      "isLive": false,
+      "link": "https://www.twitch.tv/bigezmoge"
+    },
+    {
+      "id": 5,
+      "name": "امیر ایزد",
+      "username": "AmirEyZed",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/64b4f640-7bdd-47dd-b0c3-7e5bde6f7701-profile_image-300x300.png",
+      "followers": "149K",
+      "category": "Just Chatting / Podcast / Gaming",
+      "isLive": false,
+      "link": "https://www.twitch.tv/amireyzed"
+    },
+    {
+      "id": 6,
+      "name": "امیر فانتوم",
+      "username": "AmirPhanThom",
+      "platform": "twitch",
+      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/7688e414-dd44-409f-aaef-9ea346066cf8-profile_image-300x300.png",
+      "followers": "114K",
+      "category": "Dota 2 / Just Chatting",
+      "isLive": false,
+      "link": "https://www.twitch.tv/amirphanthom"
+    },
+    {
+      "id": 7,
+      "name": "ابوالفضل ایکس مستر",
+      "username": "AliXMaster",
+      "platform": "aparat",
+      "avatar": "https://www.aparat.com/public/avatar/ali_x_master.jpg",
+      "followers": "450K",
+      "category": "Minecraft / Shooter",
+      "isLive": false,
+      "link": "https://www.aparat.com/ali_x_master"
+    },
+    {
+      "id": 8,
+      "name": "مهدی بیزیکسر",
+      "username": "MahdiBizixer",
+      "platform": "aparat",
+      "avatar": "https://www.aparat.com/public/avatar/mahdi.bizixer.jpg",
+      "followers": "390K",
+      "category": "Minecraft / Simulation / Fun",
+      "isLive": false,
+      "link": "https://www.aparat.com/mahdi.bizixer"
+    }
+  ],
     "popularGameCenters": [
       {
         "id": 62345680,
@@ -1989,94 +2078,437 @@
         "decline": 1.6
       }
     ],
-    "streamers": [
+    "bestGameCenters": [
       {
-        "id": 1,
-        "name": "میا پلیز",
-        "username": "miaplays",
-        "platform": "youtube",
-        "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
-        "followers": "863K",
-        "category": "Gaming / Fortnite / Vlog",
-        "isLive": false,
-        "link": "https://www.youtube.com/@miaplays"
+        "id": 62345680,
+        "title": "گیم نت آریا",
+        "views": "1700",
+        "date": "2024-06-20",
+        "description": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه در شمال تهران.",
+        "image": "/images/gameCenters/6.jpg",
+        "like": 320,
+        "rating": 2,
+        "city": "تهران",
+        "save": 180,
+        "details": {
+          "images": [
+            "/images/AriaGame/1.webp",
+            "/images/AriaGame/2.webp",
+            "/images/AriaGame/3.jpg",
+            "/images/AriaGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت آریا",
+              "desc": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه، تجربه‌ای به‌یادماندنی را برای گیمرها فراهم می‌کند."
+            },
+            "main": {
+              "title": "تجهیزات و بازی‌ها",
+              "desc": "بیش از 30 سیستم با سخت‌افزارهای قدرتمند و اینترنت پرسرعت."
+            },
+            "about": {
+              "text": "آریا در منطقه شمال تهران واقع شده و به راحتی قابل دسترسی است.",
+              "tell": "021-99887766",
+              "email": "info@ariagame.net",
+              "socialMedia": {
+                "instagram": "@aria_game",
+                "twitter": "@aria_game",
+                "telegram": "@aria_game"
+              }
+            },
+            "amenities": [
+              {
+                "icon": "",
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "icon": "",
+                "type": "سیستم‌های قوی",
+                "description": "سیستم‌های گیمینگ قدرتمند.",
+                "typeEnglish": "Powerful Systems"
+              },
+              {
+                "icon": "",
+                "type": "محیط دوستانه",
+                "description": "فضایی مناسب برای بازی و تفریح.",
+                "typeEnglish": "Friendly Environment"
+              }
+            ],
+            "geoLocation": { "x": 35.8045, "y": 51.3988 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت آریا در منطقه شمال تهران واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "تهران، خیابان ولیعصر، نبش خیابان شریعتی، پلاک 789"
+            }
+          },
+          "comments": [
+            {
+              "user": "محمد",
+              "comment": "محیط دوستانه و تجهیزات عالی.",
+              "imageProfile": "/images/profiles/mohammad.jpg"
+            },
+            {
+              "user": "الهام",
+              "comment": "بازی‌های جدید و متنوع.",
+              "imageProfile": "/images/profiles/elham.jpg"
+            },
+            {
+              "user": "امیر",
+              "comment": "دسترسی آسان و فضای راحت.",
+              "imageProfile": "/images/profiles/amir.jpg"
+            }
+          ]
+        }
       },
       {
-        "id": 2,
-        "name": "آریا کئوکسر",
-        "username": "KEOXER",
-        "platform": "youtube",
-        "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
-        "followers": "817K",
-        "category": "Gaming / Challenges / Just Chatting",
-        "isLive": false,
-        "link": "https://www.youtube.com/@AriaKeoXer"
+        "id": 62345681,
+        "title": "گیم نت مهتاب",
+        "views": "1300",
+        "date": "2024-06-15",
+        "description": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز در شرق تهران.",
+        "image": "/images/gameCenters/5.webp",
+        "like": 270,
+        "rating": "3.5",
+        "city": "تهران",
+        "save": 140,
+        "details": {
+          "images": [
+            "/images/MahtabGame/1.webp",
+            "/images/MahtabGame/2.webp",
+            "/images/MahtabGame/3.jpg",
+            "/images/MahtabGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت مهتاب",
+              "desc": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز، محیطی مناسب برای بازی‌های آنلاین و آفلاین ارائه می‌دهد."
+            },
+            "main": {
+              "title": "تجهیزات و امکانات",
+              "desc": "سیستم‌های جدید و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
+            },
+            "about": {
+              "text": "مهتاب در منطقه شرق تهران قرار دارد و به راحتی قابل دسترسی است.",
+              "tell": "021-55443322",
+              "email": "info@mahtabgame.net",
+              "socialMedia": {
+                "instagram": "@mahtab_game",
+                "twitter": "@mahtab_game",
+                "telegram": "@mahtab_game"
+              }
+            },
+            "amenities": [
+              {
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "type": "فضای آرام",
+                "description": "محیطی آرام و راحت برای بازی.",
+                "typeEnglish": "Calm Space"
+              },
+              {
+                "type": "سیستم‌های به‌روز",
+                "description": "سیستم‌های گیمینگ جدید.",
+                "typeEnglish": "Updated Systems"
+              }
+            ],
+            "geoLocation": { "x": 35.7101, "y": 51.492 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت مهتاب در منطقه شرق تهران واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "تهران، خیابان دماوند، نبش خیابان پیروزی، پلاک 321"
+            }
+          },
+          "comments": [
+            {
+              "user": "فاطمه",
+              "comment": "محیط آرام و سیستم‌های خوب.",
+              "imageProfile": "/images/profiles/fatemeh.jpg"
+            },
+            {
+              "user": "مهدی",
+              "comment": "اینترنت عالی و بازی‌های جدید.",
+              "imageProfile": "/images/profiles/mahdi.jpg"
+            },
+            {
+              "user": "سارا",
+              "comment": "فضای راحت و دوستانه.",
+              "imageProfile": "/images/profiles/sara.jpg"
+            }
+          ]
+        }
       },
       {
-        "id": 3,
-        "name": "سام صابری",
-        "username": "SamSaberi",
-        "platform": "twitch",
-        "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/e3eff532-8c88-4112-860d-68597489529a-profile_image-300x300.png",
-        "followers": "360K",
-        "category": "Call of Duty / Warzone / Just Chatting",
-        "isLive": false,
-        "link": "https://www.twitch.tv/samsaberi"
+        "id": 62345682,
+        "title": "گیم نت البرز",
+        "views": "1900",
+        "date": "2024-06-10",
+        "description": "گیم نت البرز با امکانات فوق‌العاده و تجهیزات پیشرفته در کرج.",
+        "image": "/images/gameCenters/4.jpg",
+        "like": 350,
+        "rating": "3.7",
+        "city": "کرج",
+        "save": 190,
+        "details": {
+          "images": [
+            "/images/AlborzGame/1.webp",
+            "/images/AlborzGame/2.webp",
+            "/images/AlborzGame/3.jpg",
+            "/images/AlborzGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت البرز",
+              "desc": "گیم نت البرز در کرج با امکانات فوق‌العاده و تجهیزات پیشرفته، تجربه‌ای متفاوت را برای گیمرها فراهم می‌کند."
+            },
+            "main": {
+              "title": "تجهیزات و بازی‌ها",
+              "desc": "سیستم‌های قدرتمند و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
+            },
+            "about": {
+              "text": "البرز در مرکز شهر کرج قرار دارد و به راحتی قابل دسترسی است.",
+              "tell": "026-12345678",
+              "email": "info@alborzgame.net",
+              "socialMedia": {
+                "instagram": "@alborz_game",
+                "twitter": "@alborz_game",
+                "telegram": "@alborz_game"
+              }
+            },
+            "amenities": [
+              {
+                "icon": "",
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "icon": "",
+                "type": "سیستم‌های قوی",
+                "description": "سیستم‌های گیمینگ قدرتمند.",
+                "typeEnglish": "Powerful Systems"
+              },
+              {
+                "icon": "",
+                "type": "محیط دوستانه",
+                "description": "فضایی مناسب برای بازی و تفریح.",
+                "typeEnglish": "Friendly Environment"
+              }
+            ],
+            "geoLocation": { "x": 35.84, "y": 50.9391 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت البرز در مرکز شهر کرج واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "کرج، خیابان اصلی، نبش خیابان فرعی، پلاک 654"
+            }
+          },
+          "comments": [
+            {
+              "user": "حسین",
+              "comment": "فضای بسیار مدرن و تجهیزات عالی.",
+              "imageProfile": "/images/profiles/hossein2.jpg"
+            },
+            {
+              "user": "زهرا",
+              "comment": "بازی‌های متنوع و جذاب.",
+              "imageProfile": "/images/profiles/zahra2.jpg"
+            },
+            {
+              "user": "سعید",
+              "comment": "پارکینگ اختصاصی واقعا به کار میاد.",
+              "imageProfile": "/images/profiles/saeid2.jpg"
+            }
+          ]
+        }
       },
       {
-        "id": 4,
-        "name": "علی بیگزموگ",
-        "username": "Bigezmoge",
-        "platform": "twitch",
-        "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/c1f61b83-a0e5-4f97-89bf-b3e981830f7d-profile_image-300x300.png",
-        "followers": "290K",
-        "category": "Just Chatting / DayZ / Call of Duty",
-        "isLive": false,
-        "link": "https://www.twitch.tv/bigezmoge"
+        "id": 62345683,
+        "title": "گیم نت ستاره",
+        "views": "1600",
+        "date": "2024-06-05",
+        "description": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت در جنوب تهران.",
+        "image": "/images/gameCenters/1.jpg",
+        "like": 310,
+        "rating": "4.5",
+        "city": "تهران",
+        "save": 160,
+        "details": {
+          "images": [
+            "/images/SetarehGame/1.webp",
+            "/images/SetarehGame/2.webp",
+            "/images/SetarehGame/3.jpg",
+            "/images/SetarehGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت ستاره",
+              "desc": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت، تجربه‌ای متفاوت را برای گیمرها فراهم می‌کند."
+            },
+            "main": {
+              "title": "تجهیزات و امکانات",
+              "desc": "سیستم‌های جدید و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
+            },
+            "about": {
+              "text": "ستاره در منطقه جنوب تهران قرار دارد و به راحتی قابل دسترسی است.",
+              "tell": "021-55443322",
+              "email": "info@setarehgame.net",
+              "socialMedia": {
+                "instagram": "@setareh_game",
+                "twitter": "@setareh_game",
+                "telegram": "@setareh_game"
+              }
+            },
+            "amenities": [
+              {
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "type": "فضای آرام",
+                "description": "محیطی آرام و راحت برای بازی.",
+                "typeEnglish": "Calm Space"
+              },
+              {
+                "type": "سیستم‌های به‌روز",
+                "description": "سیستم‌های گیمینگ جدید.",
+                "typeEnglish": "Updated Systems"
+              }
+            ],
+            "geoLocation": { "x": 35.6731, "y": 51.3245 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت ستاره در منطقه جنوب تهران واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "تهران، خیابان ولیعصر، نبش خیابان شریعتی، پلاک 123"
+            }
+          },
+          "comments": [
+            {
+              "user": "محمد",
+              "comment": "محیط دوستانه و تجهیزات عالی.",
+              "imageProfile": "/images/profiles/mohammad2.jpg"
+            },
+            {
+              "user": "الهام",
+              "comment": "بازی‌های جدید و متنوع.",
+              "imageProfile": "/images/profiles/elham2.jpg"
+            },
+            {
+              "user": "امیر",
+              "comment": "دسترسی آسان و فضای راحت.",
+              "imageProfile": "/images/profiles/amir2.jpg"
+            }
+          ]
+        }
       },
       {
-        "id": 5,
-        "name": "امیر ایزد",
-        "username": "AmirEyZed",
-        "platform": "twitch",
-        "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/64b4f640-7bdd-47dd-b0c3-7e5bde6f7701-profile_image-300x300.png",
-        "followers": "149K",
-        "category": "Just Chatting / Podcast / Gaming",
-        "isLive": false,
-        "link": "https://www.twitch.tv/amireyzed"
-      },
-      {
-        "id": 6,
-        "name": "امیر فانتوم",
-        "username": "AmirPhanThom",
-        "platform": "twitch",
-        "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/7688e414-dd44-409f-aaef-9ea346066cf8-profile_image-300x300.png",
-        "followers": "114K",
-        "category": "Dota 2 / Just Chatting",
-        "isLive": false,
-        "link": "https://www.twitch.tv/amirphanthom"
-      },
-      {
-        "id": 7,
-        "name": "ابوالفضل ایکس مستر",
-        "username": "AliXMaster",
-        "platform": "aparat",
-        "avatar": "https://www.aparat.com/public/avatar/ali_x_master.jpg",
-        "followers": "450K",
-        "category": "Minecraft / Shooter",
-        "isLive": false,
-        "link": "https://www.aparat.com/ali_x_master"
-      },
-      {
-        "id": 8,
-        "name": "مهدی بیزیکسر",
-        "username": "MahdiBizixer",
-        "platform": "aparat",
-        "avatar": "https://www.aparat.com/public/avatar/mahdi.bizixer.jpg",
-        "followers": "390K",
-        "category": "Minecraft / Simulation / Fun",
-        "isLive": false,
-        "link": "https://www.aparat.com/mahdi.bizixer"
+        "id": 62345678,
+        "title": "گیم نت ایران گیم",
+        "views": "1500",
+        "date": "2024-07-03",
+        "description": "یکی از بهترین گیم نت‌های تهران با تجهیزات به‌روز و محیطی دوستانه.",
+        "image": "/images/gameCenters/6.webp",
+        "like": 300,
+        "rating": "5",
+        "city": "تهران",
+        "save": 150,
+        "details": {
+          "images": [
+            "/images/IranGame/1.webp",
+            "/images/IranGame/2.webp",
+            "/images/IranGame/3.jpg",
+            "/images/IranGame/4.jpg"
+          ],
+          "completeExplanations": {
+            "header": {
+              "title": "معرفی گیم نت ایران گیم",
+              "desc": "گیم نت ایران گیم یکی از مجهزترین و محبوب‌ترین گیم نت‌های تهران است که با محیطی دوستانه و امکانات به‌روز، تجربه‌ای متفاوت را برای علاقه‌مندان به بازی‌های کامپیوتری فراهم می‌کند."
+            },
+            "main": {
+              "title": "تجهیزات و بازی‌ها",
+              "desc": "این گیم نت دارای بیش از 20 سیستم با سخت‌افزارهای قدرتمند، اینترنت پرسرعت و مجموعه‌ای از جدیدترین بازی‌های آنلاین و آفلاین است."
+            },
+            "about": {
+              "text": "ایران گیم در منطقه مرکزی تهران واقع شده و دسترسی آسانی دارد. این گیم نت همواره تلاش دارد تا با ارائه خدمات بهتر، رضایت مشتریان خود را جلب کند.",
+              "tell": "021-12345678",
+              "email": "info@irangame.net",
+              "socialMedia": {
+                "instagram": "@irangame_net",
+                "twitter": "@irangame_net",
+                "telegram": "@irangame_net"
+              }
+            },
+            "amenities": [
+              {
+                "type": "اینترنت پرسرعت",
+                "description": "اینترنت با سرعت بالا برای بازی‌های آنلاین.",
+                "typeEnglish": "High-Speed Internet"
+              },
+              {
+                "type": "سیستم‌های به‌روز",
+                "description": "سیستم‌های گیمینگ با سخت‌افزارهای جدید.",
+                "typeEnglish": "Updated Systems"
+              },
+              {
+                "type": "محیط دوستانه",
+                "description": "محیطی مناسب برای بازی و تفریح.",
+                "typeEnglish": "Friendly Environment"
+              }
+            ],
+            "geoLocation": { "x": 35.6892, "y": 51.389 }
+          },
+          "location": {
+            "header": {
+              "title": "موقعیت گیم نت",
+              "desc": "گیم نت ایران گیم در منطقه مرکزی تهران واقع شده است."
+            },
+            "main": {
+              "title": "آدرس",
+              "desc": "تهران، خیابان انقلاب، نبش خیابان حافظ، پلاک 123"
+            }
+          },
+          "comments": [
+            {
+              "user": "علی",
+              "comment": "محیط عالی و تجهیزات به‌روز. خیلی راضی بودم.",
+              "imageProfile": "/images/profiles/ali.jpg"
+            },
+            {
+              "user": "مینا",
+              "comment": "فضای دوستانه و کارکنان حرفه‌ای.",
+              "imageProfile": "/images/profiles/mina.jpg"
+            },
+            {
+              "user": "رضا",
+              "comment": "از بازی‌های متنوع و جدیدشان خیلی خوشم اومد.",
+              "imageProfile": "/images/profiles/reza.jpg"
+            }
+          ]
+        }
       }
     ]
   },

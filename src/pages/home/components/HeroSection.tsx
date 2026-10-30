@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import { NewspaperIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 import "swiper/css";
@@ -14,6 +14,8 @@ type NewsCardPreviewProps = {
   cards: News[];
   isLoading?: boolean;
 };
+
+import { SignalSlashIcon } from "@heroicons/react/24/outline";
 
 function NewsCardSkeleton() {
   return (
@@ -41,10 +43,54 @@ function NewsCardSkeleton() {
     </div>
   );
 }
+function NewsCardError() {
+  return (
+    <div
+      role="alert"
+      aria-label="خطا در دریافت خبر"
+      className="relative flex w-full select-none flex-col overflow-hidden rounded-xl border border-primary-400/10 bg-gradient-to-br from-primary-500/35 via-primary-900/80 to-[#0b0b11] p-3 shadow-lg shadow-black/20"
+    >
+      <div aria-hidden="true" className="flex flex-col opacity-40">
+        <div className="aspect-video h-32 w-full rounded-md bg-primary-400/10 sm:h-44 md:h-52" />
 
+        <div className="flex flex-col gap-3 pt-3">
+          <div className="h-3 w-3/4 rounded-sm bg-primary-200/10" />
+
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-1.5">
+              <div className="h-3 w-8 rounded-sm bg-primary-200/10" />
+              <div className="h-3 w-3 rounded-full bg-primary-200/10" />
+            </div>
+
+            <div className="flex items-center gap-2">
+              <div className="h-3 w-14 rounded-sm bg-primary-200/10" />
+              <div className="h-6 w-6 shrink-0 rounded-full bg-primary-300/10" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 backdrop-blur-[3px] bg-[radial-gradient(ellipse_at_50%_35%,rgba(255,255,255,0.12),transparent_65%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b0b11]/10 via-[#0b0b11]/40 to-[#0b0b11]/85"
+      />
+
+      <div className="absolute inset-x-3 top-3 flex h-32 items-center justify-center sm:h-44 md:h-52">
+        <SignalSlashIcon
+          className="h-10 w-10 text-primary-100/40 sm:h-12 sm:w-12"
+          aria-hidden="true"
+        />
+      </div>
+    </div>
+  );
+}
 function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
   const showSkeleton = isLoading && cards.length === 0;
-
+  const hasError = !isLoading && cards.length === 0;
   const pagination = {
     el: ".game-card-pagination",
     bulletClass:
@@ -54,11 +100,6 @@ function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
     renderBullet: (_index: number, className: string) =>
       `<span class="${className}"></span>`,
   };
-
-  if (!isLoading && cards.length === 0) {
-    return null;
-  }
-
   return (
     <div
       className="relative flex w-full items-center py-10 lg:py-0"
@@ -69,7 +110,7 @@ function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
       <Swiper
         effect="coverflow"
         grabCursor={!showSkeleton}
-        initialSlide={1}
+        initialSlide={0}
         centeredSlides
         slidesPerView={2}
         coverflowEffect={{
@@ -80,67 +121,77 @@ function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
           slideShadows: true,
         }}
         pagination={showSkeleton ? false : pagination}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper w-full max-w-[35rem] px-6"
+        autoplay={{ delay: 5_000 ,  }}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
+        className={`mySwiper w-full max-w-[35rem] px-6 ${hasError ? "pointer-events-none" : ""}`}
       >
-        {showSkeleton
+        {hasError
           ? Array.from({ length: 3 }, (_, index) => (
-              <SwiperSlide key={`skeleton-${index}`}>
-                <NewsCardSkeleton />
+              <SwiperSlide key={`error-${index}`}>
+                <NewsCardError />{" "}
               </SwiperSlide>
             ))
-          : cards.map((card) => (
-              <SwiperSlide key={card.id}>
-                <div className="flex w-full flex-col rounded-xl border border-primary-400/20 bg-gradient-to-br from-primary-500/35 via-primary-900/80 to-[#0b0b11]/95 p-3 shadow-lg shadow-black/20 backdrop-blur-[2px]">
-                  <Link to={`/news/${card.id}`} className="w-full">
-                    <img
-                      className="aspect-video h-32 w-full rounded-md object-cover sm:h-44 md:h-52 bg-primary-400/10"
-                      src={card.image}
-                      alt={card.title ?? ""}
-                      loading="lazy"
-                    />
-                  </Link>
-
-                  <div className="flex flex-col gap-3 pt-2">
-                    <Link to={`/news/${card.id}`} className="line-clamp-1 text-xs sm:text-sm">
-                      {card.title}
+          : showSkeleton
+            ? Array.from({ length: 3 }, (_, index) => (
+                <SwiperSlide key={`skeleton-${index}`}>
+                  <NewsCardSkeleton />
+                </SwiperSlide>
+              ))
+            : cards.map((card) => (
+                <SwiperSlide key={card.id}>
+                  <div className="flex w-full flex-col rounded-xl border border-primary-400/20 bg-gradient-to-br from-primary-500/35 via-primary-900/80 to-[#0b0b11]/95 p-3 shadow-lg shadow-black/20 backdrop-blur-[2px]">
+                    <Link to={`/news/${card.id}`} className="w-full">
+                      <img
+                        className="aspect-video h-32 w-full rounded-md object-cover sm:h-44 md:h-52 bg-primary-400/10"
+                        src={card.image}
+                        alt={card.title ?? ""}
+                        loading="lazy"
+                      />
                     </Link>
 
-                    <div className="flex items-center justify-between gap-2 text-[10px] text-gray-200 sm:text-[11px]">
-                      <span className="flex items-center gap-1">
-                        <span dir="ltr" className="tabular-nums">
-                          {formatCompactNumber(card.views)}
-                        </span>
-                        <EyeIcon className="w-3 shrink-0 sm:w-4" />
-                      </span>
+                    <div className="flex flex-col gap-3 pt-2">
+                      <Link
+                        to={`/news/${card.id}`}
+                        className="line-clamp-1 text-xs sm:text-sm"
+                      >
+                        {card.title}
+                      </Link>
 
-                      <div className="flex min-w-0 items-center gap-2">
-                        <span className="truncate text-xs font-medium text-white/80">
-                          {card.author}
+                      <div className="flex items-center justify-between gap-2 text-[10px] text-gray-200 sm:text-[11px]">
+                        <span className="flex items-center gap-1">
+                          <span dir="ltr" className="tabular-nums">
+                            {formatCompactNumber(card.views)}
+                          </span>
+                          <EyeIcon className="w-3 shrink-0 sm:w-4" />
                         </span>
 
-                        <div className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/5">
-                          {card.authorImage ? (
-                            <img
-                              src={card.authorImage}
-                              alt=""
-                              loading="lazy"
-                              className="h-full w-full object-cover"
-                            />
-                          ) : (
-                            <UserCircleIcon className="h-4 w-4 text-white/50" />
-                          )}
+                        <div className="flex min-w-0 items-center gap-2">
+                          <span className="truncate text-xs font-medium text-white/80">
+                            {card.author}
+                          </span>
+
+                          <div className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/5">
+                            {card.authorImage ? (
+                              <img
+                                src={card.authorImage}
+                                alt=""
+                                loading="lazy"
+                                className="h-full w-full object-cover"
+                              />
+                            ) : (
+                              <UserCircleIcon className="h-4 w-4 text-white/50" />
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))}
 
-        {!showSkeleton && (
-          <div className="game-card-pagination relative mt-4 flex justify-center gap-1" />
-        )}
+        <div
+          className={`game-card-pagination relative mt-4 flex justify-center gap-1 ${hasError ? "brightness-50 opacity-25" : ""}`}
+        />
       </Swiper>
     </div>
   );
@@ -156,10 +207,7 @@ function HeroSection({
     <>
       <div className="flex flex-col md:flex-row w-full h-full mt-8 sm:mt-28 px-4 z-10">
         <Texts />
-        <NewsCardPreview
-          isLoading={isLoading}
-          cards={data?.slice(0, 3) ?? []}
-        />
+        <NewsCardPreview isLoading={isLoading} cards={data ?? []} />
       </div>
     </>
   );
