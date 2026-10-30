@@ -1,4 +1,3 @@
-import React from "react";
 import { useMemo } from "react";
 import type { Producer } from "../../../types/ producer.types";
 import ChevronLeftIcon from "@heroicons/react/24/solid/ChevronLeftIcon";
@@ -20,7 +19,6 @@ function buildRows<T>(items: T[]): T[][] {
 function ProducerCard({ producer }: { producer: any }) {
   return (
     <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
-      {/* Icon + Name */}
       <div className="flex items-center gap-2.5 min-w-0">
         <Link to="#" className="shrink-0">
           {producer.icon ? (
@@ -48,7 +46,6 @@ function ProducerCard({ producer }: { producer: any }) {
         </div>
       </div>
 
-      {/* Stats */}
       <div className="flex flex-col gap-1 text-[10px] text-gray-300">
         <p>
           <span className="text-gray-200">کارکنان</span>
@@ -62,7 +59,6 @@ function ProducerCard({ producer }: { producer: any }) {
         </p>
       </div>
 
-      {/* Percent badges - hidden on very small screens */}
       <div className="hidden sm:flex flex-col gap-1">
         <div className="text-[9px] px-2 py-0.5 rounded bg-green-700/90 leading-none">
           0.555%

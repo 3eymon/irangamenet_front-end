@@ -9,7 +9,6 @@ import HeroSection from "./components/HeroSection";
 import DataSliderSection from "../../components/ui/DataSliderSection";
 import { sliderCardsType } from "../../components/ui/SliderCards";
 import SeeAll from "../../components/ui/SeeAll";
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { Producer } from "../../types/ producer.types";
 import BestProducers from "./components/BestProducers";
 type Home = {

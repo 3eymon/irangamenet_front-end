@@ -1,4 +1,3 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { NewspaperIcon, UserCircleIcon } from "@heroicons/react/24/outline";
@@ -10,7 +9,6 @@ import { formatCompactNumber } from "../../../utils/formatCompactNumber";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { sliderCardsType } from "../../../components/ui/SliderCards";
 import { News } from "../../../types/news.types";
 type NewsCardPreviewProps = {
   cards: News[];
