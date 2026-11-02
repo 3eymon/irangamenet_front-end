@@ -19,9 +19,9 @@ import AuthPage from "./pages/auth";
 import CompleteProfile from "./pages/auth/complete-profile";
 import CheckOTP from "./pages/auth/check-otp";
 import SingleNews from "./pages/news/detail";
-function App() {
-  const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 
+function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Navbar />

@@ -1,15 +1,29 @@
 import { useParams } from "react-router-dom";
-import useServer from "../../../hooks/useServer";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { Rating } from "@mui/material";
-import type { GameCenter } from "../../../types/game.types";
+import { useQuery } from "@tanstack/react-query";
+import {
+  getAllGameCenters,
+  getGameCenterByID,
+} from "../../../services/gameCenterService";
+import { GameCenter } from "../../../types/game.types";
+import { useEffect } from "react";
 
 function SingleGameCenter() {
   const { id } = useParams();
-  const [gameCenter, isLoading] = useServer<GameCenter | null>(
-    `GameCenters/${id}`,
-    null
-  );
+
+  const {
+    data: gameCenter,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["gameCenter", id],
+    queryFn: () => getGameCenterByID(id!),
+    enabled: !!id,
+    retry: false,
+  });
+
   function nFormatter(num: number | string) {
     const numericValue = Number(num);
     const lookup = [
@@ -29,6 +43,9 @@ function SingleGameCenter() {
           .replace(regexp, "")
           .concat(item.symbol)
       : "0";
+  }
+  if (!id || isLoading || isError || !gameCenter) {
+    return null;
   }
   if (isLoading) return <p>loader</p>;
   if (!gameCenter) return <p>گیم نتی پیدا نشد.</p>;
@@ -81,12 +98,12 @@ function HeaderSection({
                 Number(gameCenter.rating) > 4
                   ? "bg-green-400/50"
                   : Number(gameCenter.rating) > 3
-                  ? "bg-lime-400/50"
-                  : Number(gameCenter.rating) > 2
-                  ? "bg-yellow-500/60"
-                  : Number(gameCenter.rating) > 1
-                  ? "bg-orange-400/50"
-                  : "bg-red-400/50"
+                    ? "bg-lime-400/50"
+                    : Number(gameCenter.rating) > 2
+                      ? "bg-yellow-500/60"
+                      : Number(gameCenter.rating) > 1
+                        ? "bg-orange-400/50"
+                        : "bg-red-400/50"
               }`}
             >
               {`${gameCenter.rating} نمره `}
@@ -153,7 +170,7 @@ function HeaderSection({
                   alt=""
                   className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out "
                 />
-                {gameCenter.details?.images.length > 4 ? (
+                {/* {gameCenter.details?.images.length > 4 ? (
                   <>
                     {" "}
                     <div className="absolute inset-0 bg-black/65 z-10"></div>
@@ -164,7 +181,7 @@ function HeaderSection({
                   </>
                 ) : (
                   ""
-                )}
+                )} */}
               </a>
             </div>
           </div>

@@ -5,32 +5,42 @@ import fa from "javascript-time-ago/locale/fa";
 import MostViewed from "./components/MostViewed";
 import DataSliderSection from "../../components/ui/DataSliderSection";
 import { sliderCardsType } from "../../components/ui/SliderCards";
-import type { News as NewsItem } from "../../types/news.types";
-import useServer from "../../hooks/useServer";
 import SeeAll from "../../components/ui/SeeAll";
+import { useQuery } from "@tanstack/react-query";
+import { getAllNews } from "../../services/newsService";
 
 TimeAgo.addDefaultLocale(en);
 TimeAgo.addLocale(fa);
 function News() {
-  const [news, newsIsLoading] = useServer<NewsItem[]>("news", []);
-  const [weeklyHighlightNews, weeklyHighlightIsLoading] = useServer<NewsItem[]>(
-    "WeeklyHighlightNews",
-    [],
+  const { data: news = [], isLoading: newsLoading } = useQuery({
+    queryKey: ["news"],
+    queryFn: getAllNews,
+  });
+  const { data: weeklyHighlightNews = [], isLoading: weeklyLoading } = useQuery(
+    {
+      queryKey: ["weeklyHighlightNews"],
+      queryFn: getAllNews,
+    },
   );
-
   return (
     <main className="flex flex-col justify-center gap-14 w-full mt-0 md:mt-5 ">
-      <HeaderNews />
+      <HeaderNews
+        isLoading={newsLoading}
+        data={{
+          featured: news.slice(0, 6),
+          secondary: news.slice(6, 10),
+        }}
+      />
       <DataSliderSection
         data={news}
-        isLoading={newsIsLoading}
+        isLoading={newsLoading}
         type={sliderCardsType.News}
       >
         <SeeAll title="جدیدترین اخبار " link="latest" color="#5254d4" />
       </DataSliderSection>
       <DataSliderSection
         data={news}
-        isLoading={newsIsLoading}
+        isLoading={newsLoading}
         type={sliderCardsType.News}
         renderItems={(news) => <MostViewed news={news} />}
       >
@@ -38,7 +48,7 @@ function News() {
       </DataSliderSection>
       <DataSliderSection
         data={weeklyHighlightNews}
-        isLoading={weeklyHighlightIsLoading}
+        isLoading={weeklyLoading}
         type={sliderCardsType.News}
       >
         <SeeAll title="برترین های هفته" link="weeklyHighlight" color="#fff" />

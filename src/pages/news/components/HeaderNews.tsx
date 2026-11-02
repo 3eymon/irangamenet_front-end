@@ -9,19 +9,25 @@ import {
   ClockIcon,
   PencilIcon,
 } from "@heroicons/react/24/outline";
-import useServer from "../../../hooks/useServer";
 // time ago
 
 import ReactTimeAgo from "react-time-ago";
-import LazyLoad from "react-lazyload";
 import type { News } from "../../../types/news.types";
 import EmptyState from "../../../components/ui/EmptyState";
+import { useQuery } from "@tanstack/react-query";
+import { getAllNews } from "../../../services/newsService";
 
-function HeaderNews() {
-  const [news, isLoading] = useServer<News[]>("news", []);
-  const [popularNews] = useServer<News[]>("popularNews", []);
+function FeaturedNewsSection({
+  data,
+  isLoading,
+}: {
+  data: {
+    featured: News[];
+    secondary: News[];
+  };
+  isLoading: boolean;
+}) {
   if (isLoading) return <Loader />;
-
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-1 ">
@@ -41,7 +47,7 @@ function HeaderNews() {
               modules={[Navigation, Keyboard]}
               className="mySwiper relative"
             >
-              {news.map((n) => (
+              {data.featured.map((n) => (
                 <SwiperSlide key={n.id} className="p-5">
                   <CardSlider
                     title={n.title}
@@ -60,8 +66,8 @@ function HeaderNews() {
           </div>
         </div>
         <div className="flex-1 flex flex-col gap-5 p-5">
-          {popularNews.length > 0 ? (
-            popularNews.map((n) => (
+          {data.secondary.length > 0 ? (
+            data.secondary.map((n) => (
               <PopularCard
                 key={n.id}
                 title={n.title}
@@ -152,13 +158,12 @@ export function PopularCard({
   return (
     <div className="flex gap-2 hover:bg-white/5 backdrop-blur p-2 rounded-lg transition-colors ease-in-out animate-fade animate-duration-1000">
       <Link to={String(id)} className="w-2/6 h-24 xl:h-28">
-        <LazyLoad className="w-full h-full">
-          <img
-            src={image}
-            className="w-full h-full object-cover rounded-lg "
-            alt={` عکس/ خبر ${title}`}
-          />
-        </LazyLoad>
+        <img
+          src={image}
+          className="w-full h-full object-cover rounded-lg "
+          alt={` عکس/ خبر ${title}`}
+          loading="lazy"
+        />
       </Link>
       <div className="flex flex-col justify-around gap-2 w-3/4">
         <div className="flex gap-3 items-center text-xs xl:text-sm">
@@ -242,4 +247,4 @@ function Loader() {
     </div>
   );
 }
-export default HeaderNews;
+export default FeaturedNewsSection;
