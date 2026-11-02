@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { PopularCard } from "./HeaderNews";
 import ReactTimeAgo from "react-time-ago";
 import { BookOpenIcon } from "@heroicons/react/24/outline";
-import LazyLoad from "react-lazyload";
 import type { News } from "../../../types/news.types";
 
 export default function MostViewed({ news }: { news: News[] }) {
@@ -13,14 +12,12 @@ export default function MostViewed({ news }: { news: News[] }) {
         {topview ? (
           <div key={topview.id} className="w-full ">
             <Link to={String(topview.id)}>
-              <LazyLoad>
-                <img
-                  loading="lazy"
-                  src={topview.image}
-                  className="w-full h-60 object-cover rounded-xl hover:brightness-[.8] transition-all ease-linear bg-gray-400"
-                  alt={`خبر ${topview.title} `}
-                />
-              </LazyLoad>
+              <img
+                loading="lazy"
+                src={topview.image}
+                className="w-full h-60 object-cover rounded-xl hover:brightness-[.8] transition-all ease-linear bg-gray-400"
+                alt={`خبر ${topview.title} `}
+              />
             </Link>
             <div className="flex flex-col gap-1 pt-3">
               <div className="inline-flex gap-2 items-center text-sm pr-1">

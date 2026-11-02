@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import LazyLoad from "react-lazyload";
 import {
   BookmarkIcon,
   ClockIcon,
@@ -35,14 +34,12 @@ export default function Card({
     <div className="w-full px-5 md:px-0 md:w-[22rem]">
       <div className="relative">
         <Link to={detailPath}>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              src={data.image}
-              className="w-full h-60 object-cover rounded-xl hover:brightness-[.8] transition-all ease-linear bg-gray-400"
-              alt={`${category ?? "بازی"} ${data.title}`}
-            />
-          </LazyLoad>
+          <img
+            loading="lazy"
+            src={data.image}
+            className="w-full h-60 object-cover rounded-xl hover:brightness-[.8] transition-all ease-linear bg-gray-400"
+            alt={`${category ?? "بازی"} ${data.title}`}
+          />
         </Link>
         <div className="flex absolute left-2 -bottom-2  gap-5">
           <button
