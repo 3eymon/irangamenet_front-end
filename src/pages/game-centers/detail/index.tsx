@@ -7,7 +7,6 @@ import {
   getGameCenterByID,
 } from "../../../services/gameCenterService";
 import { GameCenter } from "../../../types/game.types";
-import { useEffect } from "react";
 
 function SingleGameCenter() {
   const { id } = useParams();

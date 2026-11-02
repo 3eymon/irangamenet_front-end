@@ -11,10 +11,10 @@ function Comments({ el }) {
       <h2 className="text-2xl font-PeydaMed my-4 ml-10 text-left">
         0 نظر ثبت شده
       </h2>
-      <div className="input input-bordered flex items-center gap-2 bg-transparent">
+      <div className="flex items-center gap-2 rounded-lg border border-white/20 bg-transparent px-3 py-2 focus-within:border-primary">
         <input
           type="text"
-          className="grow bg-transparent text-white placeholder:text-gray-200"
+          className="grow bg-transparent text-white placeholder:text-gray-200 focus:outline-none"
           placeholder="چه سوالی داری ؟ ( نظر )"
         />
         <button>

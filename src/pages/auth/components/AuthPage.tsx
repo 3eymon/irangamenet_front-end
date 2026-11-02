@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Loading } from "react-daisyui";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Input from "../../../components/ui/input";
@@ -82,7 +81,11 @@ function AuthPageForm() {
         }`}
       >
         <div className="z-30 ml-5">
-          <Loading className="mr-2" />
+          <span
+            role="status"
+            aria-label="در حال بارگذاری"
+            className="mr-2 inline-block size-8 animate-spin rounded-full border-4 border-white/30 border-t-white"
+          />
         </div>
       </div>
 

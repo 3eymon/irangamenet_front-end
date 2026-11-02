@@ -83,7 +83,7 @@ export default function NavigationMobile() {
   );
 }
 
-const Path = (props: any) => (
+const Path = (props : any) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -93,7 +93,7 @@ const Path = (props: any) => (
   />
 );
 
-function MenuToggle({ toggle }: { toggle: () => void }) {
+function MenuToggle({ toggle } : {toggle : () => void}) {
   return (
     <motion.div className=" relative">
       <button onClick={toggle} className="z-30 pr-2.5">
@@ -180,7 +180,7 @@ function Navigation({
     <motion.ul
       variants={variants}
       dir="rtl"
-      className={`absolute  top-16 right-0 z-40 h-full flex flex-col  font-PeydaLight ${
+      className={`absolute text-white top-16 right-0 z-40 h-full flex flex-col  font-PeydaLight ${
         isOpen ? "pointer-events-auto" : "pointer-events-none"
       }`}
     >
