@@ -4,8 +4,9 @@ import {
   InformationCircleIcon,
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
-import "./games.css"
-function Main({ el }) {
+import "./games.css";
+import { Ref } from "react";
+function Main({ el }: { el: Ref<HTMLDivElement> | undefined }) {
   return (
     <div ref={el} className="w-full mx-auto px-7">
       <h2 className="text-center text-gray-300 text-xl font-PeydaBlack  mt-5">

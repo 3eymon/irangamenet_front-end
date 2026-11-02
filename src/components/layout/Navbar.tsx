@@ -1,6 +1,5 @@
 import {
   BookOpenIcon,
-  BuildingStorefrontIcon,
   HomeIcon,
   PuzzlePieceIcon,
   VideoCameraIcon,
@@ -9,7 +8,14 @@ import { NavLink } from "react-router-dom";
 import { SiYoutubegaming } from "react-icons/si";
 
 import NavigationMobile from "./NavigationMobile";
-export const navBar = [
+import { ReactNode } from "react";
+type NavbarItemType = {
+  id: number;
+  title: string;
+  link: string;
+  icon: ReactNode;
+};
+export const navbarItems: NavbarItemType[] = [
   {
     id: 1,
     title: "خانه",
@@ -58,10 +64,10 @@ function Navbar() {
         ایران گیم نت
       </h2>
       <NavigationMobile />
-      <NavLinks navBar={navBar} />
+      <NavLinks data={navbarItems} />
       <NavLink
         to="/auth/login"
-        className="text-xs hidden sm:flex bg-gradient-to-r from-primary to-secondary px-5 py-1 transition-transform ease-linear rounded-md shadow-primary/35 hover:scale-95 "
+        className="text-xs text-white hidden sm:flex bg-gradient-to-r from-primary to-secondary px-5 py-1 transition-transform ease-linear rounded-md shadow-primary/35 hover:scale-95 "
       >
         ورود
       </NavLink>
@@ -71,10 +77,10 @@ function Navbar() {
 
 export default Navbar;
 
-function NavLinks({ navBar }) {
+function NavLinks({ data }: { data: NavbarItemType[] }) {
   return (
     <ul className="gap-3 text-xs pt-1.5 hidden sm:flex">
-      {navBar.map((nav, index) => (
+      {data.map((nav, index) => (
         <li key={index}>
           <NavLink
             className={`text-gray-500 aria-[current=page]:text-white`}

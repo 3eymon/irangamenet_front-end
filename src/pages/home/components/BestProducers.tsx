@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { Producer } from "../../../types/ producer.types";
+import type { Producer } from "../../../types/producer.types";
 import ChevronLeftIcon from "@heroicons/react/24/solid/ChevronLeftIcon";
 import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
@@ -76,7 +76,7 @@ function BestProducers({
   data,
   isLoading,
 }: {
-  data: Producer[];
+  data: Producer[] | undefined;
   isLoading: boolean;
 }) {
   const rows = useMemo(() => buildRows(data ?? []), [data]);
@@ -132,7 +132,7 @@ function BestProducers({
           ))}
       </div>
 
-      {data.length > 0 && (
+      {!isLoading && data && data?.length > 0 && (
         <button className="text-xs flex items-center gap-1 mx-auto mt-7 font-thin bg-gradient-to-r from-primary to-secondary px-6 py-1.5 rounded-md shadow-primary/30 hover:opacity-85 transition-opacity">
           مشاهده ی همه ی سازنده ها
           <ChevronLeftIcon className="w-4 h-4" />

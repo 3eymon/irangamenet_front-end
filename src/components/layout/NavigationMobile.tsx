@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "../../hooks/use-dimensions";
-import { navBar } from "./Navbar";
+import { navbarItems } from "./Navbar";
 import "./navigation.css";
 import { Backdrop, Button } from "@mui/material";
 import {
@@ -46,7 +46,7 @@ export default function NavigationMobile() {
     }, 1000);
   }
   let x = window.matchMedia("(max-width: 700px)");
-  function myFunction(x) {
+  function myFunction(x : any) {
     if (x.matches) {
       () => toggleOpen();
     } else {
@@ -83,7 +83,7 @@ export default function NavigationMobile() {
   );
 }
 
-const Path = (props) => (
+const Path = (props: any) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -93,7 +93,7 @@ const Path = (props) => (
   />
 );
 
-function MenuToggle({ toggle }) {
+function MenuToggle({ toggle }: { toggle: () => void }) {
   return (
     <motion.div className=" relative">
       <button onClick={toggle} className="z-30 pr-2.5">
@@ -169,7 +169,13 @@ const variantsItem2 = {
   },
 };
 
-function Navigation({ toggle, isOpen }) {
+function Navigation({
+  toggle,
+  isOpen,
+}: {
+  toggle: () => void;
+  isOpen: boolean;
+}) {
   return (
     <motion.ul
       variants={variants}
@@ -191,7 +197,7 @@ function Navigation({ toggle, isOpen }) {
           ورود یا ثبت نام
         </Link>
       </motion.li>
-      {navBar.map((i) => (
+      {navbarItems.map((i) => (
         <motion.li
           key={i.id}
           variants={variantsItem}

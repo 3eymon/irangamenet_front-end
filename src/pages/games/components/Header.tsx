@@ -1,13 +1,13 @@
 import useInc from "../../../hooks/useInc";
 
-function Header({ scroll }) {
+function Header({ scroll }: { scroll: () => void }) {
   const creaedGames = useInc(980);
   const hTraller = useInc(568);
   return (
     <div className="mx-auto min-h-[100vh] flex flex-col justify-evenly z-10">
       <div className="flex flex-col md:flex-row  md:gap-20 items-center h-full">
         <div className="relative">
-          <img 
+          <img
             src="/images/games/Character.png"
             className=" animate-fade-up [filter:drop-shadow(-5px_20px_7px_black)]"
           />
