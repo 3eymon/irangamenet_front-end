@@ -245,3 +245,47 @@
     @apply text-sm lg:text-base text-center w-full flex bg-gradient-to-r from-primary to-secondary px-5 py-3 transition ease-linear rounded-xl shadow-primary/35 hover:brightness-105 active:brightness-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 }
+
+.streamers-swiper::before,
+.streamers-swiper::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  bottom: -20px;
+  width: 85px;
+  z-index: 10;
+  pointer-events: none;
+  filter: blur(16px);
+  opacity: 1;
+}
+
+.streamers-swiper::before {
+  left: -40px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(15, 15, 25, 0.95) 0%,
+    rgba(15, 15, 25, 0.8) 30%,
+    rgba(15, 15, 25, 0.5) 55%,
+    rgba(15, 15, 25, 0.2) 75%,
+    transparent 100%
+  );
+}
+
+.streamers-swiper::after {
+  right: -40px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(15, 15, 25, 0.95) 0%,
+    rgba(15, 15, 25, 0.8) 30%,
+    rgba(15, 15, 25, 0.5) 55%,
+    rgba(15, 15, 25, 0.2) 75%,
+    transparent 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .streamers-swiper::before,
+  .streamers-swiper::after {
+    display: none;
+  }
+}

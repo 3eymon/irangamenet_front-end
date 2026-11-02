@@ -9,13 +9,11 @@ import {
   ClockIcon,
   PencilIcon,
 } from "@heroicons/react/24/outline";
-// time ago
 
 import ReactTimeAgo from "react-time-ago";
 import type { News } from "../../../types/news.types";
 import EmptyState from "../../../components/ui/EmptyState";
-import { useQuery } from "@tanstack/react-query";
-import { getAllNews } from "../../../services/newsService";
+import Image from "../../../components/ui/Image";
 
 function FeaturedNewsSection({
   data,
@@ -32,7 +30,7 @@ function FeaturedNewsSection({
     <>
       <div className="flex flex-col lg:flex-row gap-1 ">
         <div className="relative lg:h-auto lg:w-2/3 w-11/12 mx-auto h-1/2 lg:pr-5 xl:pr-20">
-          <img
+          <Image
             src="/images/news/homePage.jpg"
             className="w-full h-full object-cover rounded-xl animate-fade scale-x-[-1] hidden sm:block"
             alt=""
@@ -158,11 +156,10 @@ export function PopularCard({
   return (
     <div className="flex gap-2 hover:bg-white/5 backdrop-blur p-2 rounded-lg transition-colors ease-in-out animate-fade animate-duration-1000">
       <Link to={String(id)} className="w-2/6 h-24 xl:h-28">
-        <img
+        <Image
           src={image}
           className="w-full h-full object-cover rounded-lg "
           alt={` عکس/ خبر ${title}`}
-          loading="lazy"
         />
       </Link>
       <div className="flex flex-col justify-around gap-2 w-3/4">

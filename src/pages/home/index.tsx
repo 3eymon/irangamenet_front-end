@@ -15,10 +15,8 @@ import { getAllGameCenters } from "../../services/gameCenterService";
 import { getAllProducers } from "../../services/producerService";
 import { getAllStreamers } from "../../services/streamerService";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
 function Main() {
   const popularNewsQuery = useQuery({
     queryKey: ["news", "popular"],
@@ -87,25 +85,39 @@ function Main() {
           <>در حال بارگذاری</>
         ) : bestStreamersQuery.data && bestStreamersQuery.data.length > 0 ? (
           <Swiper
-            modules={[Navigation]}
-            navigation
-            spaceBetween={16}
-            slidesPerView={2}
+            slidesPerView={2.4}
+            spaceBetween={5}
             breakpoints={{
+              480: {
+                slidesPerView: 3.4,
+                spaceBetween: 12,
+              },
               640: {
-                slidesPerView: 2.5,
+                slidesPerView: 3.5,
+                spaceBetween: 14,
               },
               768: {
-                slidesPerView: 3.5,
+                slidesPerView: 4.4,
+                spaceBetween: 16,
               },
               1024: {
-                slidesPerView: 5.5,
+                slidesPerView: 5.4,
+                spaceBetween: 18,
               },
               1280: {
+                slidesPerView: 6.4,
+                spaceBetween: 20,
+              },
+              1536: {
+                slidesPerView: 7.4,
+                spaceBetween: 20,
+              },
+              1768: {
                 slidesPerView: 8,
+                spaceBetween: 20,
               },
             }}
-            className="!mt-6 !px-3 lg:!px-5"
+            className="streamers-swiper !pt-6 !px-3 lg:!px-5 !pb-4 rounded-2xl overflow-hidden"
           >
             {bestStreamersQuery.data.slice(0, 8).map((s) => (
               <SwiperSlide key={s.id}>

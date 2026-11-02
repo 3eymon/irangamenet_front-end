@@ -16,6 +16,7 @@ type NewsCardPreviewProps = {
 };
 
 import { SignalSlashIcon } from "@heroicons/react/24/outline";
+import Image from "../../../components/ui/Image";
 
 function NewsCardSkeleton() {
   return (
@@ -141,11 +142,10 @@ function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
                 <SwiperSlide key={card.id}>
                   <div className="flex w-full flex-col rounded-xl border border-primary-400/20 bg-gradient-to-br from-primary-500/35 via-primary-900/80 to-[#0b0b11]/95 p-3 shadow-lg shadow-black/20 backdrop-blur-[2px]">
                     <Link to={`/news/${card.id}`} className="w-full">
-                      <img
+                      <Image
                         className="aspect-video h-32 w-full rounded-md object-cover sm:h-44 md:h-52 bg-primary-400/10"
                         src={card.image}
                         alt={card.title ?? ""}
-                        loading="lazy"
                       />
                     </Link>
 
