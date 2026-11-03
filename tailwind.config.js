@@ -67,9 +67,6 @@ export default {
 
       fontFamily: {
         Peyda: ["Peyda"],
-        PeydaLight: ["Peyda-light"],
-        PeydaBlack: ["Peyda-black"],
-        PeydaMed: ["Peyda-med"],
         Jaro: ["Jaro"],
       },
 
