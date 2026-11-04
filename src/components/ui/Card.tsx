@@ -31,7 +31,6 @@ export default function Card({
         : `/games/${data.id}`;
   const category = "category" in data ? data.category : "گیم نت";
   const author = data.author ?? "گیم نت";
-  console.log(data)
   return (
     <div className="w-full px-5 md:px-0 md:w-[22rem]">
       <div className="relative">
