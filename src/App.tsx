@@ -19,7 +19,15 @@ import AuthPage from "./pages/auth";
 import CompleteProfile from "./pages/auth/complete-profile";
 import CheckOTP from "./pages/auth/check-otp";
 import SingleNews from "./pages/news/detail";
-const queryClient = new QueryClient();
+import { isNotFoundError } from "./utils/isNotFoundErr";
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: (failureCount, error) =>
+        !isNotFoundError(error) && failureCount < 1,
+    },
+  },
+});
 
 function App() {
   return (
