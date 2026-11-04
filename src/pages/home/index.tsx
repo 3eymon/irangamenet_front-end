@@ -61,6 +61,7 @@ function Main() {
         className="mb-16"
       >
         <SeeAll
+          id="newest-games"
           title="جدیدترین بازی ها "
           link="games?sort=newest"
           color="#d42222"

@@ -7,13 +7,23 @@ type SeeAllProps = {
   link?: string;
   color: string;
   className?: string;
+  id?: string;
 };
 
-export default function SeeAll({ title, link, color, className }: SeeAllProps) {
+export default function SeeAll({
+  title,
+  link,
+  color,
+  className,
+  id,
+}: SeeAllProps) {
   return (
     <div className={clsx("flex justify-between pb-3", className)}>
       <div className="relative flex gap-5 mr-5 md:mr-0">
-        <h2 className="text-lg lg:text-xl xl:text-2xl font-PeydaBlack pr-3.5 xl:pr-5">
+        <h2
+          id={id}
+          className="text-lg lg:text-xl xl:text-2xl font-PeydaBlack pr-3.5 xl:pr-5"
+        >
           {title}
         </h2>
         <div

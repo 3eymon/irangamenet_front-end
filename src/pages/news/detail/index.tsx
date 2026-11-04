@@ -16,6 +16,7 @@ import { getNewsById, getRelatedNews } from "../../../services/newsService";
 import Card from "../../../components/ui/Card";
 import { sliderCardsType } from "../../../components/ui/SliderCards";
 import DataSliderSection from "../../../components/ui/DataSliderSection";
+import ReactTimeAgo from "react-time-ago";
 
 function formatNumber(value: number | string) {
   return Number(value).toLocaleString("fa-IR");
@@ -215,7 +216,12 @@ export default function NewsPage() {
 
               {news.updated_at && (
                 <span className="hidden sm:block">
-                  آخرین بروزرسانی: {news.updated_at}
+                  آخرین بروزرسانی:{" "}
+                  <ReactTimeAgo
+                    date={new Date(news.updated_at)}
+                    locale="fa-IR"
+                    timeStyle="round"
+                  />
                 </span>
               )}
             </div>

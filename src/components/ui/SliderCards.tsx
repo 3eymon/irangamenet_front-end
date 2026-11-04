@@ -21,7 +21,7 @@ export default function SliderCards({
   data,
   type = sliderCardsType.Games,
   extraSlide,
-  sliderProps
+  sliderProps,
 }: SliderCardsProps) {
   const pagination = {
     el: ".swiper-pagination",
@@ -35,18 +35,14 @@ export default function SliderCards({
     },
   };
   const breakpoints = {
-    576: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-    1500: {
-      slidesPerView: 4,
-    },
+    0: { slidesPerView: 1 },
+    440: { slidesPerView: 1.5 },
+    500: { slidesPerView: 1.7 },
+    540: { slidesPerView: 1.8 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 2.6 },
+    1280: { slidesPerView: 3.5 },
+    1536: { slidesPerView: 4 },
   };
   return (
     <Swiper
@@ -60,8 +56,7 @@ export default function SliderCards({
       }}
       modules={[Navigation, Pagination]}
       className="mt-5"
-            {...sliderProps}
-
+      {...sliderProps}
     >
       {data.map((item) => {
         return (
