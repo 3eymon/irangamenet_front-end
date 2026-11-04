@@ -17,16 +17,17 @@ import { getAllStreamers } from "../../services/streamerService";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import { getAllGames } from "../../services/gameService";
 function Main() {
   const popularNewsQuery = useQuery({
     queryKey: ["news", "popular"],
-    queryFn: getAllNews,
+    queryFn: () => getAllNews(),
     staleTime: 5 * 60 * 1000,
   });
 
   const newestGamesQuery = useQuery({
     queryKey: ["games", "newest"],
-    queryFn: getAllNews,
+    queryFn: () => getAllGames(),
     staleTime: 10 * 60 * 1000,
   });
 

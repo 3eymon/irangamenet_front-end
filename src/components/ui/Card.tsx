@@ -31,6 +31,7 @@ export default function Card({
         : `/games/${data.id}`;
   const category = "category" in data ? data.category : "گیم نت";
   const author = data.author ?? "گیم نت";
+  console.log(data)
   return (
     <div className="w-full px-5 md:px-0 md:w-[22rem]">
       <div className="relative">
@@ -45,7 +46,7 @@ export default function Card({
         <div className="flex absolute left-2 -bottom-2  gap-5">
           <button
             // onClick={}
-            title={String(data.like ?? "")}
+            title={String(data.likes ?? "")}
             className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-red-500 transition-all ease-linear"
           >
             <HeartIcon
@@ -53,7 +54,7 @@ export default function Card({
             />
           </button>
           <button
-            title={String(data.save ?? "")}
+            title={String(data.saves ?? "")}
             className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-gray-400 transition-all ease-linear"
           >
             <BookmarkIcon className="w-5 h-5 group-hover:fill-gray-400/30 transition-all ease-linear" />
@@ -72,14 +73,16 @@ export default function Card({
               />
               <p className="hover:underline">{data.author}</p>
             </Link>
-            <div className="text-gray-400 inline-flex gap-2">
-              <ReactTimeAgo
-                date={new Date(data.date)}
-                locale="fa-IR"
-                timeStyle="round"
-              />
-              <ClockIcon className="w-4 text-gray-500" />
-            </div>
+            {data.created_at && (
+              <div className="text-gray-400 inline-flex gap-2">
+                <ReactTimeAgo
+                  date={new Date(data.created_at)}
+                  locale="fa-IR"
+                  timeStyle="round"
+                />
+                <ClockIcon className="w-4 text-gray-500" />
+              </div>
+            )}
           </div>
         )}
         <h2 className="text-lg font-PeydaMed w-11/12 ">
@@ -112,7 +115,6 @@ export default function Card({
                     size="small"
                     readOnly
                   />
-                  
                 </div>
               </>
             ) : (

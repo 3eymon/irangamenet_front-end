@@ -50,7 +50,7 @@ function FeaturedNewsSection({
                   <CardSlider
                     title={n.title}
                     desc={n.description}
-                    createdAt={n.date}
+                    createdAt={n.updated_at ?? n.created_at}
                     author={n.author}
                     id={n.id}
                     image={n.image}
@@ -69,7 +69,7 @@ function FeaturedNewsSection({
               <PopularCard
                 key={n.id}
                 title={n.title}
-                createdAt={n.date}
+                createdAt={n.updated_at ?? n.created_at}
                 author={n.author}
                 id={n.id}
                 views={n.views}

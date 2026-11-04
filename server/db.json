@@ -1,136 +1,1046 @@
 {
   "news": [
     {
-      "id": "64979306",
-      "title": "انتشار نسخه جدید بازی کال آف دیوتی",
-      "author": "خبرگزاری دیجیتال گیمز",
-      "author_image": "https://example.com/images/author-digital-games-news.jpg",
-      "views": 15000,
-      "date": "2024-05-20 11:10:20",
-      "description": "نسخه جدید بازی کال آف دیوتی با گرافیک بهبود یافته و امکانات جدید منتشر شد. این نسخه جدید با داستانی جذاب و حالت‌های بازی متنوع عرضه شده است.",
-      "link": "https://digitalgamesnews.com/cod-new-release",
-      "image": "/images/news/What-to-Expect-From-Call-of-Duty-2024-This-Year.gif"
+      "id": 1,
+      "title": "چگونه هوش مصنوعی در حال تغییر روند ساخت بازی‌های ویدیویی است؟",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85",
+      "description": "از ساخت شخصیت‌های هوشمند تا تولید محیط‌های پویا، ابزارهای هوش مصنوعی مسیر توسعه بازی‌ها را تغییر داده‌اند.",
+      "category": "فناوری",
+      "tags": [
+        "هوش مصنوعی",
+        "توسعه بازی",
+        "فناوری"
+      ],
+      "author": "آرمان رضایی",
+      "authorImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-28 11:10:20",
+      "updated_at": "2026-10-28 14:25:00",
+      "readingTime": 5,
+      "views": 2840,
+      "rating": 4.6,
+      "likes": 186,
+      "saves": 74,
+      "sections": [
+        {
+          "id": "1-1",
+          "title": "ابزارهای تازه برای توسعه‌دهندگان",
+          "content": [
+            "ابزارهای مبتنی بر هوش مصنوعی می‌توانند در نمونه‌سازی اولیه، تولید محتوای تکراری و آزمایش بخش‌های مختلف بازی به توسعه‌دهندگان کمک کنند.",
+            "با این حال، تصمیم‌های خلاقانه و کنترل کیفیت همچنان به نظارت مستقیم تیم سازنده نیاز دارند."
+          ],
+          "image": "/images/news/ai-tools.jpg",
+          "imageCaption": "ابزارهای هوشمند در فرایند توسعه بازی"
+        },
+        {
+          "id": "1-2",
+          "title": "تأثیر بر تجربه بازیکنان",
+          "content": [
+            "شخصیت‌های غیرقابل‌بازی می‌توانند واکنش‌های متنوع‌تری به رفتار بازیکن نشان دهند و محیط بازی را پویاتر کنند.",
+            "چالش اصلی، ایجاد تعادل میان آزادی عمل، عملکرد فنی و طراحی منسجم بازی است."
+          ],
+          "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "تأثیر بر تجربه بازیکنان"
+        }
+      ],
+      "relatedNewsIds": [
+        2,
+        5,
+        8
+      ],
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-1-ai-game-development"
     },
     {
-      "id": "66916247",
-      "title": "بررسی بازی آخرین بازمانده",
-      "author": "وبسایت بازی‌نما",
-      "author_image": "https://example.com/images/author-bazinama.jpg",
-      "views": 8500,
-      "date": "2024-05-18 11:10:20",
-      "description": "در این مقاله به بررسی جامع بازی آخرین بازمانده پرداخته‌ایم. این بازی با گرافیک خیره‌کننده و داستانی عمیق توانسته است نظر بسیاری از گیمرها را به خود جلب کند.",
-      "link": "https://bazinama.com/last-survivor-review",
-      "image": "https://example.com/images/last-survivor-review.jpg"
+      "id": 2,
+      "title": "نسل جدید کارت‌های گرافیک چه تغییری در تجربه بازی ایجاد می‌کند؟",
+      "image": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1600&q=85",
+      "description": "افزایش توان پردازشی و بهبود فناوری‌های ارتقای تصویر، اجرای بازی‌های سنگین را روان‌تر می‌کند.",
+      "category": "سخت‌افزار",
+      "tags": [
+        "کارت گرافیک",
+        "سخت‌افزار",
+        "PC"
+      ],
+      "author": "نیما کریمی",
+      "authorImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-25 09:30:00",
+      "readingTime": 4,
+      "views": 1935,
+      "rating": 4.3,
+      "likes": 122,
+      "saves": 51,
+      "sections": [
+        {
+          "id": "2-1",
+          "title": "تمرکز بر عملکرد و بهره‌وری",
+          "content": [
+            "نسل‌های جدید پردازنده‌های گرافیکی معمولاً علاوه بر افزایش قدرت خام، روی مصرف انرژی و قابلیت‌های نرم‌افزاری نیز تمرکز می‌کنند.",
+            "فناوری‌های ارتقای تصویر می‌توانند با بازسازی فریم‌ها، تعادل مناسبی میان کیفیت بصری و نرخ فریم ایجاد کنند."
+          ],
+          "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "تمرکز بر عملکرد و بهره‌وری"
+        },
+        {
+          "id": "2-2",
+          "title": "هنگام ارتقا به چه نکاتی توجه کنیم؟",
+          "content": [
+            "سازگاری با منبع تغذیه، فضای کیس، پردازنده و نمایشگر از نکات مهم پیش از خرید کارت گرافیک هستند."
+          ],
+          "image": "https://images.unsplash.com/photo-1580327344181-c1163234e5a0?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "هنگام ارتقا به چه نکاتی توجه کنیم؟"
+        }
+      ],
+      "relatedNewsIds": [
+        1,
+        6,
+        9
+      ],
+      "updated_at": "2026-10-25 09:30:00",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-2-next-gen-gpu"
     },
     {
-      "id": "6209664",
-      "title": "افتتاحیه لیگ جهانی ورزش‌های الکترونیکی",
-      "author": "خبرگزاری ورزش‌های دیجیتال",
-      "author_image": "https://example.com/images/author-digital-sports-news.jpg",
-      "views": 12000,
-      "date": "2024-05-22 11:10:20",
-      "description": " لیگ جهانی ورزش‌های الکترونیکی با حضور تیم‌های برتر از سراسر جهان افتتاح شد. این لیگ با جوایز میلیونی و رقابت‌های هیجان‌انگیز توجه بسیاری از علاقه‌مندان به گیم را به خود جلب کرده است. و این رویداد اواخر سال ۲۰۲۴ در عربستان سعودی برگزار می‌شود؛ کشوری که به دنبال سرمایه گذاری عظیم در صنعت ورزش‌های الکترونیک است. این مسابقات در فضایی نزدیک به ۶۰۰ هزار مترمربع برگزار می‌شود و چهار میدان ورزشی جداگانه دارد. برگزارکنندگان انتظار دارند ۲.۹ میلیون طرفدار ",
-      "link": "https://digitalesportsnews.com/global-esports-league",
-      "image": "/images/news/game-lig.webp"
+      "id": 3,
+      "title": "بازی‌های مستقل؛ خلاقیتی فراتر از بودجه‌های بزرگ",
+      "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=85",
+      "description": "استودیوهای کوچک با ایده‌های متفاوت همچنان سهم مهمی در شکل‌گیری تجربه‌های تازه در صنعت بازی دارند.",
+      "category": "صنعت بازی",
+      "tags": [
+        "بازی مستقل",
+        "ایندی",
+        "استودیو"
+      ],
+      "author": "سارا محمدی",
+      "authorImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-22 16:45:10",
+      "readingTime": 6,
+      "views": 3210,
+      "rating": 4.8,
+      "likes": 241,
+      "saves": 103,
+      "sections": [
+        {
+          "id": "3-1",
+          "title": "قدرت ایده‌های کوچک",
+          "content": [
+            "بازی‌های مستقل اغلب با تمرکز بر یک مکانیک مشخص یا روایت متفاوت، تجربه‌ای متمایز از آثار پرهزینه ارائه می‌کنند.",
+            "محدودیت منابع می‌تواند تیم‌ها را به سمت طراحی خلاقانه‌تر و انتخاب‌های دقیق‌تر هدایت کند."
+          ],
+          "image": "/images/news/indie-studio.jpg",
+          "imageCaption": "یک تیم کوچک در حال توسعه بازی"
+        },
+        {
+          "id": "3-2",
+          "title": "راه‌های دیده‌شدن",
+          "content": [
+            "نمایش نسخه آزمایشی، حضور در رویدادهای مستقل و ارتباط با جامعه بازیکنان از روش‌های رایج معرفی این آثار است."
+          ],
+          "image": "https://images.unsplash.com/photo-1592155931584-901ac15763e3?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "راه‌های دیده‌شدن"
+        }
+      ],
+      "relatedNewsIds": [
+        4,
+        7,
+        10
+      ],
+      "updated_at": "2026-10-22 16:45:10",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-3-indie-games"
     },
     {
-      "id": "64084369",
-      "title": "بازی جدید شرکت نینتندو به بازار عرضه شد",
-      "author": "خبرگزاری گیم‌نیوز",
-      "author_image": "https://example.com/images/author-gamenews.jpg",
-      "views": 20000,
-      "date": "2024-05-19 11:10:20",
-      "description": "شرکت نینتندو بازی جدید خود را با عنوان \"مترویدوینیا \" به بازار عرضه کرد. این بازی با ویژگی‌های نوآورانه و داستانی جذاب، تجربه‌ای متفاوت برای گیمرها به ارمغان می‌آورد.",
-      "link": "https://gamenews.com/nintendo-new-game-release",
-      "image": "/images/news/TalesofKenzeraZau.jpg"
+      "id": 4,
+      "title": "چرا بازی‌های جهان‌باز همچنان محبوب هستند؟",
+      "image": "https://images.unsplash.com/photo-1580327344181-c1163234e5a0?auto=format&fit=crop&w=1600&q=85",
+      "description": "آزادی اکتشاف، مأموریت‌های متنوع و جهان‌های واکنش‌گرا از مهم‌ترین دلایل جذابیت بازی‌های جهان‌باز هستند.",
+      "category": "تحلیل",
+      "tags": [
+        "جهان‌باز",
+        "طراحی بازی",
+        "گیم‌پلی"
+      ],
+      "author": "پارسا احمدی",
+      "authorImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-19 12:05:30",
+      "readingTime": 5,
+      "views": 2674,
+      "rating": 4.5,
+      "likes": 174,
+      "saves": 68,
+      "sections": [
+        {
+          "id": "4-1",
+          "title": "آزادی در انتخاب مسیر",
+          "content": [
+            "در بازی‌های جهان‌باز، بازیکن معمولاً می‌تواند ترتیب انجام بسیاری از فعالیت‌ها را خودش انتخاب کند.",
+            "این آزادی زمانی مؤثر است که جهان بازی با نشانه‌گذاری مناسب و فعالیت‌های معنادار از بازیکن پشتیبانی کند."
+          ],
+          "image": "https://images.unsplash.com/photo-1592155931584-901ac15763e3?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "آزادی در انتخاب مسیر"
+        },
+        {
+          "id": "4-2",
+          "title": "چالش طراحی جهان",
+          "content": [
+            "ساخت محیطی بزرگ به‌تنهایی کافی نیست؛ هر منطقه باید دلیل مناسبی برای اکتشاف و تعامل داشته باشد."
+          ],
+          "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "چالش طراحی جهان"
+        }
+      ],
+      "relatedNewsIds": [
+        3,
+        7,
+        8
+      ],
+      "updated_at": "2026-10-19 12:05:30",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-4-open-world"
     },
     {
-      "id": "63012666",
-      "title": "بازی‌های ویدیویی و تأثیر آنها بر ذهن کودکان",
-      "author": "مجله علمی گیم‌فکتس",
-      "author_image": "https://example.com/images/author-gamefacts.jpg",
-      "views": 9500,
-      "date": "2024-05-21 11:10:20",
-      "description": "در این مقاله به بررسی تأثیر بازی‌های ویدیویی بر ذهن کودکان پرداخته‌ایم. تحقیقات نشان می‌دهد که بازی‌های ویدیویی می‌توانند بر توانایی‌های شناختی و اجتماعی کودکان تأثیرات مثبت و منفی داشته باشند.",
-      "link": "https://gamefacts.com/impact-of-video-games-on-children",
-      "image": "/images/news/gameForKid.jpeg"
+      "id": 5,
+      "title": "آینده واقعیت مجازی در بازی‌های ویدیویی",
+      "image": "https://images.unsplash.com/photo-1592155931584-901ac15763e3?auto=format&fit=crop&w=1600&q=85",
+      "description": "بهبود نمایشگرها و کنترلرها می‌تواند تجربه واقعیت مجازی را در دسترس‌تر و طبیعی‌تر کند.",
+      "category": "فناوری",
+      "tags": [
+        "واقعیت مجازی",
+        "VR",
+        "تجهیزات"
+      ],
+      "author": "آرمان رضایی",
+      "authorImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-16 10:20:00",
+      "readingTime": 4,
+      "views": 1580,
+      "rating": 4.1,
+      "likes": 98,
+      "saves": 42,
+      "sections": [
+        {
+          "id": "5-1",
+          "title": "تجربه‌ای نزدیک‌تر به دنیای واقعی",
+          "content": [
+            "ردیابی دقیق‌تر حرکت و کنترلرهای پیشرفته‌تر به بازیکن اجازه می‌دهند تعامل طبیعی‌تری با محیط مجازی داشته باشد.",
+            "راحتی استفاده و کاهش تأخیر همچنان از عوامل مهم در طراحی هدست‌های واقعیت مجازی هستند."
+          ],
+          "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "تجربه‌ای نزدیک‌تر به دنیای واقعی"
+        },
+        {
+          "id": "5-2",
+          "title": "محتوا، عامل تعیین‌کننده",
+          "content": [
+            "موفقیت این پلتفرم فقط به سخت‌افزار وابسته نیست و به وجود بازی‌های باکیفیت و متنوع نیز نیاز دارد."
+          ],
+          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "محتوا، عامل تعیین‌کننده"
+        }
+      ],
+      "relatedNewsIds": [
+        1,
+        2,
+        9
+      ],
+      "updated_at": "2026-10-16 10:20:00",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-5-virtual-reality"
     },
     {
-      "id": "61936144",
-      "title": "مسابقات جهانی بازی‌های ویدیویی برگزار شد",
-      "author": "خبرگزاری مسابقات گیم",
-      "author_image": "https://example.com/images/author-gametournaments.jpg",
-      "views": 17500,
-      "date": "2024-05-17 11:10:20",
-      "description": "مسابقات جهانی بازی‌های ویدیویی با حضور تیم‌های برتر از سراسر جهان برگزار شد. این مسابقات با جوایز ارزشمند و رقابت‌های هیجان‌انگیز توانست توجه بسیاری از علاقه‌مندان به بازی‌های ویدیویی را جلب کند.",
-      "link": "https://gametournaments.com/world-championship",
-      "image": "/images/news/world-championship.jpg"
+      "id": 6,
+      "title": "رقابت در بازی‌های آنلاین؛ نقش سرورها و پینگ",
+      "image": "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1600&q=85",
+      "description": "کیفیت اتصال شبکه می‌تواند روی پاسخ‌گویی بازی و عدالت رقابت‌های آنلاین تأثیر مستقیم داشته باشد.",
+      "category": "بازی آنلاین",
+      "tags": [
+        "آنلاین",
+        "شبکه",
+        "پینگ"
+      ],
+      "author": "نیما کریمی",
+      "authorImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-13 18:15:00",
+      "readingTime": 5,
+      "views": 4120,
+      "rating": 4.7,
+      "likes": 305,
+      "saves": 119,
+      "sections": [
+        {
+          "id": "6-1",
+          "title": "تأخیر شبکه چیست؟",
+          "content": [
+            "پینگ مدت‌زمان رفت‌وبرگشت داده میان دستگاه بازیکن و سرور را نشان می‌دهد.",
+            "فاصله جغرافیایی، کیفیت مسیر ارتباطی و شلوغی شبکه می‌توانند روی این مقدار اثر بگذارند."
+          ],
+          "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "تأخیر شبکه چیست؟"
+        },
+        {
+          "id": "6-2",
+          "title": "اهمیت زیرساخت مناسب",
+          "content": [
+            "سرورهای پایدار و انتخاب منطقه مناسب می‌توانند تجربه رقابتی قابل‌اعتمادتری ایجاد کنند."
+          ],
+          "image": "https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "اهمیت زیرساخت مناسب"
+        }
+      ],
+      "relatedNewsIds": [
+        2,
+        8,
+        10
+      ],
+      "updated_at": "2026-10-13 18:15:00",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-6-online-gaming"
     },
     {
-      "id": "68046568",
-      "title": "بازی جدید پلی‌استیشن 5 منتشر شد",
-      "author": "مجله پلی‌استیشن",
-      "author_image": "https://example.com/images/the-best-playstation-5-games.jpeg",
-      "views": 22000,
-      "date": "2024-05-16 11:10:20",
-      "description": "پلی‌استیشن 5 بازی جدیدی با عنوان \"افسانه‌های گمشده\" را منتشر کرد. این بازی با گرافیک بی‌نظیر و گیم‌پلی منحصر به فرد تجربه‌ای جدید برای گیمرها ارائه می‌دهد.",
-      "link": "https://playstationmag.com/new-game-release",
-      "image": "/images/news/the-best-playstation-5-games.jpeg"
+      "id": 7,
+      "title": "موسیقی متن چگونه به هویت یک بازی شکل می‌دهد؟",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85",
+      "description": "موسیقی و طراحی صدا با تقویت فضای داستان، به ماندگارشدن لحظات مهم بازی کمک می‌کنند.",
+      "category": "هنر و طراحی",
+      "tags": [
+        "موسیقی",
+        "صداگذاری",
+        "طراحی بازی"
+      ],
+      "author": "سارا محمدی",
+      "authorImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-10 13:40:00",
+      "readingTime": 6,
+      "views": 2098,
+      "rating": 4.6,
+      "likes": 190,
+      "saves": 87,
+      "sections": [
+        {
+          "id": "7-1",
+          "title": "موسیقی در خدمت روایت",
+          "content": [
+            "تم‌های موسیقایی می‌توانند بدون استفاده از دیالوگ، احساسات و ویژگی‌های یک شخصیت یا مکان را منتقل کنند.",
+            "تغییر موسیقی متناسب با اتفاقات بازی، ارتباط میان بازیکن و جهان داستانی را تقویت می‌کند."
+          ],
+          "image": "https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "موسیقی در خدمت روایت"
+        },
+        {
+          "id": "7-2",
+          "title": "طراحی صدای محیط",
+          "content": [
+            "صداهای محیطی به بازیکن کمک می‌کنند موقعیت خود را بهتر درک کند و فضای بازی را باورپذیرتر تجربه کند."
+          ],
+          "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "طراحی صدای محیط"
+        }
+      ],
+      "relatedNewsIds": [
+        3,
+        4,
+        10
+      ],
+      "updated_at": "2026-10-10 13:40:00",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-7-game-soundtrack"
     },
     {
-      "id": "6786756",
-      "title": "رشد صنعت بازی‌های موبایل در سال 2024",
-      "author": "وبسایت گیم‌اینداستری",
-      "author_image": "https://example.com/images/author-gameindustry.jpg",
-      "views": 14000,
-      "date": "2024-05-15 11:10:20",
-      "description": "صنعت بازی‌های موبایل در سال 2024 رشد چشمگیری داشته است. با افزایش تعداد کاربران و بهبود فناوری‌های موبایل، بازار بازی‌های موبایل به یکی از پر درآمدترین بخش‌های صنعت بازی تبدیل شده است.",
-      "link": "https://gameindustry.com/mobile-games-growth-2024",
-      "image": "https://example.com/images/mobile-games-growth.jpg"
+      "id": 8,
+      "title": "ورزش‌های الکترونیکی و مسیر حرفه‌ای بازیکنان",
+      "image": "https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=1600&q=85",
+      "description": "ورود به رقابت‌های حرفه‌ای به تمرین هدفمند، کار تیمی و شناخت عمیق بازی نیاز دارد.",
+      "category": "ورزش الکترونیکی",
+      "tags": [
+        "Esports",
+        "رقابت",
+        "تیم"
+      ],
+      "author": "پارسا احمدی",
+      "authorImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-07 20:00:00",
+      "readingTime": 5,
+      "views": 3780,
+      "rating": 4.4,
+      "likes": 263,
+      "saves": 92,
+      "sections": [
+        {
+          "id": "8-1",
+          "title": "فراتر از مهارت فردی",
+          "content": [
+            "در سطح رقابتی، هماهنگی تیمی، ارتباط مؤثر و تصمیم‌گیری در شرایط پرفشار اهمیت زیادی دارند.",
+            "تحلیل مسابقات گذشته می‌تواند به شناسایی اشتباه‌ها و بهبود عملکرد کمک کند."
+          ],
+          "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "فراتر از مهارت فردی"
+        },
+        {
+          "id": "8-2",
+          "title": "ساخت مسیر پایدار",
+          "content": [
+            "برنامه تمرینی متعادل و توجه به استراحت، یادگیری و تحصیل یا کار به حفظ پایداری در مسیر رقابت کمک می‌کند."
+          ],
+          "image": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "ساخت مسیر پایدار"
+        }
+      ],
+      "relatedNewsIds": [
+        1,
+        6,
+        9
+      ],
+      "updated_at": "2026-10-07 20:00:00",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-8-esports-career"
     },
     {
-      "id": "61883218",
-      "title": "بازی‌های واقعیت مجازی: آینده صنعت گیم",
-      "author": "مجله واقعیت مجازی",
-      "author_image": "https://example.com/images/author-vrmagazine.jpg",
-      "views": 11500,
-      "date": "2024-05-14 11:10:20",
-      "description": "بازی‌های واقعیت مجازی به عنوان آینده صنعت گیم شناخته می‌شوند. با پیشرفت‌های فناوری در حوزه واقعیت مجازی، این بازی‌ها تجربه‌ای بی‌نظیر و همه‌جانبه برای کاربران فراهم می‌کنند.",
-      "link": "https://vrmagazine.com/future-of-vr-games",
-      "image": "https://example.com/images/vr-games.jpg"
+      "id": 9,
+      "title": "SSD یا HDD؛ کدام گزینه برای نصب بازی مناسب‌تر است؟",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=85",
+      "description": "نوع حافظه ذخیره‌سازی می‌تواند زمان بارگذاری بازی‌ها و سرعت جابه‌جایی فایل‌ها را تغییر دهد.",
+      "category": "سخت‌افزار",
+      "tags": [
+        "SSD",
+        "HDD",
+        "ذخیره‌سازی"
+      ],
+      "author": "نیما کریمی",
+      "authorImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-04 08:50:00",
+      "readingTime": 4,
+      "views": 2460,
+      "rating": 4.2,
+      "likes": 147,
+      "saves": 81,
+      "sections": [
+        {
+          "id": "9-1",
+          "title": "تفاوت در سرعت بارگذاری",
+          "content": [
+            "حافظه‌های SSD به دلیل نداشتن قطعات مکانیکی، معمولاً زمان بارگذاری کوتاه‌تری نسبت به HDD دارند.",
+            "این تفاوت در بازی‌هایی با محیط‌های بزرگ و فایل‌های حجیم بیشتر به چشم می‌آید."
+          ],
+          "image": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "تفاوت در سرعت بارگذاری"
+        },
+        {
+          "id": "9-2",
+          "title": "انتخاب بر اساس نیاز",
+          "content": [
+            "برای سیستم‌عامل و بازی‌هایی که مرتب اجرا می‌شوند، SSD انتخاب مناسبی است؛ HDD همچنان برای آرشیو فایل‌های حجیم کاربرد دارد."
+          ],
+          "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "انتخاب بر اساس نیاز"
+        }
+      ],
+      "relatedNewsIds": [
+        2,
+        5,
+        6
+      ],
+      "updated_at": "2026-10-04 08:50:00",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-9-ssd-vs-hdd"
     },
     {
-      "id": "61458118",
-      "title": "بهترین بازی‌های سال 2024 معرفی شدند",
-      "author": "وبسایت گیم‌آواردز",
-      "author_image": "https://example.com/images/author-gameawards.jpg",
-      "views": 19500,
-      "date": "2024-05-13 11:10:20",
-      "description": "در مراسم گیم‌آواردز بهترین بازی‌های سال 2024 معرفی شدند. این بازی‌ها با نوآوری‌های خود توانستند جوایز متعددی را کسب کنند و توجه گیمرها و منتقدان را به خود جلب کنند.",
-      "link": "https://gameawards.com/best-games-2024",
-      "image": "/images/news/best_Games2024.jpg"
+      "id": 10,
+      "title": "چرا دسترسی زودهنگام به بازی‌ها اهمیت دارد؟",
+      "image": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=85",
+      "description": "انتشار نسخه‌های اولیه به سازندگان اجازه می‌دهد پیش از عرضه نهایی، بازخورد بازیکنان را دریافت کنند.",
+      "category": "صنعت بازی",
+      "tags": [
+        "Early Access",
+        "توسعه بازی",
+        "بازخورد"
+      ],
+      "author": "آرمان رضایی",
+      "authorImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "created_at": "2026-10-01 15:25:00",
+      "readingTime": 5,
+      "views": 1845,
+      "rating": 4,
+      "likes": 116,
+      "saves": 49,
+      "sections": [
+        {
+          "id": "10-1",
+          "title": "بازخورد در طول توسعه",
+          "content": [
+            "در مدل دسترسی زودهنگام، بازیکنان می‌توانند پیش از انتشار کامل، نسخه‌ای در حال توسعه از بازی را تجربه کنند.",
+            "گزارش مشکلات و پیشنهادهای جامعه بازیکنان ممکن است در اولویت‌بندی تغییرات سازندگان مؤثر باشد."
+          ],
+          "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "بازخورد در طول توسعه"
+        },
+        {
+          "id": "10-2",
+          "title": "انتظارات واقع‌بینانه",
+          "content": [
+            "نسخه‌های اولیه ممکن است با مشکلات فنی، محتوای ناقص یا تغییرات اساسی در مسیر توسعه همراه باشند."
+          ],
+          "image": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1600&q=85",
+          "imageCaption": "انتظارات واقع‌بینانه"
+        }
+      ],
+      "relatedNewsIds": [
+        3,
+        6,
+        7
+      ],
+      "updated_at": "2026-10-01 15:25:00",
+      "source": "Iran Game Net Editorial",
+      "status": "published",
+      "slug": "news-10-early-access"
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "title": "Elden Ring",
+      "slug": "elden-ring",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg",
+      "category": "Action RPG",
+      "description": "در یک جهان فانتزی گسترده کاوش کنید، با دشمنان قدرتمند روبه‌رو شوید و مسیر خود را در سرزمین میانه بسازید.",
+      "genres": [
+        "Action RPG",
+        "Soulslike",
+        "Open World"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X|S"
+      ],
+      "modes": [
+        "Single-player",
+        "Online Co-op",
+        "PvP"
+      ],
+      "releaseYear": 2022,
+      "developer": "FromSoftware",
+      "publisher": "Bandai Namco Entertainment",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/1245620/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=E3Huy2cdih0",
+      "rating": 4.8,
+      "likes": 9850,
+      "saves": 4210,
+      "releaseDate": "2022-02-25",
+      "created_at": "2022-02-25",
+      "price": "59.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "امیرحسین کاظمی",
+      "author_image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "views": 12540,
+      "storeUrl": "https://store.steampowered.com/app/1245620/",
+      "steamAppId": 1245620,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "در یک جهان فانتزی گسترده کاوش کنید، با دشمنان قدرتمند روبه‌رو شوید و مسیر خود را در سرزمین میانه بسازید.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 4821
     },
     {
-      "id": "11",
-      "title": "تکنولوژی‌های جدید در صنعت بازی‌سازی",
-      "author": "خبرگزاری تکنولوژی گیم",
-      "author_image": "https://example.com/images/author-gametechnews.jpg",
-      "views": 16000,
-      "date": "2024-05-12 11:10:20",
-      "description": "در این مقاله به بررسی تکنولوژی‌های جدید در صنعت بازی‌سازی پرداخته‌ایم. این تکنولوژی‌ها شامل هوش مصنوعی پیشرفته، گرافیک واقع‌گرایانه و ابزارهای توسعه بازی‌های چندنفره آنلاین می‌باشند.",
-      "link": "https://gametechnews.com/new-tech-in-gaming",
-      "image": "https://example.com/images/gaming-tech.jpg"
+      "id": 2,
+      "title": "Cyberpunk 2077",
+      "slug": "cyberpunk-2077",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg",
+      "category": "RPG",
+      "description": "در نقش یک مزدور در شهر آینده‌نگر نایت‌سیتی وارد ماجراجویی‌ای پر از انتخاب‌ها و مأموریت‌های مختلف شوید.",
+      "genres": [
+        "Action RPG",
+        "Open World",
+        "Sci-Fi"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S"
+      ],
+      "modes": [
+        "Single-player"
+      ],
+      "releaseYear": 2020,
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/1091500/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=8X2kIfS6fb8",
+      "rating": 4.5,
+      "likes": 8720,
+      "saves": 3890,
+      "releaseDate": "2020-12-10",
+      "created_at": "2020-12-10",
+      "price": "59.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "مهدی نادری",
+      "author_image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "views": 18420,
+      "storeUrl": "https://store.steampowered.com/app/1091500/",
+      "steamAppId": 1091500,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "در نقش یک مزدور در شهر آینده‌نگر نایت‌سیتی وارد ماجراجویی‌ای پر از انتخاب‌ها و مأموریت‌های مختلف شوید.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 9320
     },
     {
-      "id": "12",
-      "title": "به نام خدا",
-      "author": "خبرگزاری تکنولوژی گیم",
-      "author_image": "https://example.com/images/author-gametechnews.jpg",
-      "views": 16000,
-      "date": "2024-07-20 15:10:20",
-      "description": "در این مقاله به بررسی تکنولوژی‌های جدید در صنعت بازی‌سازی پرداخته‌ایم. این تکنولوژی‌ها شامل هوش مصنوعی پیشرفته، گرافیک واقع‌گرایانه و ابزارهای توسعه بازی‌های چندنفره آنلاین می‌باشند.",
-      "link": "https://gametechnews.com/new-tech-in-gaming",
-      "image": "https://example.com/images/gaming-tech.jpg"
+      "id": 3,
+      "title": "Counter-Strike 2",
+      "slug": "counter-strike-2",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg",
+      "category": "FPS",
+      "description": "یک شوتر تاکتیکی رقابتی که در آن دقت، هماهنگی تیمی و تصمیم‌گیری سریع نقش اصلی را دارند.",
+      "genres": [
+        "FPS",
+        "Tactical Shooter",
+        "Competitive"
+      ],
+      "platforms": [
+        "PC"
+      ],
+      "modes": [
+        "Competitive",
+        "Casual",
+        "Deathmatch",
+        "Wingman"
+      ],
+      "releaseYear": 2023,
+      "developer": "Valve",
+      "publisher": "Valve",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/730/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=c80dVYcL69E",
+      "rating": 4.3,
+      "likes": 12400,
+      "saves": 5100,
+      "releaseDate": "2012-08-21",
+      "created_at": "2012-08-21",
+      "price": "Free to Play",
+      "currency": null,
+      "isFree": true,
+      "author": "پارسا احمدی",
+      "author_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80",
+      "views": 35200,
+      "storeUrl": "https://store.steampowered.com/app/730/",
+      "steamAppId": 730,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "یک شوتر تاکتیکی رقابتی که در آن دقت، هماهنگی تیمی و تصمیم‌گیری سریع نقش اصلی را دارند.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 18500
+    },
+    {
+      "id": 4,
+      "title": "Baldur's Gate 3",
+      "slug": "baldurs-gate-3",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/1086940/header.jpg",
+      "category": "RPG",
+      "description": "در یک ماجراجویی نقش‌آفرینی گروهی، با انتخاب‌های داستانی و نبردهای تاکتیکی سرنوشت شخصیت‌ها را رقم بزنید.",
+      "genres": [
+        "RPG",
+        "Turn-Based",
+        "Fantasy"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 5",
+        "Xbox Series X|S",
+        "macOS"
+      ],
+      "modes": [
+        "Single-player",
+        "Online Co-op",
+        "Local Co-op"
+      ],
+      "releaseYear": 2023,
+      "developer": "Larian Studios",
+      "publisher": "Larian Studios",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/1086940/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/1086940/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=1T22wNvoNiU",
+      "rating": 4.8,
+      "likes": 11200,
+      "saves": 6300,
+      "releaseDate": "2023-08-03",
+      "created_at": "2023-08-03",
+      "price": "59.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "سارا محمدی",
+      "author_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
+      "views": 16870,
+      "storeUrl": "https://store.steampowered.com/app/1086940/",
+      "steamAppId": 1086940,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "در یک ماجراجویی نقش‌آفرینی گروهی، با انتخاب‌های داستانی و نبردهای تاکتیکی سرنوشت شخصیت‌ها را رقم بزنید.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 12400
+    },
+    {
+      "id": 5,
+      "title": "Red Dead Redemption 2",
+      "slug": "red-dead-redemption-2",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg",
+      "category": "Action Adventure",
+      "description": "در دنیای غرب وحشی، همراه گروهی قانون‌گریز زندگی کنید و با پیامد تصمیم‌های خود روبه‌رو شوید.",
+      "genres": [
+        "Action Adventure",
+        "Open World",
+        "Western"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Xbox One"
+      ],
+      "modes": [
+        "Single-player",
+        "Online Multiplayer"
+      ],
+      "releaseYear": 2018,
+      "developer": "Rockstar Games",
+      "publisher": "Rockstar Games",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/1174180/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=eaW0tYpxyp0",
+      "rating": 4.9,
+      "likes": 14500,
+      "saves": 7200,
+      "releaseDate": "2019-12-05",
+      "created_at": "2019-12-05",
+      "price": "59.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "امیرحسین کاظمی",
+      "author_image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "views": 29110,
+      "storeUrl": "https://store.steampowered.com/app/1174180/",
+      "steamAppId": 1174180,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "در دنیای غرب وحشی، همراه گروهی قانون‌گریز زندگی کنید و با پیامد تصمیم‌های خود روبه‌رو شوید.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 16300
+    },
+    {
+      "id": 6,
+      "title": "The Witcher 3: Wild Hunt",
+      "slug": "the-witcher-3-wild-hunt",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg",
+      "category": "Action RPG",
+      "description": "در نقش گرالت، شکارچی هیولا، به جست‌وجوی سیری بروید و در سرزمینی پر از ماجرا و انتخاب‌های دشوار سفر کنید.",
+      "genres": [
+        "Action RPG",
+        "Fantasy",
+        "Open World"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X|S",
+        "Nintendo Switch"
+      ],
+      "modes": [
+        "Single-player"
+      ],
+      "releaseYear": 2015,
+      "developer": "CD Projekt Red",
+      "publisher": "CD Projekt",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/292030/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=c0i88t0Kacs",
+      "rating": 4.8,
+      "likes": 13100,
+      "saves": 6800,
+      "releaseDate": "2015-05-18",
+      "created_at": "2015-05-18",
+      "price": "39.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "مهدی نادری",
+      "author_image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "views": 22340,
+      "storeUrl": "https://store.steampowered.com/app/292030/",
+      "steamAppId": 292030,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "در نقش گرالت، شکارچی هیولا، به جست‌وجوی سیری بروید و در سرزمینی پر از ماجرا و انتخاب‌های دشوار سفر کنید.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 14900
+    },
+    {
+      "id": 7,
+      "title": "Hades",
+      "slug": "hades",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/1145360/header.jpg",
+      "category": "Roguelike",
+      "description": "برای فرار از جهان زیرین تلاش کنید و در هر بار مبارزه، توانایی‌ها و مسیرهای تازه‌ای پیدا کنید.",
+      "genres": [
+        "Roguelike",
+        "Action",
+        "Dungeon Crawler"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "PlayStation 5",
+        "Xbox One",
+        "Xbox Series X|S",
+        "Nintendo Switch"
+      ],
+      "modes": [
+        "Single-player"
+      ],
+      "releaseYear": 2020,
+      "developer": "Supergiant Games",
+      "publisher": "Supergiant Games",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/1145360/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/1145360/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=91t0ha9x0AE",
+      "rating": 4.6,
+      "likes": 7640,
+      "saves": 3320,
+      "releaseDate": "2020-09-17",
+      "created_at": "2020-09-17",
+      "price": "24.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "پارسا احمدی",
+      "author_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80",
+      "views": 11280,
+      "storeUrl": "https://store.steampowered.com/app/1145360/",
+      "steamAppId": 1145360,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "برای فرار از جهان زیرین تلاش کنید و در هر بار مبارزه، توانایی‌ها و مسیرهای تازه‌ای پیدا کنید.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 7820
+    },
+    {
+      "id": 8,
+      "title": "Forza Horizon 5",
+      "slug": "forza-horizon-5",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg",
+      "category": "Racing",
+      "description": "در نقشه‌ای الهام‌گرفته از مکزیک رانندگی کنید، خودروهای مختلف جمع‌آوری کنید و در رویدادهای متنوع شرکت کنید.",
+      "genres": [
+        "Racing",
+        "Open World",
+        "Sports"
+      ],
+      "platforms": [
+        "PC",
+        "Xbox One",
+        "Xbox Series X|S",
+        "PlayStation 5"
+      ],
+      "modes": [
+        "Single-player",
+        "Online Multiplayer",
+        "Co-op"
+      ],
+      "releaseYear": 2021,
+      "developer": "Playground Games",
+      "publisher": "Xbox Game Studios",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/1551360/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=FYH9n37B7Yw",
+      "rating": 4.5,
+      "likes": 9030,
+      "saves": 4170,
+      "releaseDate": "2021-11-09",
+      "created_at": "2021-11-09",
+      "price": "59.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "سارا محمدی",
+      "author_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
+      "views": 14760,
+      "storeUrl": "https://store.steampowered.com/app/1551360/",
+      "steamAppId": 1551360,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "در نقشه‌ای الهام‌گرفته از مکزیک رانندگی کنید، خودروهای مختلف جمع‌آوری کنید و در رویدادهای متنوع شرکت کنید.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 10100
+    },
+    {
+      "id": 9,
+      "title": "Hollow Knight",
+      "slug": "hollow-knight",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/367520/header.jpg",
+      "category": "Metroidvania",
+      "description": "در سرزمینی زیرزمینی و اسرارآمیز کاوش کنید، توانایی‌های تازه به دست آورید و با دشمنان چالش‌برانگیز روبه‌رو شوید.",
+      "genres": [
+        "Metroidvania",
+        "Platformer",
+        "Action"
+      ],
+      "platforms": [
+        "PC",
+        "PlayStation 4",
+        "Xbox One",
+        "Nintendo Switch"
+      ],
+      "modes": [
+        "Single-player"
+      ],
+      "releaseYear": 2017,
+      "developer": "Team Cherry",
+      "publisher": "Team Cherry",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/367520/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/367520/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=UAO2urG23S4",
+      "rating": 4.7,
+      "likes": 8160,
+      "saves": 3950,
+      "releaseDate": "2017-02-24",
+      "created_at": "2017-02-24",
+      "price": "14.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "امیرحسین کاظمی",
+      "author_image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+      "views": 13890,
+      "storeUrl": "https://store.steampowered.com/app/367520/",
+      "steamAppId": 367520,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "در سرزمینی زیرزمینی و اسرارآمیز کاوش کنید، توانایی‌های تازه به دست آورید و با دشمنان چالش‌برانگیز روبه‌رو شوید.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 8900
+    },
+    {
+      "id": 10,
+      "title": "God of War Ragnarök",
+      "slug": "god-of-war-ragnarok",
+      "image": "https://cdn.akamai.steamstatic.com/steam/apps/2322010/header.jpg",
+      "category": "Action Adventure",
+      "description": "کریتوس و آترئوس در سفری میان قلمروهای اساطیری، با تهدیدهای تازه و تصمیم‌های دشوار روبه‌رو می‌شوند.",
+      "genres": [
+        "Action Adventure",
+        "Hack and Slash",
+        "Mythology"
+      ],
+      "platforms": [
+        "PlayStation 4",
+        "PlayStation 5",
+        "PC"
+      ],
+      "modes": [
+        "Single-player"
+      ],
+      "releaseYear": 2022,
+      "developer": "Santa Monica Studio",
+      "publisher": "Sony Interactive Entertainment",
+      "screenshots": [
+        "https://cdn.akamai.steamstatic.com/steam/apps/2322010/header.jpg",
+        "https://cdn.akamai.steamstatic.com/steam/apps/2322010/library_hero.jpg"
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=EE-4GvjKcfs",
+      "rating": 4.7,
+      "likes": 10700,
+      "saves": 4900,
+      "releaseDate": "2024-09-19",
+      "created_at": "2024-09-19",
+      "price": "59.99 USD",
+      "currency": "USD",
+      "isFree": false,
+      "author": "مهدی نادری",
+      "author_image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "authorImage": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=256&q=80",
+      "views": 19650,
+      "storeUrl": "https://store.steampowered.com/app/2322010/",
+      "steamAppId": 2322010,
+      "status": "released",
+      "language": [
+        "English"
+      ],
+      "ageRating": null,
+      "shortDescription": "کریتوس و آترئوس در سفری میان قلمروهای اساطیری، با تهدیدهای تازه و تصمیم‌های دشوار روبه‌رو می‌شوند.",
+      "pros": [],
+      "cons": [],
+      "reviewCount": 9700
     }
   ],
   "popularNews": [
@@ -139,8 +1049,11 @@
       "title": "رشد صنعت بازی‌های موبایل در سال 2024",
       "author": "وبسایت گیم‌اینداستری",
       "author_image": "https://example.com/images/author-gameindustry.jpg",
+      "authorImage": "https://example.com/images/author-gameindustry.jpg",
       "views": 14000,
-      "date": "2024-05-15 11:10:20",
+      "created_at": "2024-05-15 11:10:20",
+      "readingTime": 1,
+      "sections": [],
       "description": "صنعت بازی‌های موبایل در سال 2024 رشد چشمگیری داشته است. با افزایش تعداد کاربران و بهبود فناوری‌های موبایل، بازار بازی‌های موبایل به یکی از پر درآمدترین بخش‌های صنعت بازی تبدیل شده است.",
       "link": "https://gameindustry.com/mobile-games-growth-2024",
       "image": "/images/news/mobile-games.webp"
@@ -150,8 +1063,11 @@
       "title": "بازی‌های واقعیت مجازی: آینده صنعت گیم",
       "author": "مجله واقعیت مجازی",
       "author_image": "https://example.com/images/author-vrmagazine.jpg",
+      "authorImage": "https://example.com/images/author-vrmagazine.jpg",
       "views": 11500,
-      "date": "2024-05-22 12:10:20 am",
+      "created_at": "2024-05-22 12:10:20 am",
+      "readingTime": 1,
+      "sections": [],
       "description": "بازی‌های واقعیت مجازی به عنوان آینده صنعت گیم شناخته می‌شوند. با پیشرفت‌های فناوری در حوزه واقعیت مجازی، این بازی‌ها تجربه‌ای بی‌نظیر و همه‌جانبه برای کاربران فراهم می‌کنند.",
       "link": "https://vrmagazine.com/future-of-vr-games",
       "image": "/images/news/آینده-صنعت-بازی.jpg"
@@ -161,8 +1077,11 @@
       "title": "بهترین بازی‌های سال 2024 معرفی شدند",
       "author": "وبسایت گیم‌آواردز",
       "author_image": "https://example.com/images/author-gameawards.jpg",
+      "authorImage": "https://example.com/images/author-gameawards.jpg",
       "views": 19500,
-      "date": "2024-05-23 11:24:00",
+      "created_at": "2024-05-23 11:24:00",
+      "readingTime": 1,
+      "sections": [],
       "description": "در مراسم گیم‌آواردز بهترین بازی‌های سال 2024 معرفی شدند. این بازی‌ها با نوآوری‌های خود توانستند جوایز متعددی را کسب کنند و توجه گیمرها و منتقدان را به خود جلب کنند.",
       "link": "https://gameawards.com/best-games-2024",
       "image": "/images/news/best-games-of-the-2024.jpg"
@@ -172,21 +1091,27 @@
       "title": "تکنولوژی‌های جدید در صنعت بازی‌سازی",
       "author": "خبرگزاری تکنولوژی گیم",
       "author_image": "https://example.com/images/author-gametechnews.jpg",
+      "authorImage": "https://example.com/images/author-gametechnews.jpg",
       "views": 16000,
-      "date": "2024-05-23 11:00:20",
+      "created_at": "2024-05-23 11:00:20",
+      "readingTime": 1,
+      "sections": [],
       "description": "در این مقاله به بررسی تکنولوژی‌های جدید در صنعت بازی‌سازی پرداخته‌ایم. این تکنولوژی‌ها شامل هوش مصنوعی پیشرفته، گرافیک واقع‌گرایانه و ابزارهای توسعه بازی‌های چندنفره آنلاین می‌باشند.",
       "link": "https://gametechnews.com/new-tech-in-gaming",
       "image": "images/news/new-tech-in-gaming.jpeg"
     }
   ],
-  "WeeklyHighlightNews": [
+  "weeklyHighlightNews": [
     {
       "id": 61234567,
       "title": "عرضه بازی جدید Assassin's Creed Mirage",
       "author": "خبرگزاری بازی‌سازان",
       "author_image": "https://example.com/images/authors/gamesazan.jpg",
+      "authorImage": "https://example.com/images/authors/gamesazan.jpg",
       "views": 25000,
-      "date": "2024-05-30",
+      "created_at": "2024-05-30",
+      "readingTime": 1,
+      "sections": [],
       "description": "بازی جدید Assassin's Creed Mirage از شرکت یوبی‌سافت با ویژگی‌ها و داستان‌های جذاب منتشر شد. این بازی با محیط‌های باز و امکانات جدید، تجربه‌ای بی‌نظیر را برای گیمرها به ارمغان می‌آورد.",
       "link": "https://gamesazan.com/assassins-creed-mirage-release",
       "image": "/images/news/Assassins-Creed-Mirage.jpg"
@@ -196,8 +1121,11 @@
       "title": "معرفی بازی جدید The Witcher 4",
       "author": "مجله بازی‌های دیجیتال",
       "author_image": "https://example.com/images/authors/digital-gaming-mag.jpg",
+      "authorImage": "https://example.com/images/authors/digital-gaming-mag.jpg",
       "views": 18000,
-      "date": "2024-05-29",
+      "created_at": "2024-05-29",
+      "readingTime": 1,
+      "sections": [],
       "description": "شرکت CD Projekt Red از بازی جدید The Witcher 4 رونمایی کرد. این بازی قرار است با گرافیک بسیار بالا و داستانی عمیق، مخاطبان را به دنیایی جدید ببرد.",
       "link": "https://digitalgamingmag.com/the-witcher-4-announcement",
       "image": "/images/news/the-witcher-4-logo.webp"
@@ -207,8 +1135,11 @@
       "title": "آپدیت جدید بازی Fortnite",
       "author": "خبرگزاری گیم‌نیوز",
       "author_image": "https://example.com/images/authors/gamenews.jpg",
+      "authorImage": "https://example.com/images/authors/gamenews.jpg",
       "views": 22000,
-      "date": "2024-05-28",
+      "created_at": "2024-05-28",
+      "readingTime": 1,
+      "sections": [],
       "description": "بازی Fortnite با آپدیت جدیدی که شامل امکانات و اسکین‌های جدید است، به‌روزرسانی شد. این آپدیت تجربه بازی را برای کاربران بهبود می‌بخشد.",
       "link": "https://gamenews.com/fortnite-new-update",
       "image": "/images/news/Fortnite-Cover.jpg"
@@ -218,243 +1149,14 @@
       "title": "بررسی بازی Cyberpunk 2077 پس از آپدیت 2.0",
       "author": "وبسایت بازی‌نما",
       "author_image": "https://example.com/images/authors/bazinama.jpg",
+      "authorImage": "https://example.com/images/authors/bazinama.jpg",
       "views": 15000,
-      "date": "2024-05-27",
+      "created_at": "2024-05-27",
+      "readingTime": 1,
+      "sections": [],
       "description": "آپدیت جدید بازی Cyberpunk 2077 با نسخه 2.0 عرضه شد و بسیاری از مشکلات فنی بازی برطرف شده است. بررسی کامل این آپدیت در این مقاله ارائه شده است.",
       "link": "https://bazinama.com/cyberpunk-2077-update-2-review",
       "image": "/images/news/Cyber-Punk.jpg"
-    }
-  ],
-  "Games": [
-    {
-      "id": 61234567,
-      "title": "بازی Call of Duty: Warzone",
-      "author": "شرکت Activision",
-      "author_image": "https://example.com/images/authors/activision.jpg",
-      "views": 5000000,
-      "price": 69.9,
-      "date": "2020-03-10",
-      "description": "بازی Call of Duty: Warzone یکی از محبوب‌ترین بازی‌های بتل رویال است که توسط شرکت Activision ساخته شده است. این بازی با گرافیک بالا و گیم‌پلی هیجان‌انگیز خود توانسته است طرفداران زیادی را جذب کند.",
-      "link": "https://www.callofduty.com/warzone",
-      "image": "/images/callofduty/4.jpg",
-      "trialer": "/video/trailer/warzone.mp4",
-      "like": 200,
-      "save": 200,
-      "details": {
-        "images": {
-          "poster": "/images/callofduty/warzone.jpg",
-          "gallery": [
-            "/images/callofduty/1.jpg",
-            "/images/callofduty/2.jpg",
-            "/images/callofduty/3.jpg",
-            "/images/callofduty/4.jpg"
-          ]
-        },
-        "completeExplanations": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main1": { "title": "", "desc": "" },
-          "main2": { "title": "", "desc": "" },
-          "system": {
-            "min": "",
-            "max": ""
-          }
-        },
-        "producer": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main": { "title": "", "desc": "" }
-        }
-      },
-      "category": ["اکشن", "action"]
-    },
-    {
-      "id": 62345678,
-      "title": "بازی Fortnite",
-      "author": "شرکت Epic Games",
-      "author_image": "https://example.com/images/authors/epicgames.jpg",
-      "views": 3500000,
-      "price": 69.9,
-      "date": "2017-07-25",
-      "description": "بازی Fortnite یکی از محبوب‌ترین بازی‌های بتل رویال است که توسط شرکت Epic Games ساخته شده است. این بازی با گرافیک کارتونی و امکانات متنوع خود، تجربه‌ای منحصر به فرد را به بازیکنان ارائه می‌دهد.",
-      "link": "https://www.epicgames.com/fortnite",
-      "image": "/images/news/Fortnite-Cover.jpg",
-      "trialer": "/video/trailer/Fortnite.mp4",
-      "like": 200,
-      "save": 200,
-      "details": {
-        "images": {
-          "poster": "/images/Fortnite/FortniteTum.jpg",
-          "gallery": [
-            "/images/Fortnite/1.webp",
-            "/images/Fortnite/2.webp",
-            "/images/Fortnite/3.jpg",
-            "/images/Fortnite/4.jpg"
-          ]
-        },
-        "completeExplanations": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main1": { "title": "", "desc": "" },
-          "main2": { "title": "", "desc": "" },
-          "system": {
-            "min": "",
-            "max": ""
-          }
-        },
-        "producer": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main": { "title": "", "desc": "" }
-        }
-      },
-      "category": "اکشن"
-    },
-    {
-      "id": 63456789,
-      "title": "بازی The Witcher 3: Wild Hunt",
-      "author": "شرکت CD Projekt Red",
-      "author_image": "https://example.com/images/authors/cdprojektred.jpg",
-      "views": 2000000,
-      "price": 69.9,
-      "date": "2015-05-19",
-      "description": "بازی The Witcher 3: Wild Hunt یک بازی نقش‌آفرینی است که توسط شرکت CD Projekt Red ساخته شده است. این بازی با داستان عمیق و گرافیک خیره‌کننده، یکی از بهترین بازی‌های تاریخ محسوب می‌شود.",
-      "link": "https://thewitcher.com/en/witcher3",
-      "image": "/images/news/the-witcher-4-logo.webp",
-      "trialer": "/video/trailer/theWitcher3WildHunt.mp4",
-      "like": 200,
-      "save": 200,
-      "details": {
-        "images": {
-          "poster": "/images/TheWitcher3WildHunt/TheWitcher3WildHuntTum.jpg",
-          "gallery": [
-            "/images/TheWitcher3WildHunt/1.jpg",
-            "/images/TheWitcher3WildHunt/2.webp",
-            "/images/TheWitcher3WildHunt/3.webp",
-            "/images/TheWitcher3WildHunt/4.jpg"
-          ]
-        },
-        "completeExplanations": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main1": { "title": "", "desc": "" },
-          "main2": { "title": "", "desc": "" },
-          "system": {
-            "min": "",
-            "max": ""
-          }
-        },
-        "producer": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main": { "title": "", "desc": "" }
-        }
-      },
-      "category": ["اکشن", "action"]
-    },
-    {
-      "id": 64567890,
-      "title": "بازی Cyberpunk 2077",
-      "author": "شرکت CD Projekt Red",
-      "author_image": "https://example.com/images/authors/cdprojektred.jpg",
-      "views": 3000000,
-      "price": 69.9,
-      "date": "2020-12-10",
-      "description": "بازی Cyberpunk 2077 یک بازی نقش‌آفرینی و جهان باز است که توسط شرکت CD Projekt Red ساخته شده است. این بازی با داستان علمی تخیلی و گرافیک بالا، تجربه‌ای جدید و هیجان‌انگیز را برای بازیکنان به ارمغان می‌آورد.",
-      "link": "https://www.cyberpunk.net",
-      "image": "/images/news/Cyber-Punk.jpg",
-      "trialer": "/video/trailer/cyberpunk.mp4",
-      "like": 200,
-      "save": 200,
-      "details": {
-        "images": {
-          "poster": "/images/cyberpunk/cyberPunkTum.jpg",
-          "gallery": [
-            "/images/cyberpunk/1.jpg",
-            "/images/cyberpunk/2.jpeg",
-            "/images/cyberpunk/3.webp",
-            "/images/cyberpunk/4.jpg"
-          ]
-        },
-        "completeExplanations": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main1": { "title": "", "desc": "" },
-          "main2": { "title": "", "desc": "" },
-          "system": {
-            "min": "",
-            "max": ""
-          }
-        },
-        "producer": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main": { "title": "", "desc": "" }
-        }
-      },
-      "category": ["اکشن", "action"]
-    },
-    {
-      "id": 65678901,
-      "title": "بازی Grand Theft Auto V",
-      "author": "شرکت Rockstar Games",
-      "author_image": "https://example.com/images/authors/rockstargames.jpg",
-      "views": 6000000,
-      "price": 69.9,
-      "date": "2013-09-17",
-      "description": "بازی Grand Theft Auto V یکی از محبوب‌ترین و پرفروش‌ترین بازی‌های جهان است که توسط شرکت Rockstar Games ساخته شده است. این بازی با داستان جذاب و گرافیک بالا، تجربه‌ای بی‌نظیر را به بازیکنان ارائه می‌دهد.",
-      "link": "https://www.rockstargames.com/V",
-      "image": "/images/gtav_back.jpg",
-      "trialer": "/video/trailer/GrandThefAutoV.mp4",
-      "like": 200,
-      "save": 200,
-      "details": {
-        "images": {
-          "poster": "/images/gtav/grandtheftautovTum.jpg",
-          "gallery": [
-            "/images/gtav/1.webp",
-            "/images/gtav/2.jpg",
-            "/images/gtav/3.jpg",
-            "/images/gtav/4.jpeg"
-          ]
-        },
-        "completeExplanations": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main1": { "title": "", "desc": "" },
-          "main2": { "title": "", "desc": "" },
-          "system": {
-            "min": "",
-            "max": ""
-          }
-        },
-        "producer": {
-          "header": {
-            "title": "",
-            "desc": ""
-          },
-          "main": { "title": "", "desc": "" }
-        }
-      },
-      "category": ["اکشن", "action"]
     }
   ],
   "GameCenters": [
@@ -462,13 +1164,13 @@
       "id": 62345680,
       "title": "گیم نت آریا",
       "views": "1700",
-      "date": "2024-06-20",
+      "created_at": "2024-06-20",
       "description": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه در شمال تهران.",
       "image": "/images/gameCenters/6.jpg",
-      "like": 320,
+      "likes": 320,
       "rating": 2,
       "city": "تهران",
-      "save": 180,
+      "saves": 180,
       "details": {
         "images": [
           "/images/AriaGame/1.webp",
@@ -515,7 +1217,10 @@
               "typeEnglish": "Friendly Environment"
             }
           ],
-          "geoLocation": { "x": 35.8045, "y": 51.3988 }
+          "geoLocation": {
+            "x": 35.8045,
+            "y": 51.3988
+          }
         },
         "location": {
           "header": {
@@ -550,13 +1255,13 @@
       "id": 62345681,
       "title": "گیم نت مهتاب",
       "views": "1300",
-      "date": "2024-06-15",
+      "created_at": "2024-06-15",
       "description": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز در شرق تهران.",
       "image": "/images/gameCenters/5.webp",
-      "like": 270,
+      "likes": 270,
       "rating": "3.5",
       "city": "تهران",
-      "save": 140,
+      "saves": 140,
       "details": {
         "images": [
           "/images/MahtabGame/1.webp",
@@ -587,20 +1292,26 @@
             {
               "type": "اینترنت پرسرعت",
               "description": "اینترنت با سرعت بالا.",
-              "typeEnglish": "High-Speed Internet"
+              "typeEnglish": "High-Speed Internet",
+              "icon": ""
             },
             {
               "type": "فضای آرام",
               "description": "محیطی آرام و راحت برای بازی.",
-              "typeEnglish": "Calm Space"
+              "typeEnglish": "Calm Space",
+              "icon": ""
             },
             {
               "type": "سیستم‌های به‌روز",
               "description": "سیستم‌های گیمینگ جدید.",
-              "typeEnglish": "Updated Systems"
+              "typeEnglish": "Updated Systems",
+              "icon": ""
             }
           ],
-          "geoLocation": { "x": 35.7101, "y": 51.492 }
+          "geoLocation": {
+            "x": 35.7101,
+            "y": 51.492
+          }
         },
         "location": {
           "header": {
@@ -635,13 +1346,13 @@
       "id": 62345682,
       "title": "گیم نت البرز",
       "views": "1900",
-      "date": "2024-06-10",
+      "created_at": "2024-06-10",
       "description": "گیم نت البرز با امکانات فوق‌العاده و تجهیزات پیشرفته در کرج.",
       "image": "/images/gameCenters/4.jpg",
-      "like": 350,
+      "likes": 350,
       "rating": "3.7",
       "city": "کرج",
-      "save": 190,
+      "saves": 190,
       "details": {
         "images": [
           "/images/AlborzGame/1.webp",
@@ -688,7 +1399,10 @@
               "typeEnglish": "Friendly Environment"
             }
           ],
-          "geoLocation": { "x": 35.84, "y": 50.9391 }
+          "geoLocation": {
+            "x": 35.84,
+            "y": 50.9391
+          }
         },
         "location": {
           "header": {
@@ -723,13 +1437,13 @@
       "id": 62345683,
       "title": "گیم نت ستاره",
       "views": "1600",
-      "date": "2024-06-05",
+      "created_at": "2024-06-05",
       "description": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت در جنوب تهران.",
       "image": "/images/gameCenters/1.jpg",
-      "like": 310,
+      "likes": 310,
       "rating": "4.5",
       "city": "تهران",
-      "save": 160,
+      "saves": 160,
       "details": {
         "images": [
           "/images/SetarehGame/1.webp",
@@ -760,20 +1474,26 @@
             {
               "type": "اینترنت پرسرعت",
               "description": "اینترنت با سرعت بالا.",
-              "typeEnglish": "High-Speed Internet"
+              "typeEnglish": "High-Speed Internet",
+              "icon": ""
             },
             {
               "type": "فضای آرام",
               "description": "محیطی آرام و راحت برای بازی.",
-              "typeEnglish": "Calm Space"
+              "typeEnglish": "Calm Space",
+              "icon": ""
             },
             {
               "type": "سیستم‌های به‌روز",
               "description": "سیستم‌های گیمینگ جدید.",
-              "typeEnglish": "Updated Systems"
+              "typeEnglish": "Updated Systems",
+              "icon": ""
             }
           ],
-          "geoLocation": { "x": 35.6731, "y": 51.3245 }
+          "geoLocation": {
+            "x": 35.6731,
+            "y": 51.3245
+          }
         },
         "location": {
           "header": {
@@ -808,13 +1528,13 @@
       "id": 62345678,
       "title": "گیم نت ایران گیم",
       "views": "1500",
-      "date": "2024-07-03",
+      "created_at": "2024-07-03",
       "description": "یکی از بهترین گیم نت‌های تهران با تجهیزات به‌روز و محیطی دوستانه.",
       "image": "/images/gameCenters/6.webp",
-      "like": 300,
+      "likes": 300,
       "rating": "5",
       "city": "تهران",
-      "save": 150,
+      "saves": 150,
       "details": {
         "images": [
           "/images/IranGame/1.webp",
@@ -845,20 +1565,26 @@
             {
               "type": "اینترنت پرسرعت",
               "description": "اینترنت با سرعت بالا برای بازی‌های آنلاین.",
-              "typeEnglish": "High-Speed Internet"
+              "typeEnglish": "High-Speed Internet",
+              "icon": ""
             },
             {
               "type": "سیستم‌های به‌روز",
               "description": "سیستم‌های گیمینگ با سخت‌افزارهای جدید.",
-              "typeEnglish": "Updated Systems"
+              "typeEnglish": "Updated Systems",
+              "icon": ""
             },
             {
               "type": "محیط دوستانه",
               "description": "محیطی مناسب برای بازی و تفریح.",
-              "typeEnglish": "Friendly Environment"
+              "typeEnglish": "Friendly Environment",
+              "icon": ""
             }
           ],
-          "geoLocation": { "x": 35.6892, "y": 51.389 }
+          "geoLocation": {
+            "x": 35.6892,
+            "y": 51.389
+          }
         },
         "location": {
           "header": {
@@ -893,13 +1619,13 @@
       "id": 62345679,
       "title": "گیم نت پارسیان",
       "views": "2000",
-      "date": "2024-06-25",
+      "created_at": "2024-06-25",
       "description": "گیم نت پارسیان با فضایی مدرن و تجهیزات پیشرفته در غرب تهران.",
       "image": "/images/gameCenters/parsian/1.webp",
-      "like": 450,
+      "likes": 450,
       "rating": "5",
       "city": "تهران",
-      "save": 200,
+      "saves": 200,
       "details": {
         "images": [
           "/images/gameCenters/parsian/1.webp",
@@ -931,20 +1657,26 @@
             {
               "type": "اینترنت پرسرعت",
               "description": "اتصال به اینترنت با سرعت بالا.",
-              "typeEnglish": "High-Speed Internet"
+              "typeEnglish": "High-Speed Internet",
+              "icon": ""
             },
             {
               "type": "فضای مدرن",
               "description": "دکوراسیون مدرن و جذاب.",
-              "typeEnglish": "Modern Space"
+              "typeEnglish": "Modern Space",
+              "icon": ""
             },
             {
               "type": "پارکینگ اختصاصی",
               "description": "پارکینگ اختصاصی برای مشتریان.",
-              "typeEnglish": "Private Parking"
+              "typeEnglish": "Private Parking",
+              "icon": ""
             }
           ],
-          "geoLocation": { "x": 35.7322, "y": 51.4485 }
+          "geoLocation": {
+            "x": 35.7322,
+            "y": 51.4485
+          }
         },
         "location": {
           "header": {
@@ -979,13 +1711,13 @@
       "id": 62345684,
       "title": "گیم نت مروارید",
       "views": "1400",
-      "date": "2024-05-30",
+      "created_at": "2024-05-30",
       "description": "گیم نت مروارید با تجهیزات پیشرفته و اینترنت پرسرعت در شیراز.",
       "image": "/images/gameCenters/2.jpg",
-      "like": 290,
+      "likes": 290,
       "rating": "4.5",
       "city": "شیراز",
-      "save": 150,
+      "saves": 150,
       "details": {
         "images": [
           "/images/MarvaridGame/1.webp",
@@ -1032,7 +1764,10 @@
               "typeEnglish": "Friendly Environment"
             }
           ],
-          "geoLocation": { "x": 29.5926, "y": 52.5836 }
+          "geoLocation": {
+            "x": 29.5926,
+            "y": 52.5836
+          }
         },
         "location": {
           "header": {
@@ -1067,13 +1802,13 @@
       "id": 62345685,
       "title": "گیم نت ققنوس",
       "views": "1800",
-      "date": "2024-05-25",
+      "created_at": "2024-05-25",
       "description": "گیم نت ققنوس با امکانات فوق‌العاده و اینترنت پرسرعت در مشهد.",
       "image": "/images/news/GhoghnousGame-Cover.jpg",
-      "like": 370,
+      "likes": 370,
       "rating": "4.1",
       "city": "مشهد",
-      "save": 200,
+      "saves": 200,
       "details": {
         "images": [
           "/images/GhoghnousGame/1.webp",
@@ -1120,7 +1855,10 @@
               "typeEnglish": "Friendly Environment"
             }
           ],
-          "geoLocation": { "x": 36.2978, "y": 59.6116 }
+          "geoLocation": {
+            "x": 36.2978,
+            "y": 59.6116
+          }
         },
         "location": {
           "header": {
@@ -1155,13 +1893,13 @@
       "id": 62345686,
       "title": "گیم نت سپهر",
       "views": "1100",
-      "date": "2024-05-20",
+      "created_at": "2024-05-20",
       "description": "گیم نت سپهر با تجهیزات به‌روز و اینترنت پرسرعت در اهواز.",
       "image": "/images/news/SepehrGame-Cover.jpg",
-      "like": 250,
+      "likes": 250,
       "rating": "4.5",
       "city": "اهواز",
-      "save": 130,
+      "saves": 130,
       "details": {
         "images": [
           "/images/SepehrGame/1.webp",
@@ -1208,7 +1946,10 @@
               "typeEnglish": "Friendly Environment"
             }
           ],
-          "geoLocation": { "x": 31.3183, "y": 48.6706 }
+          "geoLocation": {
+            "x": 31.3183,
+            "y": 48.6706
+          }
         },
         "location": {
           "header": {
@@ -1240,1278 +1981,88 @@
       }
     }
   ],
-  "home": {
-    "popularNews": [
-    {
-      "id": "6786756",
-      "title": "رشد صنعت بازی‌های موبایل در سال 2024",
-      "author": "وبسایت گیم‌اینداستری",
-      "author_image": "https://example.com/images/author-gameindustry.jpg",
-      "views": 14000,
-      "date": "2024-05-15 11:10:20",
-      "description": "صنعت بازی‌های موبایل در سال 2024 رشد چشمگیری داشته است. با افزایش تعداد کاربران و بهبود فناوری‌های موبایل، بازار بازی‌های موبایل به یکی از پر درآمدترین بخش‌های صنعت بازی تبدیل شده است.",
-      "link": "https://gameindustry.com/mobile-games-growth-2024",
-      "image": "/images/news/mobile-games.webp"
-    },
-    {
-      "id": "61883218",
-      "title": "بازی‌های واقعیت مجازی: آینده صنعت گیم",
-      "author": "مجله واقعیت مجازی",
-      "author_image": "https://example.com/images/author-vrmagazine.jpg",
-      "views": 11500,
-      "date": "2024-05-22 12:10:20 am",
-      "description": "بازی‌های واقعیت مجازی به عنوان آینده صنعت گیم شناخته می‌شوند. با پیشرفت‌های فناوری در حوزه واقعیت مجازی، این بازی‌ها تجربه‌ای بی‌نظیر و همه‌جانبه برای کاربران فراهم می‌کنند.",
-      "link": "https://vrmagazine.com/future-of-vr-games",
-      "image": "/images/news/آینده-صنعت-بازی.jpg"
-    },
-    {
-      "id": "61458118",
-      "title": "بهترین بازی‌های سال 2024 معرفی شدند",
-      "author": "وبسایت گیم‌آواردز",
-      "author_image": "https://example.com/images/author-gameawards.jpg",
-      "views": 19500,
-      "date": "2024-05-23 11:24:00",
-      "description": "در مراسم گیم‌آواردز بهترین بازی‌های سال 2024 معرفی شدند. این بازی‌ها با نوآوری‌های خود توانستند جوایز متعددی را کسب کنند و توجه گیمرها و منتقدان را به خود جلب کنند.",
-      "link": "https://gameawards.com/best-games-2024",
-      "image": "/images/news/best-games-of-the-2024.jpg"
-    },
-    {
-      "id": "11",
-      "title": "تکنولوژی‌های جدید در صنعت بازی‌سازی",
-      "author": "خبرگزاری تکنولوژی گیم",
-      "author_image": "https://example.com/images/author-gametechnews.jpg",
-      "views": 16000,
-      "date": "2024-05-23 11:00:20",
-      "description": "در این مقاله به بررسی تکنولوژی‌های جدید در صنعت بازی‌سازی پرداخته‌ایم. این تکنولوژی‌ها شامل هوش مصنوعی پیشرفته، گرافیک واقع‌گرایانه و ابزارهای توسعه بازی‌های چندنفره آنلاین می‌باشند.",
-      "link": "https://gametechnews.com/new-tech-in-gaming",
-      "image": "images/news/new-tech-in-gaming.jpeg"
-    }
-    ],
-    "newestGames": [
-      {
-        "id": 61234567,
-        "title": "بازی Call of Duty: Warzone",
-        "author": "شرکت Activision",
-        "author_image": "https://example.com/images/authors/activision.jpg",
-        "views": 5000000,
-        "price": 69.9,
-        "date": "2020-03-10",
-        "description": "بازی Call of Duty: Warzone یکی از محبوب‌ترین بازی‌های بتل رویال است که توسط شرکت Activision ساخته شده است. این بازی با گرافیک بالا و گیم‌پلی هیجان‌انگیز خود توانسته است طرفداران زیادی را جذب کند.",
-        "link": "https://www.callofduty.com/warzone",
-        "image": "/images/callofduty/4.jpg",
-        "trialer": "/video/trailer/warzone.mp4",
-        "like": 200,
-        "save": 200,
-        "details": {
-          "images": {
-            "poster": "/images/callofduty/warzone.jpg",
-            "gallery": [
-              "/images/callofduty/1.jpg",
-              "/images/callofduty/2.jpg",
-              "/images/callofduty/3.jpg",
-              "/images/callofduty/4.jpg"
-            ]
-          },
-          "completeExplanations": {
-            "header": {
-              "title": "",
-              "desc": ""
-            },
-            "main1": { "title": "", "desc": "" },
-            "main2": { "title": "", "desc": "" },
-            "system": {
-              "min": "",
-              "max": ""
-            }
-          },
-          "producer": {
-            "header": {
-              "title": "",
-              "desc": ""
-            },
-            "main": { "title": "", "desc": "" }
-          }
-        },
-        "category": ["اکشن", "action"]
-      },
-      {
-        "id": 62345678,
-        "title": "بازی Fortnite",
-        "author": "شرکت Epic Games",
-        "author_image": "https://example.com/images/authors/epicgames.jpg",
-        "views": 3500000,
-        "price": 69.9,
-        "date": "2017-07-25",
-        "description": "بازی Fortnite یکی از محبوب‌ترین بازی‌های بتل رویال است که توسط شرکت Epic Games ساخته شده است. این بازی با گرافیک کارتونی و امکانات متنوع خود، تجربه‌ای منحصر به فرد را به بازیکنان ارائه می‌دهد.",
-        "link": "https://www.epicgames.com/fortnite",
-        "image": "/images/news/Fortnite-Cover.jpg",
-        "trialer": "/video/trailer/Fortnite.mp4",
-        "like": 200,
-        "save": 200,
-        "details": {
-          "images": {
-            "poster": "/images/Fortnite/FortniteTum.jpg",
-            "gallery": [
-              "/images/Fortnite/1.webp",
-              "/images/Fortnite/2.webp",
-              "/images/Fortnite/3.jpg",
-              "/images/Fortnite/4.jpg"
-            ]
-          },
-          "completeExplanations": {
-            "header": {
-              "title": "",
-              "desc": ""
-            },
-            "main1": { "title": "", "desc": "" },
-            "main2": { "title": "", "desc": "" },
-            "system": {
-              "min": "",
-              "max": ""
-            }
-          },
-          "producer": {
-            "header": {
-              "title": "",
-              "desc": ""
-            },
-            "main": { "title": "", "desc": "" }
-          }
-        },
-        "category": "اکشن"
-      },
-      {
-        "id": 63456789,
-        "title": "بازی The Witcher 3: Wild Hunt",
-        "author": "شرکت CD Projekt Red",
-        "author_image": "https://example.com/images/authors/cdprojektred.jpg",
-        "views": 2000000,
-        "price": 69.9,
-        "date": "2015-05-19",
-        "description": "بازی The Witcher 3: Wild Hunt یک بازی نقش‌آفرینی است که توسط شرکت CD Projekt Red ساخته شده است. این بازی با داستان عمیق و گرافیک خیره‌کننده، یکی از بهترین بازی‌های تاریخ محسوب می‌شود.",
-        "link": "https://thewitcher.com/en/witcher3",
-        "image": "/images/news/the-witcher-4-logo.webp",
-        "trialer": "/video/trailer/theWitcher3WildHunt.mp4",
-        "like": 200,
-        "save": 200,
-        "details": {
-          "images": {
-            "poster": "/images/TheWitcher3WildHunt/TheWitcher3WildHuntTum.jpg",
-            "gallery": [
-              "/images/TheWitcher3WildHunt/1.jpg",
-              "/images/TheWitcher3WildHunt/2.webp",
-              "/images/TheWitcher3WildHunt/3.webp",
-              "/images/TheWitcher3WildHunt/4.jpg"
-            ]
-          },
-          "completeExplanations": {
-            "header": {
-              "title": "",
-              "desc": ""
-            },
-            "main1": { "title": "", "desc": "" },
-            "main2": { "title": "", "desc": "" },
-            "system": {
-              "min": "",
-              "max": ""
-            }
-          },
-          "producer": {
-            "header": {
-              "title": "",
-              "desc": ""
-            },
-            "main": { "title": "", "desc": "" }
-          }
-        },
-        "category": ["اکشن", "action"]
-      },
-      {
-        "id": 64567890,
-        "title": "بازی Cyberpunk 2077",
-        "author": "شرکت CD Projekt Red",
-        "author_image": "https://example.com/images/authors/cdprojektred.jpg",
-        "views": 3000000,
-        "price": 69.9,
-        "date": "2020-12-10",
-        "description": "بازی Cyberpunk 2077 یک بازی نقش‌آفرینی و جهان باز است که توسط شرکت CD Projekt Red ساخته شده است. این بازی با داستان علمی تخیلی و گرافیک بالا، تجربه‌ای جدید و هیجان‌انگیز را برای بازیکنان به ارمغان می‌آورد.",
-        "link": "https://www.cyberpunk.net",
-        "image": "/images/news/Cyber-Punk.jpg",
-        "trialer": "/video/trailer/cyberpunk.mp4",
-        "like": 200,
-        "save": 200,
-        "details": {
-          "images": {
-            "poster": "/images/cyberpunk/cyberPunkTum.jpg",
-            "gallery": [
-              "/images/cyberpunk/1.jpg",
-              "/images/cyberpunk/2.jpeg",
-              "/images/cyberpunk/3.webp",
-              "/images/cyberpunk/4.jpg"
-            ]
-          },
-          "completeExplanations": {
-            "header": {
-              "title": "",
-              "desc": ""
-            },
-            "main1": { "title": "", "desc": "" },
-            "main2": { "title": "", "desc": "" },
-            "system": {
-              "min": "",
-              "max": ""
-            }
-          },
-          "producer": {
-            "header": {
-              "title": "",
-              "desc": ""
-            },
-            "main": { "title": "", "desc": "" }
-          }
-        },
-        "category": ["اکشن", "action"]
-      }
-    ],
-    "bestStreamers": [
+  "producers": [
     {
       "id": 1,
-      "name": "میا پلیز",
-      "username": "miaplays",
-      "platform": "youtube",
-      "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
-      "followers": "863K",
-      "category": "Gaming / Fortnite / Vlog",
-      "isLive": false,
-      "link": "https://www.youtube.com/@miaplays"
+      "name": "نینتندو",
+      "icon": "https://www.google.com/s2/favicons?domain=nintendo.com&sz=128",
+      "Founded": 1889,
+      "employees": "حدود ۷٬۷۰۰ نفر",
+      "Revenue": "حدود ۱۱ تا ۱۲ میلیارد دلار در سال مالی ۲۰۲۴",
+      "growth": 5.55,
+      "decline": 1.25
     },
     {
       "id": 2,
-      "name": "آریا کئوکسر",
-      "username": "KEOXER",
-      "platform": "youtube",
-      "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kZq8vQvQvQvQvQvQvQvQvQvQvQvQvQvQvQvQ=s800-c-k-c0x00ffffff-no-rj",
-      "followers": "817K",
-      "category": "Gaming / Challenges / Just Chatting",
-      "isLive": false,
-      "link": "https://www.youtube.com/@AriaKeoXer"
+      "name": "راک‌استار گیمز",
+      "icon": "https://www.google.com/s2/favicons?domain=rockstargames.com&sz=128",
+      "Founded": 1998,
+      "employees": "چند هزار نفر در استودیوهای مختلف",
+      "Revenue": "درآمد مستقل شرکت به‌صورت عمومی اعلام نمی‌شود",
+      "growth": 8.2,
+      "decline": 2.1
     },
     {
       "id": 3,
-      "name": "سام صابری",
-      "username": "SamSaberi",
-      "platform": "twitch",
-      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/e3eff532-8c88-4112-860d-68597489529a-profile_image-300x300.png",
-      "followers": "360K",
-      "category": "Call of Duty / Warzone / Just Chatting",
-      "isLive": false,
-      "link": "https://www.twitch.tv/samsaberi"
+      "name": "سی‌دی پراجکت رد",
+      "icon": "https://www.google.com/s2/favicons?domain=cdprojektred.com&sz=128",
+      "Founded": 2002,
+      "employees": "حدود ۱٬۰۰۰ تا ۱٬۲۰۰ نفر در گروه",
+      "Revenue": "درآمد گروه در سال‌های اخیر متغیر بوده؛ رقم دقیق به سال مالی بستگی دارد",
+      "growth": 6.35,
+      "decline": 1.85
     },
     {
       "id": 4,
-      "name": "علی بیگزموگ",
-      "username": "Bigezmoge",
-      "platform": "twitch",
-      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/c1f61b83-a0e5-4f97-89bf-b3e981830f7d-profile_image-300x300.png",
-      "followers": "290K",
-      "category": "Just Chatting / DayZ / Call of Duty",
-      "isLive": false,
-      "link": "https://www.twitch.tv/bigezmoge"
+      "name": "الکترونیک آرتس",
+      "icon": "https://www.google.com/s2/favicons?domain=ea.com&sz=128",
+      "Founded": 1982,
+      "employees": "حدود ۱۳٬۰۰۰ نفر",
+      "Revenue": "حدود ۷ تا ۸ میلیارد دلار در سال مالی ۲۰۲۴",
+      "growth": 4.7,
+      "decline": 2.4
     },
     {
       "id": 5,
-      "name": "امیر ایزد",
-      "username": "AmirEyZed",
-      "platform": "twitch",
-      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/64b4f640-7bdd-47dd-b0c3-7e5bde6f7701-profile_image-300x300.png",
-      "followers": "149K",
-      "category": "Just Chatting / Podcast / Gaming",
-      "isLive": false,
-      "link": "https://www.twitch.tv/amireyzed"
+      "name": "یوبی‌سافت",
+      "icon": "https://www.google.com/s2/favicons?domain=ubisoft.com&sz=128",
+      "Founded": 1986,
+      "employees": "حدود ۱۷٬۰۰۰ نفر در سراسر جهان",
+      "Revenue": "چند میلیارد یورو در سال؛ رقم دقیق به سال مالی بستگی دارد",
+      "growth": 2.85,
+      "decline": 4.1
     },
     {
       "id": 6,
-      "name": "امیر فانتوم",
-      "username": "AmirPhanThom",
-      "platform": "twitch",
-      "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/7688e414-dd44-409f-aaef-9ea346066cf8-profile_image-300x300.png",
-      "followers": "114K",
-      "category": "Dota 2 / Just Chatting",
-      "isLive": false,
-      "link": "https://www.twitch.tv/amirphanthom"
+      "name": "ولو",
+      "icon": "https://www.google.com/s2/favicons?domain=valvesoftware.com&",
+      "Founded": 1996,
+      "employees": "تعداد دقیق کارکنان به‌صورت رسمی و مستمر منتشر نمی‌شود",
+      "Revenue": "درآمد خصوصی شرکت به‌صورت رسمی منتشر نمی‌شود",
+      "growth": 7.15,
+      "decline": 1.05
     },
     {
       "id": 7,
-      "name": "ابوالفضل ایکس مستر",
-      "username": "AliXMaster",
-      "platform": "aparat",
-      "avatar": "https://www.aparat.com/public/avatar/ali_x_master.jpg",
-      "followers": "450K",
-      "category": "Minecraft / Shooter",
-      "isLive": false,
-      "link": "https://www.aparat.com/ali_x_master"
+      "name": "اکتیویژن",
+      "icon": "https://www.google.com/s2/favicons?domain=activision.com&sz=128",
+      "Founded": 1979,
+      "employees": "اکنون بخشی از مایکروسافت گیمینگ",
+      "Revenue": "درآمد مستقل فعلی به‌صورت جداگانه گزارش نمی‌شود",
+      "growth": 3.2,
+      "decline": 2.75
     },
     {
       "id": 8,
-      "name": "مهدی بیزیکسر",
-      "username": "MahdiBizixer",
-      "platform": "aparat",
-      "avatar": "https://www.aparat.com/public/avatar/mahdi.bizixer.jpg",
-      "followers": "390K",
-      "category": "Minecraft / Simulation / Fun",
-      "isLive": false,
-      "link": "https://www.aparat.com/mahdi.bizixer"
+      "name": "اپیک گیمز",
+      "icon": "https://www.google.com/s2/favicons?domain=epicgames.com&sz=128",
+      "Founded": 1991,
+      "employees": "چند هزار نفر؛ رقم دقیق ممکن است تغییر کند",
+      "Revenue": "شرکت خصوصی است و رقم درآمد سالانه را به‌طور کامل عمومی نمی‌کند",
+      "growth": 5.4,
+      "decline": 1.6
     }
   ],
-    "popularGameCenters": [
-      {
-        "id": 62345680,
-        "title": "گیم نت آریا",
-        "views": "1700",
-        "date": "2024-06-20",
-        "description": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه در شمال تهران.",
-        "image": "/images/gameCenters/6.jpg",
-        "like": 320,
-        "rating": 2,
-        "city": "تهران",
-        "save": 180,
-        "details": {
-          "images": [
-            "/images/AriaGame/1.webp",
-            "/images/AriaGame/2.webp",
-            "/images/AriaGame/3.jpg",
-            "/images/AriaGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت آریا",
-              "desc": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه، تجربه‌ای به‌یادماندنی را برای گیمرها فراهم می‌کند."
-            },
-            "main": {
-              "title": "تجهیزات و بازی‌ها",
-              "desc": "بیش از 30 سیستم با سخت‌افزارهای قدرتمند و اینترنت پرسرعت."
-            },
-            "about": {
-              "text": "آریا در منطقه شمال تهران واقع شده و به راحتی قابل دسترسی است.",
-              "tell": "021-99887766",
-              "email": "info@ariagame.net",
-              "socialMedia": {
-                "instagram": "@aria_game",
-                "twitter": "@aria_game",
-                "telegram": "@aria_game"
-              }
-            },
-            "amenities": [
-              {
-                "icon": "",
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "icon": "",
-                "type": "سیستم‌های قوی",
-                "description": "سیستم‌های گیمینگ قدرتمند.",
-                "typeEnglish": "Powerful Systems"
-              },
-              {
-                "icon": "",
-                "type": "محیط دوستانه",
-                "description": "فضایی مناسب برای بازی و تفریح.",
-                "typeEnglish": "Friendly Environment"
-              }
-            ],
-            "geoLocation": { "x": 35.8045, "y": 51.3988 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت آریا در منطقه شمال تهران واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "تهران، خیابان ولیعصر، نبش خیابان شریعتی، پلاک 789"
-            }
-          },
-          "comments": [
-            {
-              "user": "محمد",
-              "comment": "محیط دوستانه و تجهیزات عالی.",
-              "imageProfile": "/images/profiles/mohammad.jpg"
-            },
-            {
-              "user": "الهام",
-              "comment": "بازی‌های جدید و متنوع.",
-              "imageProfile": "/images/profiles/elham.jpg"
-            },
-            {
-              "user": "امیر",
-              "comment": "دسترسی آسان و فضای راحت.",
-              "imageProfile": "/images/profiles/amir.jpg"
-            }
-          ]
-        }
-      },
-      {
-        "id": 62345681,
-        "title": "گیم نت مهتاب",
-        "views": "1300",
-        "date": "2024-06-15",
-        "description": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز در شرق تهران.",
-        "image": "/images/gameCenters/5.webp",
-        "like": 270,
-        "rating": "3.5",
-        "city": "تهران",
-        "save": 140,
-        "details": {
-          "images": [
-            "/images/MahtabGame/1.webp",
-            "/images/MahtabGame/2.webp",
-            "/images/MahtabGame/3.jpg",
-            "/images/MahtabGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت مهتاب",
-              "desc": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز، محیطی مناسب برای بازی‌های آنلاین و آفلاین ارائه می‌دهد."
-            },
-            "main": {
-              "title": "تجهیزات و امکانات",
-              "desc": "سیستم‌های جدید و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
-            },
-            "about": {
-              "text": "مهتاب در منطقه شرق تهران قرار دارد و به راحتی قابل دسترسی است.",
-              "tell": "021-55443322",
-              "email": "info@mahtabgame.net",
-              "socialMedia": {
-                "instagram": "@mahtab_game",
-                "twitter": "@mahtab_game",
-                "telegram": "@mahtab_game"
-              }
-            },
-            "amenities": [
-              {
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "type": "فضای آرام",
-                "description": "محیطی آرام و راحت برای بازی.",
-                "typeEnglish": "Calm Space"
-              },
-              {
-                "type": "سیستم‌های به‌روز",
-                "description": "سیستم‌های گیمینگ جدید.",
-                "typeEnglish": "Updated Systems"
-              }
-            ],
-            "geoLocation": { "x": 35.7101, "y": 51.492 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت مهتاب در منطقه شرق تهران واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "تهران، خیابان دماوند، نبش خیابان پیروزی، پلاک 321"
-            }
-          },
-          "comments": [
-            {
-              "user": "فاطمه",
-              "comment": "محیط آرام و سیستم‌های خوب.",
-              "imageProfile": "/images/profiles/fatemeh.jpg"
-            },
-            {
-              "user": "مهدی",
-              "comment": "اینترنت عالی و بازی‌های جدید.",
-              "imageProfile": "/images/profiles/mahdi.jpg"
-            },
-            {
-              "user": "سارا",
-              "comment": "فضای راحت و دوستانه.",
-              "imageProfile": "/images/profiles/sara.jpg"
-            }
-          ]
-        }
-      },
-      {
-        "id": 62345682,
-        "title": "گیم نت البرز",
-        "views": "1900",
-        "date": "2024-06-10",
-        "description": "گیم نت البرز با امکانات فوق‌العاده و تجهیزات پیشرفته در کرج.",
-        "image": "/images/gameCenters/4.jpg",
-        "like": 350,
-        "rating": "3.7",
-        "city": "کرج",
-        "save": 190,
-        "details": {
-          "images": [
-            "/images/AlborzGame/1.webp",
-            "/images/AlborzGame/2.webp",
-            "/images/AlborzGame/3.jpg",
-            "/images/AlborzGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت البرز",
-              "desc": "گیم نت البرز در کرج با امکانات فوق‌العاده و تجهیزات پیشرفته، تجربه‌ای متفاوت را برای گیمرها فراهم می‌کند."
-            },
-            "main": {
-              "title": "تجهیزات و بازی‌ها",
-              "desc": "سیستم‌های قدرتمند و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
-            },
-            "about": {
-              "text": "البرز در مرکز شهر کرج قرار دارد و به راحتی قابل دسترسی است.",
-              "tell": "026-12345678",
-              "email": "info@alborzgame.net",
-              "socialMedia": {
-                "instagram": "@alborz_game",
-                "twitter": "@alborz_game",
-                "telegram": "@alborz_game"
-              }
-            },
-            "amenities": [
-              {
-                "icon": "",
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "icon": "",
-                "type": "سیستم‌های قوی",
-                "description": "سیستم‌های گیمینگ قدرتمند.",
-                "typeEnglish": "Powerful Systems"
-              },
-              {
-                "icon": "",
-                "type": "محیط دوستانه",
-                "description": "فضایی مناسب برای بازی و تفریح.",
-                "typeEnglish": "Friendly Environment"
-              }
-            ],
-            "geoLocation": { "x": 35.84, "y": 50.9391 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت البرز در مرکز شهر کرج واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "کرج، خیابان اصلی، نبش خیابان فرعی، پلاک 654"
-            }
-          },
-          "comments": [
-            {
-              "user": "حسین",
-              "comment": "فضای بسیار مدرن و تجهیزات عالی.",
-              "imageProfile": "/images/profiles/hossein2.jpg"
-            },
-            {
-              "user": "زهرا",
-              "comment": "بازی‌های متنوع و جذاب.",
-              "imageProfile": "/images/profiles/zahra2.jpg"
-            },
-            {
-              "user": "سعید",
-              "comment": "پارکینگ اختصاصی واقعا به کار میاد.",
-              "imageProfile": "/images/profiles/saeid2.jpg"
-            }
-          ]
-        }
-      },
-      {
-        "id": 62345683,
-        "title": "گیم نت ستاره",
-        "views": "1600",
-        "date": "2024-06-05",
-        "description": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت در جنوب تهران.",
-        "image": "/images/gameCenters/1.jpg",
-        "like": 310,
-        "rating": "4.5",
-        "city": "تهران",
-        "save": 160,
-        "details": {
-          "images": [
-            "/images/SetarehGame/1.webp",
-            "/images/SetarehGame/2.webp",
-            "/images/SetarehGame/3.jpg",
-            "/images/SetarehGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت ستاره",
-              "desc": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت، تجربه‌ای متفاوت را برای گیمرها فراهم می‌کند."
-            },
-            "main": {
-              "title": "تجهیزات و امکانات",
-              "desc": "سیستم‌های جدید و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
-            },
-            "about": {
-              "text": "ستاره در منطقه جنوب تهران قرار دارد و به راحتی قابل دسترسی است.",
-              "tell": "021-55443322",
-              "email": "info@setarehgame.net",
-              "socialMedia": {
-                "instagram": "@setareh_game",
-                "twitter": "@setareh_game",
-                "telegram": "@setareh_game"
-              }
-            },
-            "amenities": [
-              {
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "type": "فضای آرام",
-                "description": "محیطی آرام و راحت برای بازی.",
-                "typeEnglish": "Calm Space"
-              },
-              {
-                "type": "سیستم‌های به‌روز",
-                "description": "سیستم‌های گیمینگ جدید.",
-                "typeEnglish": "Updated Systems"
-              }
-            ],
-            "geoLocation": { "x": 35.6731, "y": 51.3245 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت ستاره در منطقه جنوب تهران واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "تهران، خیابان ولیعصر، نبش خیابان شریعتی، پلاک 123"
-            }
-          },
-          "comments": [
-            {
-              "user": "محمد",
-              "comment": "محیط دوستانه و تجهیزات عالی.",
-              "imageProfile": "/images/profiles/mohammad2.jpg"
-            },
-            {
-              "user": "الهام",
-              "comment": "بازی‌های جدید و متنوع.",
-              "imageProfile": "/images/profiles/elham2.jpg"
-            },
-            {
-              "user": "امیر",
-              "comment": "دسترسی آسان و فضای راحت.",
-              "imageProfile": "/images/profiles/amir2.jpg"
-            }
-          ]
-        }
-      },
-      {
-        "id": 62345678,
-        "title": "گیم نت ایران گیم",
-        "views": "1500",
-        "date": "2024-07-03",
-        "description": "یکی از بهترین گیم نت‌های تهران با تجهیزات به‌روز و محیطی دوستانه.",
-        "image": "/images/gameCenters/6.webp",
-        "like": 300,
-        "rating": "5",
-        "city": "تهران",
-        "save": 150,
-        "details": {
-          "images": [
-            "/images/IranGame/1.webp",
-            "/images/IranGame/2.webp",
-            "/images/IranGame/3.jpg",
-            "/images/IranGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت ایران گیم",
-              "desc": "گیم نت ایران گیم یکی از مجهزترین و محبوب‌ترین گیم نت‌های تهران است که با محیطی دوستانه و امکانات به‌روز، تجربه‌ای متفاوت را برای علاقه‌مندان به بازی‌های کامپیوتری فراهم می‌کند."
-            },
-            "main": {
-              "title": "تجهیزات و بازی‌ها",
-              "desc": "این گیم نت دارای بیش از 20 سیستم با سخت‌افزارهای قدرتمند، اینترنت پرسرعت و مجموعه‌ای از جدیدترین بازی‌های آنلاین و آفلاین است."
-            },
-            "about": {
-              "text": "ایران گیم در منطقه مرکزی تهران واقع شده و دسترسی آسانی دارد. این گیم نت همواره تلاش دارد تا با ارائه خدمات بهتر، رضایت مشتریان خود را جلب کند.",
-              "tell": "021-12345678",
-              "email": "info@irangame.net",
-              "socialMedia": {
-                "instagram": "@irangame_net",
-                "twitter": "@irangame_net",
-                "telegram": "@irangame_net"
-              }
-            },
-            "amenities": [
-              {
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا برای بازی‌های آنلاین.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "type": "سیستم‌های به‌روز",
-                "description": "سیستم‌های گیمینگ با سخت‌افزارهای جدید.",
-                "typeEnglish": "Updated Systems"
-              },
-              {
-                "type": "محیط دوستانه",
-                "description": "محیطی مناسب برای بازی و تفریح.",
-                "typeEnglish": "Friendly Environment"
-              }
-            ],
-            "geoLocation": { "x": 35.6892, "y": 51.389 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت ایران گیم در منطقه مرکزی تهران واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "تهران، خیابان انقلاب، نبش خیابان حافظ، پلاک 123"
-            }
-          },
-          "comments": [
-            {
-              "user": "علی",
-              "comment": "محیط عالی و تجهیزات به‌روز. خیلی راضی بودم.",
-              "imageProfile": "/images/profiles/ali.jpg"
-            },
-            {
-              "user": "مینا",
-              "comment": "فضای دوستانه و کارکنان حرفه‌ای.",
-              "imageProfile": "/images/profiles/mina.jpg"
-            },
-            {
-              "user": "رضا",
-              "comment": "از بازی‌های متنوع و جدیدشان خیلی خوشم اومد.",
-              "imageProfile": "/images/profiles/reza.jpg"
-            }
-          ]
-        }
-      }
-    ],
-    "producers": [
-      {
-        "id": 1,
-        "name": "نینتندو",
-        "icon": "https://www.google.com/s2/favicons?domain=nintendo.com&sz=128",
-        "Founded": 1889,
-        "employees": "حدود ۷٬۷۰۰ نفر",
-        "Revenue": "حدود ۱۱ تا ۱۲ میلیارد دلار در سال مالی ۲۰۲۴",
-        "growth": 5.55,
-        "decline": 1.25
-      },
-      {
-        "id": 2,
-        "name": "راک‌استار گیمز",
-        "icon": "https://www.google.com/s2/favicons?domain=rockstargames.com&sz=128",
-        "Founded": 1998,
-        "employees": "چند هزار نفر در استودیوهای مختلف",
-        "Revenue": "درآمد مستقل شرکت به‌صورت عمومی اعلام نمی‌شود",
-        "growth": 8.2,
-        "decline": 2.1
-      },
-      {
-        "id": 3,
-        "name": "سی‌دی پراجکت رد",
-        "icon": "https://www.google.com/s2/favicons?domain=cdprojektred.com&sz=128",
-        "Founded": 2002,
-        "employees": "حدود ۱٬۰۰۰ تا ۱٬۲۰۰ نفر در گروه",
-        "Revenue": "درآمد گروه در سال‌های اخیر متغیر بوده؛ رقم دقیق به سال مالی بستگی دارد",
-        "growth": 6.35,
-        "decline": 1.85
-      },
-      {
-        "id": 4,
-        "name": "الکترونیک آرتس",
-        "icon": "https://www.google.com/s2/favicons?domain=ea.com&sz=128",
-        "Founded": 1982,
-        "employees": "حدود ۱۳٬۰۰۰ نفر",
-        "Revenue": "حدود ۷ تا ۸ میلیارد دلار در سال مالی ۲۰۲۴",
-        "growth": 4.7,
-        "decline": 2.4
-      },
-      {
-        "id": 5,
-        "name": "یوبی‌سافت",
-        "icon": "https://www.google.com/s2/favicons?domain=ubisoft.com&sz=128",
-        "Founded": 1986,
-        "employees": "حدود ۱۷٬۰۰۰ نفر در سراسر جهان",
-        "Revenue": "چند میلیارد یورو در سال؛ رقم دقیق به سال مالی بستگی دارد",
-        "growth": 2.85,
-        "decline": 4.1
-      },
-      {
-        "id": 6,
-        "name": "ولو",
-        "icon": "https://www.google.com/s2/favicons?domain=valvesoftware.com&",
-        "Founded": 1996,
-        "employees": "تعداد دقیق کارکنان به‌صورت رسمی و مستمر منتشر نمی‌شود",
-        "Revenue": "درآمد خصوصی شرکت به‌صورت رسمی منتشر نمی‌شود",
-        "growth": 7.15,
-        "decline": 1.05
-      },
-      {
-        "id": 7,
-        "name": "اکتیویژن",
-        "icon": "https://www.google.com/s2/favicons?domain=activision.com&sz=128",
-        "Founded": 1979,
-        "employees": "اکنون بخشی از مایکروسافت گیمینگ",
-        "Revenue": "درآمد مستقل فعلی به‌صورت جداگانه گزارش نمی‌شود",
-        "growth": 3.2,
-        "decline": 2.75
-      },
-      {
-        "id": 8,
-        "name": "اپیک گیمز",
-        "icon": "https://www.google.com/s2/favicons?domain=epicgames.com&sz=128",
-        "Founded": 1991,
-        "employees": "چند هزار نفر؛ رقم دقیق ممکن است تغییر کند",
-        "Revenue": "شرکت خصوصی است و رقم درآمد سالانه را به‌طور کامل عمومی نمی‌کند",
-        "growth": 5.4,
-        "decline": 1.6
-      }
-    ],
-    "bestGameCenters": [
-      {
-        "id": 62345680,
-        "title": "گیم نت آریا",
-        "views": "1700",
-        "date": "2024-06-20",
-        "description": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه در شمال تهران.",
-        "image": "/images/gameCenters/6.jpg",
-        "like": 320,
-        "rating": 2,
-        "city": "تهران",
-        "save": 180,
-        "details": {
-          "images": [
-            "/images/AriaGame/1.webp",
-            "/images/AriaGame/2.webp",
-            "/images/AriaGame/3.jpg",
-            "/images/AriaGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت آریا",
-              "desc": "گیم نت آریا با سیستم‌های پیشرفته و محیطی دوستانه، تجربه‌ای به‌یادماندنی را برای گیمرها فراهم می‌کند."
-            },
-            "main": {
-              "title": "تجهیزات و بازی‌ها",
-              "desc": "بیش از 30 سیستم با سخت‌افزارهای قدرتمند و اینترنت پرسرعت."
-            },
-            "about": {
-              "text": "آریا در منطقه شمال تهران واقع شده و به راحتی قابل دسترسی است.",
-              "tell": "021-99887766",
-              "email": "info@ariagame.net",
-              "socialMedia": {
-                "instagram": "@aria_game",
-                "twitter": "@aria_game",
-                "telegram": "@aria_game"
-              }
-            },
-            "amenities": [
-              {
-                "icon": "",
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "icon": "",
-                "type": "سیستم‌های قوی",
-                "description": "سیستم‌های گیمینگ قدرتمند.",
-                "typeEnglish": "Powerful Systems"
-              },
-              {
-                "icon": "",
-                "type": "محیط دوستانه",
-                "description": "فضایی مناسب برای بازی و تفریح.",
-                "typeEnglish": "Friendly Environment"
-              }
-            ],
-            "geoLocation": { "x": 35.8045, "y": 51.3988 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت آریا در منطقه شمال تهران واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "تهران، خیابان ولیعصر، نبش خیابان شریعتی، پلاک 789"
-            }
-          },
-          "comments": [
-            {
-              "user": "محمد",
-              "comment": "محیط دوستانه و تجهیزات عالی.",
-              "imageProfile": "/images/profiles/mohammad.jpg"
-            },
-            {
-              "user": "الهام",
-              "comment": "بازی‌های جدید و متنوع.",
-              "imageProfile": "/images/profiles/elham.jpg"
-            },
-            {
-              "user": "امیر",
-              "comment": "دسترسی آسان و فضای راحت.",
-              "imageProfile": "/images/profiles/amir.jpg"
-            }
-          ]
-        }
-      },
-      {
-        "id": 62345681,
-        "title": "گیم نت مهتاب",
-        "views": "1300",
-        "date": "2024-06-15",
-        "description": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز در شرق تهران.",
-        "image": "/images/gameCenters/5.webp",
-        "like": 270,
-        "rating": "3.5",
-        "city": "تهران",
-        "save": 140,
-        "details": {
-          "images": [
-            "/images/MahtabGame/1.webp",
-            "/images/MahtabGame/2.webp",
-            "/images/MahtabGame/3.jpg",
-            "/images/MahtabGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت مهتاب",
-              "desc": "گیم نت مهتاب با فضای آرام و سیستم‌های به‌روز، محیطی مناسب برای بازی‌های آنلاین و آفلاین ارائه می‌دهد."
-            },
-            "main": {
-              "title": "تجهیزات و امکانات",
-              "desc": "سیستم‌های جدید و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
-            },
-            "about": {
-              "text": "مهتاب در منطقه شرق تهران قرار دارد و به راحتی قابل دسترسی است.",
-              "tell": "021-55443322",
-              "email": "info@mahtabgame.net",
-              "socialMedia": {
-                "instagram": "@mahtab_game",
-                "twitter": "@mahtab_game",
-                "telegram": "@mahtab_game"
-              }
-            },
-            "amenities": [
-              {
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "type": "فضای آرام",
-                "description": "محیطی آرام و راحت برای بازی.",
-                "typeEnglish": "Calm Space"
-              },
-              {
-                "type": "سیستم‌های به‌روز",
-                "description": "سیستم‌های گیمینگ جدید.",
-                "typeEnglish": "Updated Systems"
-              }
-            ],
-            "geoLocation": { "x": 35.7101, "y": 51.492 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت مهتاب در منطقه شرق تهران واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "تهران، خیابان دماوند، نبش خیابان پیروزی، پلاک 321"
-            }
-          },
-          "comments": [
-            {
-              "user": "فاطمه",
-              "comment": "محیط آرام و سیستم‌های خوب.",
-              "imageProfile": "/images/profiles/fatemeh.jpg"
-            },
-            {
-              "user": "مهدی",
-              "comment": "اینترنت عالی و بازی‌های جدید.",
-              "imageProfile": "/images/profiles/mahdi.jpg"
-            },
-            {
-              "user": "سارا",
-              "comment": "فضای راحت و دوستانه.",
-              "imageProfile": "/images/profiles/sara.jpg"
-            }
-          ]
-        }
-      },
-      {
-        "id": 62345682,
-        "title": "گیم نت البرز",
-        "views": "1900",
-        "date": "2024-06-10",
-        "description": "گیم نت البرز با امکانات فوق‌العاده و تجهیزات پیشرفته در کرج.",
-        "image": "/images/gameCenters/4.jpg",
-        "like": 350,
-        "rating": "3.7",
-        "city": "کرج",
-        "save": 190,
-        "details": {
-          "images": [
-            "/images/AlborzGame/1.webp",
-            "/images/AlborzGame/2.webp",
-            "/images/AlborzGame/3.jpg",
-            "/images/AlborzGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت البرز",
-              "desc": "گیم نت البرز در کرج با امکانات فوق‌العاده و تجهیزات پیشرفته، تجربه‌ای متفاوت را برای گیمرها فراهم می‌کند."
-            },
-            "main": {
-              "title": "تجهیزات و بازی‌ها",
-              "desc": "سیستم‌های قدرتمند و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
-            },
-            "about": {
-              "text": "البرز در مرکز شهر کرج قرار دارد و به راحتی قابل دسترسی است.",
-              "tell": "026-12345678",
-              "email": "info@alborzgame.net",
-              "socialMedia": {
-                "instagram": "@alborz_game",
-                "twitter": "@alborz_game",
-                "telegram": "@alborz_game"
-              }
-            },
-            "amenities": [
-              {
-                "icon": "",
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "icon": "",
-                "type": "سیستم‌های قوی",
-                "description": "سیستم‌های گیمینگ قدرتمند.",
-                "typeEnglish": "Powerful Systems"
-              },
-              {
-                "icon": "",
-                "type": "محیط دوستانه",
-                "description": "فضایی مناسب برای بازی و تفریح.",
-                "typeEnglish": "Friendly Environment"
-              }
-            ],
-            "geoLocation": { "x": 35.84, "y": 50.9391 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت البرز در مرکز شهر کرج واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "کرج، خیابان اصلی، نبش خیابان فرعی، پلاک 654"
-            }
-          },
-          "comments": [
-            {
-              "user": "حسین",
-              "comment": "فضای بسیار مدرن و تجهیزات عالی.",
-              "imageProfile": "/images/profiles/hossein2.jpg"
-            },
-            {
-              "user": "زهرا",
-              "comment": "بازی‌های متنوع و جذاب.",
-              "imageProfile": "/images/profiles/zahra2.jpg"
-            },
-            {
-              "user": "سعید",
-              "comment": "پارکینگ اختصاصی واقعا به کار میاد.",
-              "imageProfile": "/images/profiles/saeid2.jpg"
-            }
-          ]
-        }
-      },
-      {
-        "id": 62345683,
-        "title": "گیم نت ستاره",
-        "views": "1600",
-        "date": "2024-06-05",
-        "description": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت در جنوب تهران.",
-        "image": "/images/gameCenters/1.jpg",
-        "like": 310,
-        "rating": "4.5",
-        "city": "تهران",
-        "save": 160,
-        "details": {
-          "images": [
-            "/images/SetarehGame/1.webp",
-            "/images/SetarehGame/2.webp",
-            "/images/SetarehGame/3.jpg",
-            "/images/SetarehGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت ستاره",
-              "desc": "گیم نت ستاره با تجهیزات به‌روز و اینترنت پرسرعت، تجربه‌ای متفاوت را برای گیمرها فراهم می‌کند."
-            },
-            "main": {
-              "title": "تجهیزات و امکانات",
-              "desc": "سیستم‌های جدید و اینترنت پرسرعت برای تجربه بهتر بازی‌ها."
-            },
-            "about": {
-              "text": "ستاره در منطقه جنوب تهران قرار دارد و به راحتی قابل دسترسی است.",
-              "tell": "021-55443322",
-              "email": "info@setarehgame.net",
-              "socialMedia": {
-                "instagram": "@setareh_game",
-                "twitter": "@setareh_game",
-                "telegram": "@setareh_game"
-              }
-            },
-            "amenities": [
-              {
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "type": "فضای آرام",
-                "description": "محیطی آرام و راحت برای بازی.",
-                "typeEnglish": "Calm Space"
-              },
-              {
-                "type": "سیستم‌های به‌روز",
-                "description": "سیستم‌های گیمینگ جدید.",
-                "typeEnglish": "Updated Systems"
-              }
-            ],
-            "geoLocation": { "x": 35.6731, "y": 51.3245 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت ستاره در منطقه جنوب تهران واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "تهران، خیابان ولیعصر، نبش خیابان شریعتی، پلاک 123"
-            }
-          },
-          "comments": [
-            {
-              "user": "محمد",
-              "comment": "محیط دوستانه و تجهیزات عالی.",
-              "imageProfile": "/images/profiles/mohammad2.jpg"
-            },
-            {
-              "user": "الهام",
-              "comment": "بازی‌های جدید و متنوع.",
-              "imageProfile": "/images/profiles/elham2.jpg"
-            },
-            {
-              "user": "امیر",
-              "comment": "دسترسی آسان و فضای راحت.",
-              "imageProfile": "/images/profiles/amir2.jpg"
-            }
-          ]
-        }
-      },
-      {
-        "id": 62345678,
-        "title": "گیم نت ایران گیم",
-        "views": "1500",
-        "date": "2024-07-03",
-        "description": "یکی از بهترین گیم نت‌های تهران با تجهیزات به‌روز و محیطی دوستانه.",
-        "image": "/images/gameCenters/6.webp",
-        "like": 300,
-        "rating": "5",
-        "city": "تهران",
-        "save": 150,
-        "details": {
-          "images": [
-            "/images/IranGame/1.webp",
-            "/images/IranGame/2.webp",
-            "/images/IranGame/3.jpg",
-            "/images/IranGame/4.jpg"
-          ],
-          "completeExplanations": {
-            "header": {
-              "title": "معرفی گیم نت ایران گیم",
-              "desc": "گیم نت ایران گیم یکی از مجهزترین و محبوب‌ترین گیم نت‌های تهران است که با محیطی دوستانه و امکانات به‌روز، تجربه‌ای متفاوت را برای علاقه‌مندان به بازی‌های کامپیوتری فراهم می‌کند."
-            },
-            "main": {
-              "title": "تجهیزات و بازی‌ها",
-              "desc": "این گیم نت دارای بیش از 20 سیستم با سخت‌افزارهای قدرتمند، اینترنت پرسرعت و مجموعه‌ای از جدیدترین بازی‌های آنلاین و آفلاین است."
-            },
-            "about": {
-              "text": "ایران گیم در منطقه مرکزی تهران واقع شده و دسترسی آسانی دارد. این گیم نت همواره تلاش دارد تا با ارائه خدمات بهتر، رضایت مشتریان خود را جلب کند.",
-              "tell": "021-12345678",
-              "email": "info@irangame.net",
-              "socialMedia": {
-                "instagram": "@irangame_net",
-                "twitter": "@irangame_net",
-                "telegram": "@irangame_net"
-              }
-            },
-            "amenities": [
-              {
-                "type": "اینترنت پرسرعت",
-                "description": "اینترنت با سرعت بالا برای بازی‌های آنلاین.",
-                "typeEnglish": "High-Speed Internet"
-              },
-              {
-                "type": "سیستم‌های به‌روز",
-                "description": "سیستم‌های گیمینگ با سخت‌افزارهای جدید.",
-                "typeEnglish": "Updated Systems"
-              },
-              {
-                "type": "محیط دوستانه",
-                "description": "محیطی مناسب برای بازی و تفریح.",
-                "typeEnglish": "Friendly Environment"
-              }
-            ],
-            "geoLocation": { "x": 35.6892, "y": 51.389 }
-          },
-          "location": {
-            "header": {
-              "title": "موقعیت گیم نت",
-              "desc": "گیم نت ایران گیم در منطقه مرکزی تهران واقع شده است."
-            },
-            "main": {
-              "title": "آدرس",
-              "desc": "تهران، خیابان انقلاب، نبش خیابان حافظ، پلاک 123"
-            }
-          },
-          "comments": [
-            {
-              "user": "علی",
-              "comment": "محیط عالی و تجهیزات به‌روز. خیلی راضی بودم.",
-              "imageProfile": "/images/profiles/ali.jpg"
-            },
-            {
-              "user": "مینا",
-              "comment": "فضای دوستانه و کارکنان حرفه‌ای.",
-              "imageProfile": "/images/profiles/mina.jpg"
-            },
-            {
-              "user": "رضا",
-              "comment": "از بازی‌های متنوع و جدیدشان خیلی خوشم اومد.",
-              "imageProfile": "/images/profiles/reza.jpg"
-            }
-          ]
-        }
-      }
-    ]
-  },
   "streamers": [
     {
       "id": 1,

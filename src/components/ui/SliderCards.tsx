@@ -10,6 +10,7 @@ type SliderCardsProps = {
   data: Array<Game | News | GameCenter>;
   type?: sliderCardsType;
   extraSlide?: ReactNode;
+  sliderProps?: Record<string, any>;
 };
 export enum sliderCardsType {
   News = "خبر",
@@ -20,6 +21,7 @@ export default function SliderCards({
   data,
   type = sliderCardsType.Games,
   extraSlide,
+  sliderProps
 }: SliderCardsProps) {
   const pagination = {
     el: ".swiper-pagination",
@@ -58,6 +60,8 @@ export default function SliderCards({
       }}
       modules={[Navigation, Pagination]}
       className="mt-5"
+            {...sliderProps}
+
     >
       {data.map((item) => {
         return (

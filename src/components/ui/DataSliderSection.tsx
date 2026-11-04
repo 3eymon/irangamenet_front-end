@@ -10,9 +10,10 @@ type DataSliderSectionProps<T extends CollectionItem> = {
   data: T[];
   isLoading: boolean;
   type: sliderCardsType;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   renderItems?: (items: T[]) => ReactNode;
+  sliderProps?: Record<string, any>;
 };
 
 export default function DataSliderSection<T extends CollectionItem>({
@@ -22,6 +23,7 @@ export default function DataSliderSection<T extends CollectionItem>({
   children,
   className,
   renderItems,
+  sliderProps
 }: DataSliderSectionProps<T>) {
   if (isLoading) return <Loader />;
 
@@ -33,7 +35,7 @@ export default function DataSliderSection<T extends CollectionItem>({
           {renderItems ? (
             renderItems(data)
           ) : (
-            <SliderCards data={data} type={type} />
+            <SliderCards data={data} type={type} sliderProps={sliderProps} />
           )}
         </div>
       ) : (

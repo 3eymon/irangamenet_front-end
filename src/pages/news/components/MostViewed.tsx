@@ -35,7 +35,7 @@ export default function MostViewed({ news }: { news: News[] }) {
                 </Link>
                 <p className="text-gray-400">
                   <ReactTimeAgo
-                    date={new Date(topview.date)}
+                    date={new Date(topview.updated_at ?? topview.created_at)}
                     locale="fa-IR"
                     timeStyle="round"
                   />
@@ -70,7 +70,7 @@ export default function MostViewed({ news }: { news: News[] }) {
               author={item.author}
               id={item.id}
               views={item.views}
-              date={item.date}
+              date={item.updated_at ?? item.created_at}
               image={item.image}
             />
           ) : null,

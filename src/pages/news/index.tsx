@@ -14,12 +14,12 @@ TimeAgo.addLocale(fa);
 function News() {
   const { data: news = [], isLoading: newsLoading } = useQuery({
     queryKey: ["news"],
-    queryFn: getAllNews,
+    queryFn: () => getAllNews(),
   });
   const { data: weeklyHighlightNews = [], isLoading: weeklyLoading } = useQuery(
     {
       queryKey: ["weeklyHighlightNews"],
-      queryFn: getAllNews,
+      queryFn: () => getAllNews(),
     },
   );
   return (

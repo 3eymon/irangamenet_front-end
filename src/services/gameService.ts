@@ -9,3 +9,7 @@ export const getAllGames = async (sort?: string): Promise<Game[]> => {
     })
     return result.data
 }
+export const getGameById = async (id: string): Promise<Game> => {
+    const res = await http.get<Game>(`/games/${id}`)
+    return res.data
+}
