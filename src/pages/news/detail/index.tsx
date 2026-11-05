@@ -17,6 +17,9 @@ import Card from "../../../components/ui/Card";
 import { sliderCardsType } from "../../../components/ui/SliderCards";
 import DataSliderSection from "../../../components/ui/DataSliderSection";
 import ReactTimeAgo from "react-time-ago";
+import { isNotFoundError } from "../../../utils/isNotFoundErr";
+import ErrorState from "../../../components/ui/ErrorState";
+import NotFound from "../../../components/ui/NotFound";
 
 function formatNumber(value: number | string) {
   return Number(value).toLocaleString("fa-IR");
@@ -45,25 +48,6 @@ function LoadingPage() {
   );
 }
 
-function ErrorPage({ message }: { message: string }) {
-  return (
-    <main className="flex min-h-[60vh] flex-col items-center justify-center px-5 text-center">
-      <span className="text-5xl text-zinc-600">!</span>
-
-      <h1 className="mt-5 text-xl font-bold text-white">مشکلی پیش آمده</h1>
-
-      <p className="mt-3 text-sm text-zinc-500">{message}</p>
-
-      <Link
-        to="/news"
-        className="mt-6 rounded-xl bg-primary-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-primary-600"
-      >
-        بازگشت به اخبار
-      </Link>
-    </main>
-  );
-}
-
 export default function NewsPage() {
   const { id } = useParams<{ id: string }>();
 
@@ -76,6 +60,8 @@ export default function NewsPage() {
     isLoading,
     isError,
     error,
+    refetch,
+    isFetching,
   } = useQuery({
     queryKey: ["news", id],
     queryFn: () => getNewsById(id!),
@@ -121,18 +107,31 @@ export default function NewsPage() {
 
   if (isLoading) return <LoadingPage />;
 
-  if (isError) {
+  if (isError && !isNotFoundError(error)) {
     return (
-      <ErrorPage
-        message={
-          error instanceof Error ? error.message : "دریافت خبر با خطا مواجه شد."
+      <ErrorState
+        title="خطا در دریافت اطلاعات خبر"
+        description={
+          error instanceof Error ? error.message : "مشکلی پیش آمده است."
         }
+        retry={{
+          fn: refetch,
+          label: isFetching ? "در حال تلاش مجدد..." : "تلاش دوباره",
+          isLoading: isFetching,
+        }}
       />
     );
   }
 
   if (!news) {
-    return <ErrorPage message="خبری با این شناسه پیدا نشد." />;
+    return (
+      <NotFound
+        backTo="/news"
+        backLabel="برگشت به بخش خبر ها"
+        title="خبر پیدا نشد"
+        description="ممکن است این خبر حذف شده باشد یا آدرس اشتباه باشد."
+      />
+    );
   }
 
   return (

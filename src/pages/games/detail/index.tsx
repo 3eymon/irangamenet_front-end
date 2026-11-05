@@ -19,14 +19,14 @@ import { getGameById } from "../../../services/gameService";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
+import ErrorState from "../../../components/ui/ErrorState";
+import NotFound from "../../../components/ui/NotFound";
 type IconButtonProps = {
   label: string;
   pressed?: boolean;
   onClick: () => void;
   children: React.ReactNode;
 };
-
-
 
 export default function GamePage() {
   const { id: gameId } = useParams<{ id: string }>();
@@ -78,21 +78,25 @@ export default function GamePage() {
   if (isLoading) return <GamePageSkeleton />;
   if (isError && !isNotFoundError(error)) {
     return (
-      <GameStateMessage
+      <ErrorState
         title="خطا در دریافت اطلاعات بازی"
         description={
           error instanceof Error ? error.message : "مشکلی پیش آمده است."
         }
-        actionLabel={isFetching ? "در حال تلاش مجدد..." : "تلاش دوباره"}
-        onAction={() => refetch()}
-        disabled={isFetching}
+        retry={{
+          fn: refetch,
+          label: isFetching ? "در حال تلاش مجدد..." : "تلاش دوباره",
+          isLoading: isFetching,
+        }}
       />
     );
   }
 
   if (!game) {
     return (
-      <GameStateMessage
+      <NotFound
+        backTo="/games"
+        backLabel="برگشت به بخش بازی ها"
         title="بازی پیدا نشد"
         description="ممکن است این بازی حذف شده باشد یا آدرس اشتباه باشد."
       />
@@ -430,44 +434,7 @@ function GamePageSkeleton() {
     </main>
   );
 }
-function GameStateMessage({
-  title,
-  description,
-  actionLabel,
-  onAction,
-  disabled,
-}: {
-  title: string;
-  description?: string;
-  actionLabel?: string;
-  onAction?: () => void;
-  disabled?: boolean;
-}) {
-  return (
-    <main className="grid min-h-[60svh] w-full place-items-center p-5 text-white">
-      <div
-        role="alert"
-        className="flex max-w-md flex-col items-center gap-4 rounded-xl border border-white/10 bg-black/30 p-8 text-center backdrop-blur-sm"
-      >
-        <ExclamationTriangleIcon className="size-10 text-primary-400" />
-        <h1 className="text-xl font-bold">{title}</h1>
-        {description && (
-          <p className="text-sm leading-7 text-zinc-400">{description}</p>
-        )}
-        {onAction && (
-          <button
-            type="button"
-            onClick={onAction}
-            disabled={disabled}
-            className="-skew-x-12 bg-primary-500 px-5 py-3 text-sm font-bold transition hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            <span className="inline-block skew-x-12">{actionLabel}</span>
-          </button>
-        )}
-      </div>
-    </main>
-  );
-}
+
 function IconButton({ label, pressed, onClick, children }: IconButtonProps) {
   return (
     <button

@@ -11,7 +11,6 @@ import GameCenters from "./pages/game-centers";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import SingleGameCenter from "./pages/game-centers/detail";
-import NotFound from "./components/layout/NotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "./components/layout/Navbar";
 import AuthLayout from "./components/layout/AuthLayout";
@@ -20,6 +19,7 @@ import CompleteProfile from "./pages/auth/complete-profile";
 import CheckOTP from "./pages/auth/check-otp";
 import SingleNews from "./pages/news/detail";
 import { isNotFoundError } from "./utils/isNotFoundErr";
+import NotFound from "./components/ui/NotFound";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
