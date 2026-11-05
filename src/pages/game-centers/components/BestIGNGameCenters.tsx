@@ -2,7 +2,14 @@ import { Link } from "react-router-dom";
 import { ButtonBase } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import { ArrowLongLeftIcon, BookOpenIcon } from "@heroicons/react/24/outline";
-function BestIGNGameCenters({ gameCenters, isLoading }) {
+import { GameCenter } from "../../../types/game.types";
+function BestIGNGameCenters({
+  gameCenters,
+  isLoading,
+}: {
+  gameCenters: GameCenter[];
+  isLoading: boolean;
+}) {
   const bestGameCenters = [...gameCenters]
     .sort((a, b) => Number(b.rating) - Number(a.rating))
     .slice(0, 4);
@@ -23,7 +30,7 @@ function BestIGNGameCenters({ gameCenters, isLoading }) {
     </div>
   );
 }
-function BestIGNGameCenterCard({ item }) {
+function BestIGNGameCenterCard({ item }: { item: GameCenter }) {
   return (
     <div className="group">
       <div className="flex justify-between items-center pb-2">
@@ -45,7 +52,7 @@ function BestIGNGameCenterCard({ item }) {
       <Link to={`/gameCenter/${item.id}`} className="h-full w-full">
         <img
           src={item.image}
-          alt={`${item.titl} عکس  `}
+          alt={`${item.title} عکس  `}
           className="w-full h-32 object-cover rounded-lg group-hover:brightness-75 transition ease-linear bg-gray-400"
           loading="lazy"
         />

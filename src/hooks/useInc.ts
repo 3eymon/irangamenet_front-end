@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useInc(limt) {
+export default function useInc(limt: number) {
   const [value, seValue] = useState(0);
   const limiter = limt;
   useEffect(() => {

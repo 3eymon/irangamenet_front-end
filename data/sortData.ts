@@ -1,44 +1,45 @@
-export const categories = [
+import { Category } from './../src/types/game.types';
+export const categories: Category[] = [
   {
     id: 1,
     text: "اکشن",
-    val: "action",
+    slug: "action",
     image: "/images/games/action.png",
   },
   {
     id: 2,
     text: " ماجراجویی",
-    val: "actionAdventure",
+    slug: "actionAdventure",
     image: "/images/games/adventure.png",
   },
   {
     id: 4,
     text: "نقش آفرینی",
-    val: "rolePlay",
+    slug: "rolePlay",
     image: "/images/games/rolePlay.png",
   },
   {
     id: 5,
     text: "استراتژی",
-    val: "strategy",
+    slug: "strategy",
     image: "/images/games/strategy.png",
   },
   {
     id: 6,
     text: "ورزشی ",
-    val: "Sports",
+    slug: "Sports",
     image: "/images/games/sport.webp",
   },
   {
     id: 7,
     text: "ترسناک",
-    val: "scary",
+    slug: "scary",
     image: "/images/games/scary.png",
   },
   {
     id: 8,
     text: "ماشینی",
-    val: "car",
+    slug: "car",
     image: "/images/games/car.avif",
   },
 ];
@@ -46,26 +47,26 @@ export const platform = [
   {
     id: 1,
     title: "کامپیوتر",
-    val: "pc",
+    slug: "pc",
   },
   {
     id: 2,
     title: "پلی استیشن 5",
-    val: "PS5",
+    slug: "PS5",
   },
   {
     id: 3,
     title: "پلی استیشن 4",
-    val: "PS4",
+    slug: "PS4",
   },
   {
     id: 4,
     title: "ایکس باکس سری x و s",
-    val: "xboxSeries",
+    slug: "xboxSeries",
   },
   {
     id: 5,
     title: "نیدنتندو سوییج",
-    val: "nintendoSwitch",
+    slug: "nintendoSwitch",
   },
 ];

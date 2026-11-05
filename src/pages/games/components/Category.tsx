@@ -12,7 +12,7 @@ function Category() {
       <div className="flex flex-wrap justify-center gap-10 ">
         {categories.map((e) => (
           <Link
-            to={e.val}
+            to={`/games/category/${e.slug}`}
             key={e.id}
             className="p-5 bg-gray-700  rounded-2xl relative  group active:scale-95 transition-transform w-full sm:w-72"
           >
@@ -33,10 +33,6 @@ function Category() {
             </div>
           </Link>
         ))}
-      </div>
-      <div>
-        <img src="" alt="" />
-        <img src="" alt="" />
       </div>
     </div>
   );

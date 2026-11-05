@@ -11,7 +11,6 @@ import {
   CodeBracketIcon,
   BuildingOffice2Icon,
   UsersIcon,
-  ExclamationTriangleIcon,
 } from "@heroicons/react/24/outline";
 import Rating from "@mui/lab/Rating/Rating";
 import Image from "../../../components/ui/Image";

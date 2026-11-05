@@ -57,7 +57,7 @@ export interface GameCenter {
   views: number | string;
   rating: number | string;
   city?: string;
-  created_at ?: string;
+  created_at?: string;
   updated_at?: string;
   details?: {
     images: string[];
@@ -75,4 +75,11 @@ export interface GameCenter {
       }>;
     };
   };
+}
+
+export interface Category {
+  id: string | number;
+  text: string,
+  slug: string,
+  image: string,
 }

@@ -77,7 +77,19 @@ function FAQs() {
     </div>
   );
 }
-function AccordionItem({ title, text, setOpen, open, id }) {
+function AccordionItem({
+  title,
+  text,
+  setOpen,
+  open,
+  id,
+}: {
+  title: string;
+  text: string;
+  setOpen: (v: number) => void;
+  open: number;
+  id: number;
+}) {
   const isOpen = id === open;
   const active = "bg-gradient-to-r from-primary to-secondary border-none";
   return (

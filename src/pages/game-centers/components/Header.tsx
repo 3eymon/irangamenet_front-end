@@ -1,11 +1,7 @@
-
 import { useEffect, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 
-import {
-  getAllProvinces,
-  getCitiesByProvinceName,
-} from "../../../";
+import { getAllProvinces, getCitiesByProvinceName } from "../../../";
 
 import {
   ArrowLongLeftIcon,
@@ -15,24 +11,19 @@ import {
 } from "@heroicons/react/24/outline";
 
 import "./style.css";
+import { Destination } from "..";
 
-type Destination = string[];
-
-type FilterType =
-  | "new"
-  | "bestOfWeek"
-  | "mostScore"
-  | "bestByIGN";
+type FilterType = "new" | "bestOfWeek" | "mostScore" | "bestByIGN";
 
 interface HeaderProps {
   setFilter: (filter: FilterType) => void;
   destination: Destination;
-  setDestination: Dispatch<SetStateAction<Destination>>;
+  setDestination: (item: Destination) => void;
 }
 
 interface SelectDestinationProps {
   destination: Destination;
-  setDestination: Dispatch<SetStateAction<Destination>>;
+  setDestination: (item: Destination) => void;
 }
 
 interface FilterProps {
@@ -46,11 +37,7 @@ const filters: { label: string; value: FilterType }[] = [
   { label: "برترین از نظر IGN", value: "bestByIGN" },
 ];
 
-function Header({
-  setFilter,
-  destination,
-  setDestination,
-}: HeaderProps) {
+function Header({ setFilter, destination, setDestination }: HeaderProps) {
   return (
     <div className="relative 2xl:h-[40rem] xl:h-[32rem] sm:h-[30rem] h-72 rounded-2xl overflow-hidden">
       <img
@@ -87,7 +74,6 @@ function Header({
 }
 
 export default Header;
-
 
 function SelectDestination({
   destination,
@@ -230,9 +216,7 @@ function SelectDestination({
                     <li key={province.id}>
                       <button
                         type="button"
-                        onClick={() =>
-                          setSelectedProvince(province.name)
-                        }
+                        onClick={() => setSelectedProvince(province.name)}
                         className="w-full text-right px-3 py-3 rounded-lg hover:bg-white/10 transition-colors"
                       >
                         {province.name}
@@ -268,10 +252,8 @@ function SelectDestination({
   );
 }
 
-
 function Filter({ setFilter }: FilterProps) {
-  const [selectedFilter, setSelectedFilter] =
-    useState<FilterType>("new");
+  const [selectedFilter, setSelectedFilter] = useState<FilterType>("new");
 
   const handleFilterChange = (value: FilterType) => {
     setSelectedFilter(value);
