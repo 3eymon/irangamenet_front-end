@@ -113,6 +113,12 @@ export default function Card({
                     precision={0.1}
                     size="small"
                     readOnly
+                    sx={{
+                      color: "#a855f7",
+                      "& .MuiRating-iconEmpty": {
+                        color: "rgba(255,255,255,.3)",
+                      },
+                    }}
                   />
                 </div>
               </>
