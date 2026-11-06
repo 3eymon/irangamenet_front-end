@@ -36,7 +36,7 @@ function News() {
         isLoading={newsLoading}
         type={sliderCardsType.News}
       >
-        <SeeAll title="جدیدترین اخبار " link="latest" color="#5254d4" />
+        <SeeAll title="جدیدترین اخبار " link="browse/latest" color="#5254d4" />
       </DataSliderSection>
       <DataSliderSection
         data={news}
@@ -44,14 +44,14 @@ function News() {
         type={sliderCardsType.News}
         renderItems={(news) => <MostViewed news={news} />}
       >
-        <SeeAll title="بیشترین تعداد خوندن" link="mostRead" color="#34f4c5" />
+        <SeeAll title="بیشترین تعداد خوندن" link="browse/most-read" color="#34f4c5" />
       </DataSliderSection>
       <DataSliderSection
         data={weeklyHighlightNews}
         isLoading={weeklyLoading}
         type={sliderCardsType.News}
       >
-        <SeeAll title="برترین های هفته" link="weeklyHighlight" color="#fff" />
+        <SeeAll title="برترین های هفته" link="browse/weekly-highlight" color="#fff" />
       </DataSliderSection>
       <TopCreatorNews />
     </main>

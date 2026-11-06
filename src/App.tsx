@@ -20,6 +20,10 @@ import CheckOTP from "./pages/auth/check-otp";
 import SingleNews from "./pages/news/detail";
 import { isNotFoundError } from "./utils/isNotFoundErr";
 import NotFound from "./components/ui/NotFound";
+import BrowseNews from "./pages/news/discover";
+import NewsCategory from "./pages/news/category";
+import GameCategory from "./pages/games/category";
+import GameDiscovery from "./pages/games/discover";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -41,11 +45,16 @@ function App() {
               <Route index element={<Home />} />
               <Route path="news" element={<News />} />
               <Route path="news/:id" element={<SingleNews />} />
-              <Route path="about" element={<About />} />
+              <Route path="news/discover/:filter" element={<BrowseNews />} />
+              <Route path="news/categories/:slug" element={<NewsCategory />} />
 
               <Route path="games" element={<Games />} />
               <Route path="games/:id" element={<SinglePage />} />
-
+              <Route
+                path="games/discover/:filter"
+                element={<GameDiscovery />}
+              />
+              <Route path="games/category/:slug" element={<GameCategory />} />
               <Route path="streamers" element={<Streamers />} />
               <Route path="auth" element={<AuthLayout />}>
                 <Route index element={<AuthPage />} />
@@ -55,6 +64,8 @@ function App() {
               </Route>
               <Route path="game-centers" element={<GameCenters />} />
               <Route path="game-centers/:id" element={<SingleGameCenter />} />
+
+              <Route path="about" element={<About />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
