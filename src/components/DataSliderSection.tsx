@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import type { Game, GameCenter } from "../../types/game.types";
-import type { News } from "../../types/news.types";
+import type { Game, GameCenter } from "../types/game.types";
+import type { News } from "../types/news.types";
 import EmptyState from "./EmptyState";
-import SliderCards, { Loader, sliderCardsType } from "./SliderCards";
+import SliderCards, { Loader, sliderCardsType } from "./ui/SliderCards";
 
 type CollectionItem = Game | GameCenter | News;
 

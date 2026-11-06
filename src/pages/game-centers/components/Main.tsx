@@ -5,7 +5,7 @@ import GameCenters from "./GameCenters";
 import type { GameCenter } from "../../../types/game.types";
 import { useQuery } from "@tanstack/react-query";
 import { getAllGameCenters } from "../../../services/gameCenterService";
-import EmptyState from "../../../components/ui/EmptyState";
+import EmptyState from "../../../components/EmptyState";
 function Main() {
   const {
     data: gameCenters = [],

@@ -3,9 +3,9 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import fa from "javascript-time-ago/locale/fa";
 import MostViewed from "./components/MostViewed";
-import DataSliderSection from "../../components/ui/DataSliderSection";
+import DataSliderSection from "../../components/DataSliderSection";
 import { sliderCardsType } from "../../components/ui/SliderCards";
-import SeeAll from "../../components/ui/SeeAll";
+import SeeAll from "../../components/SeeAll";
 import { useQuery } from "@tanstack/react-query";
 import { getAllNews } from "../../services/newsService";
 

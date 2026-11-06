@@ -19,7 +19,7 @@ import CompleteProfile from "./pages/auth/complete-profile";
 import CheckOTP from "./pages/auth/check-otp";
 import SingleNews from "./pages/news/detail";
 import { isNotFoundError } from "./utils/isNotFoundErr";
-import NotFound from "./components/ui/NotFound";
+import NotFound from "./components/NotFound";
 import BrowseNews from "./pages/news/discover";
 import NewsCategory from "./pages/news/category";
 import GameCategory from "./pages/games/category";

@@ -1,6 +1,6 @@
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { ErrorIllustration } from "./StateIllustrations";
-import StateLayout from "../layout/StateLayout";
+import StateLayout from "./layout/StateLayout";
 
 function ErrorState({
   title = "مشکلی پیش اومد",

@@ -18,8 +18,8 @@ import { getGameById } from "../../../services/gameService";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
-import ErrorState from "../../../components/ui/ErrorState";
-import NotFound from "../../../components/ui/NotFound";
+import ErrorState from "../../../components/ErrorState";
+import NotFound from "../../../components/NotFound";
 type IconButtonProps = {
   label: string;
   pressed?: boolean;

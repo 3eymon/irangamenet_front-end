@@ -1,7 +1,7 @@
 // EmptyState.tsx
 import { ReactNode } from "react";
 import { EmptyIllustration } from "./StateIllustrations";
-import StateLayout from "../layout/StateLayout";
+import StateLayout from "./layout/StateLayout";
 
 function EmptyState({
   title = "اطلاعاتی پیدا نشد",

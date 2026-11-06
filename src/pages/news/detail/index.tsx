@@ -15,11 +15,11 @@ import {
 import { getNewsById, getRelatedNews } from "../../../services/newsService";
 import Card from "../../../components/ui/Card";
 import { sliderCardsType } from "../../../components/ui/SliderCards";
-import DataSliderSection from "../../../components/ui/DataSliderSection";
+import DataSliderSection from "../../../components/DataSliderSection";
 import ReactTimeAgo from "react-time-ago";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
-import ErrorState from "../../../components/ui/ErrorState";
-import NotFound from "../../../components/ui/NotFound";
+import ErrorState from "../../../components/ErrorState";
+import NotFound from "../../../components/NotFound";
 
 function formatNumber(value: number | string) {
   return Number(value).toLocaleString("fa-IR");

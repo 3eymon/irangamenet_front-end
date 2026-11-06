@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import SeeAll from "../../components/ui/SeeAll";
+import SeeAll from "../../components/SeeAll";
 import Category from "./components/Category";
 import ForMore from "./components/ForMore";
-import DataSliderSection from "../../components/ui/DataSliderSection";
+import DataSliderSection from "../../components/DataSliderSection";
 import { sliderCardsType } from "../../components/ui/SliderCards";
 import type { Game } from "../../types/game.types";
 import { getAllGames } from "../../services/gameService";

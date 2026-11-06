@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { NotFoundIllustration } from "./StateIllustrations";
-import StateLayout from "../layout/StateLayout";
+import StateLayout from "./layout/StateLayout";
 
 function NotFound({
   title = "صفحه پیدا نشد",

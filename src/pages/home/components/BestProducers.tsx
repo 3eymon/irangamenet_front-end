@@ -3,7 +3,7 @@ import type { Producer } from "../../../types/producer.types";
 import ChevronLeftIcon from "@heroicons/react/24/solid/ChevronLeftIcon";
 import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import SeeAll from "../../../components/ui/SeeAll";
+import SeeAll from "../../../components/SeeAll";
 const LIMIT = 8;
 
 function buildRows<T>(items: T[]): T[][] {

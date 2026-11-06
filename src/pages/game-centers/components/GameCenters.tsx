@@ -1,7 +1,7 @@
 import SliderCards, {
   sliderCardsType,
 } from "../../../components/ui/SliderCards";
-import SeeAll from "../../../components/ui/SeeAll";
+import SeeAll from "../../../components/SeeAll";
 import { useState } from "react";
 import type { GameCenter } from "../../../types/game.types";
 function GameCenters({ gameCenters }: { gameCenters: GameCenter[] }) {

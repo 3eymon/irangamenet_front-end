@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import SeeAll from "../../../components/ui/SeeAll";
+import SeeAll from "../../../components/SeeAll";
 
 const faqs = [
   {

@@ -12,7 +12,7 @@ import {
 
 import ReactTimeAgo from "react-time-ago";
 import type { News } from "../../../types/news.types";
-import EmptyState from "../../../components/ui/EmptyState";
+import EmptyState from "../../../components/EmptyState";
 import Image from "../../../components/ui/Image";
 
 function FeaturedNewsSection({
