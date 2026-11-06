@@ -64,7 +64,7 @@ function CompleteProfile() {
             id="displayName"
             autoComplete="name"
             placeholder="نامی که دیگران می‌بینند"
-            label={
+            icon={
               <MdDriveFileRenameOutline className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
             }
             className="!bg-white/5 !text-white placeholder:!text-white/40"
@@ -87,7 +87,7 @@ function CompleteProfile() {
             نام کاربری
           </label>
           <Input
-            label={
+            icon={
               <BiRename className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
             }
             id="username"

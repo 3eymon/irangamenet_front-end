@@ -76,7 +76,7 @@ function CheckOTP() {
             autoComplete="one-time-code"
             maxLength={6}
             placeholder="کد ۶ رقمی"
-            label={
+            icon={
               <MdOutlineMarkEmailUnread className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
             }
             className="!bg-white/5 !text-white placeholder:!text-white/40 text-center placeholder:!text-center"

@@ -256,7 +256,7 @@ function AuthPageForm() {
             <Input
               className="font-mono placeholder:font-Peyda"
               placeholder="ایمیل (پست الکترونیک)"
-              label={
+              icon={
                 <MdAlternateEmail className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
               }
               {...register("email", {
