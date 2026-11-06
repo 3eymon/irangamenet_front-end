@@ -13,13 +13,13 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import { getNewsById, getRelatedNews } from "../../../services/newsService";
-import Card from "../../../components/ui/Card";
 import { sliderCardsType } from "../../../components/ui/SliderCards";
 import DataSliderSection from "../../../components/DataSliderSection";
 import ReactTimeAgo from "react-time-ago";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
 import ErrorState from "../../../components/ErrorState";
 import NotFound from "../../../components/NotFound";
+import Breadcrumb from "../../../components/Breadcrumb";
 
 function formatNumber(value: number | string) {
   return Number(value).toLocaleString("fa-IR");
@@ -137,26 +137,12 @@ export default function NewsPage() {
   return (
     <main className="min-h-screen overflow-hidden text-white">
       <div className="mx-auto max-w-[1400px] px-5 pb-20 pt-8 sm:px-8 lg:px-12">
-        <nav
-          aria-label="مسیر صفحه"
-          className="mb-8 flex items-center gap-2 text-xs text-zinc-500"
-        >
-          <Link to="/" className="transition hover:text-primary-300">
-            خانه
-          </Link>
-
-          <span>/</span>
-
-          <Link to="/news" className="transition hover:text-primary-300">
-            اخبار
-          </Link>
-
-          <span>/</span>
-
-          <span className="max-w-[180px] truncate text-zinc-300">
-            {news.category ?? "خبر"}
-          </span>
-        </nav>
+        <Breadcrumb
+          items={[
+            { label: "اخبار", to: "/news" },
+            { label: news.category ?? "خبر" },
+          ]}
+        />
 
         <header className="mx-auto">
           <div className="mb-5 flex flex-wrap items-center gap-3">

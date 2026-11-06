@@ -20,6 +20,7 @@ import { useParams } from "react-router-dom";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
 import ErrorState from "../../../components/ErrorState";
 import NotFound from "../../../components/NotFound";
+import Breadcrumb from "../../../components/Breadcrumb";
 type IconButtonProps = {
   label: string;
   pressed?: boolean;
@@ -108,10 +109,16 @@ export default function GamePage() {
     <main className="relative isolate w-full overflow-hidden text-white">
       <section
         aria-labelledby="game-title"
-        className="relative isolate min-h-[100svh] w-full overflow-hidden md:rounded-2xl"
+        className="relative isolate min-h-[100svh] w-full overflow-hidden md:rounded-2xl flex flex-col"
       >
-        <div className="grid min-h-[100svh] grid-cols-1 gap-10 p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-12 lg:p-12">
+        <div className="grid min-h-[100svh] grid-cols-1 gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-12 lg:px-12">
           <section className="flex flex-col justify-center gap-6 lg:py-2">
+            <Breadcrumb
+              items={[
+                { label: "بازی ها", to: "/games" },
+                { label: game.title ?? "بازی" },
+              ]}
+            />
             <div className="space-y-5">
               <div>
                 <span className="mb-3 block text-xs font-bold tracking-[0.2em] text-primary-400">
