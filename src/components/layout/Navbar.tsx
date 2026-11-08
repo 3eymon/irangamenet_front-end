@@ -9,6 +9,7 @@ import { SiYoutubegaming } from "react-icons/si";
 
 import NavigationMobile from "./NavigationMobile";
 import { ReactNode } from "react";
+import { Button } from "../ui/Button";
 type NavbarItemType = {
   id: number;
   title: string;
@@ -65,12 +66,13 @@ function Navbar() {
       </h2>
       <NavigationMobile />
       <NavLinks data={navbarItems} />
-      <NavLink
+      <Button
+        as={NavLink}
         to="/auth/login"
-        className="text-xs text-white hidden sm:flex bg-gradient-to-r from-primary to-secondary px-5 py-1 transition-transform ease-linear rounded-md shadow-primary/35 hover:scale-95 "
+        className="text-xs text-white hidden sm:flex rounded-lg px-5 py-1 "
       >
         ورود
-      </NavLink>
+      </Button>
     </nav>
   );
 }
