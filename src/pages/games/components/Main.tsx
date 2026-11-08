@@ -53,7 +53,7 @@ function Main({ el }: { el: Ref<HTMLDivElement> | undefined }) {
         </div>
       </div>
       <div className="flex">
-        <Link to="all" className="mx-auto">
+        <Link to="discover/all" className="mx-auto">
           <button className="all-games ">همه ی بازی ها</button>
         </Link>
       </div>

@@ -14,13 +14,14 @@ import {
 } from "@heroicons/react/24/outline";
 import Rating from "@mui/lab/Rating/Rating";
 import Image from "../../../components/ui/Image";
-import { getGameById } from "../../../services/gameService";
+import { getGameById } from "../../../services/games";
 import { useQuery } from "@tanstack/react-query";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
 import ErrorState from "../../../components/ErrorState";
 import NotFound from "../../../components/NotFound";
 import Breadcrumb from "../../../components/Breadcrumb";
+import { PhotoIcon } from "@heroicons/react/24/solid";
 type IconButtonProps = {
   label: string;
   pressed?: boolean;
@@ -34,6 +35,7 @@ export default function GamePage() {
   const [favorite, setFavorite] = useState(false);
   const [saved, setSaved] = useState(false);
   const [shareNote, setShareNote] = useState("");
+  const [modal, setModal] = useState(false);
   const {
     data: game,
     isLoading,
@@ -103,8 +105,6 @@ export default function GamePage() {
     );
   }
 
-  const rating = (game && Number(game.rating)) || 0;
-
   return (
     <main className="relative isolate w-full overflow-hidden text-white">
       <section
@@ -122,7 +122,7 @@ export default function GamePage() {
             <div className="space-y-5">
               <div>
                 <span className="mb-3 block text-xs font-bold tracking-[0.2em] text-primary-400">
-                  {game.category}
+                  {game.status.toLocaleUpperCase()}
                 </span>
 
                 <h1
@@ -136,11 +136,11 @@ export default function GamePage() {
               </div>
 
               <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-                {game.rating !== undefined && (
+                {Number(game.rating) > 0 && (
                   <div className="flex items-center gap-2" dir="ltr">
                     <Rating
                       name="game-rating"
-                      value={rating}
+                      value={game.rating}
                       precision={0.1}
                       size="small"
                       readOnly
@@ -153,7 +153,7 @@ export default function GamePage() {
                     />
 
                     <span className="text-sm font-bold" dir="rtl">
-                      {rating.toLocaleString("fa-IR", {
+                      {game.rating.toLocaleString("fa-IR", {
                         minimumFractionDigits: 1,
                       })}
                     </span>
@@ -173,15 +173,18 @@ export default function GamePage() {
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm text-zinc-400">ژانر:</span>
+                <span className="text-sm text-zinc-400">دسته بندی:</span>
 
-                {game.genres.map((genre) => (
-                  <span
-                    key={genre}
-                    className="-skew-x-12 border border-primary-400/40 bg-primary-500/15 px-3 py-1 text-xs"
+                {game.categories.map((category) => (
+                  <Link
+                    to={`/games/category/${category.slug}`}
+                    key={category.slug}
+                    className="-skew-x-12 border border-primary-400/40 bg-primary-500/15 hover:shadow-md hover:shadow-primary-500/50 transition-shadow ease-linear px-3 py-1 text-xs"
                   >
-                    <span className="inline-block skew-x-12">{genre}</span>
-                  </span>
+                    <span className="inline-block skew-x-12">
+                      {category.title}
+                    </span>
+                  </Link>
                 ))}
               </div>
 
@@ -194,11 +197,11 @@ export default function GamePage() {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-zinc-400">
                     <CalendarDaysIcon className="size-4 text-primary-400" />
-                    <span className="text-xs">سال انتشار</span>
+                    <span className="text-xs">تاریخ انتشار</span>
                   </div>
 
                   <p className="max-sm:text-base text-lg font-bold font-Jaro">
-                    {game.releaseYear}
+                    {game.release_date}
                   </p>
                 </div>
 
@@ -208,18 +211,15 @@ export default function GamePage() {
                     <span className="text-xs">سازنده</span>
                   </div>
 
-                  <p className="text-sm font-bold">{game.developer}</p>
-                </div>
-
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-zinc-400">
-                    <BuildingOffice2Icon className="size-4 text-primary-400" />
-                    <span className="text-xs">ناشر</span>
+                  <div>
+                    <Link
+                      to={`/producers/${game.producer?.slug}`}
+                      className="text-sm font-bold underline underline-offset-2 hover:text-zinc-300"
+                    >
+                      {game.producer?.name}
+                    </Link>
                   </div>
-
-                  <p className="text-sm font-bold">{game.publisher}</p>
                 </div>
-
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-zinc-400">
                     <UsersIcon className="size-4 text-primary-400" />
@@ -301,9 +301,9 @@ export default function GamePage() {
                 </p>
               </div>
 
-              {game.trailerUrl ? (
+              {game.trailer_url ? (
                 <a
-                  href={game.trailerUrl}
+                  href={game.trailer_url}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="مشاهده تریلر"
@@ -328,20 +328,57 @@ export default function GamePage() {
                 <h2 className="text-xl font-bold">تصاویر بازی</h2>
                 <AccentBar />
               </div>
+              <div className="flex flex-col gap-3">
+                {game.screenshots?.length ? (
+                  game.screenshots.slice(0, 3).map((screenshot, index) => {
+                    const remaining = game.screenshots
+                      ? game.screenshots.length - 3
+                      : 0;
+                    const hasMore = index === 2 && remaining > 0;
 
-              <div className="flex gap-3 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible">
-                {game.screenshots.map((src, index) => (
-                  <div
-                    key={`${src}-${index}`}
-                    className="w-56 shrink-0 overflow-hidden rounded-lg border border-white/10 sm:w-64 lg:w-full"
-                  >
-                    <Image
-                      src={src}
-                      alt={`تصویر ${index + 1} بازی ${game.title}`}
-                      className="aspect-video w-full object-cover transition duration-300 hover:scale-105"
-                    />
+                    return (
+                      <div
+                        key={`${screenshot}-${index}`}
+                        className="group relative w-56 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-[#1b2432] shadow-lg sm:w-64 lg:w-full"
+                      >
+                        <Image
+                          src={screenshot}
+                          alt={`تصویر ${index + 1} بازی ${game.title}`}
+                          className={`aspect-video w-full object-cover transition-transform duration-500 ${
+                            hasMore ? "brightness-50" : "group-hover:scale-105"
+                          }`}
+                        />
+
+                        {hasMore && (
+                          <button
+                            onClick={() => setModal(true)}
+                            className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/5 text-white backdrop-blur-[2px] transition hover:bg-black/10"
+                          >
+                            <div className="rounded-full border border-white/20 bg-white/10 p-3">
+                              <PhotoIcon className="size-6" />
+                            </div>
+
+                            <span className="text-sm font-semibold">
+                              مشاهده {remaining} تصویر دیگر
+                            </span>
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="flex min-h-40 flex-col items-center justify-center gap-3 rounded-xl border border-dashed border-white/10 px-4 text-center">
+                    <div className="rounded-full bg-white/5 p-3">
+                      <PhotoIcon className="size-6 text-gray-500" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-300">تصویری موجود نیست</p>
+                      <p className="mt-1 text-xs text-gray-500">
+                        تصاویر این بازی هنوز اضافه نشده‌اند.
+                      </p>
+                    </div>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </aside>
@@ -466,7 +503,7 @@ function IconButton({ label, pressed, onClick, children }: IconButtonProps) {
   );
 }
 
-function AccentBar() {
+export function AccentBar() {
   return (
     <div
       aria-hidden="true"

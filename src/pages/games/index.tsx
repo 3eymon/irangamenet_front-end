@@ -6,18 +6,18 @@ import Category from "./components/Category";
 import ForMore from "./components/ForMore";
 import DataSliderSection from "../../components/DataSliderSection";
 import { sliderCardsType } from "../../components/ui/SliderCards";
-import type { Game } from "../../types/game.types";
-import { getAllGames } from "../../services/gameService";
+import { getAllGames } from "../../services/games";
 import { useQuery } from "@tanstack/react-query";
+import { GameFilterOptions } from "../../types/common.types";
 function Games() {
   const latestGamesQuery = useQuery({
     queryKey: ["games", "latest"],
-    queryFn: () => getAllGames("latest"),
+    queryFn: () => getAllGames({ limit: 7, filter: GameFilterOptions.latest }),
   });
 
   const freeGamesQuery = useQuery({
     queryKey: ["games", "free"],
-    queryFn: () => getAllGames("free"),
+    queryFn: () => getAllGames({ filter: GameFilterOptions.free, limit: 7 }),
   });
   const around = useRef<HTMLDivElement>(null);
   const scroll = () => {
@@ -31,23 +31,27 @@ function Games() {
       <Header scroll={scroll} />
       <Main el={around} />
       <DataSliderSection
-        data={latestGamesQuery.data || []}
+        data={latestGamesQuery.data?.data || []}
         isLoading={latestGamesQuery.isLoading}
         type={sliderCardsType.Games}
         className="mb-16"
       >
-        <SeeAll title="جدیدترین بازی ها " link="latest" color="#d42222" />
+        <SeeAll
+          title="جدیدترین بازی ها "
+          link="discover/latest"
+          color="#d42222"
+        />
       </DataSliderSection>
       <Category />
       <DataSliderSection
-        data={freeGamesQuery.data || []}
+        data={freeGamesQuery.data?.data || []}
         isLoading={freeGamesQuery.isLoading}
         type={sliderCardsType.Games}
         className="mb-16"
       >
-        <SeeAll title="بازی های رایگان" link="free" color="#22d465" />
+        <SeeAll title="بازی های رایگان" link="discover/free" color="#22d465" />
       </DataSliderSection>
-      <ForMore />
+      {/* <ForMore /> */}
     </main>
   );
 }
