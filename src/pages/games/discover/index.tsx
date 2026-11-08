@@ -58,7 +58,7 @@ function GamesDiscovery() {
     fetchNextPage,
   });
   const flattenedData = useMemo(
-    () => (data ? data?.pages.flatMap((page) => page.data) : []),
+    () => (data ? data?.pages.flatMap((page) => page.results) : []),
     [data],
   );
 

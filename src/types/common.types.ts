@@ -1,5 +1,5 @@
 export interface PaginatedResponse<T> {
-    data: T[];
+    results: T[];
     pagination: {
         total: number;
         page: number;

@@ -31,7 +31,7 @@ function Games() {
       <Header scroll={scroll} />
       <Main el={around} />
       <DataSliderSection
-        data={latestGamesQuery.data?.data || []}
+        data={latestGamesQuery.data?.results || []}
         isLoading={latestGamesQuery.isLoading}
         type={sliderCardsType.Games}
         className="mb-16"
@@ -44,7 +44,7 @@ function Games() {
       </DataSliderSection>
       <Category />
       <DataSliderSection
-        data={freeGamesQuery.data?.data || []}
+        data={freeGamesQuery.data?.results || []}
         isLoading={freeGamesQuery.isLoading}
         type={sliderCardsType.Games}
         className="mb-16"
