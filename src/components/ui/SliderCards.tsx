@@ -1,28 +1,23 @@
-import { BookOpenIcon } from "@heroicons/react/24/outline";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import Card from "./Card";
-import type { Game, GameCenter } from "../../types/game.types";
-import type { News } from "../../types/news.types";
 import { ReactNode } from "react";
+import CardSkeleton from "./CardSkeleton";
+import { News } from "../../services/news/queries";
+import { Game } from "../../services/games/queries";
+import { CollectionItem, sliderCardsType } from "../../types/card.types";
 
-type SliderCardsProps = {
-  data: Array<Game | News | GameCenter>;
-  type?: sliderCardsType;
-  extraSlide?: ReactNode;
+type SliderCardsProps<T extends CollectionItem> = {
+  data: T[];
+  type: sliderCardsType;
   sliderProps?: Record<string, any>;
 };
-export enum sliderCardsType {
-  News = "خبر",
-  Games = "بازی",
-  GameCenters = "گیم نت",
-}
-export default function SliderCards({
+
+export default function SliderCards<T extends CollectionItem>({
   data,
-  type = sliderCardsType.Games,
-  extraSlide,
+  type,
   sliderProps,
-}: SliderCardsProps) {
+}: SliderCardsProps<T>) {
   const pagination = {
     el: ".swiper-pagination",
     type: "bullets" as const,
@@ -61,11 +56,14 @@ export default function SliderCards({
       {data.map((item) => {
         return (
           <SwiperSlide key={item.id}>
-            <Card type={type} data={item} />
+            {type === sliderCardsType.News ? (
+              <Card type={sliderCardsType.News} data={item as News} />
+            ) : (
+              <Card type={sliderCardsType.Games} data={item as Game} />
+            )}
           </SwiperSlide>
         );
       })}
-      {extraSlide && <SwiperSlide>{extraSlide}</SwiperSlide>}
       <div className="flex gap-3 w-full justify-center items-center py-2 pt-5">
         <button className="prev opacity-60 hover:opacity-80 transition-opacity ease-in-out">
           <svg
@@ -103,47 +101,15 @@ export function Loader() {
     <div>
       <div>
         <div key="1" className="flex justify-between pb-5">
-          <h2 className="text-2xl font-PeydaBlack w-40 h-7 bg-gray-400 animate-pulse rounded mr-4"></h2>
-          <div className="group text-[#bb80ff] font-PeydaMed flex items-center  gap-2 ml-3 w-20 h-5 bg-gray-400 animate-pulse rounded"></div>
+          <h2 className="text-2xl font-PeydaBlack w-40 h-7 bg-neutral-800/70  animate-pulse rounded mr-4"></h2>
+          <div className="group text-[#bb80ff] font-PeydaMed flex items-center  gap-2 ml-3 w-20 h-5 bg-neutral-800/70  animate-pulse rounded"></div>
         </div>
       </div>
       <div className="flex gap-5">
-        <LoaderCard />
-        <LoaderCard c="md:block" />
-        <LoaderCard c="lg:block" />
-        <LoaderCard c="2xl:block" />
-      </div>
-    </div>
-  );
-}
-function LoaderCard({ c }: { c?: string }) {
-  return (
-    <div className={`w-full px-5 md:px-0 ${c ? "hidden" : ""} ${c}`}>
-      <div>
-        <div className="w-full h-60 rounded-xl bg-gray-400 animate-pulse"></div>
-      </div>
-      <div className="flex flex-col gap-1 pt-3">
-        <div className="inline-flex gap-2 items-center text-sm pr-1">
-          <div className="inline-flex gap-1 items-center">
-            <div className="w-7 h-7 rounded-full object-cover bg-gray-400"></div>
-            <div className="hover:underline w-12 h-3 bg-gray-400 animate-pulse rounded-sm"></div>
-          </div>
-          <div className="text-gray-400 w-16 h-3 bg-gray-400 rounded-sm animate-pulse"></div>
-        </div>
-        <h2 className="text-lg font-PeydaMed w-11/12 h-3 bg-gray-400 animate-pulse rounded-sm mb-1"></h2>
-        <h2 className="text-lg font-PeydaMed w-11/12 h-3 bg-gray-400 animate-pulse rounded-sm"></h2>
-        <div className="w-full pt-2 flex flex-col gap-1">
-          <div className="w-full h-2 bg-gray-400 animate-pulse rounded-sm"></div>
-          <div className="w-full h-2 bg-gray-400 animate-pulse rounded-sm"></div>
-          <div className="w-3/4 h-2 bg-gray-400 animate-pulse rounded-sm"></div>
-        </div>
-        <div className="pt-2">
-          <div className="text-gray-400 inline-flex items-center text-xs gap-1">
-            <div className="text-red-500 ml-2 bg-gray-400 w-7 h-3 animate-pulse rounded-sm"></div>
-            <BookOpenIcon className="w-4 text-gray-400 animate-pulse" />
-            <div className="bg-gray-400 w-16 h-3 animate-pulse rounded-sm"></div>
-          </div>
-        </div>
+        <CardSkeleton />
+        <CardSkeleton className="md:block" />
+        <CardSkeleton className="lg:block" />
+        <CardSkeleton className="2xl:block" />
       </div>
     </div>
   );
