@@ -3,12 +3,11 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import SeeAll from "../../components/SeeAll";
 import Category from "./components/Category";
-import ForMore from "./components/ForMore";
 import DataSliderSection from "../../components/DataSliderSection";
-import { sliderCardsType } from "../../components/ui/SliderCards";
 import { getAllGames } from "../../services/games";
 import { useQuery } from "@tanstack/react-query";
 import { GameFilterOptions } from "../../types/common.types";
+import { sliderCardsType } from "../../types/card.types";
 function Games() {
   const latestGamesQuery = useQuery({
     queryKey: ["games", "latest"],

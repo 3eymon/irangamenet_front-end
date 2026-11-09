@@ -9,7 +9,6 @@ import {
   ShareIcon,
   CalendarDaysIcon,
   CodeBracketIcon,
-  BuildingOffice2Icon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
 import Rating from "@mui/lab/Rating/Rating";

@@ -6,8 +6,8 @@ import { supabase } from "../../utils/supabase";
 export const GameQuery = () =>
   supabase.from("games").select(`
     *,
-    producer:producers(name, logo_path, slug),
-    categories:game_categories!game_category_links(slug, title)
+    producer:producers(name, logo_path, slug, id),
+    categories:game_categories!game_category_links(slug, title, id)
   `, { count: "exact" });
 
 // types -------------

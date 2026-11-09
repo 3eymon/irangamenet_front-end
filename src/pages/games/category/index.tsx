@@ -1,23 +1,17 @@
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import NotFound from "../../../components/NotFound";
-import { isEnumValue } from "../../../utils/isEnumValue";
 import Input from "../../../components/ui/input";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { GameFilterOptions } from "../../../types/common.types";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { getAllGames, getGameCategoryBySlug } from "../../../services/games";
 import {
   ReactNode,
-  useCallback,
-  useEffect,
   useMemo,
-  useRef,
-  useState,
+
 } from "react";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
 import ErrorState from "../../../components/ErrorState";
 import Card from "../../../components/ui/Card";
-import { sliderCardsType } from "../../../components/ui/SliderCards";
 import CardSkeleton from "../../../components/ui/CardSkeleton";
 import { AccentBar } from "../detail";
 import { SearchFailedIllustration } from "../../../components/StateIllustrations";
@@ -25,6 +19,7 @@ import { useSearchQueryParam } from "../../../hooks/useSearchQueryParam";
 import { useInfiniteScroll } from "../../../hooks/useInfiniteScroll";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Button } from "../../../components/ui/Button";
+import { sliderCardsType } from "../../../types/card.types";
 
 function GameCategory() {
   const { slug } = useParams<{ slug: string }>();
@@ -150,7 +145,6 @@ function GameCategory() {
       );
     }
   };
-  console.log(categoryIsLoading)
   return (
     <div className="space-y-10">
       <header className="mb-8 flex flex-col gap-5 px-5 md:px-0 md:flex-row md:items-end md:justify-between">

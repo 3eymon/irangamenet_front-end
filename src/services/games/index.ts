@@ -45,14 +45,14 @@ export const getAllGames = async ({
     if (error) throw error;
     const totalPages = Math.ceil((count ?? 0) / limit)
     return {
-        data,
+        results: data,
         pagination: {
             total: count ?? 0,
             page,
             limit,
             totalPages,
             hasNextPage: (page + 1) <= totalPages,
-            hasPrevPage: page !== 1
+            hasPrevPage: page > 1 && page <= totalPages
         }
     };
 };

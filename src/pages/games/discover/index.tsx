@@ -10,13 +10,13 @@ import { ReactNode, useMemo } from "react";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
 import ErrorState from "../../../components/ErrorState";
 import Card from "../../../components/ui/Card";
-import { sliderCardsType } from "../../../components/ui/SliderCards";
 import CardSkeleton from "../../../components/ui/CardSkeleton";
 import { SearchFailedIllustration } from "../../../components/StateIllustrations";
 import { useSearchQueryParam } from "../../../hooks/useSearchQueryParam";
 import { useInfiniteScroll } from "../../../hooks/useInfiniteScroll";
 import { ArrowRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Button } from "../../../components/ui/Button";
+import { sliderCardsType } from "../../../types/card.types";
 const LIMIT = 12;
 function GamesDiscovery() {
   const { filter } = useParams<{ filter: GameFilterOptions }>();
@@ -108,9 +108,9 @@ function GamesDiscovery() {
       return (
         <NotFound
           className="col-span-full"
-          backTo={`/games/discover/${filter}`}
+          backTo={query ? `/games/discover/${filter}` : "/games"}
           illustration={<SearchFailedIllustration />}
-          backLabel="پاک کردن متن جستجو"
+          backLabel={query ? "پاک کردن متن جستجو" : "برگشت به بخش بازی ها"}
           title="بازی‌ای پیدا نشد !"
           description={
             query
