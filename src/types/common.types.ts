@@ -17,4 +17,6 @@ export enum GameFilterOptions {
 export enum NewsFilterOptions {
     latest = "latest",
     popular = "popular",
+    mostRead = "most-read",
+    weeklyHighlight = "weekly-highlight"
 }
