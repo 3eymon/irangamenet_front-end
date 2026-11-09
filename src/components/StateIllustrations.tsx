@@ -18,7 +18,6 @@ export function NotFoundIllustration({ className = "" }: Props) {
         className="fill-primary-500/10"
       />
 
-      {/* پنجره */}
       <rect
         x="36"
         y="24"
@@ -53,7 +52,6 @@ export function NotFoundIllustration({ className = "" }: Props) {
         className="fill-primary-800"
       />
 
-      {/* ذره‌بین */}
       <path
         d="M180 132L202 154"
         strokeWidth="8"
@@ -78,6 +76,140 @@ export function NotFoundIllustration({ className = "" }: Props) {
     </svg>
   );
 }
+export function SearchFailedIllustration({ className = "" }: Props) {
+  return (
+    <svg
+      viewBox="0 0 240 180"
+      fill="none"
+      aria-hidden="true"
+      className={`${base} ${className}`}
+    >
+      <ellipse
+        cx="120"
+        cy="164"
+        rx="72"
+        ry="7"
+        className="fill-primary-500/10"
+      />
+
+      <rect
+        x="36"
+        y="24"
+        width="160"
+        height="112"
+        rx="14"
+        strokeWidth="2"
+        className="fill-primary-900/50 stroke-primary-700"
+      />
+
+      <rect
+        x="50"
+        y="38"
+        width="132"
+        height="20"
+        rx="10"
+        strokeWidth="2"
+        className="fill-primary-900 stroke-primary-700"
+      />
+      <circle
+        cx="64"
+        cy="48"
+        r="4"
+        strokeWidth="2"
+        className="stroke-primary-600"
+      />
+      <path
+        d="M67 51L70 54"
+        strokeWidth="2"
+        strokeLinecap="round"
+        className="stroke-primary-600"
+      />
+      <rect
+        x="78"
+        y="45"
+        width="40"
+        height="6"
+        rx="3"
+        className="fill-primary-800"
+      />
+
+      <rect
+        x="50"
+        y="72"
+        width="26"
+        height="18"
+        rx="5"
+        strokeWidth="2"
+        strokeDasharray="4 4"
+        className="stroke-primary-700"
+      />
+      <rect
+        x="84"
+        y="75"
+        width="64"
+        height="5"
+        rx="2.5"
+        className="fill-primary-800"
+      />
+      <rect
+        x="84"
+        y="84"
+        width="40"
+        height="5"
+        rx="2.5"
+        className="fill-primary-800/60"
+      />
+
+      <rect
+        x="50"
+        y="100"
+        width="26"
+        height="18"
+        rx="5"
+        strokeWidth="2"
+        strokeDasharray="4 4"
+        className="stroke-primary-800"
+      />
+      <rect
+        x="84"
+        y="103"
+        width="52"
+        height="5"
+        rx="2.5"
+        className="fill-primary-800/60"
+      />
+      <rect
+        x="84"
+        y="112"
+        width="32"
+        height="5"
+        rx="2.5"
+        className="fill-primary-800/40"
+      />
+
+      <path
+        d="M180 132L202 154"
+        strokeWidth="8"
+        strokeLinecap="round"
+        className="stroke-primary-400"
+      />
+      <circle
+        cx="160"
+        cy="112"
+        r="26"
+        strokeWidth="6"
+        className="fill-primary-900 stroke-primary-400"
+      />
+
+      <path
+        d="M151 103L169 121M169 103L151 121"
+        strokeWidth="4"
+        strokeLinecap="round"
+        className="stroke-primary-300"
+      />
+    </svg>
+  );
+}
 
 export function EmptyIllustration({ className = "" }: Props) {
   return (
@@ -95,7 +227,6 @@ export function EmptyIllustration({ className = "" }: Props) {
         className="fill-primary-500/10"
       />
 
-      {/* برگه خالی */}
       <rect
         x="94"
         y="30"
@@ -123,7 +254,6 @@ export function EmptyIllustration({ className = "" }: Props) {
         className="fill-primary-800"
       />
 
-      {/* جعبه */}
       <rect
         x="66"
         y="80"
@@ -140,7 +270,6 @@ export function EmptyIllustration({ className = "" }: Props) {
         className="stroke-primary-500"
       />
 
-      {/* جزئیات تزئینی */}
       <circle cx="58" cy="52" r="3.5" className="fill-primary-500/40" />
       <circle cx="186" cy="64" r="3" className="fill-primary-500/40" />
       <path
@@ -169,7 +298,6 @@ export function ErrorIllustration({ className = "" }: Props) {
         className="fill-primary-500/10"
       />
 
-      {/* کارت */}
       <rect
         x="48"
         y="34"
@@ -196,7 +324,6 @@ export function ErrorIllustration({ className = "" }: Props) {
         className="fill-primary-800"
       />
 
-      {/* هشدار */}
       <path
         d="M120 46L148 92H92Z"
         strokeWidth="6"
