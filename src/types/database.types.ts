@@ -213,7 +213,7 @@ export type Database = {
       news: {
         Row: {
           author_id: string
-          category_id: string | null
+          content: string
           cover_path: string | null
           created_at: string
           excerpt: string | null
@@ -221,15 +221,16 @@ export type Database = {
           is_featured: boolean
           likes: number
           published_at: string | null
+          reading_time: number
           slug: string
-          status: string
+          status: Database["public"]["Enums"]["news_status"]
           title: string
           updated_at: string
           views: number
         }
         Insert: {
           author_id: string
-          category_id?: string | null
+          content?: string
           cover_path?: string | null
           created_at?: string
           excerpt?: string | null
@@ -237,15 +238,16 @@ export type Database = {
           is_featured?: boolean
           likes?: number
           published_at?: string | null
+          reading_time?: number
           slug: string
-          status?: string
+          status?: Database["public"]["Enums"]["news_status"]
           title: string
           updated_at?: string
           views?: number
         }
         Update: {
           author_id?: string
-          category_id?: string | null
+          content?: string
           cover_path?: string | null
           created_at?: string
           excerpt?: string | null
@@ -253,8 +255,9 @@ export type Database = {
           is_featured?: boolean
           likes?: number
           published_at?: string | null
+          reading_time?: number
           slug?: string
-          status?: string
+          status?: Database["public"]["Enums"]["news_status"]
           title?: string
           updated_at?: string
           views?: number
@@ -265,13 +268,6 @@ export type Database = {
             columns: ["author_id"]
             isOneToOne: false
             referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "news_category_id_fkey"
-            columns: ["category_id"]
-            isOneToOne: false
-            referencedRelation: "news_categories"
             referencedColumns: ["id"]
           },
         ]
@@ -306,34 +302,32 @@ export type Database = {
         }
         Relationships: []
       }
-      news_sections: {
+      news_category_links: {
         Row: {
-          content: string[]
+          category_id: string
           created_at: string
-          id: string
           news_id: string
-          sort_order: number
-          title: string
         }
         Insert: {
-          content?: string[]
+          category_id: string
           created_at?: string
-          id?: string
           news_id: string
-          sort_order?: number
-          title: string
         }
         Update: {
-          content?: string[]
+          category_id?: string
           created_at?: string
-          id?: string
           news_id?: string
-          sort_order?: number
-          title?: string
         }
         Relationships: [
           {
-            foreignKeyName: "news_sections_news_id_fkey"
+            foreignKeyName: "news_category_links_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "news_categories"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "news_category_links_news_id_fkey"
             columns: ["news_id"]
             isOneToOne: false
             referencedRelation: "news"
@@ -427,7 +421,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      news_status: "draft" | "published"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -554,6 +548,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      news_status: ["draft", "published"],
+    },
   },
 } as const
