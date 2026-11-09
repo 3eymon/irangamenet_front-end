@@ -4,54 +4,70 @@ import en from "javascript-time-ago/locale/en";
 import fa from "javascript-time-ago/locale/fa";
 import MostViewed from "./components/MostViewed";
 import DataSliderSection from "../../components/DataSliderSection";
-import { sliderCardsType } from "../../components/ui/SliderCards";
 import SeeAll from "../../components/SeeAll";
 import { useQuery } from "@tanstack/react-query";
-import { getAllNews } from "../../services/newsService";
+import { getAllNews } from "../../services/news";
+import { NewsFilterOptions } from "../../types/common.types";
+import { sliderCardsType } from "../../types/card.types";
 
 TimeAgo.addDefaultLocale(en);
 TimeAgo.addLocale(fa);
 function News() {
-  const { data: news = [], isLoading: newsLoading } = useQuery({
+  const latestNewsQ = useQuery({
     queryKey: ["news"],
-    queryFn: () => getAllNews(),
+    queryFn: () => getAllNews({ limit: 7 }),
   });
-  const { data: weeklyHighlightNews = [], isLoading: weeklyLoading } = useQuery(
-    {
-      queryKey: ["weeklyHighlightNews"],
-      queryFn: () => getAllNews(),
-    },
-  );
+  const mostReadNewsQ = useQuery({
+    queryKey: ["mostRead"],
+    queryFn: () => getAllNews({ filter: NewsFilterOptions.mostRead, limit: 7 }),
+  });
+  const weeklyHighlightNewsQ = useQuery({ 
+    queryKey: ["weeklyHighlightNews"],
+    queryFn: () =>
+      getAllNews({ filter: NewsFilterOptions.weeklyHighlight, limit: 7 }),
+  });
   return (
     <main className="flex flex-col justify-center gap-14 w-full mt-0 md:mt-5 ">
       <HeaderNews
-        isLoading={newsLoading}
+        isLoading={latestNewsQ.isLoading}
         data={{
-          featured: news.slice(0, 6),
-          secondary: news.slice(6, 10),
+          featured: latestNewsQ.data?.results.slice(0, 6) || [],
+          secondary: latestNewsQ.data?.results.slice(6, 10) || [],
         }}
       />
       <DataSliderSection
-        data={news}
-        isLoading={newsLoading}
+        data={latestNewsQ.data?.results}
+        isLoading={latestNewsQ.isLoading}
         type={sliderCardsType.News}
       >
-        <SeeAll title="جدیدترین اخبار " link="browse/latest" color="#5254d4" />
+        <SeeAll
+          title="جدیدترین اخبار "
+          link="discover/latest"
+          color="#5254d4"
+        />
       </DataSliderSection>
       <DataSliderSection
-        data={news}
-        isLoading={newsLoading}
+        data={mostReadNewsQ.data?.results}
+        isLoading={mostReadNewsQ.isLoading}
         type={sliderCardsType.News}
-        renderItems={(news) => <MostViewed news={news} />}
+        renderItems={(newsItem) => <MostViewed news={newsItem} />}
       >
-        <SeeAll title="بیشترین تعداد خوندن" link="browse/most-read" color="#34f4c5" />
+        <SeeAll
+          title="بیشترین تعداد خوندن"
+          link="discover/most-read"
+          color="#34f4c5"
+        />
       </DataSliderSection>
       <DataSliderSection
-        data={weeklyHighlightNews}
-        isLoading={weeklyLoading}
+        data={weeklyHighlightNewsQ.data?.results}
+        isLoading={weeklyHighlightNewsQ.isLoading}
         type={sliderCardsType.News}
       >
-        <SeeAll title="برترین های هفته" link="browse/weekly-highlight" color="#fff" />
+        <SeeAll
+          title="برترین های هفته"
+          link="discover/weekly-highlight"
+          color="#fff"
+        />
       </DataSliderSection>
       <TopCreatorNews />
     </main>

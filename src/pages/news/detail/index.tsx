@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-
 import {
   BookmarkIcon,
   CalendarDaysIcon,
@@ -12,14 +11,17 @@ import {
   ArrowRightIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import { getNewsById, getRelatedNews } from "../../../services/newsService";
-import { sliderCardsType } from "../../../components/ui/SliderCards";
-import DataSliderSection from "../../../components/DataSliderSection";
 import ReactTimeAgo from "react-time-ago";
 import { isNotFoundError } from "../../../utils/isNotFoundErr";
 import ErrorState from "../../../components/ErrorState";
 import NotFound from "../../../components/NotFound";
 import Breadcrumb from "../../../components/Breadcrumb";
+import { getNewsBySlug, getRelatedNews } from "../../../services/news";
+import { extractAuthorName } from "../../../utils/authorName";
+import Image from "../../../components/ui/Image";
+import { NewsContent } from "../components/NewsContent";
+import DataSliderSection from "../../../components/DataSliderSection";
+import { sliderCardsType } from "../../../types/card.types";
 
 function formatNumber(value: number | string) {
   return Number(value).toLocaleString("fa-IR");
@@ -49,7 +51,7 @@ function LoadingPage() {
 }
 
 export default function NewsPage() {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
 
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -63,17 +65,17 @@ export default function NewsPage() {
     refetch,
     isFetching,
   } = useQuery({
-    queryKey: ["news", id],
-    queryFn: () => getNewsById(id!),
-    enabled: Boolean(id),
-    staleTime: 60_000,
+    queryKey: ["news", slug],
+    queryFn: () => getNewsBySlug(slug!),
+    enabled: Boolean(slug),
+    staleTime: 5 * 60_000,
   });
 
   const { data: relatedNews = [] } = useQuery({
-    queryKey: ["related-news", id],
+    queryKey: ["related-news", slug],
     queryFn: () => getRelatedNews(news!),
     enabled: Boolean(news),
-    staleTime: 60_000,
+    staleTime: 5 * 60_000,
   });
 
   useEffect(() => {
@@ -133,24 +135,28 @@ export default function NewsPage() {
       />
     );
   }
-
   return (
     <main className="min-h-screen overflow-hidden text-white">
       <div className="mx-auto max-w-[1400px] px-5 pb-20 pt-8 sm:px-8 lg:px-12">
         <Breadcrumb
           items={[
             { label: "اخبار", to: "/news" },
-            { label: news.category ?? "خبر" },
+            { label: news.title ?? "خبر" },
           ]}
         />
 
         <header className="mx-auto">
           <div className="mb-5 flex flex-wrap items-center gap-3">
-            {news.category && (
-              <span className="rounded-lg border border-primary-500/30 bg-primary-500/10 px-3 py-1.5 text-xs font-bold text-primary-300">
-                {news.category}
-              </span>
-            )}
+            {news.categories &&
+              news.categories.map((category) => (
+                <Link
+                  to={`/news/category/${category.slug}`}
+                  key={category.slug}
+                  className="rounded-lg border border-primary-500/30 bg-primary-500/10 px-3 py-1.5 text-xs font-bold text-primary-300"
+                >
+                  {category.title}
+                </Link>
+              ))}
 
             <span className="flex items-center gap-1.5 text-xs text-zinc-500">
               <CalendarDaysIcon className="size-4" />
@@ -160,7 +166,7 @@ export default function NewsPage() {
 
             <span className="flex items-center gap-1.5 text-xs text-zinc-500">
               <ClockIcon className="size-4" />
-              {formatNumber(news.readingTime)} دقیقه مطالعه
+              {formatNumber(news.reading_time)} دقیقه مطالعه
             </span>
           </div>
 
@@ -169,15 +175,15 @@ export default function NewsPage() {
           </h1>
 
           <p className="mt-5 max-w-4xl text-sm leading-8 text-zinc-400 sm:text-base">
-            {news.description}
+            {news.excerpt}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-between gap-5 border-y border-white/10 py-5">
             <div className="flex items-center gap-3">
-              {news.authorImage ? (
+              {news.author.avatar_path ? (
                 <img
-                  src={news.authorImage}
-                  alt={news.author}
+                  src={news.author.avatar_path}
+                  alt={extractAuthorName(news)}
                   className="size-11 rounded-full border border-white/10 object-cover"
                   width={44}
                   height={44}
@@ -187,7 +193,9 @@ export default function NewsPage() {
               )}
 
               <div>
-                <p className="text-sm font-bold text-white">{news.author}</p>
+                <p className="text-sm font-bold text-white">
+                  {extractAuthorName(news)}
+                </p>
 
                 <p className="mt-1 text-[11px] text-zinc-500">نویسنده خبر</p>
               </div>
@@ -214,11 +222,9 @@ export default function NewsPage() {
         </header>
 
         <figure className="mx-auto mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[#111116]">
-          <img
-            src={news.image}
+          <Image
+            src={news.cover_path}
             alt={news.title}
-            fetchPriority="high"
-            decoding="async"
             className="aspect-[16/8] w-full object-cover sm:aspect-[16/7]"
           />
         </figure>
@@ -226,73 +232,27 @@ export default function NewsPage() {
         <div className="mt-14">
           <article className="min-w-0">
             <div className="mb-10 rounded-xl border border-primary-500/15 bg-primary-500/[0.04] p-5">
-              <p className="text-sm leading-8 text-zinc-300">
-                {news.description}
-              </p>
+              <p className="text-sm leading-8 text-zinc-300">{news.excerpt}</p>
             </div>
-
-            <div className="space-y-16">
-              {news.sections.map((section) => (
-                <section
-                  key={section.id}
-                  id={section.id}
-                  className="scroll-mt-28 space-y-6"
-                >
-                  <h2 className="border-b border-white/10 pb-4 text-xl font-black text-white sm:text-2xl">
-                    {section.title}
-                  </h2>
-
-                  <div className="space-y-6">
-                    {section.content.map((paragraph, index) => (
-                      <p
-                        key={index}
-                        className="text-sm leading-9 text-zinc-300 sm:text-base"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-
-                  {section.image && (
-                    <figure className="overflow-hidden rounded-2xl border border-white/10 bg-[#111116]">
-                      <img
-                        src={section.image}
-                        alt={section.imageCaption ?? section.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="max-h-[520px] w-full object-cover"
-                      />
-
-                      {section.imageCaption && (
-                        <figcaption className="border-t border-white/10 px-4 py-3 text-center text-xs text-zinc-500">
-                          {section.imageCaption}
-                        </figcaption>
-                      )}
-                    </figure>
-                  )}
-                </section>
-              ))}
-            </div>
-
-            {/* Tags */}
-            {news.tags && news.tags.length > 0 && (
+            
+            <NewsContent content={news.content} />
+            {news.categories && news.categories.length > 0 && (
               <div className="mt-14 border-t border-white/10 pt-8">
-                <h3 className="mb-4 text-sm font-bold">موضوعات مرتبط</h3>
+                <h3 className="mb-4 text-sm font-bold">دسته بندی ها</h3>
 
                 <div className="flex flex-wrap gap-2">
-                  {news.tags.map((tag) => (
-                    <span
-                      key={tag}
+                  {news.categories.map((cat) => (
+                    <Link
+                      to={`/news/category/${cat.slug}`}
+                      key={cat.slug}
                       className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-zinc-400 transition hover:border-primary-500/40 hover:text-primary-300"
                     >
-                      #{tag}
-                    </span>
+                      #{cat.title}
+                    </Link>
                   ))}
                 </div>
               </div>
             )}
-
-            {/* Article Actions */}
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#111116] p-5">
               <div>
                 <p className="text-sm font-bold">از این خبر لذت بردی؟</p>
