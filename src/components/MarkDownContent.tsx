@@ -1,6 +1,6 @@
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Image from "../../../components/ui/Image";
+import Image from "./ui/Image";
 
 const components: Components = {
   h2: ({ children }) => (
@@ -13,11 +13,21 @@ const components: Components = {
       {children}
     </h3>
   ),
-  p: ({ children }) => (
-    <p className="my-6 text-sm leading-9 text-zinc-300 sm:text-base">
-      {children}
-    </p>
-  ),
+  p: ({ node, children }) => {
+    const hasImage = node?.children.some(
+      (child) => child.type === "element" && child.tagName === "img",
+    );
+
+    if (hasImage) {
+      return <div className="my-6">{children}</div>;
+    }
+
+    return (
+      <p className="my-6 text-sm leading-9 text-zinc-300 sm:text-base">
+        {children}
+      </p>
+    );
+  },
   a: ({ href, children }) => (
     <a
       href={href}
@@ -77,7 +87,7 @@ const components: Components = {
   ),
 };
 
-export function NewsContent({ content }: { content: string }) {
+export default function MarkDownContent({ content }: { content: string }) {
   return (
     <div dir="rtl">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>

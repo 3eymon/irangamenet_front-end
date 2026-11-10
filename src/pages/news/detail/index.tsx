@@ -17,11 +17,12 @@ import ErrorState from "../../../components/ErrorState";
 import NotFound from "../../../components/NotFound";
 import Breadcrumb from "../../../components/Breadcrumb";
 import { getNewsBySlug, getRelatedNews } from "../../../services/news";
-import { extractAuthorName } from "../../../utils/authorName";
+import { extractAuthorName } from "../../../utils/extractAuthorName";
 import Image from "../../../components/ui/Image";
-import { NewsContent } from "../components/NewsContent";
+
 import DataSliderSection from "../../../components/DataSliderSection";
 import { sliderCardsType } from "../../../types/card.types";
+import MarkDownContent from "../../../components/MarkDownContent";
 
 function formatNumber(value: number | string) {
   return Number(value).toLocaleString("fa-IR");
@@ -234,8 +235,8 @@ export default function NewsPage() {
             <div className="mb-10 rounded-xl border border-primary-500/15 bg-primary-500/[0.04] p-5">
               <p className="text-sm leading-8 text-zinc-300">{news.excerpt}</p>
             </div>
-            
-            <NewsContent content={news.content} />
+
+            <MarkDownContent content={news.content} />
             {news.categories && news.categories.length > 0 && (
               <div className="mt-14 border-t border-white/10 pt-8">
                 <h3 className="mb-4 text-sm font-bold">دسته بندی ها</h3>
