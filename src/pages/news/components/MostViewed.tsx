@@ -4,7 +4,7 @@ import ReactTimeAgo from "react-time-ago";
 import { BookOpenIcon } from "@heroicons/react/24/outline";
 import { News } from "../../../services/news/queries";
 import Image from "../../../components/ui/Image";
-import { extractAuthorName } from "../../../utils/authorName";
+import { extractAuthorName } from "../../../utils/extractAuthorName";
 
 export default function MostViewed({ news }: { news: News[] }) {
   const topview = news[0];

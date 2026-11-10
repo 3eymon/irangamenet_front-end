@@ -4,7 +4,6 @@ import { NewspaperIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import { Game } from "../../../types/game.types";
 import { formatCompactNumber } from "../../../utils/formatCompactNumber";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";

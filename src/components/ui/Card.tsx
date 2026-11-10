@@ -13,7 +13,7 @@ import { Game } from "../../services/games/queries";
 import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
 import { Ref } from "react";
 import { News } from "../../services/news/queries";
-import { extractAuthorName } from "../../utils/authorName";
+import { extractAuthorName } from "../../utils/extractAuthorName";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 type CardProps = {
   ref?: Ref<HTMLDivElement>;

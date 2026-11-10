@@ -15,7 +15,7 @@ import EmptyState from "../../../components/EmptyState";
 import Image from "../../../components/ui/Image";
 import { cn } from "../../../utils/cn";
 import { News } from "../../../services/news/queries";
-import { extractAuthorName } from "../../../utils/authorName";
+import { extractAuthorName } from "../../../utils/extractAuthorName";
 
 function FeaturedNewsSection({
   data,
