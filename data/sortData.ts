@@ -1,4 +1,4 @@
-import { Category } from './../src/types/game.types';
+import { Category } from '../src/types/game.types';
 export const categories: Category[] = [
   {
     id: 1,
