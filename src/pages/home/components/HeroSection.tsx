@@ -8,7 +8,6 @@ import { formatCompactNumber } from "../../../utils/formatCompactNumber";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { News } from "../../../types/news.types";
 type NewsCardPreviewProps = {
   cards: News[];
   isLoading?: boolean;
@@ -16,6 +15,8 @@ type NewsCardPreviewProps = {
 
 import { SignalSlashIcon } from "@heroicons/react/24/outline";
 import Image from "../../../components/ui/Image";
+import { News } from "../../../services/news/queries";
+import { extractAuthorName } from "../../../utils/extractAuthorName";
 
 function NewsCardSkeleton() {
   return (
@@ -100,7 +101,6 @@ function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
     renderBullet: (_index: number, className: string) =>
       `<span class="${className}"></span>`,
   };
-  console.log(cards.length / 2 - 1);
   return (
     <div
       className="relative flex w-full items-center py-10 lg:py-0"
@@ -140,52 +140,99 @@ function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
               ))
             : cards.map((card) => (
                 <SwiperSlide key={card.id}>
-                  <div className="flex w-full flex-col rounded-xl border border-primary-400/20 bg-gradient-to-br from-primary-500/35 via-primary-900/80 to-[#0b0b11]/95 p-3 shadow-lg shadow-black/20 backdrop-blur-[2px]">
-                    <Link to={`/news/${card.id}`} className="w-full">
+                  <article className="group relative flex w-full flex-col overflow-hidden rounded-2xl border border-primary-400/20 bg-gradient-to-br from-primary-500/35 via-primary-900/80 to-[#0b0b11]/95 p-3 shadow-lg shadow-black/30 backdrop-blur-[2px]">
+                    <span className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary-300/80 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+
+                    <span className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary-400/20 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+
+                    <Link
+                      to={`/news/${card.slug}`}
+                      className="relative block w-full overflow-hidden rounded-xl"
+                    >
                       <Image
-                        className="aspect-video h-32 w-full rounded-md object-cover sm:h-44 md:h-52 bg-primary-400/10"
-                        src={card.image}
+                        className="aspect-video h-32 w-full bg-primary-400/10 object-cover transition-transform duration-700 ease-out group-hover:scale-110 sm:h-44 md:h-52"
+                        src={card.cover_path}
                         alt={card.title ?? ""}
                       />
+
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+                      {card.categories?.length > 0 && (
+                        <div className="absolute end-2 top-2 flex max-w-[80%] flex-wrap gap-1.5">
+                          {card.categories.slice(0, 2).map((category) => (
+                            <span
+                              key={category.slug}
+                              className="truncate rounded-full border border-white/20 bg-black/40 px-2.5 py-0.5 text-[10px] font-medium text-white backdrop-blur-md sm:text-xs"
+                            >
+                              {category.title}
+                            </span>
+                          ))}
+                          {card.categories.length > 2 && (
+                            <span className="rounded-full border border-white/20 bg-black/40 px-2 py-0.5 text-[10px] font-medium text-white/80 backdrop-blur-md sm:text-xs">
+                              +{card.categories.length - 2}
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      <span className="absolute bottom-2 left-2 flex h-8 w-8 translate-y-2 items-center justify-center rounded-full bg-primary-500 text-white opacity-0 shadow-lg shadow-primary-500/40 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          className="h-4 w-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M7 17 17 7M7 7h10v10"
+                          />
+                        </svg>
+                      </span>
                     </Link>
 
-                    <div className="flex flex-col gap-3 pt-2">
+                    <div className="relative flex flex-col gap-3 pt-3">
                       <Link
-                        to={`/news/${card.id}`}
-                        className="line-clamp-1 text-xs sm:text-sm lg:text-base"
+                        to={`/news/${card.slug}`}
+                        className="line-clamp-1 text-xs font-semibold text-white transition-colors duration-200 hover:text-primary-200 sm:text-sm lg:text-base"
                       >
                         {card.title}
                       </Link>
 
+                      <div className="h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
                       <div className="flex items-center justify-between gap-2 text-[10px] text-gray-200 sm:text-[11px]">
-                        <span className="flex items-center gap-1">
+                        <span className="flex items-center gap-1.5 rounded-full bg-white/5 px-2 py-1 ring-1 ring-white/10 transition-colors group-hover:bg-white/10">
                           <span dir="ltr" className="tabular-nums">
                             {formatCompactNumber(card.views)}
                           </span>
-                          <EyeIcon className="w-3 shrink-0 sm:w-4" />
+                          <EyeIcon className="w-3 shrink-0 text-primary-200 sm:w-4" />
                         </span>
 
                         <div className="flex min-w-0 items-center gap-2">
-                          <span className="truncate text-xs font-medium text-white/80">
-                            {card.author}
+                          <span className="truncate text-xs font-medium text-white/80 transition-colors group-hover:text-white">
+                            {extractAuthorName(card)}
                           </span>
 
-                          <div className="flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/5">
-                            {card.authorImage ? (
-                              <img
-                                src={card.authorImage}
-                                alt=""
-                                loading="lazy"
-                                className="h-full w-full object-cover"
-                              />
-                            ) : (
-                              <UserCircleIcon className="h-4 w-4 text-white/50" />
-                            )}
+                          <div className="shrink-0 rounded-full bg-gradient-to-tr from-primary-300 via-primary-500 to-white/70 p-[1.5px]">
+                            <div className="flex h-6 w-6 items-center justify-center overflow-hidden rounded-full bg-neutral-800">
+                              {card.author.avatar_path ? (
+                                <img
+                                  src={card.author.avatar_path}
+                                  alt=""
+                                  loading="lazy"
+                                  className="h-full w-full object-cover"
+                                />
+                              ) : (
+                                <UserCircleIcon className="h-4 w-4 text-white/50" />
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </SwiperSlide>
               ))}
 
@@ -200,7 +247,7 @@ function HeroSection({
   data,
   isLoading,
 }: {
-  data: News[];
+  data?: News[];
   isLoading: boolean;
 }) {
   return (
@@ -242,7 +289,7 @@ function Texts() {
         </a>
 
         <Link
-          to="/news/latest"
+          to="/news/discover/latest"
           className="text-sm inline-flex gap-2 items-center px-5 py-2.5 transition-transform rounded-md border-2 border-secondary hover:scale-95"
         >
           <NewspaperIcon className="w-5" />
