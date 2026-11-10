@@ -1,20 +1,16 @@
 import { Link } from "react-router-dom";
-import {
-  BookmarkIcon,
-  ClockIcon,
-  EyeIcon,
-  HeartIcon,
-} from "@heroicons/react/16/solid";
+
 import ReactTimeAgo from "react-time-ago";
 import { sliderCardsType } from "../../types/card.types";
 import { formatCompactNumber } from "../../utils/formatCompactNumber";
 import Image from "./Image";
 import { Game } from "../../services/games/queries";
-import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
+import { BookmarkIcon, BuildingOffice2Icon, EyeIcon, HeartIcon } from "@heroicons/react/24/outline";
 import { Ref } from "react";
 import { News } from "../../services/news/queries";
 import { extractAuthorName } from "../../utils/extractAuthorName";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
+import { ClockIcon } from "@heroicons/react/24/solid";
 type CardProps = {
   ref?: Ref<HTMLDivElement>;
 } & (
@@ -36,7 +32,6 @@ export default function Card({ data, type, ref }: CardProps) {
         <div className="relative">
           <Link to={`/news/${data.slug}`}>
             <Image
-              // loading="lazy"
               src={data.cover_path}
               className="w-full h-60 object-cover rounded-xl hover:brightness-[.8] transition-all ease-linear bg-gray-400"
               alt={`${data ?? "خبر"} ${data.title}`}
@@ -116,12 +111,11 @@ export default function Card({ data, type, ref }: CardProps) {
               <div className="inline-flex items-center gap-1.5 text-sm text-gray-300">
                 <EyeIcon className="h-4 w-4 shrink-0" />
 
-                <span className="inline-flex items-center gap-1">
-                  <span>بازدید</span>
-                  <span dir="ltr" className="tabular-nums">
-                    {formatCompactNumber(Number(data.views))}
-                  </span>
+                <span dir="ltr" className="font-medium tabular-nums">
+                  {formatCompactNumber(Number(data.views))}
                 </span>
+
+                <span className="text-gray-400">بازدید</span>
               </div>
             </div>
           </div>
