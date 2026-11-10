@@ -56,8 +56,9 @@ export const getAllGames = async ({
         }
     };
 };
-export const getGameById = async (id: string): Promise<Game | null> => {
-    const res = await GameQuery().eq("id", id).single()
+export const getGameById = async (id: string) => {
+    const res = await supabase.from("games").select(`*,producer:producers(name, logo_path, slug),
+    categories:game_categories!game_category_links(slug, title)`).eq("id", id).single()
     return res.data
 }
 

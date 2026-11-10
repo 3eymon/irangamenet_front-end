@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   BookmarkIcon,
@@ -21,6 +21,7 @@ import ErrorState from "../../../components/ErrorState";
 import NotFound from "../../../components/NotFound";
 import Breadcrumb from "../../../components/Breadcrumb";
 import { PhotoIcon } from "@heroicons/react/24/solid";
+import MarkDownContent from "../../../components/MarkDownContent";
 type IconButtonProps = {
   label: string;
   pressed?: boolean;
@@ -35,6 +36,13 @@ export default function GamePage() {
   const [saved, setSaved] = useState(false);
   const [shareNote, setShareNote] = useState("");
   const [modal, setModal] = useState(false);
+  const around = useRef<HTMLDivElement>(null);
+  const scroll = () => {
+    around.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
   const {
     data: game,
     isLoading,
@@ -108,9 +116,9 @@ export default function GamePage() {
     <main className="relative isolate w-full overflow-hidden text-white">
       <section
         aria-labelledby="game-title"
-        className="relative isolate min-h-[100svh] w-full overflow-hidden md:rounded-2xl flex flex-col"
+        className="relative isolate min-h-[100dvh] w-full overflow-hidden md:rounded-2xl flex flex-col"
       >
-        <div className="grid min-h-[100svh] grid-cols-1 gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-12 lg:px-12">
+        <div className="grid min-h-[100dvh] grid-cols-1 gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-12 lg:px-12">
           <section className="flex flex-col justify-center gap-6 lg:py-2">
             <Breadcrumb
               items={[
@@ -382,6 +390,16 @@ export default function GamePage() {
             </div>
           </aside>
         </div>
+        <img
+          onClick={scroll}
+          src="/images/games/88221.png"
+          className="max-lg:hidden absolute bottom-20 left-1/2 -translate-x-1/2 w-6 invert mx-auto cursor-pointer animate-bounce animate-infinite animate-ease-linear animate-duration-[2000ms]"
+        />
+      </section>
+      <section ref={around}>
+        {game.system && game.system?.length > 0 && (
+          <MarkDownContent content={game.system} />
+        )}
       </section>
     </main>
   );
