@@ -1,5 +1,4 @@
-import { Category } from '../src/types/game.types';
-export const categories: Category[] = [
+export const categories: any[] = [
   {
     id: 1,
     text: "اکشن",
