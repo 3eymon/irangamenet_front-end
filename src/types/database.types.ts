@@ -136,7 +136,7 @@ export type Database = {
           status: string
           steam_app_id: number | null
           store_url: string | null
-          system: Json | null
+          system: string | null
           title: string
           trailer_url: string | null
           updated_at: string
@@ -165,7 +165,7 @@ export type Database = {
           status?: string
           steam_app_id?: number | null
           store_url?: string | null
-          system?: Json | null
+          system?: string | null
           title: string
           trailer_url?: string | null
           updated_at?: string
@@ -194,7 +194,7 @@ export type Database = {
           status?: string
           steam_app_id?: number | null
           store_url?: string | null
-          system?: Json | null
+          system?: string | null
           title?: string
           trailer_url?: string | null
           updated_at?: string
