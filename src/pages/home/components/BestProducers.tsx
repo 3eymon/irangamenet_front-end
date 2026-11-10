@@ -1,9 +1,9 @@
 import { useMemo } from "react";
-import type { Producer } from "../../../types/producer.types";
 import ChevronLeftIcon from "@heroicons/react/24/solid/ChevronLeftIcon";
 import { BuildingOffice2Icon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import SeeAll from "../../../components/SeeAll";
+import { Tables } from "../../../types/database.types";
 const LIMIT = 8;
 
 function buildRows<T>(items: T[]): T[][] {
@@ -73,10 +73,10 @@ function ProducerCard({ producer }: { producer: any }) {
 }
 
 function BestProducers({
-  data,
+  data = [],
   isLoading,
 }: {
-  data: Producer[] | undefined;
+  data?: Tables<"producers">[];
   isLoading: boolean;
 }) {
   const rows = useMemo(() => buildRows(data ?? []), [data]);
