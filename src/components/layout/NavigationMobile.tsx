@@ -11,6 +11,9 @@ import {
   UserCircleIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
+import { useAuth } from "../../contexts/AuthContext";
+import { useMutation } from "@tanstack/react-query";
+import { logOut } from "../../services/auth";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -35,6 +38,13 @@ const sidebar = {
 };
 
 export default function NavigationMobile() {
+    const { user, profile, isLoading } = useAuth();
+
+  const logoutMutation = useMutation({
+    mutationFn: logOut,
+    // onSuccess: () => toggle,
+  });
+  console.log(user,profile)
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
@@ -46,7 +56,7 @@ export default function NavigationMobile() {
     }, 1000);
   }
   let x = window.matchMedia("(max-width: 700px)");
-  function myFunction(x : any) {
+  function myFunction(x: any) {
     if (x.matches) {
       () => toggleOpen();
     } else {
@@ -83,7 +93,7 @@ export default function NavigationMobile() {
   );
 }
 
-const Path = (props : any) => (
+const Path = (props: any) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -93,7 +103,7 @@ const Path = (props : any) => (
   />
 );
 
-function MenuToggle({ toggle } : {toggle : () => void}) {
+function MenuToggle({ toggle }: { toggle: () => void }) {
   return (
     <motion.div className=" relative">
       <button onClick={toggle} className="z-30 pr-2.5">
@@ -176,6 +186,7 @@ function Navigation({
   toggle: () => void;
   isOpen: boolean;
 }) {
+
   return (
     <motion.ul
       variants={variants}
