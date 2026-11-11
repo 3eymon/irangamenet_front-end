@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 import Input from "../../../components/ui/input";
 import { SiSteam } from "react-icons/si";
 import { MdAlternateEmail } from "react-icons/md";
 import {
-  getOTP,
+  sendOTP,
   PENDING_OTP_EMAIL_KEY,
   VERIFIED_OTP_EMAIL_KEY,
-} from "../../../services/authService";
+} from "../../../services/auth";
+import { Button } from "../../../components/ui/Button";
+import { sendOtpSchema } from "../../../schemas/auth";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
+import {
+  startOtpCooldown,
+  useResendCooldown,
+} from "../../../hooks/useResendCooldown";
+import { isAuthApiError } from "@supabase/supabase-js";
 
 const AUTH_PREVIEW_VIDEOS = [
   {
@@ -23,61 +31,83 @@ const AUTH_PREVIEW_VIDEOS = [
 ];
 const AUTH_PREVIEW_POSTER = "/video/trailer/auth-gameplay-poster-blur.jpg";
 
-type AuthForm = {
+type SendOtpForm = {
   email: string;
 };
 
-function AuthPage() {
-  const pendingEmail = localStorage.getItem(PENDING_OTP_EMAIL_KEY);
-
-  if (pendingEmail) {
-    return (
-      <Navigate
-        to="/auth/check-otp"
-        replace
-        state={{ email: pendingEmail }}
-      />
-    );
-  }
-
-  return <AuthPageForm />;
-}
-
-function AuthPageForm() {
+function SendOTP() {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
-  const [submitError, setSubmitError] = useState("");
   const [previewVideoIndex, setPreviewVideoIndex] = useState(0);
   const [isPreviewLoaded, setIsPreviewLoaded] = useState(false);
   const activePreviewVideo = AUTH_PREVIEW_VIDEOS[previewVideoIndex];
-
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm<AuthForm>();
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<SendOtpForm>({
+    resolver: zodResolver(sendOtpSchema),
+    mode: "onTouched",
+  });
 
-  const onSubmit = async (data: AuthForm) => {
-    setIsLoading(true);
-    setSubmitError("");
+  const sendOTPmutation = useMutation({
+    mutationFn: (email: string) => sendOTP(email),
+    onSuccess: (_data, email) => {
+      localStorage.setItem(PENDING_OTP_EMAIL_KEY, email);
+      startOtpCooldown();
+      navigate("/auth/verify-otp", { state: { email } });
+    },
+    onError: (error) => {
+      if (isAuthApiError(error)) {
+        const { status, code } = error;
 
-    try {
-      await getOTP({ email: data.email });
-      localStorage.removeItem(VERIFIED_OTP_EMAIL_KEY);
-      localStorage.setItem(PENDING_OTP_EMAIL_KEY, data.email);
-      navigate("/auth/check-otp", { replace: true, state: { email: data.email } });
-    } catch {
-      setSubmitError("ارسال کد تایید انجام نشد. دوباره تلاش کنید.");
-    } finally {
-      setIsLoading(false);
-    }
+        if (status === 429 || code === "over_request_rate_limit") {
+          setError("root", {
+            message: "تعداد درخواست‌ها زیاد است. کمی بعد دوباره تلاش کنید.",
+          });
+          return;
+        }
+
+        if (code === "validation_failed" || code === "email_address_invalid") {
+          setError("email", {
+            message: "آدرس ایمیل معتبر نیست.",
+          });
+          return;
+        }
+
+        if (status === 422) {
+          setError("email", {
+            message: "امکان ارسال کد به این ایمیل وجود ندارد.",
+          });
+          return;
+        }
+
+        if (status === 400) {
+          setError("root", {
+            message: "اطلاعات درخواست نامعتبر است.",
+          });
+          return;
+        }
+      }
+
+      console.error("OTP send error:", error);
+
+      setError("root", {
+        message: "ارسال کد انجام نشد. دوباره تلاش کنید.",
+      });
+    },
+  });
+  const onSubmit = async ({ email }: SendOtpForm) => {
+    sendOTPmutation.mutate(email);
   };
 
   return (
     <div>
       <div
-        className={`absolute inset-0 w-full h-full bg-gray-500/5 backdrop-blur-sm z-20 flex flex-col justify-center items-center transition-all ease-linear ${
-          isLoading ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`absolute inset-0 w-full h-full bg-gray-500/5 backdrop-blur-sm z-50 flex flex-col justify-center items-center transition-all ease-linear ${
+          sendOTPmutation.isPending
+            ? "opacity-100 visible"
+            : "opacity-0 invisible"
         }`}
       >
         <div className="z-30 ml-5">
@@ -254,44 +284,42 @@ function AuthPageForm() {
         <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="w-full dir-ltr">
             <Input
-              className="font-mono placeholder:font-Peyda"
+              dir="ltr"
+              className="text-left font-sans placeholder:font-Peyda placeholder:text-right"
               placeholder="ایمیل (پست الکترونیک)"
               icon={
                 <MdAlternateEmail className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
               }
-              {...register("email", {
-                required: "وارد کردن ایمیل ضروری است.",
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: "لطفا از یک ایمیل معتبر استفاده کنید",
-                },
-              })}
+              spellCheck={false}
+              inputMode="email"
+              autoComplete="email"
+              autoCapitalize="none"
+              aria-invalid={!!errors.email}
+              {...register("email")}
             />
-
             {errors.email && (
-              <span className="text-red-500 inline-block px-4 pt-2 text-sm lg:text-base w-full text-right dir-rtl">
-                {typeof errors.email.message === "string"
-                  ? errors.email.message
-                  : "لطفا یک ایمیل معتبر وارد کنید"}
-              </span>
+              <p
+                role="alert"
+                className="text-red-500 inline-block px-4 pt-2 text-sm lg:text-base w-full text-right dir-rtl"
+              >
+                {errors.email.message}
+              </p>
             )}
-            {submitError && (
-              <span className="text-red-400 inline-block px-4 pt-2 text-sm lg:text-base w-full text-right dir-rtl">
-                {submitError}
-              </span>
+            {errors.root && (
+              <p
+                role="alert"
+                className="text-red-500 inline-block px-4 pt-2 text-sm lg:text-base w-full text-right dir-rtl"
+              >
+                {errors.root.message}
+              </p>
             )}
           </div>
 
-          <button
-            type="submit"
-            className="btn--primary !text-center font-Peyda justify-center"
-          >
-            ورود به حساب
-          </button>
+          <Button type="submit">ارسال کد تایید</Button>
         </form>
       </div>
     </div>
   );
 }
 
-export default AuthPage;
+export default SendOTP;

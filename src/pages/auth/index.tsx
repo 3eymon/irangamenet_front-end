@@ -1,9 +1,14 @@
-import AuthPage from "./components/AuthPage";
+import { Navigate } from "react-router-dom";
+import { PENDING_OTP_EMAIL_KEY } from "../../services/auth";
+import SendOTP from "./send-otp";
+export default function AuthPage() {
+  const pendingEmail = localStorage.getItem(PENDING_OTP_EMAIL_KEY);
 
-export default function Auth() {
-  return (
-    <div className="">
-      <AuthPage />
-    </div>
-  );
+  if (pendingEmail) {
+    return (
+      <Navigate to="/auth/verify-otp" replace state={{ email: pendingEmail }} />
+    );
+  }
+
+  return <SendOTP />;
 }
