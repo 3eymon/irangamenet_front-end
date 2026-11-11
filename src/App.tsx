@@ -12,7 +12,7 @@ import Navbar from "./components/layout/Navbar";
 import AuthLayout from "./components/layout/AuthLayout";
 import AuthPage from "./pages/auth";
 import CompleteProfile from "./pages/auth/complete-profile";
-import CheckOTP from "./pages/auth/check-otp";
+import VerifyOTP from "./pages/auth/verify-otp";
 import { isNotFoundError } from "./utils/isNotFoundErr";
 import NotFound from "./components/NotFound";
 import GameCategory from "./pages/games/category";
@@ -26,6 +26,7 @@ import NewsDiscovery from "./pages/news/discover";
 import NewsCategory from "./pages/news/category";
 import NewsPage from "./pages/news/detail";
 import Home from "./pages/home";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 TimeAgo.addDefaultLocale(fa);
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -69,11 +70,15 @@ function App() {
               {/* Auth Routes */}
               <Route path="auth" element={<AuthLayout />}>
                 <Route index element={<AuthPage />} />
-                <Route path="login" element={<AuthPage />} />
-                <Route path="check-otp" element={<CheckOTP />} />
+                <Route path="verify-otp" element={<VerifyOTP />} />
                 <Route path="complete-profile" element={<CompleteProfile />} />
               </Route>
 
+              {/* User Routes */}
+              <Route element={<ProtectedRoute />}>
+                <Route path="/profile" element={<>profile </>} />
+                <Route path="/dashboard" element={<>dashboard</>} />
+              </Route>
               {/* Game Centers Routes */}
               {/* <Route path="game-centers" element={<GameCenters />} />
               <Route path="game-centers/:id" element={<SingleGameCenter />} /> */}
