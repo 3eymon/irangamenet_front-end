@@ -28,7 +28,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           setValue?.(event);
         }}
         className={cn(
-          "w-full text-left bg-transparent caret-gray-300 outline-none border-2 border-solid border-zinc-500 transition-all placeholder:text-gray-400 placeholder:select-none text-sm lg:text-base  rounded-xl py-3 lg:py-3 placeholder:text-right pr-10 md:pr-12 lg:pr-18 pl-4 lg:pl-6 font-Peyda",
+          "w-full text-right bg-transparent caret-gray-300 outline-none border-2 border-solid border-zinc-500 transition-all placeholder:text-gray-400 placeholder:select-none text-sm lg:text-base  rounded-xl py-3 lg:py-3 placeholder:text-right pr-10 md:pr-12 lg:pr-18 pl-4 lg:pl-6 font-Peyda",
           className
         )}
       />

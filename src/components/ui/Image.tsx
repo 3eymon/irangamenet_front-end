@@ -1,3 +1,4 @@
+import { UserIcon } from "@heroicons/react/24/solid";
 import { memo, useEffect, useId, useRef, useState } from "react";
 import type { ReactNode } from "react";
 
@@ -11,6 +12,7 @@ interface ImageProps {
   srcSet?: string;
   sizes?: string;
   fallback?: ReactNode;
+  icon?: boolean;
 }
 
 const GamingFallback = memo(function GamingFallback({ alt }: { alt: string }) {
@@ -144,7 +146,21 @@ const GamingFallback = memo(function GamingFallback({ alt }: { alt: string }) {
     </div>
   );
 });
+const IconFallback = memo(function IconFallback({ alt }: { alt: string }) {
+  return (
+    <div
+      role="img"
+      aria-label={alt}
+      className="absolute inset-0 flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#30283d] via-[#211d2a] to-[#17151d]"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.2),transparent_70%)]" />
 
+      <div className="relative flex size-full items-center justify-center">
+        <UserIcon className="size-1/2 text-violet-400/80" />
+      </div>
+    </div>
+  );
+});
 function ImageBase({
   src,
   alt,
@@ -153,6 +169,7 @@ function ImageBase({
   srcSet,
   sizes,
   fallback,
+  icon,
 }: ImageProps) {
   const [result, setResult] = useState<{
     src: string;
@@ -183,7 +200,8 @@ function ImageBase({
       className={`relative isolate overflow-hidden bg-[#19181e] ${className}`}
     >
       {status === "error" ? (
-        (fallback ?? <GamingFallback alt={alt} />)
+        (fallback ??
+        (icon ? <IconFallback alt={alt} /> : <GamingFallback alt={alt} />))
       ) : (
         <>
           {status === "loading" && (
