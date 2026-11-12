@@ -1,4 +1,3 @@
-import "animate.css";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./style.css";
