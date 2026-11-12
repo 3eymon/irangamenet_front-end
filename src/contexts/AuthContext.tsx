@@ -1,15 +1,19 @@
+
 import {
   createContext,
+  useCallback,
   useContext,
   useEffect,
+  useMemo,
   useState,
   type ReactNode,
 } from "react";
 
-import type { Session, User } from "@supabase/supabase-js";
+import type { User } from "@supabase/supabase-js";
+
 import { supabase } from "../utils/supabase";
 import { getCurrentUserWithProfile } from "../services/auth";
-import { Tables } from "../types/database.types";
+import type { Tables } from "../types/database.types";
 
 type Profile = Pick<
   Tables<"profiles">,
@@ -17,48 +21,63 @@ type Profile = Pick<
 > | null;
 
 type AuthContextType = {
-  session: Session | null;
   user: User | null;
   profile: Profile;
   isAuthenticated: boolean;
   isProfileCompleted: boolean;
   isLoading: boolean;
+  refreshProfile: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [session, setSession] = useState<Session | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile>(null);
-  const [isAuthInitialized, setIsAuthInitialized] = useState(false);
-
   const [isLoading, setIsLoading] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const [profileVersion, setProfileVersion] = useState(0);
 
+  const userId = user?.id;
+
+  // Auth listener
   useEffect(() => {
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-      setIsAuthInitialized(true);
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      setIsInitialized(true);
+
+      if (event === "INITIAL_SESSION" || event === "SIGNED_IN") {
+        setUser(session?.user ?? null);
+      }
+
+      if (event === "SIGNED_OUT") {
+        setUser(null);
+        setProfile(null);
+        setIsLoading(false);
+      }
+
+      if (event === "USER_UPDATED") {
+        setUser(session?.user ?? null);
+      }
     });
 
     return () => subscription.unsubscribe();
   }, []);
 
+  // Fetch profile when user identity changes
   useEffect(() => {
-    if (!isAuthInitialized) return;
+    if (!isInitialized) return;
+
+    if (!userId) {
+      setProfile(null);
+      setIsLoading(false);
+      return;
+    }
 
     let active = true;
 
-    const syncUser = async () => {
-      if (!session) {
-        setUser(null);
-        setProfile(null);
-        setIsLoading(false);
-        return;
-      }
-
+    const syncProfile = async () => {
       setIsLoading(true);
 
       try {
@@ -69,41 +88,53 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(result?.user ?? null);
         setProfile(result?.profile ?? null);
       } catch (error) {
-        console.error("Failed to fetch user profile:", error);
-
         if (!active) return;
 
-        setUser(null);
-        setProfile(null);
+        console.error("Failed to fetch user profile:", error);
       } finally {
         if (active) setIsLoading(false);
       }
     };
 
-    syncUser();
+    syncProfile();
 
     return () => {
       active = false;
     };
-  }, [session,isAuthInitialized]);
+  }, [userId, isInitialized, profileVersion]);
 
-  const isAuthenticated = !!user;
+  const refreshProfile = useCallback(async () => {
+    setProfileVersion((version) => version + 1);
+  }, []);
+
+  const isAuthenticated = Boolean(user);
 
   const isProfileCompleted = Boolean(
-    profile?.username?.trim() && profile?.display_name?.trim(),
+    profile?.username?.trim() &&
+    profile?.display_name?.trim()
+  );
+
+  const value = useMemo(
+    () => ({
+      user,
+      profile,
+      isAuthenticated,
+      isProfileCompleted,
+      isLoading,
+      refreshProfile,
+    }),
+    [
+      user,
+      profile,
+      isAuthenticated,
+      isProfileCompleted,
+      isLoading,
+      refreshProfile,
+    ]
   );
 
   return (
-    <AuthContext.Provider
-      value={{
-        session,
-        user,
-        profile,
-        isAuthenticated,
-        isProfileCompleted,
-        isLoading,
-      }}
-    >
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
