@@ -6,7 +6,7 @@
     bottom: 0;
   }
 
-  nav button {
+  nav #toggle-button {
     outline: none;
     border: none;
     -webkit-user-select: none;

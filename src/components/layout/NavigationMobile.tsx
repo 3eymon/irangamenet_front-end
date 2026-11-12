@@ -1,19 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
 import { useRef } from "react";
-import { motion, useCycle } from "framer-motion";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
 import { useDimensions } from "../../hooks/use-dimensions";
 import { navbarItems } from "./Navbar";
 import "./navigation.css";
-import { Backdrop, Button } from "@mui/material";
-import {
-  ArrowLeftCircleIcon,
-  ChevronLeftIcon,
-  UserCircleIcon,
-  UserIcon,
-} from "@heroicons/react/24/outline";
+import { Backdrop } from "@mui/material";
+import { ChevronLeftIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import { useAuth } from "../../contexts/AuthContext";
 import { useMutation } from "@tanstack/react-query";
 import { logOut } from "../../services/auth";
+import Image from "../ui/Image";
+import { ArrowLeftEndOnRectangleIcon } from "@heroicons/react/24/solid";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -38,13 +35,6 @@ const sidebar = {
 };
 
 export default function NavigationMobile() {
-    const { user, profile, isLoading } = useAuth();
-
-  const logoutMutation = useMutation({
-    mutationFn: logOut,
-    // onSuccess: () => toggle,
-  });
-  console.log(user,profile)
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
@@ -82,7 +72,7 @@ export default function NavigationMobile() {
         onClick={() => toggleOpen()}
       ></Backdrop>
       <motion.div
-        className="background bg-[#29293dda] backdrop-blur text-white w-60 z-30 "
+        className="background z-30 w-60 bg-[#29293dda] text-white backdrop-blur"
         variants={sidebar}
       />
       <div className="relative">
@@ -105,13 +95,13 @@ const Path = (props: any) => (
 
 function MenuToggle({ toggle }: { toggle: () => void }) {
   return (
-    <motion.div className=" relative">
-      <button onClick={toggle} className="z-30 pr-2.5">
+    <motion.div className="relative">
+      <button id="toggle-button" onClick={toggle} className="z-30 pr-2.5">
         <svg
           width="23"
           height="23"
           viewBox="0 0 23 23"
-          className="text-white invert w-5"
+          className="w-5 text-white invert"
         >
           <Path
             variants={{
@@ -162,22 +152,6 @@ const variantsItem = {
     },
   },
 };
-const variantsItem2 = {
-  open: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      x: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    x: 50,
-    opacity: 0,
-    transition: {
-      x: { stiffness: 1000 },
-    },
-  },
-};
 
 function Navigation({
   toggle,
@@ -186,45 +160,142 @@ function Navigation({
   toggle: () => void;
   isOpen: boolean;
 }) {
+  const { user, profile, isLoading } = useAuth();
+
+  const logoutMutation = useMutation({
+    mutationFn: logOut,
+    onSuccess: () => {
+      toggle();
+    },
+  });
 
   return (
     <motion.ul
       variants={variants}
       dir="rtl"
-      className={`absolute text-white top-16 right-0 z-40 h-full flex flex-col  font-PeydaLight ${
+      className={`absolute right-0 top-16 z-40 flex w-[241px] flex-col overflow-hidden text-white ${
         isOpen ? "pointer-events-auto" : "pointer-events-none"
       }`}
     >
+      <motion.li variants={variantsItem} className="px-3 pb-3 pt-4">
+        <span className="mb-2 block px-2 text-[11px] text-zinc-500">
+          حساب کاربری
+        </span>
+
+        <AnimatePresence mode="wait" initial={false}>
+          {isLoading ? (
+            <motion.div
+              key="loading"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+              className="flex items-center gap-3 rounded-xl bg-[#383950] px-3 py-3"
+            >
+              <div className="size-9 shrink-0 animate-pulse rounded-full bg-zinc-600/70" />
+              <div className="flex flex-col gap-2">
+                <div className="h-3 w-24 animate-pulse rounded bg-zinc-600/70" />
+                <div className="h-2 w-16 animate-pulse rounded bg-zinc-700/70" />
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key={user ? "user" : "guest"}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
+            >
+              <Link
+                onClick={toggle}
+                to={user ? "/profile" : "/auth"}
+                className="flex items-center gap-3 rounded-xl bg-[#383950] px-3 py-3 transition-colors active:bg-[#41435e]"
+              >
+                {user ? (
+                  <Image
+                    icon
+                    src={profile?.avatar_path}
+                    alt="تصویر پروفایل"
+                    className="size-9 shrink-0 rounded-full bg-black object-cover !p-0.5"
+                  />
+                ) : (
+                  <UserCircleIcon className="size-9 shrink-0 text-zinc-300" />
+                )}
+
+                <div className="flex min-w-0 flex-col gap-1">
+                  <span
+                    className={`truncate text-sm ${
+                      user ? "text-primary-300" : "text-zinc-200"
+                    }`}
+                  >
+                    {user
+                      ? profile?.display_name?.trim() || "حساب کاربری"
+                      : "ورود / ثبت‌نام"}
+                  </span>
+
+                  <span className="text-[11px] text-zinc-400">
+                    {user ? "مشاهده پروفایل" : "به حساب خود وارد شوید"}
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.li>
+
       <motion.li
         variants={variantsItem}
-        className="flex items-center py-2 px-2"
-      >
-        <Link
-          onClick={toggle}
-          to="/auth"
-          className="group flex items-center gap-3 py-5 bg-[#383950]  px-[115px] pr-2 translate-x-2 text-sm"
-        >
-          <UserCircleIcon className="size-7" />
-          ورود یا ثبت نام
-        </Link>
+        className="mx-4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+      />
+
+      <motion.li variants={variantsItem} className="px-3 pb-1 pt-3">
+        <span className="mb-2 block px-2 text-[11px] text-zinc-500">
+          منوی اصلی
+        </span>
       </motion.li>
+
       {navbarItems.map((i) => (
         <motion.li
           key={i.id}
           variants={variantsItem}
-          className="flex items-center py-2 px-3"
+          className="flex w-full items-center px-3 py-1"
         >
           <NavLink
             onClick={toggle}
-            className="group flex items-center gap-3 transition-all ease-linear py-3 translate-x-1   w-full aria-[current=page]:font-PeydaMed  aria-[current=page]:bg-[#383950]/90 aria-[current=page]:text-purple-400 backdrop-blur rounded-xl px-32 pr-2 text-sm"
             to={i.link}
+            className="group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-zinc-300 transition-colors aria-[current=page]:bg-[#383950] aria-[current=page]:font-PeydaMed aria-[current=page]:text-purple-400"
           >
             {i.icon}
             {i.title}
           </NavLink>
-          <ChevronLeftIcon className="size-5 translate-x-8 pointer-events-none" />
         </motion.li>
       ))}
+
+      {user && !isLoading && (
+        <>
+          <motion.li
+            variants={variantsItem}
+            className="mx-4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+          />
+
+          <motion.li variants={variantsItem} className="px-3 py-3">
+            <span className="mb-2 block px-2 text-[11px] text-zinc-500">
+              مدیریت حساب
+            </span>
+
+            <button
+              type="button"
+              disabled={logoutMutation.isPending}
+              onClick={() => logoutMutation.mutate()}
+              className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-red-400 transition-colors hover:bg-red-500/10 active:bg-red-500/15 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <ArrowLeftEndOnRectangleIcon className="size-5 shrink-0" />
+
+              {logoutMutation.isPending ? "در حال خروج..." : "خروج از حساب"}
+            </button>
+          </motion.li>
+        </>
+      )}
     </motion.ul>
   );
 }
