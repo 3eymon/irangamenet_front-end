@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== BASE ========== */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    --ign-primary: 125 119 233;
+    --ign-primary-50: 245 244 255;
+    --ign-primary-100: 232 230 255;
+    --ign-primary-200: 207 204 250;
+    --ign-primary-300: 176 171 245;
+    --ign-primary-400: 148 142 239;
+    --ign-primary-500: 125 119 233;
+    --ign-primary-600: 101 95 210;
+    --ign-primary-700: 80 74 179;
+    --ign-primary-800: 62 57 145;
+    --ign-primary-900: 45 41 105;
+
+    --ign-secondary: 132 83 189;
+    --ign-secondary-50: 248 244 252;
+    --ign-secondary-100: 237 226 246;
+    --ign-secondary-200: 216 195 232;
+    --ign-secondary-300: 190 157 215;
+    --ign-secondary-400: 159 119 197;
+    --ign-secondary-500: 132 83 189;
+    --ign-secondary-600: 110 67 160;
+    --ign-secondary-700: 88 52 131;
+    --ign-secondary-800: 68 40 102;
+    --ign-secondary-900: 50 30 75;
+
+    --ign-background: 12 12 20;
+    --ign-background-100: 18 18 29;
+    --ign-background-200: 25 24 39;
+    --ign-background-300: 33 32 49;
+
+    --ign-surface: 22 21 35;
+    --ign-surface-100: 30 29 46;
+    --ign-surface-200: 40 38 59;
+    --ign-surface-300: 51 48 72;
+  }
+
+  html {
+    min-height: 100%;
+    background-color: rgb(var(--ign-background));
+    scrollbar-width: thin;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background-color: rgb(var(--ign-background));
+    color: #fff;
+    font-family: "Peyda", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: inherit;
+  }
+
+  * {
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #3b3b4b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: gray;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #80808094;
+  }
+
+  #root::-webkit-scrollbar {
+    display: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: #fff;
+    caret-color: #d1d5db;
+    -webkit-box-shadow: 0 0 0 1000px rgb(var(--ign-surface)) inset;
+    box-shadow: 0 0 0 1000px rgb(var(--ign-surface)) inset;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+/* ========== COMPONENTS ========== */
+
+@layer components {
+  .btn--primary {
+    @apply flex w-full items-center justify-center rounded-xl
+      bg-gradient-to-r from-primary to-secondary
+      px-5 py-3 text-center text-sm
+      shadow-lg shadow-primary/35 transition ease-linear
+      hover:brightness-105 active:brightness-90
+      focus-visible:outline-none focus-visible:ring-2
+      focus-visible:ring-primary focus-visible:ring-offset-2
+      focus-visible:ring-offset-background
+      lg:text-base;
+  }
+
+  .gradient {
+    --size: 250px;
+    position: absolute;
+    right: 40%;
+    bottom: -10px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 9999px;
+    background-color: #6535b23b;
+    filter: blur(calc(var(--size) / 5));
+  }
+
+  .all-games {
+    margin: 50px 0;
+    padding: 1em 3.3em;
+    border: none;
+    border-bottom: 2px solid rgb(var(--ign-secondary));
+    border-radius: 5px;
+    background: linear-gradient(
+      0deg,
+      rgb(var(--ign-secondary)) 0%,
+      rgb(var(--ign-primary)) 100%
+    );
+    color: #fff;
+    font-size: 16px;
+    font-weight: 900;
+    transform: perspective(200px) rotateX(15deg);
+    transition: transform 0.3s, box-shadow 0.3s;
+    will-change: transform;
+  }
+
+  .all-games:hover {
+    transform: perspective(190px) rotateX(25deg) translateY(2px);
+    box-shadow: 0 40px 29px 0 rgb(var(--ign-primary) / 0.17);
+  }
+
+  .all-games:active {
+    transform: perspective(170px) rotateX(36deg) translateY(5px);
+  }
+
+  .pattern {
+    --s: 50px;
+    --c: #191b22;
+    --_s: calc(2 * var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%, #20222a 68% 70%, #0000 72%;
+
+    background:
+      radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) / var(--_s) var(--_s),
+      radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s) var(--_s),
+      radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s) var(--_s),
+      radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s) var(--_s),
+      repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0 / var(--_s) var(--_s),
+      radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c);
+  }
+
+  .box {
+    position: relative;
+    padding: 16px 24px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 0.01);
+  }
+
+  .box::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to left,
+      #ff5770,
+      #e4428d,
+      #c42da8,
+      #9e16c3,
+      #6501de,
+      #9e16c3,
+      #c42da8,
+      #e4428d,
+      #ff5770
+    );
+    background-size: 200% 200%;
+    filter: blur(15px);
+    transform: scale(0.9) translateZ(0);
+    animation: animateGlow 1.25s linear infinite;
+  }
+
+  .ft-hr {
+    background: linear-gradient(
+      90deg,
+      rgb(2 0 36 / 0) 0%,
+      rgb(54 54 96) 40%,
+      rgb(36 118 109) 60%,
+      rgb(0 0 0 / 0) 100%
+    );
+  }
+
+  .streamers-swiper {
+    --fade: radial-gradient(
+      ellipse at center,
+      rgb(var(--ign-background) / 0.95) 0%,
+      rgb(var(--ign-background) / 0.8) 30%,
+      rgb(var(--ign-background) / 0.5) 55%,
+      rgb(var(--ign-background) / 0.2) 75%,
+      transparent 100%
+    );
+  }
+
+  .streamers-swiper::before,
+  .streamers-swiper::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: -20px;
+    bottom: -20px;
+    width: 85px;
+    background: var(--fade);
+    filter: blur(16px);
+    pointer-events: none;
+  }
+
+  .streamers-swiper::before {
+    left: -40px;
+  }
+
+  .streamers-swiper::after {
+    right: -40px;
+  }
+
+  @media (min-width: 768px) {
+    .streamers-swiper::before,
+    .streamers-swiper::after {
+      display: none;
+    }
+  }
+
+  .from-cnDarkBlue-27:is(.dark *) {
+    --tw-gradient-from: rgb(0 0 0 / 0.205) var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(40 42 59 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    border-radius: 20px;
+  }
+}
+
+/* ========== UTILITIES ========== */
+
+@layer utilities {
+  .font-PeydaMed {
+    font-weight: 500;
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes animateGlow {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box::after {
+    animation: none;
+  }
+}
+
+/* ========== MUI OVERRIDES ========== */
+
+[class*="MuiRating-icon"] {
+  color: gray !important;
+}
+
+[class*="MuiRadio-root"].Mui-checked {
+  color: #000 !important;
+}
