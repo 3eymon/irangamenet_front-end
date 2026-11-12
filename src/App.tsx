@@ -41,7 +41,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Navbar />
-      <div className="relative container text-white  min-h-screen ">
+      <div className="container relative min-h-screen text-white">
         <Toaster />
         <ThemeProvider theme={THEME}>
           <Routes>
