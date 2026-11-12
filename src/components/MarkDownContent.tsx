@@ -49,7 +49,7 @@ const components: Components = {
     </ol>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="my-6 border-r-4 border-violet-500/60 bg-white/5 py-2 pr-4 text-zinc-400">
+    <blockquote className="my-3 md:my-6 border-r-4 border-violet-500/60 bg-white/5 py-px md:py-2 pr-2 md:pr-4 text-zinc-400">
       {children}
     </blockquote>
   ),
