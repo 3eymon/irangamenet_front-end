@@ -68,7 +68,7 @@ function Home() {
   );
 }, [popularNewsQuery.data?.results]);
   return (
-    <main className="pb-10 flex flex-col gap-10">
+    <main className="pb-10 flex flex-col gap-10 px-1">
       <HeroSection
         data={triplicatedData}
         isLoading={popularNewsQuery.isLoading}

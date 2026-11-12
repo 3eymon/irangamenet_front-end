@@ -24,7 +24,7 @@ function NewsCardSkeleton() {
       aria-hidden="true"
       className="flex w-full flex-col rounded-xl border border-primary-400/20 bg-gradient-to-br from-primary-500/35 via-primary-900/80 to-[#0b0b11] p-3 shadow-lg shadow-black/20"
     >
-      <div className="aspect-video h-32 w-full rounded-md object-cover sm:h-44 md:h-52 bg-primary-400/10" />
+      <div className="aspect-video h-32 w-full rounded-md bg-primary-400/10 object-cover sm:h-44 md:h-52" />
 
       <div className="flex flex-col gap-3 pt-3">
         <div className="h-3 w-3/4 rounded-sm bg-primary-200/10" />
@@ -73,7 +73,7 @@ function NewsCardError() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 backdrop-blur-[3px] bg-[radial-gradient(ellipse_at_50%_35%,rgba(255,255,255,0.12),transparent_65%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(255,255,255,0.12),transparent_65%)] backdrop-blur-[3px]"
       />
       <div
         aria-hidden="true"
@@ -124,7 +124,7 @@ function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
         pagination={showSkeleton ? false : pagination}
         autoplay={{ delay: 5_000 }}
         modules={[EffectCoverflow, Pagination, Autoplay]}
-        className={`mySwiper w-full max-w-[35rem] px-6 ${hasError ? "pointer-events-none" : ""}`}
+        className={`mySwiper w-full max-w-xl !overflow-visible ${hasError ? "pointer-events-none" : ""}`}
       >
         {hasError
           ? Array.from({ length: 3 }, (_, index) => (
@@ -237,7 +237,7 @@ function NewsCardPreview({ cards, isLoading = false }: NewsCardPreviewProps) {
               ))}
 
         <div
-          className={`game-card-pagination relative mt-4 flex justify-center gap-1 ${hasError ? "brightness-50 opacity-25" : ""}`}
+          className={`game-card-pagination relative mt-4 flex justify-center gap-1 ${hasError ? "opacity-25 brightness-50" : ""}`}
         />
       </Swiper>
     </div>
@@ -252,74 +252,108 @@ function HeroSection({
 }) {
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center w-full h-full mt-8 sm:mt-28 px-4 z-10">
+      <div className="z-10 mt-8 flex h-full w-full flex-col items-center px-4 sm:mt-28 lg:flex-row">
         <Texts />
         <NewsCardPreview isLoading={isLoading} cards={data ?? []} />
       </div>
     </>
   );
 }
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 function Texts() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="w-full flex flex-col max-md:text-center max-md:items-center gap-7 font-Peyda "
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="relative z-20 flex w-full flex-col gap-7 font-Peyda max-md:items-center max-md:text-center"
     >
-      <h1 className="text-4xl xl:text-5xl font-bold leading-[1.1] xl:leading-[1.4]">
+      <div className="pointer-events-none absolute -inset-x-8 -inset-y-6 -z-10 rounded-3xl bg-gradient-to-r from-background/95 via-backfrom-background/75 to-transparent blur-2xl" />
+
+      <div className="gradient inset-0" />
+
+      <motion.h1
+        variants={itemVariants}
+        className="text-4xl font-bold leading-[1.3] xl:text-5xl xl:leading-[1.4]"
+      >
         دنیای بازی‌ها رو از زاویه‌ای تازه تجربه کن؛ از جدیدترین اخبار تا
         محبوب‌ترین بازی‌ها، همه در{" "}
-        <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-extrabold">
+        <span className="relative bg-gradient-to-r from-primary to-secondary bg-clip-text font-extrabold text-transparent">
           ایران گیم نت
         </span>
-      </h1>
+      </motion.h1>
 
-      <p className="text-gray-400 text-sm sm:text-base leading-8 max-w-xl">
+      <motion.p
+        variants={itemVariants}
+        className="max-w-xl text-sm leading-8 text-gray-400 sm:text-base"
+      >
         جدیدترین اخبار دنیای گیم، معرفی و بررسی بازی‌ها و محتوای جذاب از دنیای
         بازی‌های ویدیویی رو یک‌جا دنبال کن.
-      </p>
+      </motion.p>
 
-      <div className="flex flex-wrap gap-3 font-PeydaLight">
+      <motion.div
+        variants={itemVariants}
+        className="font-PeydaLight flex flex-wrap gap-3"
+      >
         <a
-          href="#newest-games"
-          className="text-sm inline-flex items-center bg-gradient-to-r from-primary to-secondary px-6 py-2.5 transition-transform rounded-md shadow-primary/35 hover:scale-95"
+          href="#latest-games"
+          className="inline-flex items-center rounded-md bg-gradient-to-r from-primary to-secondary px-6 py-2.5 text-sm shadow-primary/35 transition-transform hover:scale-95"
         >
           کشف دنیای بازی‌ها
         </a>
 
         <Link
           to="/news/discover/latest"
-          className="text-sm inline-flex gap-2 items-center px-5 py-2.5 transition-transform rounded-md border-2 border-secondary hover:scale-95"
+          className="inline-flex items-center gap-2 rounded-md border-2 border-secondary px-5 py-2.5 text-sm transition-transform hover:scale-95"
         >
           <NewspaperIcon className="w-5" />
           آخرین اخبار گیمینگ
         </Link>
-      </div>
+      </motion.div>
 
-      <div className="flex gap-3 items-center">
+      <motion.div variants={itemVariants} className="flex items-center gap-3">
         <div className="flex -space-x-2 space-x-reverse">
           <img
-            className="w-12 h-12 border-2 bg-gray-800 border-secondary rounded-full object-cover"
+            className="h-12 w-12 rounded-full border-2 border-secondary bg-gray-800 object-cover"
             src="images/icon/header/Call_of_duty.jpg"
             alt=""
           />
           <img
-            className="w-12 h-12 border-2 bg-gray-800 border-gray-600 rounded-full object-cover"
+            className="h-12 w-12 rounded-full border-2 border-gray-600 bg-gray-800 object-cover"
             src="images/icon/header/Forza.jpg"
             alt=""
           />
           <img
-            className="w-12 h-12 border-2 bg-gray-800 border-secondary/70 rounded-full object-cover"
+            className="h-12 w-12 rounded-full border-2 border-secondary/70 bg-gray-800 object-cover"
             src="images/icon/header/Grand-Theft-Auto-San-Andreas.jpg"
             alt=""
           />
         </div>
 
-        <p className="text-xs sm:text-sm text-gray-400 max-w-[12rem] leading-6">
+        <p className="max-w-[12rem] text-xs leading-6 text-gray-400 sm:text-sm">
           دنیای بازی‌ها، اخبار و تجربه‌هایی که ارزش کشف کردن دارن!
         </p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

@@ -16,32 +16,56 @@ function buildRows<T>(items: T[]): T[][] {
   if (last) rows.push([last]);
   return rows;
 }
+function ProducerSkeleton() {
+  return (
+    <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+      <div className="flex min-w-0 items-center gap-2.5">
+        <div className="md:w-13 md:h-13 h-11 w-11 shrink-0 animate-pulse rounded-full bg-neutral-800" />
+
+        <div className="flex flex-col gap-2">
+          <div className="h-3 w-20 animate-pulse rounded-sm bg-neutral-800" />
+          <div className="h-2 w-12 animate-pulse rounded-sm bg-neutral-800/70" />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <div className="h-2.5 w-16 animate-pulse rounded-sm bg-neutral-800/80" />
+        <div className="h-2.5 w-20 animate-pulse rounded-sm bg-neutral-800/80" />
+      </div>
+
+      <div className="hidden flex-col gap-1.5 sm:flex">
+        <div className="h-4 w-12 animate-pulse rounded bg-neutral-800" />
+        <div className="h-4 w-12 animate-pulse rounded bg-neutral-800" />
+      </div>
+    </div>
+  );
+}
 
 function ProducerCard({ producer }: { producer: any }) {
   return (
     <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
-      <div className="flex items-center gap-2.5 min-w-0">
+      <div className="flex min-w-0 items-center gap-2.5">
         <Link to="#" className="shrink-0">
           {producer.icon ? (
             <img
               src={producer.icon}
               loading="lazy"
-              className="w-11 h-11 md:w-13 md:h-13 rounded-full object-contain p-0.5 ring-[3px] ring-primary-500/15 bg-white shadow-sm shadow-black/20"
+              className="md:w-13 md:h-13 h-11 w-11 rounded-full bg-white object-contain p-0.5 shadow-sm shadow-black/20 ring-[3px] ring-primary-500/15"
               alt={producer.name || ""}
             />
           ) : (
-            <BuildingOffice2Icon className="w-11 h-11 md:w-13 md:h-13 p-2.5 rounded-full border border-gray-600/80 text-gray-400 bg-white/5" />
+            <BuildingOffice2Icon className="md:w-13 md:h-13 h-11 w-11 rounded-full border border-gray-600/80 bg-white/5 p-2.5 text-gray-400" />
           )}
         </Link>
 
         <div className="min-w-0">
           <Link
             to="#"
-            className="block text-xs font-medium truncate hover:underline underline-offset-2"
+            className="block truncate text-xs font-medium underline-offset-2 hover:underline"
           >
             {producer.name || "نامشخص"}
           </Link>
-          <p className="text-[11px] text-gray-400 mt-0.5">
+          <p className="mt-0.5 text-[11px] text-gray-400">
             {producer.Founded || "-"}
           </p>
         </div>
@@ -60,11 +84,11 @@ function ProducerCard({ producer }: { producer: any }) {
         </p>
       </div>
 
-      <div className="hidden sm:flex flex-col gap-1">
-        <div className="text-[9px] px-2 py-0.5 rounded bg-green-700/90 leading-none">
+      <div className="hidden flex-col gap-1 sm:flex">
+        <div className="rounded bg-green-700/90 px-2 py-0.5 text-[9px] leading-none">
           0.555%
         </div>
-        <div className="text-[9px] px-2 py-0.5 rounded bg-red-700/90 leading-none">
+        <div className="rounded bg-red-700/90 px-2 py-0.5 text-[9px] leading-none">
           0.555%
         </div>
       </div>
@@ -80,7 +104,27 @@ function BestProducers({
   isLoading: boolean;
 }) {
   const rows = useMemo(() => buildRows(data ?? []), [data]);
-  console.log(data);
+  if (isLoading)
+    return (
+      <div className={"relative"}>
+        <div className="mx-auto mb-16 h-6 w-52 animate-pulse rounded-sm bg-neutral-800 md:mx-0 md:mb-20" />
+
+        <div className="mt-4 flex flex-col items-center gap-5 px-3 sm:px-6 lg:px-16 xl:px-20">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div
+              key={i}
+              className="flex w-full flex-wrap justify-center gap-x-8 gap-y-5 border-t border-gray-600/60 pt-5 first:border-t-0 first:pt-0 sm:gap-x-12 md:gap-x-16"
+            >
+              {Array.from({ length: i === 3 ? 1 : 2 }).map((_, j) => (
+                <ProducerSkeleton key={j} />
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-7 h-7 w-36 animate-pulse rounded-md bg-neutral-800" />
+      </div>
+    );
   return (
     <div className="relative">
       <SeeAll
@@ -88,12 +132,12 @@ function BestProducers({
         className="mb-16 md:mb-20"
         color="#FFF"
       />
-      <div className="flex justify-end absolute rotate-45 scale-x-[-1]  top-10 right-10 md:right-20">
+      <div className="absolute right-10 top-10 flex rotate-45 scale-x-[-1] justify-end md:right-20">
         <svg
           viewBox="0 0 39 104"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-6 md:w-8 lg:w-10 block text-white"
+          className="block w-6 text-white md:w-8 lg:w-10"
         >
           <path
             d="M9.96 92.03c3.946 3.092 9.307 7.14 13.43 9.493m0 0c.474.271.204-3.913.177-4.109-.581-4.301-1.625-8.535-2.764-12.848m2.586 16.957C4.44 80.457-2.175 53.037 5.481 38.907c.758-1.4 1.586-2.924 2.55-4.313m0 0c1.537-2.213 3.422-4.087 5.935-4.59 2.318-.463 5.784.17 7.94 2.607 4.027 4.553 2.166 11.094-2.429 11.22-4.037.112-9.76-4.42-11.445-9.237Zm0 0a9.684 9.684 0 0 1-.1-.305C.23 9.709 19.54-1.921 36.868 3.657"
@@ -106,36 +150,29 @@ function BestProducers({
         </svg>
       </div>
 
-      <div className="flex flex-col items-center gap-5 px-3 sm:px-6 lg:px-16 xl:px-20 mt-4">
-        {!isLoading && rows[0]?.length === 0 && (
-          <p className="text-sm text-gray-400 py-10">
+      <div className="mt-4 flex flex-col items-center gap-5 px-3 sm:px-6 lg:px-16 xl:px-20">
+        {rows[0]?.length === 0 && (
+          <p className="py-10 text-sm text-gray-400">
             فعلاً استودیویی برای نمایش وجود ندارد
           </p>
         )}
 
-        {!isLoading &&
-          rows.map((row, i) => (
-            <div
-              key={i}
-              className="
-                flex flex-wrap justify-center
-                gap-x-8 gap-y-5 sm:gap-x-12 md:gap-x-16
-                w-full
-                pt-5 first:pt-0
-                border-t border-gray-600/60 first:border-t-0
-              "
-            >
-              {row.map((producer) => (
-                <ProducerCard key={producer.id} producer={producer} />
-              ))}
-            </div>
-          ))}
+        {rows.map((row, i) => (
+          <div
+            key={i}
+            className="flex w-full flex-wrap justify-center gap-x-8 gap-y-5 border-t border-gray-600/60 pt-5 first:border-t-0 first:pt-0 sm:gap-x-12 md:gap-x-16"
+          >
+            {row.map((producer) => (
+              <ProducerCard key={producer.id} producer={producer} />
+            ))}
+          </div>
+        ))}
       </div>
 
-      {!isLoading && data && data?.length > 0 && (
-        <button className="text-xs flex items-center gap-1 mx-auto mt-7 font-thin bg-gradient-to-r from-primary to-secondary px-6 py-1.5 rounded-md shadow-primary/30 hover:opacity-85 transition-opacity">
+      {data && data?.length > 0 && (
+        <button className="mx-auto mt-7 flex items-center gap-1 rounded-md bg-gradient-to-r from-primary to-secondary px-6 py-1.5 text-xs font-thin shadow-primary/30 transition-opacity hover:opacity-85">
           مشاهده ی همه ی سازنده ها
-          <ChevronLeftIcon className="w-4 h-4" />
+          <ChevronLeftIcon className="h-4 w-4" />
         </button>
       )}
     </div>

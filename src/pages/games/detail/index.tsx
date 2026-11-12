@@ -396,7 +396,7 @@ export default function GamePage() {
           className="max-lg:hidden absolute bottom-20 left-1/2 -translate-x-1/2 w-6 invert mx-auto cursor-pointer animate-bounce animate-infinite animate-ease-linear animate-duration-[2000ms]"
         />
       </section>
-      <section ref={around}>
+      <section ref={around} className="px-4">
         {game.system && game.system?.length > 0 && (
           <MarkDownContent content={game.system} />
         )}
