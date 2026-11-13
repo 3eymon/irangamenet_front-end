@@ -28,14 +28,62 @@ import Profile from "./pages/profile";
 import ProfileLayout from "./components/layout/ProfileLayout";
 import SavedGames from "./pages/profile/saved-games";
 import Favorites from "./pages/profile/favorites";
+import GameCenters from "./pages/game-centers";
 TimeAgo.addDefaultLocale(fa);
+const toastStyle: React.CSSProperties = {
+  background: "rgba(24, 24, 32, 0.92)",
+  backdropFilter: "blur(12px)",
+  WebkitBackdropFilter: "blur(12px)",
+  color: "#f5f3ff",
+  border: "1px solid rgba(255, 255, 255, 0.08)",
+  borderRadius: "12px",
+  padding: "12px 16px",
+  fontSize: "14px",
+  fontWeight: 500,
+  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.25)",
+};
 
+const toastOptions = {
+  duration: 3500,
+  style: toastStyle,
+
+  success: {
+    iconTheme: {
+      primary: "#a78bfa",
+      secondary: "#181820",
+    },
+    style: {
+      borderColor: "rgba(167, 139, 250, 0.4)",
+    },
+  },
+
+  error: {
+    iconTheme: {
+      primary: "#fb7185",
+      secondary: "#181820",
+    },
+    style: {
+      borderColor: "rgba(251, 113, 133, 0.4)",
+    },
+  },
+
+  loading: {
+    iconTheme: {
+      primary: "#c4b5fd",
+      secondary: "#181820",
+    },
+  },
+};
 function App() {
   return (
     <>
       <Navbar />
       <div className="container relative min-h-screen text-white">
-        <Toaster />
+        <Toaster
+          position="bottom-left"
+          gutter={8}
+          toastOptions={toastOptions}
+        />
         <ThemeProvider theme={THEME}>
           <Routes>
             <Route path="/" element={<Layout />}>
@@ -74,8 +122,8 @@ function App() {
                 <Route path="favorites" element={<Favorites />} />
               </Route>
               {/* Game Centers Routes */}
-              {/* <Route path="game-centers" element={<GameCenters />} />
-              <Route path="game-centers/:id" element={<SingleGameCenter />} /> */}
+              <Route path="game-centers" element={<GameCenters />} />
+              {/* <Route path="game-centers/:id" element={<SingleGameCenter />} /> */}
 
               {/* ------ */}
               <Route path="streamers" element={<Streamers />} />
