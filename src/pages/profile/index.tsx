@@ -15,6 +15,7 @@ import Input from "../../components/ui/input";
 import { useAuth } from "../../contexts/AuthContext";
 import { displayNameSchema } from "../../schemas/auth";
 import { updateProfile } from "../../services/auth";
+import toast from "react-hot-toast";
 
 const MAX_UPLOAD_SIZE = 1024 * 1024 * 1;
 
@@ -53,7 +54,7 @@ function Profile() {
     watch,
     resetField,
     setError,
-    formState: { errors, isDirty },
+    formState: { errors },
   } = useForm<DisplayName>({
     resolver: zodResolver(displayNameForm),
     mode: "all",
@@ -86,13 +87,19 @@ function Profile() {
     };
   }, [previewUrl]);
 
-  const hasChanges = isDirty || Boolean(newAvatarFile);
+  const displayName = watch("display_name");
 
+  const hasDisplayNameChanged = displayName !== (profile?.display_name || "");
+
+  const hasAvatarChanged = Boolean(newAvatarFile);
+
+  const hasChanges = hasDisplayNameChanged || hasAvatarChanged;
   const updateProfileMutation = useMutation({
     mutationFn: updateProfile,
     mutationKey: ["update"],
     onSuccess: async () => {
       await refreshProfile();
+      toast.success("اطلاعات با موفقیت بروزرسانی شدند !");
       setActiveInput(false);
       resetField("avatar");
     },
@@ -171,14 +178,15 @@ function Profile() {
                 <span className="inline-flex rounded-full border px-4 py-2">
                   <CameraIcon className="size-4" />
                 </span>
+                <input
+                  id="avatar"
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  {...register("avatar")}
+                />
               </label>
-              <input
-                id="avatar"
-                type="file"
-                accept="image/*"
-                className="hidden"
-                {...register("avatar")}
-              />
+
               <Button
                 type="button"
                 disabled={isLoading || !profile?.avatar_path}
@@ -244,7 +252,9 @@ function Profile() {
         <div className="flex items-center gap-4">
           <Button
             type="submit"
-            disabled={isLoading || updateProfileMutation.isPending || !hasChanges}
+            disabled={
+              isLoading || updateProfileMutation.isPending || !hasChanges
+            }
           >
             {updateProfileMutation.isPending
               ? "درحال بروزرسانی ..."
