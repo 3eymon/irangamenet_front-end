@@ -42,7 +42,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           "caret-gray-300 placeholder:text-right",
           "placeholder:select-none placeholder:text-gray-400",
           "focus:border-primary-500",
-          icon ? "pl-12" : "pl-4",
+          "read-only:cursor-default read-only:border-zinc-700 read-only:bg-white/5 read-only:text-gray-400",
+          "read-only:focus:border-zinc-700",
+          "disabled:cursor-not-allowed disabled:opacity-60",
+          icon ? "pl-4 pr-12" : "pr-4",
           className,
         )}
       />
@@ -50,7 +53,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       {icon && (
         <span
           className={cn(
-            "absolute left-4 top-1/2 -translate-y-1/2",
+            "absolute right-4 top-1/2 -translate-y-1/2",
             "flex items-center justify-center",
             "pointer-events-none",
             iconClassName,
