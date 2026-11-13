@@ -71,3 +71,9 @@ export async function logOut() {
     return;
   }
 }
+
+export async function updateProfile({ userId, display_name, avatar }: { userId: string, display_name: string; avatar?: File }) {
+  if (avatar) console.log(avatar)
+  const res = await supabase.from("profiles").update({ display_name }).match({ id: userId })
+  return res
+}
