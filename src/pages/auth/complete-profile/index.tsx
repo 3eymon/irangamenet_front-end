@@ -95,14 +95,14 @@ function CompleteProfile() {
     <div className="flex flex-col gap-6 text-right font-Peyda" dir="rtl">
       <div className="space-y-2">
         <p className="text-sm text-primary-200">مرحله ۳ از ۳</p>
-        <h1 className="text-xl font-PeydaMed text-white lg:text-2xl">
+        <h1 className="font-PeydaMed text-xl text-white lg:text-2xl">
           تکمیل پروفایل
         </h1>
         <p className="text-sm leading-6 text-white/60">
           برای ادامه، اطلاعات پروفایل خود را وارد کنید.
         </p>
         {user.email && (
-          <p className="text-sm text-white/80 dir-ltr">{user.email}</p>
+          <p className="dir-ltr text-sm text-white/80">{user.email}</p>
         )}
       </div>
 
@@ -120,7 +120,7 @@ function CompleteProfile() {
             autoComplete="name"
             placeholder="نامی که دیگران می‌بینند"
             icon={
-              <MdDriveFileRenameOutline className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
+              <MdDriveFileRenameOutline className="h-5 w-5 text-gray-400 transition-all lg:h-6 lg:w-6" />
             }
             className="!bg-white/5 !text-white placeholder:!text-white/40"
             {...register("displayName", {
@@ -143,7 +143,7 @@ function CompleteProfile() {
           </label>
           <Input
             icon={
-              <BiRename className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
+              <BiRename className="h-5 w-5 text-gray-400 transition-all lg:h-6 lg:w-6" />
             }
             id="ign-username"
             autoComplete="off"

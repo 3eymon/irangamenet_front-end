@@ -104,10 +104,10 @@ function SendOTP() {
   return (
     <div>
       <div
-        className={`absolute inset-0 w-full h-full bg-gray-500/5 backdrop-blur-sm z-50 flex flex-col justify-center items-center transition-all ease-linear ${
+        className={`absolute inset-0 z-50 flex h-full w-full flex-col items-center justify-center bg-gray-500/5 backdrop-blur-sm transition-all ease-linear ${
           sendOTPmutation.isPending
-            ? "opacity-100 visible"
-            : "opacity-0 invisible"
+            ? "visible opacity-100"
+            : "invisible opacity-0"
         }`}
       >
         <div className="z-30 ml-5">
@@ -133,7 +133,7 @@ function SendOTP() {
 
             <video
               key={activePreviewVideo.mp4}
-              className={`absolute inset-0 h-full w-full scale-150 object-cover transition-[opacity,transform] brightness-50 duration-300 ease-out motion-reduce:transition-none ${
+              className={`absolute inset-0 h-full w-full scale-150 object-cover brightness-50 transition-[opacity,transform] duration-300 ease-out motion-reduce:transition-none ${
                 isPreviewLoaded ? "opacity-100" : "opacity-0"
               }`}
               autoPlay
@@ -162,72 +162,19 @@ function SendOTP() {
 
             <div
               aria-hidden="true"
-              className="
-      pointer-events-none
-      absolute
-      left-1/2
-      top-1/2
-      z-10
-      h-[46px]
-      w-[62px]
-      -translate-x-1/2
-      -translate-y-1/2
-      rounded-2xl
-      border
-      border-white/10
-      bg-black/25
-      shadow-[0_4px_20px_rgba(0,0,0,0.35)]
-      backdrop-blur-sm
-      transition-all
-      duration-300
-      motion-reduce:transition-none
-    "
+              className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-[46px] w-[62px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/10 bg-black/25 shadow-[0_4px_20px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-all duration-300 motion-reduce:transition-none"
             />
 
             <div
               aria-hidden="true"
-              className="
-      pointer-events-none
-      absolute
-      inset-0
-      z-20
-      flex
-      
-      select-none
-      items-center
-      justify-center
-      transition-transform
-      duration-300
-      motion-reduce:transition-none
-    "
+              className="pointer-events-none absolute inset-0 z-20 flex select-none items-center justify-center transition-transform duration-300 motion-reduce:transition-none"
             >
-              <span
-                className="
-        flex
-        items-center
-        font-Jaro
-        text-3xl
-        font-black
-        leading-none
-        tracking-[-0.08em]
-        gap-1
-      "
-              >
+              <span className="flex items-center gap-1 font-Jaro text-3xl font-black leading-none tracking-[-0.08em]">
                 <span className="text-white drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">
                   N
                 </span>
 
-                <span
-                  className="
-          bg-gradient-to-br
-          from-primary-300
-          via-primary-500
-          to-secondary-500
-          bg-clip-text
-          text-transparent
-          drop-shadow-[0_0_10px_rgba(125,119,233,0.8)]
-        "
-                >
+                <span className="bg-gradient-to-br from-primary-300 via-primary-500 to-secondary-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(125,119,233,0.8)]">
                   G
                 </span>
 
@@ -240,22 +187,14 @@ function SendOTP() {
             {!isPreviewLoaded && (
               <div
                 aria-hidden="true"
-                className="
-        pointer-events-none
-        absolute
-        inset-0
-        z-30
-        flex
-        items-center
-        justify-center
-      "
+                className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center"
               >
                 <span className="size-4 animate-pulse rounded-full bg-white/20 backdrop-blur-sm" />
               </div>
             )}
           </div>
           <div className="mb-7 text-center">
-            <h2 className="mb-2 select-none text-base font-PeydaMed text-white lg:text-2xl">
+            <h2 className="mb-2 select-none font-PeydaMed text-base text-white lg:text-2xl">
               ورود و یا ثبت‌نام در ایران گیم نت
             </h2>
 
@@ -268,27 +207,27 @@ function SendOTP() {
         <div>
           <button
             type="button"
-            className="group w-full flex items-center justify-center gap-3 font-Peyda text-base lg:text-lg text-white px-5 py-3 rounded-xl bg-gradient-to-b from-[#2a475e] to-[#171a21]"
+            className="group flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-b from-[#2a475e] to-[#171a21] px-5 py-3 font-Peyda text-base text-white lg:text-lg"
           >
             <span>ادامه دادن با استیم</span>
-            <SiSteam className="w-5 h-5 lg:w-6 lg:h-6" />
+            <SiSteam className="h-5 w-5 lg:h-6 lg:w-6" />
           </button>
         </div>
 
-        <div className="text-xs inline-flex items-center justify-center w-full gap-3">
-          <hr className="bg-white text-white w-full h-[0.5px]" />
+        <div className="inline-flex w-full items-center justify-center gap-3 text-xs">
+          <hr className="h-[0.5px] w-full bg-white text-white" />
           یا
-          <hr className="bg-white text-white w-full h-[0.5px]" />
+          <hr className="h-[0.5px] w-full bg-white text-white" />
         </div>
 
         <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
-          <div className="w-full dir-ltr">
+          <div className="dir-ltr w-full">
             <Input
               dir="ltr"
-              className="text-left font-sans placeholder:font-Peyda placeholder:text-right"
+              className="text-left font-sans placeholder:text-right placeholder:font-Peyda"
               placeholder="ایمیل (پست الکترونیک)"
               icon={
-                <MdAlternateEmail className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
+                <MdAlternateEmail className="h-5 w-5 text-gray-400 transition-all lg:h-6 lg:w-6" />
               }
               spellCheck={false}
               inputMode="email"
@@ -300,7 +239,7 @@ function SendOTP() {
             {errors.email && (
               <p
                 role="alert"
-                className="text-red-500 inline-block px-4 pt-2 text-sm lg:text-base w-full text-right dir-rtl"
+                className="dir-rtl inline-block w-full px-4 pt-2 text-right text-sm text-red-500 lg:text-base"
               >
                 {errors.email.message}
               </p>
@@ -308,7 +247,7 @@ function SendOTP() {
             {errors.root && (
               <p
                 role="alert"
-                className="text-red-500 inline-block px-4 pt-2 text-sm lg:text-base w-full text-right dir-rtl"
+                className="dir-rtl inline-block w-full px-4 pt-2 text-right text-sm text-red-500 lg:text-base"
               >
                 {errors.root.message}
               </p>

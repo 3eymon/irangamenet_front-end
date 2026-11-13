@@ -110,13 +110,13 @@ function VerifyOTP() {
     <div className="flex flex-col gap-6 text-right font-Peyda" dir="rtl">
       <div className="space-y-2">
         <p className="text-sm text-primary-200">مرحله ۲ از ۳</p>
-        <h1 className="text-xl font-PeydaMed text-white lg:text-2xl">
+        <h1 className="font-PeydaMed text-xl text-white lg:text-2xl">
           تایید ایمیل
         </h1>
         <p className="text-sm leading-6 text-white/60">
           کد ارسال‌شده به این ایمیل را وارد کنید.
         </p>
-        <p className="text-sm text-white/80 dir-ltr">{email}</p>
+        <p className="dir-ltr text-sm text-white/80">{email}</p>
       </div>
 
       <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
@@ -132,9 +132,9 @@ function VerifyOTP() {
             maxLength={OTP_LENGTH}
             placeholder="کد ۶ رقمی"
             icon={
-              <MdOutlineMarkEmailUnread className="transition-all h-5 lg:w-6 w-5 lg:h-6 text-gray-400" />
+              <MdOutlineMarkEmailUnread className="h-5 w-5 text-gray-400 transition-all lg:h-6 lg:w-6" />
             }
-            className="!bg-white/5 !text-white placeholder:!text-white/40 text-center placeholder:!text-center"
+            className="!bg-white/5 text-center !text-white placeholder:!text-center placeholder:!text-white/40"
             aria-invalid={!!errors.otp}
             {...register("otp", {
               onChange: (e) => {
@@ -168,7 +168,7 @@ function VerifyOTP() {
         </Button>
       </form>
       <div className="flex flex-row items-center gap-2">
-        <div className="text-center text-sm flex-1">
+        <div className="flex-1 text-center text-sm">
           {isActive ? (
             <p className="text-white/50">
               ارسال مجدد کد تا{" "}
@@ -186,7 +186,7 @@ function VerifyOTP() {
               variant="outlined"
               onClick={handleResend}
               disabled={resendMutation.isPending}
-              className="transition-colors disabled:cursor-wait disabled:opacity-60 w-full"
+              className="w-full transition-colors disabled:cursor-wait disabled:opacity-60"
             >
               {resendMutation.isPending ? "در حال ارسال..." : "ارسال مجدد کد"}
             </Button>
