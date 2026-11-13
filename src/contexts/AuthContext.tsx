@@ -6,10 +6,10 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import type { User } from "@supabase/supabase-js";
 import { supabase } from "../utils/supabase";
-import { getProfile } from "../services/auth";
+import { getProfile, logOut } from "../services/auth";
 import type { Tables } from "../types/database.types";
 
 type Profile = Pick<
@@ -25,6 +25,8 @@ type AuthContextType = {
   isLoading: boolean;
   isProfileLoading: boolean;
   refreshProfile: () => Promise<void>;
+  logout: () => Promise<void>;
+  isLoggingOut: boolean;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -44,7 +46,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       if (event === "SIGNED_OUT") {
         setUser(null);
-        queryClient.removeQueries({ queryKey: ["profile"] });
+        queryClient.clear();
         return;
       }
 
@@ -68,7 +70,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const isProfileCompleted = Boolean(
     profile?.username?.trim() && profile?.display_name?.trim(),
   );
-
+  const logoutMutation = useMutation({
+    mutationFn: logOut,
+    onError: (error) => console.error("Logout failed:", error),
+  });
   const value = useMemo<AuthContextType>(
     () => ({
       user,
@@ -77,6 +82,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       isProfileCompleted,
       isLoading,
       isProfileLoading,
+      logout: () => logoutMutation.mutateAsync(),
+      isLoggingOut: logoutMutation.isPending,
       refreshProfile: () =>
         queryClient.invalidateQueries({ queryKey: profileKey(userId) }),
     }),
