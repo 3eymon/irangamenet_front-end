@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
 import { useDimensions } from "../../hooks/use-dimensions";
 import { navbarItems } from "./Navbar";
@@ -161,7 +161,7 @@ function Navigation({
   isOpen: boolean;
 }) {
   const { user, profile, isLoading, logout, isLoggingOut } = useAuth();
-
+  const [confirmLogout, setConfirmLogout] = useState(false);
   return (
     <motion.ul
       variants={variants}
@@ -276,16 +276,57 @@ function Navigation({
               مدیریت حساب
             </span>
 
-            <button
-              type="button"
-              disabled={isLoggingOut}
-              onClick={logout}
-              className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-red-400 transition-colors hover:bg-red-500/10 active:bg-red-500/15 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <ArrowLeftEndOnRectangleIcon className="size-5 shrink-0" />
+            <AnimatePresence mode="wait" initial={false}>
+              {confirmLogout ? (
+                <motion.div
+                  key="confirm"
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.15 }}
+                  className="space-y-2 rounded-xl bg-red-500/5 p-3"
+                >
+                  <p className="text-xs text-zinc-400">
+                    از خروج از حساب خود مطمئن هستید؟
+                  </p>
 
-              {isLoggingOut ? "در حال خروج..." : "خروج از حساب"}
-            </button>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={logout}
+                      disabled={isLoggingOut}
+                      className="flex-1 rounded-lg bg-red-500/15 px-3 py-2 text-xs text-red-400 transition-colors hover:bg-red-500/25 disabled:opacity-50"
+                    >
+                      {isLoggingOut ? "در حال خروج..." : "تأیید خروج"}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setConfirmLogout(false)}
+                      disabled={isLoggingOut}
+                      className="flex-1 rounded-lg bg-white/5 px-3 py-2 text-xs text-zinc-400 transition-colors hover:bg-white/10 disabled:opacity-50"
+                    >
+                      لغو
+                    </button>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.button
+                  key="logout"
+                  type="button"
+                  disabled={isLoggingOut}
+                  onClick={() => setConfirmLogout(true)}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.15 }}
+                  className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-red-400 transition-colors hover:bg-red-500/10 active:bg-red-500/15 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <ArrowLeftEndOnRectangleIcon className="size-5 shrink-0" />
+                  خروج از حساب
+                </motion.button>
+              )}
+            </AnimatePresence>
           </motion.li>
         </>
       )}

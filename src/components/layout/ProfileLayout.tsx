@@ -1,10 +1,10 @@
-import { Navigate, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
 import { BookmarkIcon, HeartIcon, UserIcon } from "@heroicons/react/24/outline";
 import { useAuth } from "../../contexts/AuthContext";
 import Image from "../ui/Image";
 import { Button } from "../ui/Button";
-import { useMutation } from "@tanstack/react-query";
-import { logOut } from "../../services/auth";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const PROFILE_NAV_ITEMS = [
   { title: "صفحه اصلی", link: "/profile", icon: UserIcon, end: true },
@@ -23,7 +23,7 @@ function ProfileLayout() {
     isLoggingOut,
   } = useAuth();
   const showSkeleton = isLoading || isProfileLoading;
-  const navigate = useNavigate();
+  const [confirmLogout, setConfirmLogout] = useState(false);
   if (!isLoading && !isAuthenticated) {
     return <Navigate to="/auth" replace />;
   }
@@ -84,13 +84,51 @@ function ProfileLayout() {
           </ul>
         </nav>
         <div className="my-4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-        <Button
-          onClick={logout}
-          disabled={isLoggingOut}
-          className="w-full bg-red-500/20 text-xs text-red-500 hover:bg-red-400/20"
-        >
-          {isLoggingOut ? "درحال خروج ..." : " خروج از حساب کاربری"}
-        </Button>
+        <AnimatePresence mode="wait" initial={false}>
+          {confirmLogout ? (
+            <motion.div
+              key="confirm"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.15 }}
+              className="flex w-full items-center gap-2"
+            >
+              <Button
+                onClick={logout}
+                disabled={isLoggingOut}
+                className="flex-1 bg-red-500/20 text-xs text-red-400 hover:bg-red-500/30"
+              >
+                {isLoggingOut ? "درحال خروج ..." : "تأیید خروج"}
+              </Button>
+
+              <Button
+                onClick={() => setConfirmLogout(false)}
+                disabled={isLoggingOut}
+                variant="outlined"
+                className="flex-1 text-xs"
+              >
+                لغو
+              </Button>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="logout"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.15 }}
+            >
+              <Button
+                onClick={() => setConfirmLogout(true)}
+                disabled={isLoggingOut}
+                className="w-full bg-red-500/20 text-xs text-red-500 hover:bg-red-400/20"
+              >
+                خروج از حساب کاربری
+              </Button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </aside>
 
       <div className="flex min-h-full w-full flex-1 flex-col gap-10 rounded-xl p-4">
