@@ -1,40 +1,68 @@
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
+
 import { cn } from "../../utils/cn";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   icon?: ReactNode;
-  prop?: Partial<InputHTMLAttributes<HTMLInputElement>>;
-  setValue?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  mode?: string;
+
+  wrapperClassName?: string;
+  iconClassName?: string;
+
+  containerClassName?: string;
+
+  onValueChange?: (value: string) => void;
 };
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  function Input({ icon, className, prop, setValue, onChange, ...props }, ref) {
+const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  {
+    icon,
+    wrapperClassName,
+    containerClassName,
+    iconClassName,
+    className,
+    onChange,
+    onValueChange,
+    ...props
+  },
+  ref,
+) {
   return (
-    <div className="relative w-full">
-      {icon && (
-        <label className="absolute top-1/2 -translate-y-1/2 right-4">
-          {icon}
-        </label>
-      )}
-
+    <div className={cn("relative w-full", wrapperClassName)}>
       <input
         ref={ref}
         {...props}
-        {...(prop ?? {})}
         onChange={(event) => {
           onChange?.(event);
-          prop?.onChange?.(event);
-          setValue?.(event);
+          onValueChange?.(event.target.value);
         }}
         className={cn(
-          "w-full text-right bg-transparent caret-gray-300 outline-none border-2 border-solid border-zinc-500 transition-all placeholder:text-gray-400 placeholder:select-none text-sm lg:text-base  rounded-xl py-3 lg:py-3 placeholder:text-right pr-10 md:pr-12 lg:pr-18 pl-4 lg:pl-6 font-Peyda",
-          className
+          "w-full rounded-xl border-2 border-solid border-zinc-500",
+          "bg-transparent py-3 text-right text-sm lg:text-base",
+          "font-Peyda text-white outline-none transition-all",
+          "caret-gray-300 placeholder:text-right",
+          "placeholder:select-none placeholder:text-gray-400",
+          "focus:border-primary-500",
+          icon ? "pl-12" : "pl-4",
+          className,
         )}
       />
+
+      {icon && (
+        <span
+          className={cn(
+            "absolute left-4 top-1/2 -translate-y-1/2",
+            "flex items-center justify-center",
+            "pointer-events-none",
+            iconClassName,
+          )}
+        >
+          {icon}
+        </span>
+      )}
     </div>
   );
-  }
-);
+});
+
+Input.displayName = "Input";
 
 export default Input;
