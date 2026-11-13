@@ -160,14 +160,7 @@ function Navigation({
   toggle: () => void;
   isOpen: boolean;
 }) {
-  const { user, profile, isLoading } = useAuth();
-
-  const logoutMutation = useMutation({
-    mutationFn: logOut,
-    onSuccess: () => {
-      toggle();
-    },
-  });
+  const { user, profile, isLoading, logout, isLoggingOut } = useAuth();
 
   return (
     <motion.ul
@@ -285,13 +278,13 @@ function Navigation({
 
             <button
               type="button"
-              disabled={logoutMutation.isPending}
-              onClick={() => logoutMutation.mutate()}
+              disabled={isLoggingOut}
+              onClick={logout}
               className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm text-red-400 transition-colors hover:bg-red-500/10 active:bg-red-500/15 disabled:cursor-not-allowed disabled:opacity-50"
             >
               <ArrowLeftEndOnRectangleIcon className="size-5 shrink-0" />
 
-              {logoutMutation.isPending ? "در حال خروج..." : "خروج از حساب"}
+              {isLoggingOut ? "در حال خروج..." : "خروج از حساب"}
             </button>
           </motion.li>
         </>
