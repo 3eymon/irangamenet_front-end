@@ -24,8 +24,10 @@ import NewsDiscovery from "./pages/news/discover";
 import NewsCategory from "./pages/news/category";
 import NewsPage from "./pages/news/detail";
 import Home from "./pages/home";
-import { ProtectedRoute } from "./components/ProtectedRoute";
 import Profile from "./pages/profile";
+import ProfileLayout from "./components/layout/ProfileLayout";
+import SavedGames from "./pages/profile/saved-games";
+import Favorites from "./pages/profile/favorites";
 TimeAgo.addDefaultLocale(fa);
 
 function App() {
@@ -66,8 +68,10 @@ function App() {
               </Route>
 
               {/* User Routes */}
-              <Route element={<ProtectedRoute />}>
-                <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<ProfileLayout />}>
+                <Route index element={<Profile />} />
+                <Route path="saved" element={<SavedGames />} />
+                <Route path="favorites" element={<Favorites />} />
               </Route>
               {/* Game Centers Routes */}
               {/* <Route path="game-centers" element={<GameCenters />} />
