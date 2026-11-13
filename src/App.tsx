@@ -7,13 +7,11 @@ import SinglePage from "./pages/games/detail";
 import { Toaster } from "react-hot-toast";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "./components/layout/Navbar";
 import AuthLayout from "./components/layout/AuthLayout";
 import AuthPage from "./pages/auth";
 import CompleteProfile from "./pages/auth/complete-profile";
 import VerifyOTP from "./pages/auth/verify-otp";
-import { isNotFoundError } from "./utils/isNotFoundErr";
 import NotFound from "./components/NotFound";
 import GameCategory from "./pages/games/category";
 import GameDiscovery from "./pages/games/discover";
@@ -27,19 +25,12 @@ import NewsCategory from "./pages/news/category";
 import NewsPage from "./pages/news/detail";
 import Home from "./pages/home";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import Profile from "./pages/profile";
 TimeAgo.addDefaultLocale(fa);
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: (failureCount, error) =>
-        !isNotFoundError(error) && failureCount < 1,
-    },
-  },
-});
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Navbar />
       <div className="container relative min-h-screen text-white">
         <Toaster />
@@ -76,8 +67,7 @@ function App() {
 
               {/* User Routes */}
               <Route element={<ProtectedRoute />}>
-                <Route path="/profile" element={<>profile </>} />
-                <Route path="/dashboard" element={<>dashboard</>} />
+                <Route path="/profile" element={<Profile />} />
               </Route>
               {/* Game Centers Routes */}
               {/* <Route path="game-centers" element={<GameCenters />} />
@@ -91,7 +81,7 @@ function App() {
           </Routes>
         </ThemeProvider>
       </div>
-    </QueryClientProvider>
+    </>
   );
 }
 

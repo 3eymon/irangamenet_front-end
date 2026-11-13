@@ -31,20 +31,15 @@ export async function verifyOTP({ email, otp }: { email: string; otp: string }) 
   return { user: data.user, isProfileComplete: !!profile?.username };
 }
 
-export async function getCurrentUserWithProfile() {
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return null;
-
-  const { data: profile, error } = await supabase
+export async function getProfile(userId: string) {
+  const { data, error } = await supabase
     .from("profiles")
     .select("username, display_name, avatar_path")
-    .eq("id", user.id)
+    .eq("id", userId)
     .maybeSingle();
-  if (error) throw error;
 
-  return { user, profile };
+  if (error) throw error;
+  return data;
 }
 
 export async function completeProfile(values: {
