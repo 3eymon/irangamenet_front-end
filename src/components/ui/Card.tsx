@@ -5,7 +5,12 @@ import { sliderCardsType } from "../../types/card.types";
 import { formatCompactNumber } from "../../utils/formatCompactNumber";
 import Image from "./Image";
 import { Game } from "../../services/games/queries";
-import { BookmarkIcon, BuildingOffice2Icon, EyeIcon, HeartIcon } from "@heroicons/react/24/outline";
+import {
+  BookmarkIcon,
+  BuildingOffice2Icon,
+  EyeIcon,
+  HeartIcon,
+} from "@heroicons/react/24/outline";
 import { Ref } from "react";
 import { News } from "../../services/news/queries";
 import { extractAuthorName } from "../../utils/extractAuthorName";
@@ -33,36 +38,30 @@ export default function Card({ data, type, ref }: CardProps) {
           <Link to={`/news/${data.slug}`}>
             <Image
               src={data.cover_path}
-              className="w-full h-60 object-cover rounded-xl hover:brightness-[.8] transition-all ease-linear bg-gray-400"
+              className="h-60 w-full rounded-xl bg-gray-400 object-cover transition-all ease-linear hover:brightness-[.8]"
               alt={`${data ?? "خبر"} ${data.title}`}
             />
           </Link>
-          <div className="flex absolute left-2 -bottom-2  gap-5">
+          <div className="absolute -bottom-2 left-2 flex gap-5">
             <button
               // onClick={}
               title={String(data.likes ?? "")}
-              className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-red-500 transition-all ease-linear"
+              className="group rounded-full bg-[#2b3748] p-1.5 text-red-500 shadow-2xl transition-all ease-linear"
             >
               <HeartIcon
-                className={`w-5 h-5 group-hover:fill-red-400/30 transition-all ease-linear `}
+                className={`h-5 w-5 transition-all ease-linear group-hover:fill-red-400/30`}
               />
             </button>
           </div>
         </div>
         <div className="flex flex-col gap-1 pt-3">
-          <div className="flex justify-between gap-2 items-center text-sm pr-1">
-            <div className="inline-flex gap-1 items-center">
-              {data.author?.avatar_path ? (
-                <img
-                  loading="lazy"
-                  src={data.author?.avatar_path}
-                  className="w-7 h-7 rounded-full object-cover"
-                  alt={`${extractAuthorName(data)} سازنده `}
-                />
-              ) : (
-                <UserCircleIcon className="size-6 text-white stroke-[1px]" />
-              )}
-
+          <div className="flex items-center justify-between gap-2 pr-1 text-sm">
+            <div className="inline-flex items-center gap-1">
+              <Image
+                src={data.author?.avatar_path}
+                className="h-7 w-7 rounded-full object-cover"
+                alt={`${extractAuthorName(data)} نویسنده خبر `}
+              />
               <p>{extractAuthorName(data)}</p>
             </div>
             {publishedDate && (
@@ -76,21 +75,21 @@ export default function Card({ data, type, ref }: CardProps) {
               </div>
             )}
           </div>
-          <h2 className="text-lg font-PeydaMed w-11/12 ">
+          <h2 className="w-11/12 font-PeydaMed text-lg">
             <Link to={`/news/${data.slug}`}>{data.title}</Link>
           </h2>
-          <p className="text-gray-300 text-xs line-clamp-3">{data.excerpt}</p>
+          <p className="line-clamp-3 text-xs text-gray-300">{data.excerpt}</p>
           <div className="pt-2">
             <div
-              className="text-gray-400 inline-flex items-center text-xs gap-1 justify-between w-full"
+              className="inline-flex w-full items-center justify-between gap-1 text-xs text-gray-400"
               dir="ltr"
             >
-              <div className="flex items-center gap-1.5 min-w-0 overflow-hidden">
+              <div className="flex min-w-0 items-center gap-1.5 overflow-hidden">
                 {data.categories.slice(0, 2).map((category) => (
                   <Link
                     key={category.slug}
                     to={`/news/category/${category.slug}`}
-                    className="text-[11px] text-red-500 hover:text-red-600 rounded-md px-2 py-1 whitespace-nowrap transition-colors"
+                    className="whitespace-nowrap rounded-md px-2 py-1 text-[11px] text-red-500 transition-colors hover:text-red-600"
                   >
                     {category.title}
                   </Link>
@@ -102,7 +101,7 @@ export default function Card({ data, type, ref }: CardProps) {
                       .slice(2)
                       .map((item) => item.title)
                       .join("، ")}
-                    className="text-[12px] text-red-500 bg-red-500/5 border border-red-500/10 rounded-full px-2 py-1 whitespace-nowrap cursor-help"
+                    className="cursor-help whitespace-nowrap rounded-full border border-red-500/10 bg-red-500/5 px-2 py-1 text-[12px] text-red-500"
                   >
                     +{data.categories.length - 2}
                   </span>
@@ -130,49 +129,49 @@ export default function Card({ data, type, ref }: CardProps) {
           <Link to={`/games/${data.id}`}>
             <Image
               src={data.cover_path}
-              className="w-full h-60 object-cover rounded-xl hover:brightness-[.8] transition-all ease-linear bg-gray-400"
+              className="h-60 w-full rounded-xl bg-gray-400 object-cover transition-all ease-linear hover:brightness-[.8]"
               alt={data.title}
             />
           </Link>
-          <div className="flex absolute left-2 -bottom-2  gap-5">
+          <div className="absolute -bottom-2 left-2 flex gap-5">
             <button
               // onClick={}
               title={String(data.likes ?? "")}
-              className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-red-500 transition-all ease-linear"
+              className="group rounded-full bg-[#2b3748] p-1.5 text-red-500 shadow-2xl transition-all ease-linear"
             >
               <HeartIcon
-                className={`w-5 h-5 group-hover:fill-red-400/30 transition-all ease-linear `}
+                className={`h-5 w-5 transition-all ease-linear group-hover:fill-red-400/30`}
               />
             </button>
             <button
               title={String(data.saves ?? "")}
-              className="group bg-[#2b3748] shadow-2xl p-1.5 rounded-full text-gray-400 transition-all ease-linear"
+              className="group rounded-full bg-[#2b3748] p-1.5 text-gray-400 shadow-2xl transition-all ease-linear"
             >
-              <BookmarkIcon className="w-5 h-5 group-hover:fill-gray-400/30 transition-all ease-linear" />
+              <BookmarkIcon className="h-5 w-5 transition-all ease-linear group-hover:fill-gray-400/30" />
             </button>
           </div>
         </div>
         <div className="flex flex-col gap-1 pt-3">
-          <div className="flex justify-between gap-2 items-center text-sm pr-1">
+          <div className="flex items-center justify-between gap-2 pr-1 text-sm">
             <Link
               to={`/producers/${data.producer?.slug}`}
-              className="inline-flex gap-1 items-center"
+              className="inline-flex items-center gap-1"
             >
               {data.producer?.logo_path ? (
                 <img
                   loading="lazy"
                   src={data.producer.logo_path}
-                  className="w-7 h-7 rounded-full object-cover"
+                  className="h-7 w-7 rounded-full object-cover"
                   alt={`${data.producer?.name} سازنده `}
                 />
               ) : (
-                <BuildingOffice2Icon className="size-7 text-white/80 p-1 border rounded-full border-zinc-500" />
+                <BuildingOffice2Icon className="size-7 rounded-full border border-zinc-500 p-1 text-white/80" />
               )}
 
               <p className="hover:underline">{data.producer?.name}</p>
             </Link>
             {data.created_at && (
-              <div className="text-gray-400 inline-flex gap-2">
+              <div className="inline-flex gap-2 text-gray-400">
                 <ReactTimeAgo
                   date={new Date(data.created_at)}
                   locale="fa-IR"
@@ -182,19 +181,19 @@ export default function Card({ data, type, ref }: CardProps) {
               </div>
             )}
           </div>
-          <h2 className="text-lg font-PeydaMed w-11/12 ">
+          <h2 className="w-11/12 font-PeydaMed text-lg">
             <Link to={`/games/${data.id}`}>{data.title}</Link>
           </h2>
-          <p className="text-gray-300 text-xs line-clamp-3">
+          <p className="line-clamp-3 text-xs text-gray-300">
             {data.description}
           </p>
-          <div className="pt-3 flex flex-row-reverse items-center justify-between gap-2 w-full">
-            <div className="flex items-center gap-1.5 min-w-0 overflow-hidden">
+          <div className="flex w-full flex-row-reverse items-center justify-between gap-2 pt-3">
+            <div className="flex min-w-0 items-center gap-1.5 overflow-hidden">
               {data.categories.slice(0, 2).map((category) => (
                 <Link
                   key={category.slug}
                   to={`/games/category/${category.slug}`}
-                  className="text-[11px] text-red-500 hover:text-red-600 rounded-md px-2 py-1 whitespace-nowrap transition-colors"
+                  className="whitespace-nowrap rounded-md px-2 py-1 text-[11px] text-red-500 transition-colors hover:text-red-600"
                 >
                   {category.title}
                 </Link>
@@ -206,14 +205,14 @@ export default function Card({ data, type, ref }: CardProps) {
                     .slice(2)
                     .map((item) => item.title)
                     .join("، ")}
-                  className="text-[12px] text-red-500 bg-red-500/5 border border-red-500/10 rounded-full px-2 py-1 whitespace-nowrap cursor-help"
+                  className="cursor-help whitespace-nowrap rounded-full border border-red-500/10 bg-red-500/5 px-2 py-1 text-[12px] text-red-500"
                 >
                   +{data.categories.length - 2}
                 </span>
               )}
             </div>
 
-            <div className="inline-flex items-center gap-1.5 text-sm text-gray-300 shrink-0">
+            <div className="inline-flex shrink-0 items-center gap-1.5 text-sm text-gray-300">
               <EyeIcon className="h-4 w-4 text-gray-500" />
 
               <span className="inline-flex items-center gap-1">

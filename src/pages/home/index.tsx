@@ -56,21 +56,11 @@ function Home() {
   //   queryFn: getAllStreamers,
   //   staleTime: 5 * 60 * 1000,
   // });
-  const triplicatedData = useMemo(() => {
-  const results = popularNewsQuery.data?.results;
-  if (!results) return results;
 
-  return [0, 1, 2].flatMap((copyIndex) =>
-    results.map((item) => ({
-      ...item,
-      id: `${item.id}-copy-${copyIndex}`,
-    }))
-  );
-}, [popularNewsQuery.data?.results]);
   return (
-    <main className="pb-10 flex flex-col gap-10 px-1">
+    <main className="flex flex-col gap-10 px-1 pb-10">
       <HeroSection
-        data={triplicatedData}
+        data={popularNewsQuery.data?.results}
         isLoading={popularNewsQuery.isLoading}
       />
       <DataSliderSection
