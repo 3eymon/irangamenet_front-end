@@ -203,14 +203,19 @@ function SendOTP() {
             </p>
           </div>
         </div>
-
         <div>
           <button
             type="button"
-            className="group flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-b from-[#2a475e] to-[#171a21] px-5 py-3 font-Peyda text-base text-white lg:text-lg"
+            disabled
+            aria-disabled="true"
+            title="به‌زودی"
+            className="group relative flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-xl bg-gradient-to-b from-[#2a475e] to-[#171a21] px-5 py-3 font-Peyda text-base text-white opacity-50 grayscale lg:text-lg"
           >
             <span>ادامه دادن با استیم</span>
             <SiSteam className="h-5 w-5 lg:h-6 lg:w-6" />
+            <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs text-zinc-300">
+              به‌زودی
+            </span>
           </button>
         </div>
 

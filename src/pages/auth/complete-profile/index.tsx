@@ -33,7 +33,7 @@ const isUsernameTaken = (error: unknown) =>
 
 function CompleteProfile() {
   const navigate = useNavigate();
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, refreshProfile } = useAuth();
   const clearStorage = () => {
     localStorage.removeItem(VERIFIED_OTP_EMAIL_KEY);
     localStorage.removeItem(PENDING_OTP_EMAIL_KEY);
@@ -48,8 +48,9 @@ function CompleteProfile() {
   } = useForm<CompleteProfileForm>();
   const saveProfile = useMutation({
     mutationFn: completeProfile,
-    onSuccess: () => {
+    onSuccess: async () => {
       clearStorage();
+      await refreshProfile();
       navigate("/", { replace: true });
     },
   });

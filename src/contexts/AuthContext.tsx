@@ -11,6 +11,7 @@ import type { User } from "@supabase/supabase-js";
 import { supabase } from "../utils/supabase";
 import { getProfile, logOut } from "../services/auth";
 import type { Tables } from "../types/database.types";
+import toast from "react-hot-toast";
 
 type Profile = Pick<
   Tables<"profiles">,
@@ -72,7 +73,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
   const logoutMutation = useMutation({
     mutationFn: logOut,
-    onError: (error) => console.error("Logout failed:", error),
+    onSuccess: () => {
+      toast.success("با موفقیت از حساب کاربری خارج شدید 👋");
+    },
+    onError: (error) => {
+      console.error("Logout failed:", error);
+      toast.error("خروج از حساب انجام نشد. دوباره تلاش کنید.");
+    },
   });
   const value = useMemo<AuthContextType>(
     () => ({
