@@ -72,8 +72,66 @@ export async function logOut() {
   }
 }
 
-export async function updateProfile({ userId, display_name, avatar }: { userId: string, display_name: string; avatar?: File }) {
-  if (avatar) console.log(avatar)
-  const res = await supabase.from("profiles").update({ display_name }).match({ id: userId })
-  return res
+export async function updateProfile({
+  userId,
+  display_name,
+  avatar,
+  username,
+}: {
+  userId: string
+  display_name: string
+  avatar?: File
+  username: string
+}) {
+  let avatar_path: string | undefined
+
+  if (avatar) {
+    const path = `${userId}/avatar`
+
+    const { error: uploadError } = await supabase.storage
+      .from("avatars")
+      .upload(path, avatar, {
+        upsert: true,
+        contentType: avatar.type,
+        cacheControl: "3600",
+      })
+
+    if (uploadError) throw new Error(uploadError.message)
+
+    const { data } = supabase.storage.from("avatars").getPublicUrl(path)
+
+    avatar_path = `${data.publicUrl}?t=${Date.now()}`
+  }
+
+  const updates: {
+    display_name: string
+    username: string
+    avatar_path?: string
+  } = { display_name, username }
+
+  if (avatar_path) updates.avatar_path = avatar_path
+
+  const { data, error } = await supabase
+    .from("profiles")
+    .update(updates)
+    .eq("id", userId)
+    .select()
+    .single()
+
+  if (error) {
+    if (error.code === "23505") throw new Error("این نام کاربری قبلا استفاده شده است !")
+    throw new Error(error.message)
+  }
+
+  return data
+}
+export async function removeAvatar(userId: string) {
+  const { error: uploadErr } = await supabase.storage.from("avatars").remove([`/${userId}`])
+  if (uploadErr) throw new Error(uploadErr.message)
+  const { error } = await supabase
+    .from("profiles")
+    .update({ avatar_path: null })
+    .eq("id", userId).single()
+  if (error) throw new Error(error.message);
+
 }
